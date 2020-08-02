@@ -24,3 +24,4 @@ C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.A
 C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.AssemblyInfo.cs
 C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.dll
 C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.pdb
+C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csprojAssemblyReference.cache

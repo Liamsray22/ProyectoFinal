@@ -12723,6 +12723,7 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.EntityFrameworkCore >= 2.1.1",
+      "Microsoft.Extensions.DependencyInjection.Abstractions >= 3.0.0",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
@@ -12801,6 +12802,10 @@
             "target": "Package",
             "version": "[2.1.1, )"
           },
+          "Microsoft.Extensions.DependencyInjection.Abstractions": {
+            "target": "Package",
+            "version": "[3.0.0, )"
+          },
           "Microsoft.NETCore.App": {
             "target": "Package",
             "version": "[2.1.0, )",
@@ -12817,9 +12822,10 @@
   },
   "logs": [
     {
-      "code": "NU1107",
-      "level": "Error",
-      "message": "Se detectó un conflicto de versiones para Microsoft.Extensions.DependencyInjection.Abstractions. Para resolver este problema, instale o haga referencia a Microsoft.Extensions.DependencyInjection.Abstractions 3.0.0 directamente en el proyecto ItlaElector. \r\n ItlaElector -> AutoMap -> Microsoft.Extensions.DependencyInjection.Abstractions (>= 3.0.0) \r\n ItlaElector -> Microsoft.AspNetCore.App 2.1.1 -> Microsoft.Extensions.DependencyInjection.Abstractions (>= 2.1.1 && < 2.2.0).",
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: Microsoft.AspNetCore.App 2.1.1 requiere Microsoft.Extensions.DependencyInjection.Abstractions (>= 2.1.1 && < 2.2.0), pero la versión Microsoft.Extensions.DependencyInjection.Abstractions 3.0.0 ya se resolvió.",
       "libraryId": "Microsoft.Extensions.DependencyInjection.Abstractions",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.1"

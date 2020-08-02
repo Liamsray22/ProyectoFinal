@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailConfig", "EmailConfig\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{1DEFCBBD-44EF-4F5E-99E9-7F4832A39093}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{CD0CBE3C-3CE8-4B5A-A2F6-4BD20171220F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBase", "DataBase\DataBase.csproj", "{C85C7159-B3BD-4C5E-889C-AE5820B2E1FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{1DEFCBBD-44EF-4F5E-99E9-7F4832A39093}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DEFCBBD-44EF-4F5E-99E9-7F4832A39093}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DEFCBBD-44EF-4F5E-99E9-7F4832A39093}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD0CBE3C-3CE8-4B5A-A2F6-4BD20171220F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD0CBE3C-3CE8-4B5A-A2F6-4BD20171220F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD0CBE3C-3CE8-4B5A-A2F6-4BD20171220F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD0CBE3C-3CE8-4B5A-A2F6-4BD20171220F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C85C7159-B3BD-4C5E-889C-AE5820B2E1FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C85C7159-B3BD-4C5E-889C-AE5820B2E1FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C85C7159-B3BD-4C5E-889C-AE5820B2E1FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C85C7159-B3BD-4C5E-889C-AE5820B2E1FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
