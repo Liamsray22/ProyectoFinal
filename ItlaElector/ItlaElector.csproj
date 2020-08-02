@@ -16,7 +16,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AutoMap\AutoMap.csproj" />
+    <ProjectReference Include="..\DataBase\DataBase.csproj" />
     <ProjectReference Include="..\EmailConfig\EmailConfig.csproj" />
+    <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 
 </Project>

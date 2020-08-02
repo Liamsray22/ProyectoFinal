@@ -32,3 +32,7 @@ C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Reposi
 C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CopyComplete
 C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Repository.dll
 C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
+C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\AutoMap.dll
+C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\DataBase.dll
+C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\AutoMap.pdb
+C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\DataBase.pdb
