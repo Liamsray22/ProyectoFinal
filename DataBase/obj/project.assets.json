@@ -688,24 +688,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Liam\\.nuget\\packages\\": {},
+    "C:\\Users\\Pablo Molina\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\DataBase\\DataBase.csproj",
+      "projectUniqueName": "C:\\Users\\Pablo Molina\\source\\repos\\ProyectoFinal\\DataBase\\DataBase.csproj",
       "projectName": "DataBase",
-      "projectPath": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\DataBase\\DataBase.csproj",
-      "packagesPath": "C:\\Users\\Liam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\DataBase\\obj\\",
+      "projectPath": "C:\\Users\\Pablo Molina\\source\\repos\\ProyectoFinal\\DataBase\\DataBase.csproj",
+      "packagesPath": "C:\\Users\\Pablo Molina\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pablo Molina\\source\\repos\\ProyectoFinal\\DataBase\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Liam\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Pablo Molina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
