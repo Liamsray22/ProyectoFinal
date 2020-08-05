@@ -8,8 +8,10 @@
     ".NETCoreApp,Version=v2.1": {
       "Repository/1.0.0": {
         "dependencies": {
+          "AutoMap": "1.0.0",
           "AutoMapper": "10.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
+          "DataBase": "1.0.0",
           "EmailConfig": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.0",
           "Microsoft.NETCore.App": "2.1.0"
@@ -223,6 +225,24 @@
         }
       },
       "System.Threading.ThreadPool/4.3.0": {},
+      "AutoMap/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "10.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.0"
+        },
+        "runtime": {
+          "AutoMap.dll": {}
+        }
+      },
+      "DataBase/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.0"
+        },
+        "runtime": {
+          "DataBase.dll": {}
+        }
+      },
       "EmailConfig/1.0.0": {
         "dependencies": {
           "NETCore.MailKit": "2.0.0"
@@ -413,6 +433,16 @@
       "sha512": "sha512-k/+g4b7vjdd4aix83sTgC9VG6oXYKAktSfNIJUNGxPEj7ryEOfzHHhfnmsZvjxawwcD9HyWXKCXmPjX8U4zeSw==",
       "path": "system.threading.threadpool/4.3.0",
       "hashPath": "system.threading.threadpool.4.3.0.nupkg.sha512"
+    },
+    "AutoMap/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DataBase/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "EmailConfig/1.0.0": {
       "type": "project",

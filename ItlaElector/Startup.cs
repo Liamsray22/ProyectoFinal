@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using AutoMap;
 using AutoMapper;
+using DataBase.Models;
 using EmailConfig;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,8 +13,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Repository.Repository;
 
 namespace ItlaElector
 {
@@ -37,27 +40,28 @@ namespace ItlaElector
             });
 
             //dataServices
-            //services.AddDbContext<Context>(options =>
-            //options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddDbContext<ItlaElectorDBContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
 
             //AutoMapping
             services.AddAutoMapper(typeof(Automapping).GetTypeInfo().Assembly);
 
             //Identity            
-            //services.AddIdentity<IdentityUser, IdentityRole>(options => {
-            //    options.Password = new PasswordOptions
-            //    {
-            //        RequireDigit = true,
-            //        RequiredLength = 3,
-            //        RequireUppercase = false,
-            //        RequireLowercase = false,
-            //        RequireNonAlphanumeric = false
-            //    };
-            //}).AddEntityFrameworkStores<Context>().AddDefaultTokenProviders();
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            {
+                options.Password = new PasswordOptions
+                {
+                    RequireDigit = true,
+                    RequiredLength = 3,
+                    RequireUppercase = false,
+                    RequireLowercase = false,
+                    RequireNonAlphanumeric = false
+                };
+            }).AddEntityFrameworkStores<ItlaElectorDBContext>().AddDefaultTokenProviders();
 
             //Repository
-            //services.AddScoped<EntidadRepo>();
+            services.AddScoped<CiudadanosRepo>();
 
             //Email
             var emailConfig = Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();
@@ -93,7 +97,7 @@ namespace ItlaElector
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Start}/{action=Start}/{id?}");
             });
         }
     }

@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "Ciudadanos";
+    Layout = "~/Views/Shared/_LayoutStart.cshtml";
+}
+
+<body style="background: #2980b9; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2c3e50, #2980b9); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
+
+    <header class="container-fluid shadow position-relative fixed-top col-lg-pull-2 border-bottom bg-light" id="HeaderHome">
+
+        <div class="row ml-4 p-1">
+
+            <div class="font-weight-bolder pt-2" style="font-family: 'Lemonada', cursive;">
+                <h1>Ciudadanos</h1>
+            </div>
+
+            <a asp-controller="Admin" asp-action="Home" class="btn btn-info ml-auto btn-group-sm rounded pt-1 mt-1" style="font-size:17px; font-family: 'Lemonada', cursive; height:2%;"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+
+        </div>
+
+    </header>
+
+    <div class="container mt-5 d-flex justify-content-center">
+
+        <div class="card rounded shadow-lg p-1 bg-dark"  style="width: 80rem; ">
+
+            <div class="card-header bg-transparent row ml-3">
+
+                    <a asp-controller="Usuario" asp-action="CrearUsuario" class="btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Agregar Usuario</a>
+
+            </div>
+            <div class="card-body bg-light table-responsive-sm" >
+
+                <table class="table table-striped text-center shadow rounded table-borderless">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">🛠</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size:12px; overflow-y: scroll;">
+
+                        <tr>
+                            <td>Dalvin David</td>
+                            <td>Molina Ogando</td>
+                            <td>dalvinmolina@gmail.com</td>
+                            <td>Activo</td>
+                            <td>
+                                
+                                <a asp-action="" asp-controller="" class="text-white btn btn-warning ml-auto  btn-sm"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+
+                                <a asp-action="" asp-controller="" class="text-white btn btn-danger ml-auto  btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>

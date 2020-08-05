@@ -1,0 +1,52 @@
+﻿#titleStart{
+    font-family: 'Playfair Display', serif;
+}
+
+/*.sinpadding [class*="col-"] {
+    padding: 0;
+}
+
+#starlogin {
+ height:100%;
+ font-family: 'Playfair Display', serif;
+}*/
+
+.titleBanner{
+    font-family: 'Playfair Display', serif;
+    font-size:100px;
+}
+
+#fontingre {
+    LINE-HEIGHT: 46px;
+    font-size: 28px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#btnIniciar {
+    font-size: 19px;
+}
+
+#InputCedula {
+font-size:25px;
+text-align:center;
+}
+
+#FormMi {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #536976; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #292E49, #536976); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #292E49, #536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#LabelLogin {
+font-size:22px;
+}
+
+#testLogin {
+    text-shadow: 2px 2px 4px #000000;
+}
