@@ -82,3 +82,6 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreap
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.csproj.CopyComplete
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Ciudadanos\Ciudadanos.g.cshtml.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Partidos\Partidos.g.cshtml.cs
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\PuestosElectivos\PuestosElectivos.g.cshtml.cs
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Candidatos\Candidatos.g.cshtml.cs
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Elecciones\Elecciones.g.cshtml.cs

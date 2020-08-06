@@ -29,7 +29,7 @@ background: linear-gradient(to left, #292E49, #536976); /* W3C, IE 10+/ Edge, Fi
                 <h1>Bienvenido al Administrador de Elecciones</h1>
             </div>
 
-            <a asp-controller="Login" asp-action="CerrarSesion" class="btn btn-danger ml-auto  btn-sm" style="font-size:16px">Cerrar Sesión</a>
+            <a asp-controller="Start" asp-action="Start" class="btn btn-danger ml-auto  btn-sm" style="font-size:16px">Cerrar Sesión</a>
         </div> 
         
     </header>
@@ -49,7 +49,7 @@ background: linear-gradient(to left, #292E49, #536976); /* W3C, IE 10+/ Edge, Fi
                                 sistema, en esta pantalla podemos manejar a los candidatos: ver, crear, editar y eliminar candidatos.
                             </p>
 
-                            <a asp-action="" asp-controller="" class="stretched-link"></a>
+                            <a asp-action="Candidatos" asp-controller="Candidatos" class="stretched-link"></a>
                         </div>
                     </div>
 
@@ -84,7 +84,7 @@ background: linear-gradient(to left, #292E49, #536976); /* W3C, IE 10+/ Edge, Fi
                                 los puestos electivos (Crear, Editar, Borrar y Listar).
                             </p>
 
-                            <a asp-action="" asp-controller="" class="stretched-link"></a>
+                            <a asp-action="PuestosElectivos" asp-controller="PuestosElectivos" class="stretched-link"></a>
                         </div>
                     </div>
 
@@ -121,7 +121,7 @@ background: linear-gradient(to left, #292E49, #536976); /* W3C, IE 10+/ Edge, Fi
 
                             </p>
 
-                            <a asp-action="Start" asp-controller="Start" class="stretched-link"></a>
+                            <a asp-action="Elecciones" asp-controller="Elecciones" class="stretched-link"></a>
                         </div>
                     </div>
 
