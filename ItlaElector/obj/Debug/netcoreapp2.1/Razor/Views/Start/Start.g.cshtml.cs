@@ -63,7 +63,7 @@ using ItlaElector;
 #line default
 #line hidden
             BeginContext(98, 2759, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61398b01c0784503898829fd1ce58ca8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2514c47bd614b3c96fb22abba63f755", async() => {
                 BeginContext(104, 489, true);
                 WriteLiteral(@"
 
@@ -77,7 +77,7 @@ using ItlaElector;
                 ");
                 EndContext();
                 BeginContext(593, 154, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7e2ab774cfe346dd90f0f4b286f58535", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7c99596994364db69a9a7416a4e370da", async() => {
                     BeginContext(684, 59, true);
                     WriteLiteral("<i class=\"fa fa-user\" aria-hidden=\"true\"></i> Administrador");
                     EndContext();
@@ -103,7 +103,7 @@ using ItlaElector;
                 WriteLiteral("\r\n\r\n            </div>\r\n        </div>\r\n\r\n    </header>\r\n\r\n    <div class=\"container-fluid bg-light\">\r\n\r\n\r\n        <div class=\"row row-no-gutters\">\r\n\r\n            <div class=\"col-sm-12 col-md-8 col-lg-8 no-gutters\" style=\"height:100%;\">\r\n                ");
                 EndContext();
                 BeginContext(1001, 71, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "47c8b58b8ab34964bd4786d01233b54b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "50466af92a7846538a41e53b449c3042", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -139,7 +139,7 @@ using ItlaElector;
                             ");
                 EndContext();
                 BeginContext(1723, 963, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ed67b5e02ff4553ada6bf72d68c77ba", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "48187899efb94b86968f0aa61526d9a2", async() => {
                     BeginContext(1729, 950, true);
                     WriteLiteral(@"
                                 <div class=""row form-group  mb-5"">

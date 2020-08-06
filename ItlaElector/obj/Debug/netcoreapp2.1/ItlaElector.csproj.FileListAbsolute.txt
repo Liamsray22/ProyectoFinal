@@ -67,7 +67,6 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreap
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Account\Contact.g.cshtml.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Account\Index.g.cshtml.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Account\Privacy.g.cshtml.cs
-C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Ciudadanos.g.cshtml.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Home.g.cshtml.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
@@ -81,3 +80,5 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreap
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.RazorTargetAssemblyInfo.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.Views.pdb
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.csproj.CopyComplete
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Ciudadanos\Ciudadanos.g.cshtml.cs
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Partidos\Partidos.g.cshtml.cs
