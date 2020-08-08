@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataBase.Models;
@@ -41,8 +42,8 @@ namespace Repository.Repository
                 candidato.PuestoElectivo = puesto.Nombre;
                 TodosLosCandidatos.Add(candidato);
             }
-            var partidoslist = await _partidosRepo.TraerPartidos();
-            var puestoslist = await _puestosElectivos.TraerPuestosElectivos();
+            var partidoslist = await _partidosRepo.TraerPartidosActivos();
+            var puestoslist = await _puestosElectivos.TraerPuestosElectivosActivos();
 
             can.ListPartido = (List<PartidosViewModels>)partidoslist.partidos;
             can.ListPuestoElectivo = (List<PuestosElectivosViewModel>)puestoslist.puestos;

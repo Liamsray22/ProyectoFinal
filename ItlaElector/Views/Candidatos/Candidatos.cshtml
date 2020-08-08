@@ -84,9 +84,6 @@
                                                              class="rounded-circle " style="width: 150px;height: 150px; ">
                                                     </div>
                                                     <span asp-validation-for="Photo" class="text-danger text-center"></span>
-
-
-                                                    @*<p id="info" class="text-danger text-center">Esta imagen sera permanente y no podra ser modificada</p>*@
                                                     <span asp-validation-for="Photo" class="text-danger"></span>
                                                     <div class="d-flex justify-content-center mt-2">
                                                         <div>
@@ -141,7 +138,7 @@
 
 
 
-                                            <input type="hidden" name="Estado" value="Activo" />
+                                            <input type="hidden" asp-for="Estado" value="Activo" />
 
                                             <div class="form-group row mt-4">
                                                 <div class="col">

@@ -4,6 +4,17 @@
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
     ViewData["Title"] = "Partidos";
 }
+<style>
+    label {
+        cursor: pointer;
+    }
+
+    #upload-photo {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+</style>
 
 <body style="background: #2980b9; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #2c3e50, #2980b9); /* Chrome 10-25, Safari 5.1-6 */
@@ -54,22 +65,35 @@
                                 <div class="modal-body bg-light">
 
 
-
                                     <div class="form-group">
                                         <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
-                                       
-                                        
+                                        <div>
+                                            <div class="d-flex justify-content-center">
+                                                <img id="imagenPrevisualizacion" src="~/images/Candidato/profile-logo.png" asp-append-version="true"
+                                                     class="rounded-circle " style="width: 150px;height: 150px; ">
+                                            </div>
+                                            <span asp-validation-for="Photo" class="text-danger text-center"></span>
+                                            <span asp-validation-for="Photo" class="text-danger"></span>
+                                            <div class="d-flex justify-content-center mt-2">
+                                                <div>
+                                                    <label for="upload-photo" class="btn btn-outline-primary mr-3 rounded float-left">Añadir foto</label>
+                                                    <input type="file" name="photo" id="upload-photo" asp-for="Photo" accept="image/*" />
+                                                    <button type="button" id="delete" class="btn btn-outline-danger rounded float-left" hidden>Quitar</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
+                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label> <span asp-validation-for="Nombre" class="text-danger"></span>
                                         <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Ingresar Nombre">
                                     </div>
                                     <div class="form-group">
-                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Descripcion</label>
+                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Descripcion</label> <span asp-validation-for="Descripcion" class="text-danger"></span>
                                         @*<textarea class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Escribrir descripcion del partido"></textarea>*@
                                         <input asp-for="Descripcion" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" id="" placeholder="Ingresar descripcion">
                                     </div>
-                                    <input type="hidden" name="Estado" value="Activo" />
+                                    <input type="hidden" asp-for="Estado" value="Activo" />
 
                                     <div class="form-group row mt-4">
                                         <div class="col">
@@ -295,3 +319,30 @@
 
 
 </body>
+<script src='~/js/site.js'></script>
+<script>
+    const $seleccionArchivos = document.querySelector("#upload-photo"),
+        $imagenPrevisualizacion = document.querySelector("#imagenPrevisualizacion");
+    $delete = document.querySelector("#delete");
+    $seleccionArchivos.addEventListener("change", () => {
+        const archivos = $seleccionArchivos.files;
+        if (!archivos || !archivos.length) {
+            $imagenPrevisualizacion.src = "";
+            return;
+        }
+        const primerArchivo = archivos[0];
+        const objectURL = URL.createObjectURL(primerArchivo);
+        $imagenPrevisualizacion.src = objectURL;
+        $('#imagenPrevisualizacion').removeAttr('hidden');
+        $('#delete').removeAttr('hidden')
+    });
+    $delete.addEventListener("click", () => {
+        $seleccionArchivos.src = "";
+        $imagenPrevisualizacion.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
+        $('#delete').attr("hidden", true)
+    });
+
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
