@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataBase.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Repository;
 
@@ -22,16 +23,30 @@ namespace ItlaElector.Controllers
 
             return View();
         }
+        public IActionResult Login() {
+            //if (User.Identity.IsAuthenticated)
+            //{
+            //    return RedirectToAction("Home", "Admin");
 
-        public async Task<IActionResult> Login()
+            //}
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel loginViewModel)
         {
-            var log = await _adminRepo.LoguearAdmin("", "");
-            if (log)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Home", "Admin");
+                var log = await _adminRepo.LoguearAdmin(loginViewModel);
+                if (log)
+                {
+                    return RedirectToAction("Home", "Admin");
 
+                }
+                ModelState.AddModelError("", "Usuario o clave incorrectos");
+
+                return View(loginViewModel);
             }
-            return RedirectToAction("Login", "Start");
+            return View(loginViewModel);
         }
 
 

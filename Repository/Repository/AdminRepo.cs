@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using DataBase.Models;
+using DataBase.ViewModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace Repository.Repository
@@ -30,11 +31,10 @@ namespace Repository.Repository
             var result = await _userManager.CreateAsync(user, "222");
         }
 
-        public async Task<bool> LoguearAdmin(string user, string pass)
+        public async Task<bool> LoguearAdmin(LoginViewModel lvm)
         {
-            user = "Liam";
-            pass= "222";
-            var result = await _signInManager.PasswordSignInAsync(user, pass, false, true);
+            
+            var result = await _signInManager.PasswordSignInAsync(lvm.Usuario, lvm.Clave, false, true);
 
             if (result.Succeeded)
             {
