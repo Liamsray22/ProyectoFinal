@@ -63,6 +63,8 @@ namespace ItlaElector
             //Repository
             services.AddScoped<CiudadanosRepo>();
             services.AddScoped<AdminRepo>();
+            services.AddScoped<PartidosRepo>();
+
 
 
             //Email

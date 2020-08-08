@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using DataBase.Models;
+using DataBase.ViewModels;
 
 namespace AutoMap
 {
@@ -6,14 +8,14 @@ namespace AutoMap
     {
         public Automapping()
         {
-            
-            MapearEntidad();
+
+            MapearPartidos();
 
         }
 
-        private void MapearEntidad()
+        private void MapearPartidos()
         {
-            //CreateMap<ViewModel, Entidad>().ReverseMap().
+            CreateMap<PartidosViewModels, Partidos>().ReverseMap();
             //ForMember(dest => dest.campo, opt => opt.Ignore()).
             //ForMember(dest => dest.campo, opt => opt.Ignore());
         }
