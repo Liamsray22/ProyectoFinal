@@ -21,5 +21,22 @@ namespace ItlaElector.Controllers
             var partido = await _partidosRepo.TraerPartidos();
             return View(partido);
         }
+        [HttpPost]
+        public async Task<IActionResult> Partidos(PartidosViewModels pvm)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await _partidosRepo.CrearPartido(pvm);
+                }
+                catch
+                {
+
+                }
+            }
+            var partido = await _partidosRepo.TraerPartidos();
+            return RedirectToAction("Partidos");
+        }
     }
 }

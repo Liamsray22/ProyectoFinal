@@ -49,15 +49,20 @@ namespace Repository.Repository
             return null;
         }
 
-            //public void Borrar(string path)
-            //{
-            //    File.SetAttributes(path, FileAttributes.Normal);
-            //    System.GC.Collect();
-            //    System.GC.WaitForPendingFinalizers();
-
-            //    File.Delete(path);
-            //}
-
-
+        public async Task CrearPartido(PartidosViewModels pvm) {
+            var partido = _mapper.Map<Partidos>(pvm);
+            await AddAsync(partido);
         }
+
+        //public void Borrar(string path)
+        //{
+        //    File.SetAttributes(path, FileAttributes.Normal);
+        //    System.GC.Collect();
+        //    System.GC.WaitForPendingFinalizers();
+
+        //    File.Delete(path);
+        //}
+
+
+    }
     }
