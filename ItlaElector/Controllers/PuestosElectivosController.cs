@@ -36,7 +36,7 @@ namespace ItlaElector.Controllers
 
                 }
             }
-            var partido = await _puestosRepo.TraerPuestosElectivos();
+            var puesto = await _puestosRepo.TraerPuestosElectivos();
             return RedirectToAction("PuestosElectivos");
         }
 

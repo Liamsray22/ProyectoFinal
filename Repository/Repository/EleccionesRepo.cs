@@ -38,15 +38,20 @@ namespace Repository.Repository
             ele.elecciones = TodasLasElecciones;
             return ele;
         }
-            //public void Borrar(string path)
-            //{
-            //    File.SetAttributes(path, FileAttributes.Normal);
-            //    System.GC.Collect();
-            //    System.GC.WaitForPendingFinalizers();
 
-            //    File.Delete(path);
-            //}
-
-
+        public async Task CrearElecciones(EleccionesViewModel evm) {
+            var eleccion = _mapper.Map<Elecciones>(evm);
+            await AddAsync(eleccion);
         }
+        //public void Borrar(string path)
+        //{
+        //    File.SetAttributes(path, FileAttributes.Normal);
+        //    System.GC.Collect();
+        //    System.GC.WaitForPendingFinalizers();
+
+        //    File.Delete(path);
+        //}
+
+
+    }
 }

@@ -52,12 +52,12 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                         </div>
 
                                     </div>
-                                    <form asp-action="" asp-controller="" method="post">
+                                    <form asp-action="Elecciones" asp-controller="Elecciones" method="post">
                                         <div class="modal-body bg-light text-dark">
 
                                             <div class="form-group ">
                                                   <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
-                                                <input class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
+                                                <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
                                                 <span class="text-danger"></span>
                                             </div>
 
@@ -65,7 +65,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                                 <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Fecha</label>
                                                 <div class="row">
                                                     <div class='col-12'>
-                                                        <input type="text" placeholder="Ingresar Fecha" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" id='datetimepicker4' />
+                                                        <input asp-for="Fecha" placeholder="Ingresar Fecha" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" id='datetimepicker4' />
                                                     </div>
                                                     @*<script type="text/javascript">
                                                         $(function () {
