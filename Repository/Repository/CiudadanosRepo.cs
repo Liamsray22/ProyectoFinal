@@ -1,6 +1,9 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 using AutoMapper;
 using DataBase.Models;
+using DataBase.ViewModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace Repository.Repository
@@ -22,15 +25,28 @@ namespace Repository.Repository
             _mapper = mapper;
         }
 
-        //public void Borrar(string path)
-        //{
-        //    File.SetAttributes(path, FileAttributes.Normal);
-        //    System.GC.Collect();
-        //    System.GC.WaitForPendingFinalizers();
+        public async Task<CiudadanosViewModel> TraerCiudadanos()
+        {
+            var ciudadanos = await GetAllAsync();
+            CiudadanosViewModel ciu = new CiudadanosViewModel();
+            List<CiudadanosViewModel> TodosLosCiudadanos = new List<CiudadanosViewModel>();
+            foreach (var c in ciudadanos)
+            {
+                var ciudadano = _mapper.Map<CiudadanosViewModel>(c);                
+                TodosLosCiudadanos.Add(ciudadano);
+            }
+            ciu.ciudadanos = TodosLosCiudadanos;
+            return ciu;
+        }
+            //public void Borrar(string path)
+            //{
+            //    File.SetAttributes(path, FileAttributes.Normal);
+            //    System.GC.Collect();
+            //    System.GC.WaitForPendingFinalizers();
 
-        //    File.Delete(path);
-        //}
+            //    File.Delete(path);
+            //}
 
 
-    }
+        }
 }
