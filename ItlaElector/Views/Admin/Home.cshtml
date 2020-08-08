@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewData["Title"] = "Administrador";
+    Layout = "~/Views/Shared/_LayoutStart.cshtml";
+}
+
+<script>
+    $(document).ready(function() {
+        $(".card").hover(
+            function () {
+                $(this).addClass('shadow-lg').css('cursor', 'pointer');
+            }, function () {
+                $(this).removeClass('shadow-lg');
+            }
+        );
+    });
+</script>
+<body style="background: #536976;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #292E49, #536976);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #292E49, #536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
+
+
+    <header class="container-fluid shadow position-relative fixed-top col-lg-pull-2 border-bottom bg-light" id="HeaderHome">
+
+        <div class="row ml-4 p-1">
+
+            <div class="text-center  text-uppercase">
+                <h1>Bienvenido al Administrador de Elecciones</h1>
+            </div>
+
+            <a asp-controller="Start" asp-action="Start" class="btn btn-danger ml-auto  btn-sm" style="font-size:16px">Cerrar Sesión</a>
+        </div> 
+        
+    </header>
+
+        <div class="container mt-4">
+
+            <div class="row justify-content-md-center">
+
+                <div class="col-sm-12 col-md-4 col-lg-3 mb-3">
+                    <div class="card bg-light" style="width: 22rem; ">
+
+                        <img src="~/images/topImagenCard.jpg" class="card-img-top card-image" alt="...">
+                        <div class="card-body">
+                            <h2 class="card-title text-center font-weight-bold">Candidatos</h2>
+                            <p class="card-text font-weight-normal text-justify" style="font-family: 'Roboto Slab', serif; font-size:10px;">
+                                En la siguiente opción, puede ver un  listado con todos los candidatos creado en el
+                                sistema, en esta pantalla podemos manejar a los candidatos: ver, crear, editar y eliminar candidatos.
+                            </p>
+
+                            <a asp-action="Candidatos" asp-controller="Candidatos" class="stretched-link"></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12 col-md-4 col-lg-3 mb-3">
+                    <div class="card bg-light" style="width: 22rem;">
+
+                        <img src="~/images/topImagenCard.jpg" class="card-img-top card-image" alt="...">
+                        <div class="card-body">
+                            <h2 class="card-title text-center font-weight-bold">Partidos</h2>
+                            <p class="card-text font-weight-normal text-justify" style="font-family: 'Roboto Slab', serif; font-size:10px;">
+                                En la opción de Partidos, podemos ver un listado con todos los partidos creado en el sistema,
+                                en esta pantalla se puede manejar los partidos (Crear, Editar, Borrar y ver todos los partidos).
+                            </p>
+
+                            <a asp-action="Partidos" asp-controller="Partidos" class="stretched-link"></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12 col-md-4 col-lg-3 mb-3">
+                    <div class="card bg-light" style="width: 22rem;">
+
+                        <img src="~/images/topImagenCard.jpg" class="card-img-top card-image" alt="...">
+                        <div class="card-body">
+                            <h2 class="card-title text-center font-weight-bold">Puestos Electivos</h2>
+                            <p class="card-text font-weight-normal text-justify" style="font-family: 'Roboto Slab', serif; font-size:10px;">
+                                Seleccionar esta opción, para ver un listado con todos los puesto electivos
+                                creado en el sistema (Presidente, Alcalde, etc.). En esta pantalla podemos mantener
+                                los puestos electivos (Crear, Editar, Borrar y Listar).
+                            </p>
+
+                            <a asp-action="PuestosElectivos" asp-controller="PuestosElectivos" class="stretched-link"></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12 col-md-4 col-lg-3 mb-3">
+                    <div class="card bg-light" style="width: 22rem; ">
+
+                        <img src="~/images/topImagenCard.jpg" class="card-img-top card-image" alt="...">
+                        <div class="card-body">
+                            <h2 class="card-title text-center font-weight-bold">Ciudadanos</h2>
+                            <p class="card-text font-weight-normal text-justify" style="font-family: 'Roboto Slab', serif; font-size:10px;">
+                                En la opción de Ciudadanos se puede encontrar un listado con todos los ciudadanos creado en el
+                                sistema, en esta pantalla podemos mantener los ciudadanos (Crear, Editar, Borrar y
+                                Listar).
+                            </p>
+
+                            <a asp-action="Ciudadanos" asp-controller="Ciudadanos" class="stretched-link"></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12 col-md-4 col-lg-3 mb-3">
+                    <div class="card bg-light" style="width: 22rem;">
+
+                        <img src="~/images/topImagenCard.jpg" class="card-img-top card-image" alt="...">
+                        <div class="card-body">
+                            <h2 class="card-title text-center font-weight-bold">Elecciones</h2>
+                            <p class="card-text font-weight-normal text-justify" style="font-family: 'Roboto Slab', serif; font-size:10px;">
+                                La opción de Elecciones, se muestra un listado de todas las elecciones realizadas hasta el momento, 
+                                en la misma se muestran los puestos que se disputaron, los candidatos para cada
+                                puesto, entre otros informes.
+
+                            </p>
+
+                            <a asp-action="Elecciones" asp-controller="Elecciones" class="stretched-link"></a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+</body>

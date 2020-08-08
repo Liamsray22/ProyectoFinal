@@ -1,0 +1,198 @@
+﻿@{
+    ViewData["Title"] = "Elecciones";
+    Layout = "~/Views/Shared/_LayoutStart.cshtml";
+}
+
+<body style="background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+
+    <header class="container-fluid shadow position-relative fixed-top col-lg-pull-2 border-bottom bg-light" id="HeaderHome">
+
+        <div class="row ml-4 p-1">
+
+            <div class="font-weight-bolder pt-2" style="font-family: 'Lemonada', cursive;">
+                <h1>Elecciones</h1>
+            </div>
+
+            <a asp-controller="Admin" asp-action="Home" class="btn btn-info ml-auto btn-group-sm rounded pt-1 mt-1" style="font-size:17px; font-family: 'Lemonada', cursive; height:2%;"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+
+        </div>
+
+    </header>
+
+    <div class="container mt-5 d-flex justify-content-center table-responsive-lg table-responsive-sm">
+
+
+        <table class="table table-hover shadow rounded table-borderless">
+
+            <thead class="thead-primary shadow-sm">
+                <tr class="bg-primary">
+                    <th scope="col" colspan="3">
+                        <h2 class="mr-auto text-white" style="font-family: 'Abril Fatface', cursive;"><i class="fa fa-certificate" style="color:orange" aria-hidden="true"></i> Listado de Elecciones</h2>
+                    </th>
+                    <th scope="col" class="text-center">
+                        <a data-toggle="modal" data-target="#agregarNewPuesto" class="shadow-sm btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Iniciar Nuevo Proceso Electivo</a>
+
+                        <div class="modal fade" id="agregarNewPuesto" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content bg-success">
+
+                                    <div class="modal-header bg-success text-white rounded-bottom shadow">
+
+
+                                        <div class=" mr-auto">
+                                            <h2 class="modal-title"><i class="fa fa-bar-chart" aria-hidden="true"></i> Agregar Elecciones</h2>
+                                        </div>
+                                        <div class="">
+                                            <button type="button" class="btn btn-danger btn-sm text-white p-2 rounded-pill" style="font-size:14px;" data-dismiss="modal" aria-label="Close">
+                                                Cancelar
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    <form asp-action="" asp-controller="" method="post">
+                                        <div class="modal-body bg-light text-dark">
+
+                                            <div class="form-group ">
+                                                  <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
+                                                <input class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
+                                                <span class="text-danger"></span>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Fecha</label>
+                                                <div class="row">
+                                                    <div class='col-12'>
+                                                        <input type="text" placeholder="Ingresar Fecha" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" id='datetimepicker4' />
+                                                    </div>
+                                                    @*<script type="text/javascript">
+                                                        $(function () {
+                                                            $('#datetimepicker4').datetimepicker();
+                                                        });
+                                                    </script>*@
+                                                </div>
+                                                <span class="text-danger"></span>
+                                            </div>
+
+
+
+                                            <input type="hidden" name="Estado" value="Activo" />
+
+                                            <div class="form-group row mt-4">
+                                                <div class="col">
+                                                    <input type="submit" value="Agregar" class="btn btn-outline-success btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
+                                                </div>
+                                                <div class="col">
+                                                    <input type="reset" value="Limpiar" class="btn btn-outline-warning btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </th>
+
+         
+
+                </tr>
+            </thead>
+
+            <thead class="table-info text-dark font-weight-light text-center" style="font-family: 'Abril Fatface', cursive; font-size:15px;">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Resultado</th>
+                </tr>
+            </thead>
+            <tbody style="font-size:14px; overflow-y: scroll" class="text-center">
+
+                <tr class="bg-light mt-3">
+                    <td>Elecciones Presidenciales 2020</td>
+                    <td>08/06/2020 : 23:11:00</td>
+                    <td class="text-info font-weight-bolder">En proceso</td>
+                    @*<td class="text-secondary font-weight-bolder">Finalizado</td>*@
+                    <td>
+
+                        @*Ver Resultado*@
+                        <a data-toggle="modal" data-target="#resultado" class="text-link text-primary" style="font-size:14px; ">Ver Resultado</a>
+                        <div class="modal fade " id="resultado" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content bg-danger shadow-sm p-1 rounded">
+
+                                    <div class="modal-header bg-danger p-1 rounded">
+
+                                        <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Eliminar</h5>
+
+                                        <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                            Cancelar
+                                        </button>
+
+                                    </div>
+
+                                    <div class="modal-body bg-light text-center">
+                                        <h4>¿SEGURO QUE QUIERE ELIMINAR ESTE CANDIDATO?</h4>
+
+                                        <div class="mt-4 d-flex justify-content-center">
+                                            <a asp-action="" asp-controller="" class="text-white btn btn-danger shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        @*Modelo para Finalizar puesto*@
+                        <a data-toggle="modal" data-target="#des-" class="btn btn-danger btn-sm text-white" style="font-size:12px; "><i class="fa fa-times-circle" style="color:white" aria-hidden="true"></i> Finalizar</a>
+
+                        <div class="modal fade " id="des-" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog  modal-sm">
+                                <div class="modal-content bg-info  p-1 rounded">
+
+                                    <div class="modal-header bg-info rounded">
+
+                                        <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
+                                        <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                            Cancelar
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body bg-light text-center">
+                                        <h4 class="text-dark">¿Seguro que deseas  <span class="text-danger">Finalizar</span> estas Elecciones?</h4>
+
+
+                                        <div class="mt-4 d-flex justify-content-center">
+                                            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-secondary btn-sm" style="font-size:16px; "><i class="fa fa-check-circle-o" style="color:greenyellow" aria-hidden="true"></i> Finalizar</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </td>
+
+
+
+                </tr>
+
+
+            </tbody>
+        </table>
+
+
+
+
+    </div>
+
+
+</body>

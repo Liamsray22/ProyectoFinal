@@ -62,6 +62,8 @@ namespace ItlaElector
 
             //Repository
             services.AddScoped<CiudadanosRepo>();
+            services.AddScoped<AdminRepo>();
+
 
             //Email
             var emailConfig = Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();
@@ -97,7 +99,7 @@ namespace ItlaElector
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Start}/{action=Start}/{id?}");
             });
         }
     }

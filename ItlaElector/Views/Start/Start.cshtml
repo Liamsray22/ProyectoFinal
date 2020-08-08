@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Elecciones";
+    Layout = "~/Views/Shared/_LayoutStart.cshtml";
+}
+<body>
+
+    <header class="container-fluid position-relative fixed-top p-1" style="background:skyblue">
+
+        <div class="dropdown">
+            <button style="font-size:14px;" class="btn btn-success dropdown-toggle" type="button" id="adminiMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="adminiMenu">
+                <a asp-controller="Start" asp-action="Login" class="dropdown-item" style="font-size:12px;"><i class="fa fa-user" aria-hidden="true"></i> Administrador</a>
+
+            </div>
+        </div>
+
+    </header>
+
+    <div class="container-fluid bg-light">
+
+
+        <div class="row row-no-gutters">
+
+            <div class="col-sm-12 col-md-8 col-lg-8 no-gutters" style="height:100%;">
+                <img src="~/images/intro.png" class="img-fluid" alt="Responsive image">
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4 no-gutters">
+                <div class="bg-primary text-center container">
+                    <div class="text-white">
+                        <div class="titleBanner display-1"><b>Comenzar Votación</b></div>
+                    </div>
+                </div>
+
+                <div class="container bg-light">
+
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-sm-12 text-center">
+                            <div class="font-weigth-bold" id="fontingre">Ingresar Cédula</div>
+
+                            <form>
+                                <div class="row form-group  mb-5">
+                                    <div class="col-10 offset-1">
+                                        <input type="text" class="form-control form-control-lg shadow-sm p-3 rounded-pill text-center" id="InputCedula" placeholder="Ingresar Cédula">
+                                        <small id="emailHelp" class="form-text text-muted">El formato de la cedula debe ser: 000-0000000-0</small>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center mb-1">
+                                    <div class="w-25">
+                                        <input type="submit" class="btn btn-outline-primary btn-block  shadow-sm" id="btnIniciar" value="Iniciar" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</body>
+

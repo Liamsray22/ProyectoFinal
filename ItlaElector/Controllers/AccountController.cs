@@ -1,33 +1,31 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Repository.Repository;
+using System.Threading.Tasks;
 
 namespace ItlaElector.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly AdminRepo _adminRepo;
+        public AccountController(AdminRepo adminRepo)
+        {
+            _adminRepo = adminRepo;
+
+        }
+
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
+        public async Task<IActionResult> CrearAdmin()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            await _adminRepo.CrearAdmin();
+            return RedirectToAction("Index","Start");
         }
 
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
+        
 
-            return View();
-        }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-       
     }
 }

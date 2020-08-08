@@ -1614,10 +1614,11 @@ pre code {
 .row-no-gutters {
   margin-right: 0;
   margin-left: 0;
+
 }
 .row-no-gutters [class*="col-"] {
-  padding-right: 0;
-  padding-left: 0;
+        padding-right: 0;
+        padding-left: 0;
 }
 .col-xs-1,
 .col-sm-1,

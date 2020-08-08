@@ -1,0 +1,364 @@
+﻿@{
+    ViewData["Title"] = "Candidatos";
+    Layout = "~/Views/Shared/_LayoutStart.cshtml";
+}
+<head>
+    <script>
+        $(function () {
+            $('.example-popover').popover({
+                container: 'body'
+            })
+        })
+    </script>
+</head>
+
+<body style="background: #2980b9; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2c3e50, #2980b9); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+
+<header class="container-fluid shadow position-relative fixed-top col-lg-pull-2 border-bottom bg-light" id="HeaderHome">
+
+<div class="row ml-4 p-1">
+
+            <div class="font-weight-bolder pt-2" style="font-family: 'Lemonada', cursive;">
+                <h1>Candidatos</h1>
+            </div>
+
+            <a asp-controller="Admin" asp-action="Home" class="btn btn-info ml-auto btn-group-sm rounded pt-1 mt-1" style="font-size:17px; font-family: 'Lemonada', cursive; height:2%;"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+
+        </div>
+
+    </header>
+
+    <div class="container mt-5 d-flex justify-content-center table-responsive-lg table-responsive-sm">
+
+
+            <table class="table table-hover shadow rounded table-borderless">
+
+                <thead class="thead-dark shadow-sm">
+                    <tr class="bg-primary">
+                        <th scope="col" colspan="6">
+                            <h2 class="mr-auto text-white" style="font-family: 'Abril Fatface', cursive;"><i class="fa fa-address-book" aria-hidden="true"></i>  Agregar Candidatos</h2>
+                        </th>
+                        <th scope="col" class="text-center">
+                            <a data-toggle="modal" data-target="#agregarNewPuesto" class="shadow-sm btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Nuevo Candidatos</a>
+                        
+                            <div class="modal fade" id="agregarNewPuesto" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content bg-success">
+
+                                        <div class="modal-header bg-success text-white rounded-bottom shadow">
+
+
+                                            <div class=" mr-auto">
+                                                <h2 class="modal-title"><i class="fa fa-user-plus" aria-hidden="true"></i> Agregar Candidatos</h2>
+                                            </div>
+                                            <div class="">
+                                                <button type="button" class="btn btn-danger btn-sm text-white p-2 rounded-pill" style="font-size:14px;" data-dismiss="modal" aria-label="Close">
+                                                    Cancelar
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                        <form asp-action="" asp-controller="" method="post">
+                                            <div class="modal-body bg-light text-dark">
+
+                                                <div class="form-group">
+                                                    <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <div class="row col-lg-4">
+                                                            <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
+                                                        </div>
+                                                        <input class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <div class="row col-lg-4">
+                                                            <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Apellido</label>
+                                                        </div>
+                                                        <input class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Apellido" />
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar partido</label>
+                                                        <select class="custom-select custom-select-lg" size="3">
+                                                            <option selected>Seleccionar Partido..</option>
+                                                            <option value="1">PRM</option>
+                                                            <option value="2">PLD</option>
+                                                            <option value="3">PRCS</option>
+                                                            <option value="3">PRD</option>
+                                                        </select>
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar puesto electivo</label>
+                                                        <select class="custom-select custom-select-lg" size="3">
+                                                            <option selected>Seleccionar puesto..</option>
+                                                            <option value="1">Presidente</option>
+                                                            <option value="2">Candidato</option>
+                                                            <option value="3">Alcalde</option>
+                                                            <option value="3">Senador</option>
+                                                        </select>
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <input type="hidden" name="Estado" value="Activo" />
+
+                                                <div class="form-group row mt-4">
+                                                    <div class="col">
+                                                        <input type="submit" value="Agregar" class="btn btn-outline-success btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="reset" value="Limpiar" class="btn btn-outline-warning btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                        </th>      
+                        
+                        @*<th>
+                              <button type="button" class="btn btn-danger text-white" data-container="body" data-toggle="popover" data-placement="top" data-content="En estos momentos no puede agregar un candidato, ya que en el sistema no hay registrado puesto electivo o un partido.">
+                                 Información!
+                                </button>
+                        </th>*@
+
+                    </tr>
+                </thead>
+
+                <thead class="table-info text-dark font-weight-light text-center" style="font-family: 'Abril Fatface', cursive; font-size:15px;">
+                    <tr>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Partido</th>
+                        <th scope="col">Puesto Electivo</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">🛠</th>
+                    </tr>
+                </thead>
+                <tbody style="font-size:14px; overflow-y: scroll" class="text-center">
+
+                    <tr class="bg-light mt-3">
+                        <td>
+                            <img src="~/images/Candidato/LuisAbinader.jpg" class="rounded mx-auto d-block mr-3 mt-2" width="60" height="60">
+                        </td>
+                        <td>Luis</td>
+                        <td>Abinader</td>
+                        <td>Partido Revolucionario Moderno</td>
+                        <td>Presidente</td>
+                        <td>
+
+                            @*Modelo para activar puesto*@
+                            <a data-toggle="modal" data-target="#act-" class="btn btn-outline-info btn-sm" style="font-size:12px; "><i class="fa fa-check-circle" style="color:greenyellow" aria-hidden="true"></i> Activar</a>
+                            <div class="modal fade " id="act-" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog modal-sm">
+                                    <div class="modal-content bg-primary shadow-sm p-1 rounded">
+                                        <div class="modal-header bg-primary  rounded">
+
+                                            <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
+                                            <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                Cancelar
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body bg-light text-center">
+                                            <h4 class="text-dark">¿Seguro que desea <span class="text-danger">Activar</span> este puesto?</h4>
+
+
+                                            <div class="mt-4 d-flex justify-content-center">
+                                                <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-info btn-sm" style="font-size:16px;"><i class="fa fa-check-circle" style="color:greenyellow" aria-hidden="true"></i> Activar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            @*Modelo para desactivar puesto*@
+                            <a data-toggle="modal" data-target="#des-" class="btn btn-outline-secondary btn-sm" style="font-size:12px; "><i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i> Desactivar</a>
+                            <div class="modal fade " id="des-" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog  modal-sm">
+                                    <div class="modal-content bg-primary  p-1 rounded">
+
+                                        <div class="modal-header bg-primary rounded">
+
+                                            <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
+                                            <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                Cancelar
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body bg-light text-center">
+                                            <h4 class="text-dark">¿Seguro que desea  <span class="text-danger">Desactivar</span> este puesto?</h4>
+
+
+                                            <div class="mt-4 d-flex justify-content-center">
+                                                <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-secondary btn-sm" style="font-size:16px; "><i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i> Desactivar</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </td>
+
+                        <td>
+                            @*Editar puesto electivo*@
+                            <a data-toggle="modal" data-target="#EditarPuesto" class="text-white btn btn-warning ml-auto mb-2  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+
+                            <div class="modal fade" id="EditarPuesto" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content bg-success">
+
+                                        <div class="modal-header bg-warning text-dark rounded-bottom shadow">
+
+
+                                            <div class=" mr-auto">
+                                                <h2 class="modal-title"><i class="fa fa-pencil" aria-hidden="true"></i> Editar Candidato</h2>
+                                            </div>
+                                            <div class="">
+                                                <button type="button" class="btn btn-danger btn-sm text-white p-2 rounded-pill" style="font-size:14px;" data-dismiss="modal" aria-label="Close">
+                                                    Cancelar
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                        <form asp-action="" asp-controller="" method="post">
+                                            <div class="modal-body bg-light text-dark">
+
+                                                <div class="form-group">
+                                                    <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <div class="row col-lg-4">
+                                                            <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
+                                                        </div>
+                                                        <input class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <div class="row col-lg-4">
+                                                            <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Apellido</label>
+                                                        </div>
+                                                        <input class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Apellido" />
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar partido</label>
+                                                        <select class="custom-select custom-select-lg" size="3">
+                                                            <option selected>Seleccionar Partido..</option>
+                                                            <option value="1">PRM</option>
+                                                            <option value="2">PLD</option>
+                                                            <option value="3">PRCS</option>
+                                                            <option value="3">PRD</option>
+                                                        </select>
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar puesto electivo</label>
+                                                        <select class="custom-select custom-select-lg" size="3">
+                                                            <option selected>Seleccionar puesto..</option>
+                                                            <option value="1">Presidente</option>
+                                                            <option value="2">Candidato</option>
+                                                            <option value="3">Alcalde</option>
+                                                            <option value="3">Senador</option>
+                                                        </select>
+                                                        <span class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <input type="hidden" name="Estado" value="Activo" />
+
+                                                <div class="form-group row mt-4">
+                                                    <div class="col">
+                                                        <input type="submit" value="Agregar" class="btn btn-outline-success btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="reset" value="Limpiar" class="btn btn-outline-warning btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            @*eliminar puesto*@
+
+
+                            <a data-toggle="modal" data-target="#EliminarCiudadano" class="text-white btn btn-danger ml-auto  btn-sm mb-2 shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                            <div class="modal fade " id="EliminarCiudadano" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content bg-danger shadow-sm p-1 rounded">
+
+                                        <div class="modal-header bg-danger p-1 rounded">
+
+                                            <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Eliminar</h5>
+
+                                            <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                Cancelar
+                                            </button>
+
+                                        </div>
+
+                                        <div class="modal-body bg-light text-center">
+                                            <h4>¿SEGURO QUE QUIERE ELIMINAR ESTE CANDIDATO?</h4>
+
+                                            <div class="mt-4 d-flex justify-content-center">
+                                                <a asp-action="" asp-controller="" class="text-white btn btn-danger shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+ 
+
+
+
+        </div>
+
+
+</body>

@@ -1,0 +1,20 @@
+﻿
+#IconBack {
+font-size:20px;
+font-weight:bolder;
+padding:15px;
+}
+
+.fontPas {
+    background: rgb(63,106,184);
+    background: linear-gradient(158deg, rgba(63,106,184,0.9626676617246686) 36%, rgba(186,49,49,0.9505464496034565) 66%);
+}
+
+#FormTabla {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ }
