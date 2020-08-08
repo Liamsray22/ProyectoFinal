@@ -39,7 +39,7 @@ namespace ItlaElector.Controllers
             return RedirectToAction("Ciudadanos");
         }
 
-        public async Task<IActionResult> EliminarCiudadano(int id)
+        public async Task<IActionResult> EliminarCiudadano(string id)
         {
             try
             {
@@ -50,6 +50,19 @@ namespace ItlaElector.Controllers
 
             }
             return RedirectToAction("Ciudadanos");
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditarCiudadano(CiudadanosViewModel ucvm)
+        {
+            var edit = await _ciudadanosRepo.EditarCiudadanos(ucvm);
+            if (edit)
+            {
+                return RedirectToAction("Ciudadanos");
+
+            }
+
+            return RedirectToAction("Start", "Start");
 
         }
 

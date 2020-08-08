@@ -24,6 +24,9 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreap
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfo.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.pdb
+<<<<<<< HEAD
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csprojAssemblyReference.cache
+=======
 C:\Users\Liam\source\repos\ItlaElector\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.deps.json
 C:\Users\Liam\source\repos\ItlaElector\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.dll
 C:\Users\Liam\source\repos\ItlaElector\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.pdb
@@ -32,3 +35,5 @@ C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\Email
 C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfo.cs
 C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.dll
 C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.pdb
+>>>>>>> b8f9597887455fd71594203f397d0e5f4b94c325
+C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csprojAssemblyReference.cache
