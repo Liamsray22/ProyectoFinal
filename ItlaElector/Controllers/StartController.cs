@@ -31,6 +31,7 @@ namespace ItlaElector.Controllers
             //}
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel loginViewModel)
         {
@@ -42,7 +43,9 @@ namespace ItlaElector.Controllers
                     return RedirectToAction("Home", "Admin");
 
                 }
-                ModelState.AddModelError("", "Usuario o clave incorrectos");
+
+                //ModelState.AddModelError("ser", "Usuario o clave incorrectos");
+                ViewBag.error = "Usuario o clave incorrectos";
 
                 return View(loginViewModel);
             }

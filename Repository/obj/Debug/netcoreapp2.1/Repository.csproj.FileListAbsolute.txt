@@ -53,3 +53,4 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CopyComplete
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.csprojAssemblyReference.cache
