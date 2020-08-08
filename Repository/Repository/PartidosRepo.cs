@@ -5,6 +5,7 @@ using AutoMapper;
 using DataBase.Models;
 using DataBase.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Repository.Repository
 {
@@ -62,6 +63,19 @@ namespace Repository.Repository
                 partido.Estado = "Inactivo";
                 await Update(partido);
             }
+        }
+
+        public async Task<bool> EditarPartidos(PartidosViewModels upvm)
+        {
+            var partido = await GetByIdAsync(upvm.IdPartido);
+            if (partido != null)
+            {
+                _context.Entry(partido).State = EntityState.Detached;
+                var par = _mapper.Map<Partidos>(upvm);
+                await Update(par);
+                return true;
+            }
+            return false;
         }
 
         //public void Borrar(string path)

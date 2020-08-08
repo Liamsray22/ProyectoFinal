@@ -204,7 +204,7 @@
                                                     </div>
 
                                                 </div>
-                                                <form asp-action="" asp-controller="" method="post">
+                                                <form asp-action="EditarPartido" asp-controller="Partidos" method="post">
                                                     <div class="modal-body bg-light">
 
 
@@ -216,18 +216,19 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
-                                                            <input type="text" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Ingresar Apellido">
+                                                            <input asp-for="Nombre" value="@p.Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Ingresar Apellido">
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Descripcion</label>
                                                             @*<textarea class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Escribrir descripcion del partido"></textarea>*@
-                                                            <input type="text" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" id="" placeholder="Ingresar descripcion">
+                                                            <input asp-for="Descripcion" value="@p.Descripcion" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" id="" placeholder="Ingresar descripcion">
                                                         </div>
-                                                        <input type="hidden" name="Estado" value="Activo" />
+                                                        @*<input type="hidden" name="Estado" value="Activo" />*@
+                                                        <input type="hidden" asp-for="IdPartido" value="@(p.IdPartido)" />
 
                                                         <div class="form-group row mt-4">
                                                             <div class="col">
-                                                                <input type="submit" value="Agregar" class="btn btn-outline-success btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
+                                                                <input type="submit" value="Editar" class="btn btn-outline-success btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
                                                             </div>
                                                             <div class="col">
                                                                 <input type="reset" value="Limpiar" class="btn btn-outline-warning btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
