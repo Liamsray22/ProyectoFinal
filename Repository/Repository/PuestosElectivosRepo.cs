@@ -38,15 +38,26 @@ namespace Repository.Repository
             return par;
         }
 
-            //public void Borrar(string path)
-            //{
-            //    File.SetAttributes(path, FileAttributes.Normal);
-            //    System.GC.Collect();
-            //    System.GC.WaitForPendingFinalizers();
-
-            //    File.Delete(path);
-            //}
-
-
+        public async Task<PuestosElectivosViewModel> TraerPuestosElectivosById(int id)
+        {
+            var PuestosElectivos = await GetByIdAsync(id);
+            if (PuestosElectivos != null)
+            {
+                var PuestosElectivosMap = _mapper.Map<PuestosElectivosViewModel>(PuestosElectivos);
+                return PuestosElectivosMap;
+            }
+            return null;
         }
+
+        //public void Borrar(string path)
+        //{
+        //    File.SetAttributes(path, FileAttributes.Normal);
+        //    System.GC.Collect();
+        //    System.GC.WaitForPendingFinalizers();
+
+        //    File.Delete(path);
+        //}
+
+
+    }
     }

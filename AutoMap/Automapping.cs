@@ -12,13 +12,19 @@ namespace AutoMap
 
             MapearPartidos();
             MapearPuestosElectivos();
-
+            MapearCandidatos();
 
         }
 
         private void MapearPuestosElectivos()
         {
             CreateMap<PuestosElectivosViewModel, PuestoElectivo>().ReverseMap();
+        }
+        private void MapearCandidatos()
+        {
+            CreateMap<CandidatosViewModel, Candidatos>().ReverseMap().
+            ForMember(dest => dest.Partido, opt => opt.Ignore()).
+            ForMember(dest => dest.PuestoElectivo, opt => opt.Ignore());
         }
 
         private void MapearPartidos()

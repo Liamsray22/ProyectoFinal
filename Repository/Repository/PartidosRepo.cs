@@ -38,6 +38,17 @@ namespace Repository.Repository
             return par;
         }
 
+        public async Task<PartidosViewModels> TraerPartidosById(int id)
+        {
+            var partido = await GetByIdAsync(id);
+            if(partido != null)
+            {
+                var partidoMap = _mapper.Map<PartidosViewModels>(partido);
+                return partidoMap;
+            }
+            return null;
+        }
+
             //public void Borrar(string path)
             //{
             //    File.SetAttributes(path, FileAttributes.Normal);
