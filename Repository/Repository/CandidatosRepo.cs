@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -40,13 +41,30 @@ namespace Repository.Repository
                 candidato.PuestoElectivo = puesto.Nombre;
                 TodosLosCandidatos.Add(candidato);
             }
+            var partidoslist = await _partidosRepo.TraerPartidos();
+            var puestoslist = await _puestosElectivos.TraerPuestosElectivos();
+
+            can.ListPartido = (List<PartidosViewModels>)partidoslist.partidos;
+            can.ListPuestoElectivo = (List<PuestosElectivosViewModel>)puestoslist.puestos;
             can.candidatos = TodosLosCandidatos;
             return can;
         }
 
-        public async Task CrearCandidatos(CandidatosViewModel cavm)
+        public async Task CrearCandidatos(CandidatosViewModel cavm, string WebrootPath)
         {
             var candidato = _mapper.Map<Candidatos>(cavm);
+
+            string uniqueName = null;
+            var folderPath = Path.Combine(WebrootPath, "images/Candidato");
+            uniqueName = Guid.NewGuid().ToString() + "_" + cavm.Photo.FileName;
+            var filepath = Path.Combine(folderPath, uniqueName);
+
+            if (filepath != null)
+            {
+
+                cavm.Photo.CopyTo(new FileStream(filepath, mode: FileMode.Create));
+            }
+            candidato.FotoPerfil = uniqueName;
             await AddAsync(candidato);
 
         }
