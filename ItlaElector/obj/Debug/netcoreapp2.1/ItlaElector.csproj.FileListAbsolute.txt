@@ -13,7 +13,6 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\bin\Debug\netcoreap
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\bin\Debug\netcoreapp2.1\DataBase.pdb
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\bin\Debug\netcoreapp2.1\EmailConfig.pdb
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\bin\Debug\netcoreapp2.1\Repository.pdb
-C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.csprojAssemblyReference.cache
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.csproj.CoreCompileInputs.cache
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.RazorAssemblyInfo.cache
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.RazorAssemblyInfo.cs
