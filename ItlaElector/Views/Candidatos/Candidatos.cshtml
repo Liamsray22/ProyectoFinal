@@ -242,7 +242,7 @@
                                             </div>
 
                                         </div>
-                                        <form asp-action="" asp-controller="" method="post">
+                                        <form asp-action="EditarCandidatos" asp-controller="Candidatos" method="post">
                                             <div class="modal-body bg-light text-dark">
 
                                                 <div class="form-group">
@@ -254,14 +254,14 @@
                                                         <div class="row col-lg-4">
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
                                                         </div>
-                                                        <input class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
+                                                        <input asp-for="Nombre" value="@c.Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
                                                         <span class="text-danger"></span>
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <div class="row col-lg-4">
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Apellido</label>
                                                         </div>
-                                                        <input class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Apellido" />
+                                                        <input asp-for="Apellido" value="@c.Apellido" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Apellido" />
                                                         <span class="text-danger"></span>
                                                     </div>
                                                 </div>
@@ -269,31 +269,27 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar partido</label>
-                                                        <select class="custom-select custom-select-lg" size="3">
+                                                        <select asp-for="IdPartido" class="custom-select custom-select-lg" size="3">
                                                             <option selected>Seleccionar Partido..</option>
                                                             <option value="1">PRM</option>
                                                             <option value="2">PLD</option>
-                                                            <option value="3">PRCS</option>
-                                                            <option value="3">PRD</option>
                                                         </select>
                                                         <span class="text-danger"></span>
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar puesto electivo</label>
-                                                        <select class="custom-select custom-select-lg" size="3">
+                                                        <select asp-for="IdPuestoElectivo" class="custom-select custom-select-lg" size="3">
                                                             <option selected>Seleccionar puesto..</option>
                                                             <option value="1">Presidente</option>
                                                             <option value="2">Candidato</option>
-                                                            <option value="3">Alcalde</option>
-                                                            <option value="3">Senador</option>
                                                         </select>
                                                         <span class="text-danger"></span>
                                                     </div>
                                                 </div>
+                                                <input type="hidden" asp-for="IdCandidato" value="@c.IdCandidato" />
 
 
-
-                                                <input type="hidden" name="Estado" value="Activo" />
+                                                @*<input type="hidden" name="Estado" value="Activo" />*@
 
                                                 <div class="form-group row mt-4">
                                                     <div class="col">

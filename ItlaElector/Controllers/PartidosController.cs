@@ -52,5 +52,20 @@ namespace ItlaElector.Controllers
             return RedirectToAction("Partidos");
 
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> EditarPartido(PartidosViewModels upvm)
+        {
+            var edit = await _partidosRepo.EditarPartidos(upvm);
+            if (edit)
+            {
+                return RedirectToAction("Partidos");
+
+            }
+
+            return RedirectToAction("Start", "Start");
+
+        }
     }
 }

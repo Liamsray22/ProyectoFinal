@@ -5,6 +5,7 @@ using AutoMapper;
 using DataBase.Models;
 using DataBase.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Repository.Repository
 {
@@ -63,6 +64,19 @@ namespace Repository.Repository
                 puesto.Estado = "Inactivo";
                 await Update(puesto);
             }
+        }
+
+        public async Task<bool> EditarPuestosElectivos(PuestosElectivosViewModel upevm)
+        {
+            var puesto = await GetByIdAsync(upevm.IdPuestoElectivo);
+            if (puesto != null)
+            {
+                _context.Entry(puesto).State = EntityState.Detached;
+                var pue = _mapper.Map<PuestoElectivo>(upevm);
+                await Update(pue);
+                return true;
+            }
+            return false;
         }
 
         //public void Borrar(string path)

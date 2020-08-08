@@ -53,5 +53,17 @@ namespace ItlaElector.Controllers
             return RedirectToAction("Candidatos");
 
         }
+
+        [HttpPost]
+        public async Task<IActionResult> EditarCandidatos(CandidatosViewModel ucavm)
+        {
+            var edit = await _candidatosRepo.EditarCandidatos(ucavm);
+            if (edit)
+            {
+                return RedirectToAction("Candidatos");
+            }
+            return RedirectToAction("Start", "Start");
+
+        }
     }
 }

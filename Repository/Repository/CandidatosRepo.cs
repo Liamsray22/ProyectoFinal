@@ -5,6 +5,7 @@ using AutoMapper;
 using DataBase.Models;
 using DataBase.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Repository.Repository
 {
@@ -60,6 +61,20 @@ namespace Repository.Repository
 
             }
         }
+
+        public async Task<bool> EditarCandidatos(CandidatosViewModel ucavm)
+        {
+            var candidato = await GetByIdAsync(ucavm.IdCandidato);
+            if (candidato != null)
+            {
+                _context.Entry(candidato).State = EntityState.Detached;
+                var can = _mapper.Map<Candidatos>(ucavm);
+                await Update(can);
+                return true;
+            }
+            return false;
+        }
+
         //public void Borrar(string path)
         //{
         //    File.SetAttributes(path, FileAttributes.Normal);
@@ -71,4 +86,4 @@ namespace Repository.Repository
 
 
     }
-    }
+}

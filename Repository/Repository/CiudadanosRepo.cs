@@ -5,6 +5,7 @@ using AutoMapper;
 using DataBase.Models;
 using DataBase.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Repository.Repository
 {
@@ -46,14 +47,34 @@ namespace Repository.Repository
 
         }
 
-        public async Task EliminarCiudadanos(int id)
+        public async Task EliminarCiudadanos(string id)
         {
-            var ciudadano = await GetByIdAsync(id);
+            var ciudadano = await _context.Ciudadanos.FirstOrDefaultAsync(x=>x.Cedula==id); ;
             if (ciudadano != null)
             {
-                ciudadano.Estado = "Inactivo";
+                if (ciudadano.Estado.Equals("Activo"))
+                {
+                    ciudadano.Estado = "Inactivo";
+                }
+                else
+                {
+                    ciudadano.Estado = "Activo";
+                }
                 await Update(ciudadano);
             }
+        }
+
+        public async Task<bool> EditarCiudadanos(CiudadanosViewModel ucvm)
+        {
+            var ciudadano = await _context.Ciudadanos.FirstOrDefaultAsync(x => x.Cedula == ucvm.Cedula); ;
+            if (ciudadano != null)
+            {
+                _context.Entry(ciudadano).State = EntityState.Detached;
+                var ciud = _mapper.Map<Ciudadanos>(ucvm);
+                await Update(ciud);
+                return true;
+            }
+            return false;
         }
         //public void Borrar(string path)
         //{
