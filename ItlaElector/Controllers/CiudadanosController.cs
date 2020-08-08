@@ -67,6 +67,7 @@ namespace ItlaElector.Controllers
 
             return RedirectToAction("Ciudadanos");
 
+
         }
 
 

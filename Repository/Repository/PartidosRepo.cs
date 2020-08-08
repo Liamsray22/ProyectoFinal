@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataBase.Models;
@@ -32,6 +33,19 @@ namespace Repository.Repository
             PartidosViewModels par = new PartidosViewModels();
             List<PartidosViewModels> TodosLosPartidos = new List<PartidosViewModels>();
             foreach (var p in partidos) {
+                var partido = _mapper.Map<PartidosViewModels>(p);
+                TodosLosPartidos.Add(partido);
+            }
+            par.partidos = TodosLosPartidos;
+            return par;
+        }
+        public async Task<PartidosViewModels> TraerPartidosActivos()
+        {
+            var partidos =  await _context.Partidos.Where(partido => partido.Estado.Trim() == "Activo").ToListAsync();
+            PartidosViewModels par = new PartidosViewModels();
+            List<PartidosViewModels> TodosLosPartidos = new List<PartidosViewModels>();
+            foreach (var p in partidos)
+            {
                 var partido = _mapper.Map<PartidosViewModels>(p);
                 TodosLosPartidos.Add(partido);
             }
