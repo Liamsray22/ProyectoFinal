@@ -1,4 +1,4 @@
-﻿
+﻿@model DataBase.ViewModels.PuestosElectivosViewModel
 @{
     ViewData["Title"] = "Puestos Electivos";
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
@@ -102,74 +102,79 @@
                         </tr>
                     </thead>
                     <tbody style="font-size:14px; overflow-y: scroll;">
-
+                        @foreach (var pe in Model.puestos) {
                         <tr>
-                            <td class="text-info font-weight-bolder">Presidente</td>
-                            <td class="text-justify font-weight-normal">funcionario público, electo para un período determinado, que ostenta el poder ejecutivo de un Estado o de una región. </td>
-                           
-                            <td>
-
-                                @*Modelo para activar puesto*@
-                                <a data-toggle="modal" data-target="#act-" class="btn btn-outline-info btn-sm" style="font-size:12px; "><i class="fa fa-check-circle" style="color:greenyellow" aria-hidden="true"></i> Activar</a>
-                                <div class="modal fade " id="act-" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog modal-sm">
-                                        <div class="modal-content bg-primary shadow-sm p-1 rounded">
-                                            <div class="modal-header bg-primary  rounded">
-
-                                                <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
-                                                <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
-                                                    Cancelar
-                                                </button>
-                                            </div>
-
-                                            <div class="modal-body bg-light text-center">
-                                                <h4 class="text-dark">¿Seguro que desea <span class="text-danger">Activar</span> este puesto?</h4>
-
-
-                                                <div class="mt-4 d-flex justify-content-center">
-                                                    <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-info btn-sm" style="font-size:16px;"><i class="fa fa-check-circle" style="color:greenyellow" aria-hidden="true"></i> Activar</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                @*Modelo para desactivar puesto*@
-                                <a data-toggle="modal" data-target="#des-" class="btn btn-outline-secondary btn-sm" style="font-size:12px; "><i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i> Desactivar</a>
-                                <div class="modal fade " id="des-" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog  modal-sm">
-                                        <div class="modal-content bg-primary  p-1 rounded">
-
-                                            <div class="modal-header bg-primary rounded">
-
-                                                <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
-                                                <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
-                                                    Cancelar
-                                                </button>
-                                            </div>
-
-                                            <div class="modal-body bg-light text-center">
-                                                <h4 class="text-dark">¿Seguro que desea  <span class="text-danger">Desactivar</span> este puesto?</h4>
-
-
-                                                <div class="mt-4 d-flex justify-content-center">
-                                                    <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-secondary btn-sm" style="font-size:16px; "><i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i> Desactivar</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
+                            <td class="text-info font-weight-bolder">
+                                @Html.DisplayFor(ModelItem => pe.Nombre)
                             </td>
+                            <td class="text-justify font-weight-normal"> 
+                                @Html.DisplayFor(ModelItem => pe.Descripcion)
+                            <td>
+                                @if (pe.Estado == "Inactivo")
+                                {
+                                    @*Modelo para activar puesto*@
+                                    <a data-toggle="modal" data-target="#act-@(pe.IdPuestoElectivo)" class="btn btn-outline-info btn-sm" style="font-size:12px; "><i class="fa fa-check-circle" style="color:greenyellow" aria-hidden="true"></i> Activar</a>
+                                    <div class="modal fade " id="act-@(pe.IdPuestoElectivo)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog modal-sm">
+                                            <div class="modal-content bg-primary shadow-sm p-1 rounded">
+                                                <div class="modal-header bg-primary  rounded">
+
+                                                    <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
+                                                    <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                        Cancelar
+                                                    </button>
+                                                </div>
+
+                                                <div class="modal-body bg-light text-center">
+                                                    <h4 class="text-dark">¿Seguro que desea <span class="text-danger">Activar</span> este puesto?</h4>
+
+
+                                                    <div class="mt-4 d-flex justify-content-center">
+                                                        <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-info btn-sm" style="font-size:16px;"><i class="fa fa-check-circle" style="color:greenyellow" aria-hidden="true"></i> Activar</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+
+                                    @*Modelo para desactivar puesto*@
+                                    <a data-toggle="modal" data-target="#des-@(pe.IdPuestoElectivo)" class="btn btn-outline-secondary btn-sm" style="font-size:12px; "><i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i> Desactivar</a>
+                                    <div class="modal fade " id="des-@(pe.IdPuestoElectivo)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog  modal-sm">
+                                            <div class="modal-content bg-primary  p-1 rounded">
+
+                                                <div class="modal-header bg-primary rounded">
+
+                                                    <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
+                                                    <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                        Cancelar
+                                                    </button>
+                                                </div>
+
+                                                <div class="modal-body bg-light text-center">
+                                                    <h4 class="text-dark">¿Seguro que desea  <span class="text-danger">Desactivar</span> este puesto?</h4>
+
+
+                                                    <div class="mt-4 d-flex justify-content-center">
+                                                        <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-secondary btn-sm" style="font-size:16px; "><i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i> Desactivar</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                                </td>
 
                             <td>
                                 @*Editar puesto electivo*@
-                                <a data-toggle="modal" data-target="#EditarPuesto" class="text-white btn btn-warning ml-auto mb-2  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                <a data-toggle="modal" data-target="#EditarPuesto@(pe.IdPuestoElectivo)" class="text-white btn btn-warning ml-auto mb-2  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 
-                                <div class="modal fade" id="EditarPuesto" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal fade" id="EditarPuesto@(pe.IdPuestoElectivo)" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                         <div class="modal-content bg-success">
 
@@ -221,9 +226,9 @@
                                 @*eliminar puesto*@
 
 
-                                <a data-toggle="modal" data-target="#EliminarCiudadano" class="text-white btn btn-danger ml-auto  btn-sm mb-2 shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                <a data-toggle="modal" data-target="#EliminarCiudadano@(pe.IdPuestoElectivo)" class="text-white btn btn-danger ml-auto  btn-sm mb-2 shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
 
-                                <div class="modal fade " id="EliminarCiudadano" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal fade " id="EliminarCiudadano@(pe.IdPuestoElectivo)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-sm">
                                         <div class="modal-content bg-danger shadow-sm p-1 rounded">
 
@@ -255,7 +260,7 @@
                             </td>
 
                         </tr>
-
+                        }
 
                     </tbody>
                 </table>

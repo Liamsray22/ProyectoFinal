@@ -82,7 +82,7 @@ using ItlaElector;
 #line default
 #line hidden
             BeginContext(98, 177, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "89a346dfd1d3424a86fd7c5a68413ee8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a980143bef7e4c95840b986444650e4f", async() => {
                 BeginContext(104, 164, true);
                 WriteLiteral("\r\n    <script>\r\n        $(function () {\r\n            $(\'.example-popover\').popover({\r\n                container: \'body\'\r\n            })\r\n        })\r\n    </script>\r\n");
                 EndContext();
@@ -102,7 +102,7 @@ using ItlaElector;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(279, 23517, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f359f12e3fb44dc8b61180738037f9d3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bccb9336c481438587e37d73059b93fa", async() => {
                 BeginContext(580, 322, true);
                 WriteLiteral(@"
 
@@ -117,7 +117,7 @@ using ItlaElector;
             ");
                 EndContext();
                 BeginContext(902, 227, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d726bbbf06e44afab109f4bc2584b73d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f50a5b0886ae44d1a4e87c2ed3b324c7", async() => {
                     BeginContext(1075, 50, true);
                     WriteLiteral("<i class=\"fa fa-home\" aria-hidden=\"true\"></i> Home");
                     EndContext();
@@ -180,7 +180,7 @@ using ItlaElector;
                 WriteLiteral("                                   </div>\r\n                                        ");
                 EndContext();
                 BeginContext(3260, 5224, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7dba7797254b4ea9924baff251bc1af1", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3e532a3c1dc479d9f8b6d0cd8499157", async() => {
                     BeginContext(3312, 2402, true);
                     WriteLiteral(@"
                                             <div class=""modal-body bg-light text-dark"">
@@ -215,7 +215,7 @@ using ItlaElector;
                                                             ");
                     EndContext();
                     BeginContext(5714, 47, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4aa2a847ff9b4348838ae99ad25c5ae5", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d891b6dcb42c42dfa97e601b46c39497", async() => {
                         BeginContext(5731, 21, true);
                         WriteLiteral("Seleccionar Partido..");
                         EndContext();
@@ -238,7 +238,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(5823, 30, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d342c805c03c422a936db4ac2ec6cd4f", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6ef6623a973544418fba2afae7c75044", async() => {
                         BeginContext(5841, 3, true);
                         WriteLiteral("PRM");
                         EndContext();
@@ -260,7 +260,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(5915, 30, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ff32b54393864e6a9dedbc38f36a8018", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "33752654c2df41b2b4aec47df2699032", async() => {
                         BeginContext(5933, 3, true);
                         WriteLiteral("PLD");
                         EndContext();
@@ -282,7 +282,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(6007, 31, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c906e63d26684700b49e45080b9bb063", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "657c0c6d2c094e3689bfc318d3370ef8", async() => {
                         BeginContext(6025, 4, true);
                         WriteLiteral("PRCS");
                         EndContext();
@@ -304,7 +304,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(6100, 30, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a547b8eb248842ab88a94651900056a6", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dad3ddd730b741f29c56ec81a7d57a61", async() => {
                         BeginContext(6118, 3, true);
                         WriteLiteral("PRD");
                         EndContext();
@@ -333,7 +333,7 @@ using ItlaElector;
                                                             ");
                     EndContext();
                     BeginContext(6768, 46, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "10c9fd78a3c04d499373e95a44345457", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1aca6756ace44c1a8e738d3da87eeab", async() => {
                         BeginContext(6785, 20, true);
                         WriteLiteral("Seleccionar puesto..");
                         EndContext();
@@ -356,7 +356,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(6876, 37, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "00a749491c29459287507755ccc54f9e", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5c88264e51c14fdabcb1274d07732bc0", async() => {
                         BeginContext(6894, 10, true);
                         WriteLiteral("Presidente");
                         EndContext();
@@ -378,7 +378,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(6975, 36, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1f38172d5bc042618a204847f9df285b", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "30b35f713a3842d3ba44e31691861459", async() => {
                         BeginContext(6993, 9, true);
                         WriteLiteral("Candidato");
                         EndContext();
@@ -400,7 +400,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(7073, 34, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2199bf53bd24ef3a87d974c1d80ef1d", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a884f301884f77beae3fa4b83b06cc", async() => {
                         BeginContext(7091, 7, true);
                         WriteLiteral("Alcalde");
                         EndContext();
@@ -422,7 +422,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(7169, 34, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "62ff588bab3649d59374c6389c015737", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "14684fdc783a4817b73c384cd102e10d", async() => {
                         BeginContext(7187, 7, true);
                         WriteLiteral("Senador");
                         EndContext();
@@ -505,7 +505,7 @@ using ItlaElector;
                             ");
                 EndContext();
                 BeginContext(10018, 112, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "a9be4fb65748446997a136587719c4e0", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "82d58cd7414e42108d85e9ce0038c7de", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -555,7 +555,7 @@ using ItlaElector;
                                                 ");
                 EndContext();
                 BeginContext(12076, 202, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e670bd364484891b5e9f85006a6e1ea", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0df226ee486145b0955b30847a3cd1dd", async() => {
                     BeginContext(12187, 87, true);
                     WriteLiteral("<i class=\"fa fa-check-circle\" style=\"color:greenyellow\" aria-hidden=\"true\"></i> Activar");
                     EndContext();
@@ -609,7 +609,7 @@ using ItlaElector;
                                                 ");
                 EndContext();
                 BeginContext(14180, 203, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3ab3496847074b2f803a458a1f852d8a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "408edb95c6db452388003adb956f76e2", async() => {
                     BeginContext(14297, 82, true);
                     WriteLiteral("<i class=\"fa fa-times-circle\" style=\"color:red\" aria-hidden=\"true\"></i> Desactivar");
                     EndContext();
@@ -676,7 +676,7 @@ using ItlaElector;
                                         ");
                 EndContext();
                 BeginContext(16220, 5224, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "af143efa74e34b38afbbdfd8da5af1e5", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c702e664e4034dae855cabb3e628cad6", async() => {
                     BeginContext(16272, 2402, true);
                     WriteLiteral(@"
                                             <div class=""modal-body bg-light text-dark"">
@@ -711,7 +711,7 @@ using ItlaElector;
                                                             ");
                     EndContext();
                     BeginContext(18674, 47, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4dc72652560540f19b5c1cf1f6ad955b", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c6d95081256420cba86777ecb13c0cf", async() => {
                         BeginContext(18691, 21, true);
                         WriteLiteral("Seleccionar Partido..");
                         EndContext();
@@ -734,7 +734,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(18783, 30, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0005c59d6035461d9f7b07465d2f27ce", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "626dbb3403904a769a268566a61363c9", async() => {
                         BeginContext(18801, 3, true);
                         WriteLiteral("PRM");
                         EndContext();
@@ -756,7 +756,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(18875, 30, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d7fd45afb4d14fe8b42a436361d080c6", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e16398f4b12544d28550ba3c2bdda783", async() => {
                         BeginContext(18893, 3, true);
                         WriteLiteral("PLD");
                         EndContext();
@@ -778,7 +778,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(18967, 31, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e55130e7f7cb4446b8bec427ee5687b6", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "abd3d720d45f4ac0ab1a3e59f03c8fed", async() => {
                         BeginContext(18985, 4, true);
                         WriteLiteral("PRCS");
                         EndContext();
@@ -800,7 +800,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(19060, 30, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "972679ccadcc453caae0e9021d05bfa6", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "52ddbdb5adcf4c6c872b17b48762aec5", async() => {
                         BeginContext(19078, 3, true);
                         WriteLiteral("PRD");
                         EndContext();
@@ -829,7 +829,7 @@ using ItlaElector;
                                                             ");
                     EndContext();
                     BeginContext(19728, 46, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0ce8622bc9d144f888772c4bbd0b1bb5", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "22465833af264381920f121932adeeef", async() => {
                         BeginContext(19745, 20, true);
                         WriteLiteral("Seleccionar puesto..");
                         EndContext();
@@ -852,7 +852,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(19836, 37, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fb6bbef9c19f49b5936571f3acfd1c78", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "651d9787cd8f45e08c499b9f94834aea", async() => {
                         BeginContext(19854, 10, true);
                         WriteLiteral("Presidente");
                         EndContext();
@@ -874,7 +874,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(19935, 36, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "feef34ec3e20417ea5dea196de05571b", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2f0644f9d6c40b3b612e3ec3ffce28f", async() => {
                         BeginContext(19953, 9, true);
                         WriteLiteral("Candidato");
                         EndContext();
@@ -896,7 +896,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(20033, 34, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a16690da237147c98810357d8d49590a", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a6347a1979404684913bf454bb710740", async() => {
                         BeginContext(20051, 7, true);
                         WriteLiteral("Alcalde");
                         EndContext();
@@ -918,7 +918,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                                                            ");
                     EndContext();
                     BeginContext(20129, 34, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e063cd4e56f84a5fb0ce7aeaa387d287", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b5b42b5aa2a4902b3925f8675bc7413", async() => {
                         BeginContext(20147, 7, true);
                         WriteLiteral("Senador");
                         EndContext();
@@ -1005,7 +1005,7 @@ using ItlaElector;
                                                 ");
                 EndContext();
                 BeginContext(23244, 172, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "973fc1695eeb4392ad42dae3f672507f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "28276947c5094cfa91903dc18e8fc4cd", async() => {
                     BeginContext(23366, 46, true);
                     WriteLiteral("<i class=\"fa fa-trash\" aria-hidden=\"true\"></i>");
                     EndContext();

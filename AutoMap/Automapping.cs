@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using DataBase.Models;
 using DataBase.ViewModels;
 
@@ -10,7 +11,14 @@ namespace AutoMap
         {
 
             MapearPartidos();
+            MapearPuestosElectivos();
 
+
+        }
+
+        private void MapearPuestosElectivos()
+        {
+            CreateMap<PuestosElectivosViewModel, PuestoElectivo>().ReverseMap();
         }
 
         private void MapearPartidos()

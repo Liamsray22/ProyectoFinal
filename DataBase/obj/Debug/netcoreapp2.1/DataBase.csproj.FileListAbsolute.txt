@@ -18,3 +18,4 @@ C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase
 C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfo.cs
 C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase.dll
 C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase.pdb
+C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase.csprojAssemblyReference.cache
