@@ -38,15 +38,22 @@ namespace Repository.Repository
             ciu.ciudadanos = TodosLosCiudadanos;
             return ciu;
         }
-            //public void Borrar(string path)
-            //{
-            //    File.SetAttributes(path, FileAttributes.Normal);
-            //    System.GC.Collect();
-            //    System.GC.WaitForPendingFinalizers();
 
-            //    File.Delete(path);
-            //}
-
+        public async Task CrearCiudadanos(CiudadanosViewModel cvm)
+        {
+            var ciudadano = _mapper.Map<Ciudadanos>(cvm);
+            await AddAsync(ciudadano);
 
         }
+        //public void Borrar(string path)
+        //{
+        //    File.SetAttributes(path, FileAttributes.Normal);
+        //    System.GC.Collect();
+        //    System.GC.WaitForPendingFinalizers();
+
+        //    File.Delete(path);
+        //}
+
+
+    }
 }
