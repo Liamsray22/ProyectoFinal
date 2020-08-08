@@ -42,8 +42,12 @@ namespace Repository.Repository
 
         public async Task CrearCiudadanos(CiudadanosViewModel cvm)
         {
-            var ciudadano = _mapper.Map<Ciudadanos>(cvm);
-            await AddAsync(ciudadano);
+            var user = new IdentityUser { UserName = cvm.Cedula };
+            var result = await _userManager.CreateAsync(user, cvm.Cedula);
+            if (result.Succeeded) {
+                var ciudadano = _mapper.Map<Ciudadanos>(cvm);
+                await AddAsync(ciudadano);
+            }
 
         }
 

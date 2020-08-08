@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataBase.Models;
@@ -33,6 +34,23 @@ namespace Repository.Repository
             CandidatosViewModel can = new CandidatosViewModel();
             List<CandidatosViewModel> TodosLosCandidatos = new List<CandidatosViewModel>();
             foreach (var c in candidatos) {
+                var candidato = _mapper.Map<CandidatosViewModel>(c);
+                var puesto = await _puestosElectivos.TraerPuestosElectivosById(candidato.IdPuestoElectivo);
+                var partido = await _partidosRepo.TraerPartidosById(candidato.IdPartido);
+                candidato.Partido = partido.Nombre;
+                candidato.PuestoElectivo = puesto.Nombre;
+                TodosLosCandidatos.Add(candidato);
+            }
+            can.candidatos = TodosLosCandidatos;
+            return can;
+        }
+        public async Task<CandidatosViewModel> TraerCandidatosByIdPuestos(int id)
+        {
+            var candidatos = await _context.Candidatos.Where(x=>x.IdPuestoElectivo == id).ToListAsync();
+            CandidatosViewModel can = new CandidatosViewModel();
+            List<CandidatosViewModel> TodosLosCandidatos = new List<CandidatosViewModel>();
+            foreach (var c in candidatos)
+            {
                 var candidato = _mapper.Map<CandidatosViewModel>(c);
                 var puesto = await _puestosElectivos.TraerPuestosElectivosById(candidato.IdPuestoElectivo);
                 var partido = await _partidosRepo.TraerPartidosById(candidato.IdPartido);

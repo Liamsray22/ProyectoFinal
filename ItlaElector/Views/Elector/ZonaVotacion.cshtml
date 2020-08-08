@@ -1,4 +1,4 @@
-﻿
+﻿@model DataBase.ViewModels.CandidatosViewModel
 @{
     ViewData["Title"] = "Elecciones";
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
@@ -27,7 +27,7 @@
 
                 <div class="col-sm-12 col-md-4 col-lg-3 mb-3 form-check-label" for="defaultCheck1">
 
-                    <input type="checkbox" id="CheckCard" value="1" checked="checked"> @*style="display:none"*@
+                    @*<input type="checkbox" id="CheckCard" value="1" checked="checked"> @*style="display:none"
                     <label for="CheckCard">
                         <div class="card bg-light stretched-link" style="width: 18rem; ">
                             <img src="~/images/Candidato/LuisAbinader.jpg" class="card-img-top card-image rounded mx-auto d-block mr-3 mt-2" width="60" height="60">
@@ -35,7 +35,7 @@
                                 <h2 class="card-title text-center font-weight-bold">Candidatos</h2>
                                 <p class="card-text font-weight-normal text-justify" style="font-family: 'Roboto Slab', serif; font-size:10px;">
 
-                                </p>
+                                </p>*@
                 <script>
                     //NO ME FUNCIONA
                     //function comprobar(checkbox) {
@@ -59,13 +59,12 @@
                     }
 
                 </script>
-
-
-
-
-
+                              
+                    
+                    @foreach (var c in Model.candidatos)
+                    {
                 <div class="col-sm-4 col-md-4 col-lg-3 mb-3 form-check-label">
-                    <input type="checkbox" id="CheckCard" name="candidato" onClick="javascript:checkBox(1)" value="1"> @*style="display:none"*@   @*onchange="comprobar(this)"*@
+                    <input type="checkbox" id="CheckCard" asp-for="Nombre" onClick="javascript:checkBox(1)" value="@c.IdCandidato"> @*style="display:none"*@   @*onchange="comprobar(this)"*@
                     <label for="CheckCard">
                         <div class="card bg-light stretched-link" style="width: 16rem; ">
                             <div class="card-header">
@@ -74,7 +73,7 @@
                                         <img src="~/images/Partido/PRM_Logo.png" class="rounded-pill p-1 ml-1 mt-1 m-0" width="40" height="40" />
                                     </div>
                                     <div class="col-9">
-                                        <p class="text-dark col-lg-pull-0 pl-2 mr-2 m-0" style="font-size:10px;">Partido Revolucionario Moderno Social Cristiano (PRM)</p>
+                                        <p class="text-dark col-lg-pull-0 pl-2 mr-2 m-0" style="font-size:10px;">@c.Partido</p>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +84,7 @@
                                     </div>
                                     <div class="col-7 d-flex justify-content-start">
                                         <p class="card-text font-weight-normal pl-1" style="font-family: 'Rowdies', cursive; font-size:14px;">
-                                            Luis Rodolfo Abinader Corona
+                                            @Html.DisplayFor(ModelItem => c.Nombre)
                                         </p>
                                     </div>
                                 </div>
@@ -93,6 +92,7 @@
                         </div>
                     </label>
                 </div>
+                    }
 
                 </div>
 
@@ -100,9 +100,9 @@
             </div>
 
 
-        <div class="fixed-bottom">
+        @*<div class="fixed-bottom">
                 <div class="col-sm-4 col-md-4 col-lg-3 mb-3 form-check-label">
-                    <input type="checkbox" id="CheckCard1" name="candidato" onClick="javascript:checkBox(1)" value="1"> @*style="display:none"*@   @*onchange="comprobar(this)"*@
+                    <input type="checkbox" id="CheckCard1" name="candidato" onClick="javascript:checkBox(1)" value="1"> @*style="display:none"onchange="comprobar(this)"*
                     <label for="CheckCard1">
                         <div class="card bg-light stretched-link" style="width: 16rem; ">
                             <div class="card-header">
@@ -129,7 +129,7 @@
                             </div>
                         </div>
                     </label>
-                </div>
+                </div>*@
 
 
 

@@ -4,6 +4,7 @@ using AutoMapper;
 using DataBase.Models;
 using DataBase.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Repository.Repository
 {
@@ -32,8 +33,7 @@ namespace Repository.Repository
         }
 
         public async Task<bool> LoguearAdmin(LoginViewModel lvm)
-        {
-            
+        {            
             var result = await _signInManager.PasswordSignInAsync(lvm.Usuario, lvm.Clave, false, true);
 
             if (result.Succeeded)
@@ -44,15 +44,29 @@ namespace Repository.Repository
             return false;
         }
 
-            //public void Borrar(string path)
-            //{
-            //    File.SetAttributes(path, FileAttributes.Normal);
-            //    System.GC.Collect();
-            //    System.GC.WaitForPendingFinalizers();
 
-            //    File.Delete(path);
-            //}
+        public async Task<bool> LoguearCiudadano(LoginViewModel lvm)
+        {
 
+            var result = await _signInManager.PasswordSignInAsync(lvm.Usuario, lvm.Clave, false, true);
 
+            if (result.Succeeded)
+            {
+                return true;
+
+            }
+            return false;
         }
+
+        //public void Borrar(string path)
+        //{
+        //    File.SetAttributes(path, FileAttributes.Normal);
+        //    System.GC.Collect();
+        //    System.GC.WaitForPendingFinalizers();
+
+        //    File.Delete(path);
+        //}
+
+
+    }
     }
