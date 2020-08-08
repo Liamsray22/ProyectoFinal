@@ -35,3 +35,4 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.AssemblyInfo.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.pdb
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csprojAssemblyReference.cache

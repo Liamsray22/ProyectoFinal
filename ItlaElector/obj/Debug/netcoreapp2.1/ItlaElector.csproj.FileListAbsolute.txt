@@ -85,3 +85,7 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreap
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\PuestosElectivos\PuestosElectivos.g.cshtml.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Candidatos\Candidatos.g.cshtml.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Elecciones\Elecciones.g.cshtml.cs
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Home.g.cshtml.cs
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Elector\Home.g.cshtml.cs
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutHome.g.cshtml.cs
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Elector\ZonaVotacion.g.cshtml.cs

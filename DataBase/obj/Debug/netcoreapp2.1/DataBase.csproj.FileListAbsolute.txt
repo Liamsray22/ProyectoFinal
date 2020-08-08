@@ -19,3 +19,4 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfo.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.pdb
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.csprojAssemblyReference.cache

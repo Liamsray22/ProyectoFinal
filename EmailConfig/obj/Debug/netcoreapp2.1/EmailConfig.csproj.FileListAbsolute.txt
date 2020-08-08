@@ -33,3 +33,4 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreap
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfo.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.pdb
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csprojAssemblyReference.cache

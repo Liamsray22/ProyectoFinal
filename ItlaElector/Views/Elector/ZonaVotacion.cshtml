@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewData["Title"] = "Elecciones";
+    Layout = "~/Views/Shared/_LayoutStart.cshtml";
+}
+
+<body id="FondoP" style=" background: #3a7bd5; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3a6073, #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3a6073, #3a7bd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+
+    <header class="container-fluid shadow position-relative fixed-top border-bottom bg-primary">
+
+        <div class="text-center">
+
+            <div class="font-weight-bolder pt-2 text-white" style="font-family: 'Lemonada', cursive;">
+                <h1>Presidente</h1>
+            </div>
+
+        </div>
+
+    </header>
+    <form asp-action="" asp-controller="" method="post">
+        <div class="container mt-4">
+
+            <div class="row justify-content-md-center">
+
+
+                <div class="col-sm-12 col-md-4 col-lg-3 mb-3 form-check-label" for="defaultCheck1">
+
+                    <input type="checkbox" id="CheckCard" value="1" checked="checked"> @*style="display:none"*@
+                    <label for="CheckCard">
+                        <div class="card bg-light stretched-link" style="width: 18rem; ">
+                            <img src="~/images/Candidato/LuisAbinader.jpg" class="card-img-top card-image rounded mx-auto d-block mr-3 mt-2" width="60" height="60">
+                            <div class="card-body">
+                                <h2 class="card-title text-center font-weight-bold">Candidatos</h2>
+                                <p class="card-text font-weight-normal text-justify" style="font-family: 'Roboto Slab', serif; font-size:10px;">
+
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                </div>
+
+
+            </div>
+
+
+        <div class="fixed-bottom">
+
+            <footer class="container-fluid bg-light  p-3">
+                <input class="font-weight-bolder text-white btn-block btn text-white btn-success" type="submit" value="VOTAR" style="font-family: 'Lemonada', cursive;"/>
+            </footer>
+
+        </div>
+
+    </form>
+
+</body>

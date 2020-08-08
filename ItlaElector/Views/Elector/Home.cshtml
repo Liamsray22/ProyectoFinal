@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Elecciones";
+    Layout = "~/Views/Shared/_LayoutStart.cshtml";
+}
+<body id="FondoP" style=" background: #3a7bd5; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3a6073, #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3a6073, #3a7bd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+
+    <header class="container-fluid shadow position-relative fixed-top border-bottom bg-primary">
+
+        <div class="row ml-4 p-1">
+
+            <div class="font-weight-bolder pt-2 text-white" style="font-family: 'Lemonada', cursive;">
+                <h1>Bienvenido a las Elecciones: </h1>
+            </div>
+
+            <a asp-controller="Start" asp-action="Start" class="btn btn-danger ml-auto btn-group-sm rounded pt-1 mt-1" style="font-size:17px; font-family: 'Lemonada', cursive; height:2%;"><i class="fa fa-window-close" aria-hidden="true"></i> Cancelar Votación</a>
+
+        </div>
+
+    </header>
+
+
+    <div class="container">
+
+        <div class="list-group mt-5">
+
+            <div class="bg-success  mb-1">
+                <h1 class="text-center text-white" style="font-family: 'Rowdies', cursive;">Puestos Electivos</h1>
+            </div>
+
+            <a asp-action="ZonaVotacion" asp-controller="Elector" asp-route-id="" class="list-group-item list-group-item-info list-group-item-action flex-column align-items-start shadow mb-2">
+                <div>
+                    <div class="row row-no-gutters">
+                        <div class="col-1">
+                            <img src="~/images/UserPuestos.jpg" class="rounded mx-auto d-block" width="60" height="60" />
+                        </div>
+                        <div class="col-11">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h2 class="mb-2 text-dark font-weight-bolder">Presidente</h2>
+                                <span class="mr-3"><i class="fa  fa-spinner" style="color:gold; font-size:20px;" aria-hidden="true"></i></span>
+                            </div>
+                            <p class="font-weight-normal text-justify text-dark" style="font-size:12px; font-family:Arial,'Agency FB'">
+                            funcionario público, electo para un período determinado, que ostenta el poder ejecutivo de un Estado o de una región.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            @*Opcion desabilitada*@
+            <a asp-action="" asp-controller="" class="list-group-item list-group-item-info list-group-item-action flex-column align-items-start shadow mb-2 disabled">
+
+                <div>
+
+                    <div class="row row-no-gutters">
+
+                        <div class="col-1">
+                            <img src="~/images/UserPuestos.jpg" class="rounded mx-auto d-block" width="60" height="60" />
+                        </div>
+
+                        <div class="col-11">
+                            <div class="d-flex w-100 justify-content-between">
+
+                                <h2 class="mb-2 text-dark font-weight-bolder">Presidente</h2>
+                                <span class="mr-3"><i class="fa fa-check" style="color:green; font-size:20px;" aria-hidden="true"></i></span>
+                            </div>
+                            <p class="mb-1 font-weight-normal text-justify" style="font-size:12px; font-family:Arial,'Agency FB'">funcionario público, electo para un período determinado, que ostenta el poder ejecutivo de un Estado o de una región.</p>
+                            <small class="text-success font-weight-bolder">Voto verificado!</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </a>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</body>
