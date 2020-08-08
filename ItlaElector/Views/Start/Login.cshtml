@@ -1,4 +1,5 @@
-﻿@{
+﻿@model DataBase.ViewModels.LoginViewModel
+@{
     ViewData["Title"] = "Login Administrador";
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
 }
@@ -29,7 +30,7 @@ console.log("document is ready");
 
         <div class="card mx-auto shadow-lg p-2 rounded" id="CardLogin" style="width: 28rem;">
             <div class="card-header bg-transparent  text-center display-4 border-bottom" id="testLogin">Login</div>
-            <form asp-controller="Admin" asp-action="Home" method="post">
+            <form asp-controller="Start" asp-action="Login" method="post">
 
                 <div class="card-body">
                     <h7 class="card-title text-danger font-weight-bold">
@@ -39,11 +40,11 @@ console.log("document is ready");
                         <label id="LabelLogin">
                             <i class="fa fa-user" aria-hidden="true"></i>&nbsp;  Username:
                         </label>
-                        <input class="form-control shadow p-3 bg-white rounded" style="font-size:20px" placeholder="Ingresar usuario ">
+                        <input asp-for="Usuario" class="form-control shadow p-3 bg-white rounded" style="font-size:20px" placeholder="Ingresar usuario ">
                     </div>
                     <div class="form-group mb-4">
                         <label id="LabelLogin"><i class="fa fa-key" aria-hidden="true"></i>&nbsp;Password</label>
-                        <input type="password" class="form-control shadow p-3 bg-white rounded" style="font-size:20px" placeholder="Ingresar contraseña">
+                        <input asp-for="Clave" type="password" class="form-control shadow p-3 bg-white rounded" style="font-size:20px" placeholder="Ingresar contraseña">
                     </div>
 
 
@@ -57,14 +58,14 @@ console.log("document is ready");
 
                             </div>
                             <div class="form-group col-6">
-                                 <input type="submit" value="Iniciar Sesión" style="font-size:17px;" class="btn btn-outline-success btn-sm  shadow rounded" />
+                                <input type="submit" value="Iniciar Sesión" style="font-size:17px;" class="btn btn-outline-success btn-sm  shadow rounded" />
 
                             </div>
                         </div>
                         @*<div class="w-50">
-                            <input type="submit" class="btn btn-outline-success btn-block shadow" style="font-size:20px;" value="Iniciar Sesión" />
-                            <input type="submit" class="btn btn-outline-success btn-block shadow" style="font-size:20px;" value="Iniciar Sesión" />
-                        </div>*@
+                    <input type="submit" class="btn btn-outline-success btn-block shadow" style="font-size:20px;" value="Iniciar Sesión" />
+                    <input type="submit" class="btn btn-outline-success btn-block shadow" style="font-size:20px;" value="Iniciar Sesión" />
+                </div>*@
                     </div>
 
                 </div>

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model DataBase.ViewModels.CandidatosViewModel
+
+@{
     ViewData["Title"] = "Candidatos";
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
 }
@@ -60,7 +62,7 @@
                                             </div>
 
                                         </div>
-                                        <form asp-action="" asp-controller="" method="post">
+                                        <form asp-action="Candidatos" asp-controller="Candidatos" method="post" enctype="multipart/form-data">
                                             <div class="modal-body bg-light text-dark">
 
                                                 <div class="form-group">
@@ -72,14 +74,14 @@
                                                         <div class="row col-lg-4">
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
                                                         </div>
-                                                        <input class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
+                                                        <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
                                                         <span class="text-danger"></span>
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <div class="row col-lg-4">
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Apellido</label>
                                                         </div>
-                                                        <input class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Apellido" />
+                                                        <input asp-for="Apellido"  class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Apellido" />
                                                         <span class="text-danger"></span>
                                                     </div>
                                                 </div>
@@ -87,23 +89,19 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar partido</label>
-                                                        <select class="custom-select custom-select-lg" size="3">
+                                                        <select asp-for="IdPartido" class="custom-select custom-select-lg" size="3">
                                                             <option selected>Seleccionar Partido..</option>
                                                             <option value="1">PRM</option>
                                                             <option value="2">PLD</option>
-                                                            <option value="3">PRCS</option>
-                                                            <option value="3">PRD</option>
                                                         </select>
                                                         <span class="text-danger"></span>
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar puesto electivo</label>
-                                                        <select class="custom-select custom-select-lg" size="3">
+                                                        <select asp-for="IdPuestoElectivo" class="custom-select custom-select-lg" size="3">
                                                             <option selected>Seleccionar puesto..</option>
                                                             <option value="1">Presidente</option>
-                                                            <option value="2">Candidato</option>
-                                                            <option value="3">Alcalde</option>
-                                                            <option value="3">Senador</option>
+                                                            <option value="2">Candidato</option>                                                            
                                                         </select>
                                                         <span class="text-danger"></span>
                                                     </div>
@@ -153,78 +151,81 @@
                     </tr>
                 </thead>
                 <tbody style="font-size:14px; overflow-y: scroll" class="text-center">
-
+                    @foreach (var c in Model.candidatos) {
                     <tr class="bg-light mt-3">
                         <td>
                             <img src="~/images/Candidato/LuisAbinader.jpg" class="rounded mx-auto d-block mr-3 mt-2" width="60" height="60">
                         </td>
-                        <td>Luis</td>
-                        <td>Abinader</td>
-                        <td>Partido Revolucionario Moderno</td>
-                        <td>Presidente</td>
+                        <td>@Html.DisplayFor(ModelItem => c.Nombre)</td>
+                        <td>@Html.DisplayFor(ModelItem => c.Apellido)</td>
+                        <td>@Html.DisplayFor(ModelItem => c.Partido)</td>
+                        <td>@Html.DisplayFor(ModelItem => c.PuestoElectivo)</td>
                         <td>
+                            @if (c.Estado == "Inactivo")
+                            {
+                                @*Modelo para activar puesto*@
+                                <a data-toggle="modal" data-target="#act-@(c.IdCandidato)" class="btn btn-outline-info btn-sm" style="font-size:12px; "><i class="fa fa-check-circle" style="color:greenyellow" aria-hidden="true"></i> Activar</a>
+                                <div class="modal fade " id="act-@(c.IdCandidato)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog modal-sm">
+                                        <div class="modal-content bg-primary shadow-sm p-1 rounded">
+                                            <div class="modal-header bg-primary  rounded">
 
-                            @*Modelo para activar puesto*@
-                            <a data-toggle="modal" data-target="#act-" class="btn btn-outline-info btn-sm" style="font-size:12px; "><i class="fa fa-check-circle" style="color:greenyellow" aria-hidden="true"></i> Activar</a>
-                            <div class="modal fade " id="act-" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog modal-sm">
-                                    <div class="modal-content bg-primary shadow-sm p-1 rounded">
-                                        <div class="modal-header bg-primary  rounded">
+                                                <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
+                                                <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                    Cancelar
+                                                </button>
+                                            </div>
 
-                                            <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
-                                            <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
-                                                Cancelar
-                                            </button>
-                                        </div>
-
-                                        <div class="modal-body bg-light text-center">
-                                            <h4 class="text-dark">¿Seguro que desea <span class="text-danger">Activar</span> este puesto?</h4>
+                                            <div class="modal-body bg-light text-center">
+                                                <h4 class="text-dark">¿Seguro que desea <span class="text-danger">Activar</span> este puesto?</h4>
 
 
-                                            <div class="mt-4 d-flex justify-content-center">
-                                                <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-info btn-sm" style="font-size:16px;"><i class="fa fa-check-circle" style="color:greenyellow" aria-hidden="true"></i> Activar</a>
+                                                <div class="mt-4 d-flex justify-content-center">
+                                                    <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-info btn-sm" style="font-size:16px;"><i class="fa fa-check-circle" style="color:greenyellow" aria-hidden="true"></i> Activar</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            }
+                            else
+                            {
 
+                                @*Modelo para desactivar puesto*@
+                                <a data-toggle="modal" data-target="#des-@(c.IdCandidato)" class="btn btn-outline-secondary btn-sm" style="font-size:12px; "><i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i> Desactivar</a>
+                                <div class="modal fade " id="des-@(c.IdCandidato)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog  modal-sm">
+                                        <div class="modal-content bg-primary  p-1 rounded">
 
-                            @*Modelo para desactivar puesto*@
-                            <a data-toggle="modal" data-target="#des-" class="btn btn-outline-secondary btn-sm" style="font-size:12px; "><i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i> Desactivar</a>
-                            <div class="modal fade " id="des-" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                <div class="modal-dialog  modal-sm">
-                                    <div class="modal-content bg-primary  p-1 rounded">
+                                            <div class="modal-header bg-primary rounded">
 
-                                        <div class="modal-header bg-primary rounded">
-
-                                            <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
-                                            <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
-                                                Cancelar
-                                            </button>
-                                        </div>
-
-                                        <div class="modal-body bg-light text-center">
-                                            <h4 class="text-dark">¿Seguro que desea  <span class="text-danger">Desactivar</span> este puesto?</h4>
-
-
-                                            <div class="mt-4 d-flex justify-content-center">
-                                                <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-secondary btn-sm" style="font-size:16px; "><i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i> Desactivar</a>
+                                                <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
+                                                <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                    Cancelar
+                                                </button>
                                             </div>
 
+                                            <div class="modal-body bg-light text-center">
+                                                <h4 class="text-dark">¿Seguro que desea  <span class="text-danger">Desactivar</span> este puesto?</h4>
+
+
+                                                <div class="mt-4 d-flex justify-content-center">
+                                                    <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-secondary btn-sm" style="font-size:16px; "><i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i> Desactivar</a>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-
-                        </td>
+                            }
+                            </td>
 
                         <td>
                             @*Editar puesto electivo*@
-                            <a data-toggle="modal" data-target="#EditarPuesto" class="text-white btn btn-warning ml-auto mb-2  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                            <a data-toggle="modal" data-target="#EditarPuesto@(c.IdCandidato)" class="text-white btn btn-warning ml-auto mb-2  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 
-                            <div class="modal fade" id="EditarPuesto" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal fade" id="EditarPuesto@(c.IdCandidato)" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content bg-success">
 
@@ -316,9 +317,9 @@
                             @*eliminar puesto*@
 
 
-                            <a data-toggle="modal" data-target="#EliminarCiudadano" class="text-white btn btn-danger ml-auto  btn-sm mb-2 shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            <a data-toggle="modal" data-target="#EliminarCiudadano@(c.IdCandidato)" class="text-white btn btn-danger ml-auto  btn-sm mb-2 shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
 
-                            <div class="modal fade " id="EliminarCiudadano" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal fade " id="EliminarCiudadano@(c.IdCandidato)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-sm">
                                     <div class="modal-content bg-danger shadow-sm p-1 rounded">
 
@@ -336,7 +337,7 @@
                                             <h4>¿SEGURO QUE QUIERE ELIMINAR ESTE CANDIDATO?</h4>
 
                                             <div class="mt-4 d-flex justify-content-center">
-                                                <a asp-action="" asp-controller="" class="text-white btn btn-danger shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                                <a asp-action="EliminarCandidatos" asp-controller="Candidatos" asp-route-id="@c.IdCandidato" class="text-white btn btn-danger shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
 
                                             </div>
 
@@ -350,7 +351,7 @@
                         </td>
 
                     </tr>
-
+                    }
 
                 </tbody>
             </table>

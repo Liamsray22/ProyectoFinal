@@ -62,6 +62,16 @@ namespace ItlaElector
 
             //Repository
             services.AddScoped<CiudadanosRepo>();
+            services.AddScoped<AdminRepo>();
+            services.AddScoped<PartidosRepo>();
+            services.AddScoped<PuestosElectivosRepo>();
+            services.AddScoped<CandidatosRepo>();
+            services.AddScoped<EleccionesRepo>();
+
+
+
+
+
 
             //Email
             var emailConfig = Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();

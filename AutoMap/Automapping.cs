@@ -1,4 +1,7 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
+using DataBase.Models;
+using DataBase.ViewModels;
 
 namespace AutoMap
 {
@@ -6,14 +9,39 @@ namespace AutoMap
     {
         public Automapping()
         {
-            
-            MapearEntidad();
+
+            MapearPartidos();
+            MapearPuestosElectivos();
+            MapearCandidatos();
+            MapearCiudadanos();
+            MapearElecciones();
 
         }
 
-        private void MapearEntidad()
+        private void MapearElecciones()
         {
-            //CreateMap<ViewModel, Entidad>().ReverseMap().
+            CreateMap<EleccionesViewModel, Elecciones>().ReverseMap();
+        }
+
+        private void MapearCiudadanos()
+        {
+            CreateMap<CiudadanosViewModel, Ciudadanos>().ReverseMap();
+        }
+
+        private void MapearPuestosElectivos()
+        {
+            CreateMap<PuestosElectivosViewModel, PuestoElectivo>().ReverseMap();
+        }
+        private void MapearCandidatos()
+        {
+            CreateMap<CandidatosViewModel, Candidatos>().ReverseMap().
+            ForMember(dest => dest.Partido, opt => opt.Ignore()).
+            ForMember(dest => dest.PuestoElectivo, opt => opt.Ignore());
+        }
+
+        private void MapearPartidos()
+        {
+            CreateMap<PartidosViewModels, Partidos>().ReverseMap();
             //ForMember(dest => dest.campo, opt => opt.Ignore()).
             //ForMember(dest => dest.campo, opt => opt.Ignore());
         }

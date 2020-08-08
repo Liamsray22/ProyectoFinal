@@ -1,4 +1,5 @@
-﻿@{
+﻿@model DataBase.ViewModels.EleccionesViewModel 
+@{
     ViewData["Title"] = "Elecciones";
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
 }
@@ -51,12 +52,12 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                         </div>
 
                                     </div>
-                                    <form asp-action="" asp-controller="" method="post">
+                                    <form asp-action="Elecciones" asp-controller="Elecciones" method="post">
                                         <div class="modal-body bg-light text-dark">
 
                                             <div class="form-group ">
                                                   <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
-                                                <input class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
+                                                <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
                                                 <span class="text-danger"></span>
                                             </div>
 
@@ -64,7 +65,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                                 <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Fecha</label>
                                                 <div class="row">
                                                     <div class='col-12'>
-                                                        <input type="text" placeholder="Ingresar Fecha" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" id='datetimepicker4' />
+                                                        <input asp-for="Fecha" placeholder="Ingresar Fecha" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" id='datetimepicker4' />
                                                     </div>
                                                     @*<script type="text/javascript">
                                                         $(function () {
@@ -77,7 +78,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
 
 
 
-                                            <input type="hidden" name="Estado" value="Activo" />
+                                            <input type="hidden" name="Estado" value="En Progreso" />
 
                                             <div class="form-group row mt-4">
                                                 <div class="col">
@@ -112,81 +113,86 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                 </tr>
             </thead>
             <tbody style="font-size:14px; overflow-y: scroll" class="text-center">
+                @foreach (var e in Model.elecciones)
+                {
+                    <tr class="bg-light mt-3">
+                        <td>@Html.DisplayFor(ModelItem => e.Nombre)</td>
+                        <td>@Html.DisplayFor(ModelItem => e.Fecha)</td>
+                        <td class="text-info font-weight-bolder">@Html.DisplayFor(ModelItem => e.Estado)</td>
+                        @*<td class="text-secondary font-weight-bolder">Finalizado</td>*@
+                        <td>
+                            @if (e.Estado == "Finalizado")
+                            {
+                                @*Ver Resultado*@
+                                <a data-toggle="modal" data-target="#resultado@(e.IdEleccion)" class="text-link text-primary" style="font-size:14px; ">Ver Resultado</a>
+                                <div class="modal fade " id="resultado@(e.IdEleccion)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content bg-danger shadow-sm p-1 rounded">
 
-                <tr class="bg-light mt-3">
-                    <td>Elecciones Presidenciales 2020</td>
-                    <td>08/06/2020 : 23:11:00</td>
-                    <td class="text-info font-weight-bolder">En proceso</td>
-                    @*<td class="text-secondary font-weight-bolder">Finalizado</td>*@
-                    <td>
+                                            <div class="modal-header bg-danger p-1 rounded">
 
-                        @*Ver Resultado*@
-                        <a data-toggle="modal" data-target="#resultado" class="text-link text-primary" style="font-size:14px; ">Ver Resultado</a>
-                        <div class="modal fade " id="resultado" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-sm">
-                                <div class="modal-content bg-danger shadow-sm p-1 rounded">
+                                                <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Eliminar</h5>
 
-                                    <div class="modal-header bg-danger p-1 rounded">
+                                                <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                    Cancelar
+                                                </button>
 
-                                        <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Eliminar</h5>
+                                            </div>
 
-                                        <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
-                                            Cancelar
-                                        </button>
+                                            <div class="modal-body bg-light text-center">
+                                                <h4>¿SEGURO QUE QUIERE ELIMINAR ESTE CANDIDATO?</h4>
 
-                                    </div>
+                                                <div class="mt-4 d-flex justify-content-center">
+                                                    <a asp-action="" asp-controller="" class="text-white btn btn-danger shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
 
-                                    <div class="modal-body bg-light text-center">
-                                        <h4>¿SEGURO QUE QUIERE ELIMINAR ESTE CANDIDATO?</h4>
+                                                </div>
 
-                                        <div class="mt-4 d-flex justify-content-center">
-                                            <a asp-action="" asp-controller="" class="text-white btn btn-danger shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
-
+                                            </div>
                                         </div>
-
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+
+                            }
+                            else
+                            {
+                                @*Modelo para Finalizar puesto*@
+                                <a data-toggle="modal" data-target="#des-@(e.IdEleccion)" class="btn btn-danger btn-sm text-white" style="font-size:12px; "><i class="fa fa-times-circle" style="color:white" aria-hidden="true"></i> Finalizar</a>
+
+                                <div class="modal fade " id="des-@(e.IdEleccion)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog  modal-sm">
+                                        <div class="modal-content bg-info  p-1 rounded">
+
+                                            <div class="modal-header bg-info rounded">
+
+                                                <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
+                                                <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                    Cancelar
+                                                </button>
+                                            </div>
+
+                                            <div class="modal-body bg-light text-center">
+                                                <h4 class="text-dark">¿Seguro que deseas  <span class="text-danger">Finalizar</span> estas Elecciones?</h4>
 
 
-                        @*Modelo para Finalizar puesto*@
-                        <a data-toggle="modal" data-target="#des-" class="btn btn-danger btn-sm text-white" style="font-size:12px; "><i class="fa fa-times-circle" style="color:white" aria-hidden="true"></i> Finalizar</a>
+                                                <div class="mt-4 d-flex justify-content-center">
+                                                    <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-secondary btn-sm" style="font-size:16px; "><i class="fa fa-check-circle-o" style="color:greenyellow" aria-hidden="true"></i> Finalizar</a>
+                                                </div>
 
-                        <div class="modal fade " id="des-" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog  modal-sm">
-                                <div class="modal-content bg-info  p-1 rounded">
-
-                                    <div class="modal-header bg-info rounded">
-
-                                        <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
-                                        <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
-                                            Cancelar
-                                        </button>
-                                    </div>
-
-                                    <div class="modal-body bg-light text-center">
-                                        <h4 class="text-dark">¿Seguro que deseas  <span class="text-danger">Finalizar</span> estas Elecciones?</h4>
-
-
-                                        <div class="mt-4 d-flex justify-content-center">
-                                            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-secondary btn-sm" style="font-size:16px; "><i class="fa fa-check-circle-o" style="color:greenyellow" aria-hidden="true"></i> Finalizar</a>
+                                            </div>
                                         </div>
-
                                     </div>
                                 </div>
-                            </div>
-                        </div>
 
-
-                    </td>
+                            }
+                            </td>
 
 
 
-                </tr>
+                    </tr>
+                }
 
 
-            </tbody>
+                </tbody>
         </table>
 
 
