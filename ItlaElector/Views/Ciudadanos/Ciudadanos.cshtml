@@ -52,12 +52,10 @@
                             <form asp-action="Ciudadanos" asp-controller="Ciudadanos" method="post" enctype="multipart/form-data">
                                 <div class="modal-body bg-light">
 
-                                    <div class="form-group">
-                                        <label style="font-family: 'Rowdies', cursive; font-size:15px;" class="ml-3">Cédula</label>
-                                        <input asp-for="Cedula" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" pattern="[0-9]{3}-[0-9]{7}-[0-9]{1}" placeholder="Ingresar Cédula">
-                                        <small class="ml-4 form-text text-muted" style="font-size:10px;">El formato de la cedula debe ser: 000-0000000-0</small>
-                                    </div>                         
-                                    
+                                    <div class="form-group">                               
+                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Cedula</label>
+                                        <input asp-for="Cedula" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Ingresar Cedula">
+                                    </div>
                                     <div class="form-group">
                                         <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
                                         <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Ingresar Nombre">
@@ -192,7 +190,8 @@
                                                 <div class="modal-header bg-warning text-dark rounded-bottom shadow">
 
 
-                                                    @*<div class="form-group">
+
+                                                    <div class="form-group">
                                                         <label style="font-family: 'Rowdies', cursive; font-size:15px;">Cédula</label>
                                                         <input type="text" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" pattern="[0-9]{3}-[0-9]{7}-[0-9]{1}" placeholder="Ingresar Cédula">
                                                         <small class="form-text text-muted">El formato de la cedula debe ser: 000-0000000-0</small>
@@ -206,10 +205,10 @@
                                                     <div class="form-group">
                                                         <label style="font-family: 'Rowdies', cursive; font-size:15px;">Apellido</label>
                                                         <input type="text" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Ingresar Apellido">
+
                                                     <div class=" mr-auto">
                                                         <h2 class="modal-title"><i class="fa fa-pencil" aria-hidden="true"></i> Editar Ciudadano</h2>
-
-                                                    </div>*@
+                                                    </div>
                                                     <div class="">
                                                         <button type="button" class="btn btn-danger btn-sm text-white p-2 rounded-pill" style="font-size:14px;" data-dismiss="modal" aria-label="Close">
                                                             Cancelar
