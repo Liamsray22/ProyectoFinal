@@ -53,5 +53,19 @@ namespace ItlaElector.Controllers
             return RedirectToAction("PuestosElectivos");
 
         }
+
+        [HttpPost]
+        public async Task<IActionResult> EditarPuestosElectivos(PuestosElectivosViewModel upevm)
+        {
+            var edit = await _puestosRepo.EditarPuestosElectivos(upevm);
+            if (edit)
+            {
+                return RedirectToAction("PuestosElectivos");
+
+            }
+
+            return RedirectToAction("Start", "Start");
+
+        }
     }
 }
