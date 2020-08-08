@@ -55,6 +55,16 @@ namespace Repository.Repository
             await AddAsync(puesto);
         }
 
+        public async Task EliminarPuestosElectivos(int id)
+        {
+            var puesto = await GetByIdAsync(id);
+            if (puesto != null)
+            {
+                puesto.Estado = "Inactivo";
+                await Update(puesto);
+            }
+        }
+
         //public void Borrar(string path)
         //{
         //    File.SetAttributes(path, FileAttributes.Normal);

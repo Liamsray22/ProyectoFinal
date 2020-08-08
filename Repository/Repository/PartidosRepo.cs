@@ -54,6 +54,16 @@ namespace Repository.Repository
             await AddAsync(partido);
         }
 
+        public async Task EliminarPartido(int id)
+        {
+            var partido = await GetByIdAsync(id);
+            if(partido != null)
+            {
+                partido.Estado = "Inactivo";
+                await Update(partido);
+            }
+        }
+
         //public void Borrar(string path)
         //{
         //    File.SetAttributes(path, FileAttributes.Normal);

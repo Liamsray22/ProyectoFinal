@@ -38,5 +38,19 @@ namespace ItlaElector.Controllers
             var partido = await _partidosRepo.TraerPartidos();
             return RedirectToAction("Partidos");
         }
+
+        public async Task<IActionResult> EliminarPartido(int id)
+        {
+            try
+            {
+                await _partidosRepo.EliminarPartido(id);
+            }
+            catch
+            {
+
+            }
+            return RedirectToAction("Partidos");
+
+        }
     }
 }

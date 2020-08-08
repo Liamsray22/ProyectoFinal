@@ -39,7 +39,19 @@ namespace ItlaElector.Controllers
             return RedirectToAction("Ciudadanos");
         }
 
+        public async Task<IActionResult> EliminarCiudadano(int id)
+        {
+            try
+            {
+                await _ciudadanosRepo.EliminarCiudadanos(id);
+            }
+            catch
+            {
 
+            }
+            return RedirectToAction("Ciudadanos");
+
+        }
 
 
 

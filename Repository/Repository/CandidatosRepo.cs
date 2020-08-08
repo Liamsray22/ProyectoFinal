@@ -49,6 +49,17 @@ namespace Repository.Repository
             await AddAsync(candidato);
 
         }
+
+        public async Task EliminarCandidatos(int id)
+        {
+            var candidato = await GetByIdAsync(id);
+            if (candidato != null)
+            {
+                candidato.Estado = "Inactivo";
+                await Update(candidato);
+
+            }
+        }
         //public void Borrar(string path)
         //{
         //    File.SetAttributes(path, FileAttributes.Normal);

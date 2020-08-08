@@ -45,6 +45,16 @@ namespace Repository.Repository
             await AddAsync(ciudadano);
 
         }
+
+        public async Task EliminarCiudadanos(int id)
+        {
+            var ciudadano = await GetByIdAsync(id);
+            if (ciudadano != null)
+            {
+                ciudadano.Estado = "Inactivo";
+                await Update(ciudadano);
+            }
+        }
         //public void Borrar(string path)
         //{
         //    File.SetAttributes(path, FileAttributes.Normal);

@@ -39,5 +39,19 @@ namespace ItlaElector.Controllers
             var candidatos = await _candidatosRepo.TraerCandidatos();
             return RedirectToAction("Candidatos");
         }
+
+        public async Task<IActionResult> EliminarCandidatos(int id)
+        {
+            try
+            {
+                await _candidatosRepo.EliminarCandidatos(id);
+            }
+            catch
+            {
+
+            }
+            return RedirectToAction("Candidatos");
+
+        }
     }
 }

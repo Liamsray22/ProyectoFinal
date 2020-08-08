@@ -40,5 +40,18 @@ namespace ItlaElector.Controllers
             return RedirectToAction("PuestosElectivos");
         }
 
+        public async Task<IActionResult> EliminarPuestosElectivos(int id)
+        {
+            try
+            {
+                await _puestosRepo.EliminarPuestosElectivos(id);
+            }
+            catch
+            {
+
+            }
+            return RedirectToAction("PuestosElectivos");
+
+        }
     }
 }
