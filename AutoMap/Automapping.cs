@@ -14,7 +14,13 @@ namespace AutoMap
             MapearPuestosElectivos();
             MapearCandidatos();
             MapearCiudadanos();
+            MapearElecciones();
 
+        }
+
+        private void MapearElecciones()
+        {
+            CreateMap<EleccionesViewModel, Elecciones>().ReverseMap();
         }
 
         private void MapearCiudadanos()

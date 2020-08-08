@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Repository.Repository;
 
 namespace ItlaElector.Controllers
 {
     public class EleccionesController : Controller
     {
-
-        public IActionResult Elecciones()
+        private readonly EleccionesRepo _eleccionesRepo;
+        public EleccionesController(EleccionesRepo eleccionesRepo)
         {
-            return View();
+            _eleccionesRepo = eleccionesRepo;
+
+        }
+        public async Task<IActionResult> Elecciones()
+        {
+            var elecciones = await _eleccionesRepo.TraerElecciones();
+            return View(elecciones);
         }
 
     }

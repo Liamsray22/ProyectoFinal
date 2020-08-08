@@ -66,6 +66,8 @@ namespace ItlaElector
             services.AddScoped<PartidosRepo>();
             services.AddScoped<PuestosElectivosRepo>();
             services.AddScoped<CandidatosRepo>();
+            services.AddScoped<EleccionesRepo>();
+
 
 
 
