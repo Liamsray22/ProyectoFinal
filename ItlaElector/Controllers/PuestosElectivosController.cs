@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataBase.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Repository;
 
@@ -19,6 +20,24 @@ namespace ItlaElector.Controllers
         {
             var puesto = await _puestosRepo.TraerPuestosElectivos();
             return View(puesto);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PuestosElectivos(PuestosElectivosViewModel pevm)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await _puestosRepo.CrearPuestosElectivos(pevm);
+                }
+                catch
+                {
+
+                }
+            }
+            var partido = await _puestosRepo.TraerPuestosElectivos();
+            return RedirectToAction("PuestosElectivos");
         }
 
     }

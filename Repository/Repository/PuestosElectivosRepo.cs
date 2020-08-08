@@ -49,6 +49,12 @@ namespace Repository.Repository
             return null;
         }
 
+        public async Task CrearPuestosElectivos(PuestosElectivosViewModel pevm)
+        {
+            var puesto = _mapper.Map<PuestoElectivo>(pevm);
+            await AddAsync(puesto);
+        }
+
         //public void Borrar(string path)
         //{
         //    File.SetAttributes(path, FileAttributes.Normal);

@@ -76,7 +76,7 @@ using ItlaElector;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(148, 18240, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "afb768aa12414094a12abceac6dbab0b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fff2017c75184474b427b26c68f6f4d1", async() => {
                 BeginContext(451, 334, true);
                 WriteLiteral(@"
 
@@ -91,7 +91,7 @@ using ItlaElector;
             ");
                 EndContext();
                 BeginContext(785, 227, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "27c04cc4f258440189eab36733b225d3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c183182079d4175a4665d1bbbe7b02b", async() => {
                     BeginContext(958, 50, true);
                     WriteLiteral("<i class=\"fa fa-home\" aria-hidden=\"true\"></i> Home");
                     EndContext();
@@ -150,7 +150,7 @@ using ItlaElector;
                             ");
                 EndContext();
                 BeginContext(2709, 2249, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "932523a8488f4050a0edf8d39971c227", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "897c6c9d031f423b90c313cd1a90d3dc", async() => {
                     BeginContext(2715, 2236, true);
                     WriteLiteral(@"
                                 <div class=""modal-body bg-light"">
@@ -313,7 +313,7 @@ WriteAttributeValue("", 6722, c.Cedula, 6722, 11, false);
                                                             ");
                 EndContext();
                 BeginContext(8209, 202, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "374630cbd6784850ba758104c5758e95", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59d8172ede1a4f51bb19c568b8beda8c", async() => {
                     BeginContext(8320, 87, true);
                     WriteLiteral("<i class=\"fa fa-check-circle\" style=\"color:greenyellow\" aria-hidden=\"true\"></i> Activar");
                     EndContext();
@@ -402,7 +402,7 @@ WriteAttributeValue("", 9212, c.Cedula, 9212, 11, false);
                                                             ");
                 EndContext();
                 BeginContext(10683, 203, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad8c640a6d30471797bb023e0ecc5ccf", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cc5465fe22c7465aa45baaec3ae557ba", async() => {
                     BeginContext(10800, 82, true);
                     WriteLiteral("<i class=\"fa fa-times-circle\" style=\"color:red\" aria-hidden=\"true\"></i> Desactivar");
                     EndContext();
@@ -492,7 +492,7 @@ WriteAttributeValue("", 11695, c.Cedula, 11695, 11, false);
                                                 ");
                 EndContext();
                 BeginContext(13009, 2739, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4072ec36d70d414cb2dbed1a76cf33d2", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b25735c9aa04a4c8db596ef0ed68cdd", async() => {
                     BeginContext(13061, 2680, true);
                     WriteLiteral(@"
                                                     <div class=""modal-body bg-light"">
@@ -593,7 +593,7 @@ WriteAttributeValue("", 16312, c.Cedula, 16312, 11, false);
                                                         ");
                 EndContext();
                 BeginContext(17712, 172, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "43db350a481449728c3eb3464bf07e01", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1eea1a738c414a8e818cd1decc6e068d", async() => {
                     BeginContext(17834, 46, true);
                     WriteLiteral("<i class=\"fa fa-trash\" aria-hidden=\"true\"></i>");
                     EndContext();

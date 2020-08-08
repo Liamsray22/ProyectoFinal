@@ -49,16 +49,16 @@
                                 </div>
 
                             </div>
-                            <form>
+                            <form asp-action="PuestosElectivos" asp-controller="PuestosElectivos" method="post" enctype="multipart/form-data">
                                 <div class="modal-body bg-light">
 
                                     <div class="form-group">
                                         <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
-                                        <input type="text" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Example input placeholder">
+                                        <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Escribir el Nombre del Puesto">
                                     </div>
                                     <div class="form-group">
                                         <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Descripcion</label>
-                                        <textarea  class="form-control shadow-sm p-3 bg-white rounded form-control-lg border-bottom border-dark" placeholder="Escribir descripcion del puesto electivo"></textarea>
+                                        <textarea asp-for="Descripcion"  class="form-control shadow-sm p-3 bg-white rounded form-control-lg border-bottom border-dark" placeholder="Escribir descripcion del puesto electivo"></textarea>
                                     </div>
                                     <input type="hidden" name="Estado" value="Activo" />
 
