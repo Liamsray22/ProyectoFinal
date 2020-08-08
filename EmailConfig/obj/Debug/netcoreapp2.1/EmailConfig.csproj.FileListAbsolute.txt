@@ -47,3 +47,4 @@ C:\Users\User\Desktop\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailCon
 C:\Users\User\Desktop\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.dll
 C:\Users\User\Desktop\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.pdb
+>>>>>>> 633ee37696dcfdb09e88bd5dbb27416bcedae837

@@ -52,7 +52,14 @@ namespace Repository.Repository
             var ciudadano = await _context.Ciudadanos.FirstOrDefaultAsync(x=>x.Cedula==id); ;
             if (ciudadano != null)
             {
-                ciudadano.Estado = "Inactivo";
+                if (ciudadano.Estado.Equals("Activo"))
+                {
+                    ciudadano.Estado = "Inactivo";
+                }
+                else
+                {
+                    ciudadano.Estado = "Activo";
+                }
                 await Update(ciudadano);
             }
         }

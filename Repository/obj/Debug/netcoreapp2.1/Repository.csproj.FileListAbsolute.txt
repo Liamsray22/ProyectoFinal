@@ -53,6 +53,9 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CopyComplete
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
+<<<<<<< HEAD
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.csprojAssemblyReference.cache
+=======
 C:\Users\User\Desktop\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\Repository.deps.json
 C:\Users\User\Desktop\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\Repository.runtimeconfig.json
 C:\Users\User\Desktop\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\Repository.runtimeconfig.dev.json
@@ -72,3 +75,4 @@ C:\Users\User\Desktop\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repositor
 C:\Users\User\Desktop\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.dll
 C:\Users\User\Desktop\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
 C:\Users\User\Desktop\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.genruntimeconfig.cache
+>>>>>>> 633ee37696dcfdb09e88bd5dbb27416bcedae837

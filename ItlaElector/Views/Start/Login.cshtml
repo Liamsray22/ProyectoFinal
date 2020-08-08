@@ -30,21 +30,28 @@ console.log("document is ready");
 
         <div class="card mx-auto shadow-lg p-2 rounded" id="CardLogin" style="width: 28rem;">
             <div class="card-header bg-transparent  text-center display-4 border-bottom" id="testLogin">Login</div>
-            <form asp-controller="Start" asp-action="Login" method="post">
+            <form class="needs-validation" novalidate asp-controller="Start" asp-action="Login" method="post">
 
                 <div class="card-body">
-                    <h7 class="card-title text-danger font-weight-bold">
-                        <div asp-validation-summary="All" class="text-danger"></div>
-                    </h7>
+                    <h5 class="card-title text-danger text-center font-weight-bold mb-1">
+                        @*<div asp-validation-summary="All" class="text-danger"></div>*@
+                        @ViewBag.error
+                    </h5>
                     <div class="form-group">
                         <label id="LabelLogin">
                             <i class="fa fa-user" aria-hidden="true"></i>&nbsp;  Username:
                         </label>
                         <input asp-for="Usuario" class="form-control shadow p-3 bg-white rounded" style="font-size:20px" placeholder="Ingresar usuario ">
+                        <span asp-validation-for="Usuario" class="pl-2 font-weight-bold text-danger" style="font-size:12px;"></span>
+              
+
                     </div>
                     <div class="form-group mb-4">
                         <label id="LabelLogin"><i class="fa fa-key" aria-hidden="true"></i>&nbsp;Password</label>
                         <input asp-for="Clave" type="password" class="form-control shadow p-3 bg-white rounded" style="font-size:20px" placeholder="Ingresar contraseña">
+                        <span asp-validation-for="Clave" class="pl-2 font-weight-bold text-danger" style="font-size:12px;"></span>
+
+
                     </div>
 
 
@@ -62,10 +69,6 @@ console.log("document is ready");
 
                             </div>
                         </div>
-                        @*<div class="w-50">
-                    <input type="submit" class="btn btn-outline-success btn-block shadow" style="font-size:20px;" value="Iniciar Sesión" />
-                    <input type="submit" class="btn btn-outline-success btn-block shadow" style="font-size:20px;" value="Iniciar Sesión" />
-                </div>*@
                     </div>
 
                 </div>

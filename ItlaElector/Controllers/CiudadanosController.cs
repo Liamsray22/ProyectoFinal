@@ -16,11 +16,13 @@ namespace ItlaElector.Controllers
             _ciudadanosRepo = ciudadanosRepo;
 
         }
+
         public async Task<IActionResult> Ciudadanos()
         {
             var ciudadanos =await _ciudadanosRepo.TraerCiudadanos();
             return View(ciudadanos);
         }
+
         [HttpPost]
         public async Task<IActionResult> Ciudadanos(CiudadanosViewModel cvm)
         {
@@ -56,13 +58,15 @@ namespace ItlaElector.Controllers
         public async Task<IActionResult> EditarCiudadano(CiudadanosViewModel ucvm)
         {
             var edit = await _ciudadanosRepo.EditarCiudadanos(ucvm);
+
             if (edit)
             {
                 return RedirectToAction("Ciudadanos");
 
             }
 
-            return RedirectToAction("Start", "Start");
+            return RedirectToAction("Ciudadanos");
+
 
         }
 
