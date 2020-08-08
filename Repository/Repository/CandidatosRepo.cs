@@ -43,15 +43,21 @@ namespace Repository.Repository
             return can;
         }
 
-            //public void Borrar(string path)
-            //{
-            //    File.SetAttributes(path, FileAttributes.Normal);
-            //    System.GC.Collect();
-            //    System.GC.WaitForPendingFinalizers();
-
-            //    File.Delete(path);
-            //}
-
+        public async Task CrearCandidatos(CandidatosViewModel cavm)
+        {
+            var candidato = _mapper.Map<Candidatos>(cavm);
+            await AddAsync(candidato);
 
         }
+        //public void Borrar(string path)
+        //{
+        //    File.SetAttributes(path, FileAttributes.Normal);
+        //    System.GC.Collect();
+        //    System.GC.WaitForPendingFinalizers();
+
+        //    File.Delete(path);
+        //}
+
+
+    }
     }
