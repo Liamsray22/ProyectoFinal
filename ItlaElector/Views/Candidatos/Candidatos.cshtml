@@ -278,6 +278,22 @@
 
                                                 <div class="form-group">
                                                     <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
+                                                    <div>
+                                                        <div class="d-flex justify-content-center">
+                                                            <img id="imagenPrevisualizacion" src="@photopath" asp-append-version="true"
+                                                                 class="rounded-circle " style="width: 150px;height: 150px; ">
+                                                        </div>
+                                                        <span asp-validation-for="Photo" class="text-danger text-center"></span>
+                                                        <span asp-validation-for="Photo" class="text-danger"></span>
+                                                        <div class="d-flex justify-content-center mt-2">
+                                                            <div>
+                                                                <label for="upload-photo" class="btn btn-outline-primary mr-3 rounded float-left">Añadir foto</label>
+                                                                <input type="file" name="photo" id="upload-photo" asp-for="Photo" accept="image/*" />
+                                                                <button type="button" id="delete" class="btn btn-outline-danger rounded float-left" hidden>Quitar</button>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
 
                                                 <div class="form-row">
@@ -285,14 +301,16 @@
                                                         <div class="row col-lg-4">
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
                                                         </div>
-                                                        <input asp-for="Nombre" value="@c.Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
+                                                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                                                        <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" value="@c.Nombre" />
                                                         <span class="text-danger"></span>
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <div class="row col-lg-4">
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Apellido</label>
                                                         </div>
-                                                        <input asp-for="Apellido" value="@c.Apellido" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Apellido" />
+                                                        <span asp-validation-for="Apellido" class="text-danger"></span>
+                                                        <input asp-for="Apellido" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Apellido" value="@c.Apellido"  />
                                                         <span class="text-danger"></span>
                                                     </div>
                                                 </div>
@@ -300,19 +318,19 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar partido</label>
-                                                        <select asp-for="IdPartido" class="custom-select custom-select-lg" size="3">
-                                                            <option selected>Seleccionar Partido..</option>
-                                                            <option value="1">PRM</option>
-                                                            <option value="2">PLD</option>
+                                                        <span asp-validation-for="IdPartido" class="text-danger ml-5 row"></span>
+                                                        <select asp-for="IdPartido" asp-items="@(new  SelectList(Model.ListPartido,"IdPartido","Nombre"))" class="custom-select custom-select-lg" size="3"  value="@c.IdPartido" >
+                                                            <option disabled>Seleccionar Partido..</option>
+
                                                         </select>
                                                         <span class="text-danger"></span>
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar puesto electivo</label>
-                                                        <select asp-for="IdPuestoElectivo" class="custom-select custom-select-lg" size="3">
-                                                            <option selected>Seleccionar puesto..</option>
-                                                            <option value="1">Presidente</option>
-                                                            <option value="2">Candidato</option>
+                                                        <span asp-validation-for="IdPuestoElectivo" class="text-danger ml-5 row"></span>
+                                                        <select asp-for="IdPuestoElectivo" asp-items="@(new  SelectList(Model.ListPuestoElectivo,"IdPuestoElectivo","Nombre"))" class="custom-select custom-select-lg" size="3" value="@c.IdPuestoElectivo" >
+                                                            <option disabled>Seleccionar puesto..</option>
+
                                                         </select>
                                                         <span class="text-danger"></span>
                                                     </div>
