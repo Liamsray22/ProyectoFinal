@@ -72,7 +72,7 @@ using ItlaElector;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(102, 2180, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b44c0fd4d234e6abd6d4eddfce4076d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f8cb0265a554eb8bfa476e5ab02b808", async() => {
                 BeginContext(418, 341, true);
                 WriteLiteral(@"
 
@@ -90,7 +90,7 @@ using ItlaElector;
     ");
                 EndContext();
                 BeginContext(759, 1512, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df2409ee78a0407bb6256214e8ed3260", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "325a66fe8ace4e239ed449eb8252224e", async() => {
                     BeginContext(811, 293, true);
                     WriteLiteral(@"
         <div class=""container mt-4"">
@@ -106,7 +106,7 @@ using ItlaElector;
                     WriteLiteral("\r\n                    <label for=\"CheckCard\">\r\n                        <div class=\"card bg-light stretched-link\" style=\"width: 18rem; \">\r\n                            ");
                     EndContext();
                     BeginContext(1294, 136, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "6a1467f579cf49558dcc511c8886a5b5", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "de409fd2778c4fcca22ddc25f1e96259", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
