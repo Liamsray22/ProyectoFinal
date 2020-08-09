@@ -56,6 +56,7 @@ namespace API
             services.AddScoped<PartidoApiRepos>();
             services.AddScoped<CandidatoApiRepos>();
             services.AddScoped<PuestoElectivoApiRepos>();
+            services.AddScoped<PuestoCanditadoApiRepos>();
 
         }
 

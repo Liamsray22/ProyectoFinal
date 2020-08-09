@@ -14,11 +14,10 @@ namespace DataBase.DTO
 
         [Nombre(ErrorMessage = "Este Partido ya existe!")]
         [Required(ErrorMessage = "El nombre del partido debe ser llenado")]
-        [StringLength(45)]
+        [StringLength(80)]
         public string Nombre { get; set; }
 
         [Required(ErrorMessage = "La descripción del partido debe ser llenado")]
-        [StringLength(45)]
         public string Descripcion { get; set; }
         
     }

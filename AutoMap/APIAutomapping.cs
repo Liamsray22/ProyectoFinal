@@ -14,6 +14,7 @@ namespace AutoMap
             MapearCandidatoDTO_Candidato();
             MapearCandidatoPartidoDTO_Candidato();
             MapearCrearPartidoDTO_Partido();
+            MapearPuestoElectivoDTO_PuestoElectivo();
 
         }
 
@@ -47,6 +48,10 @@ namespace AutoMap
             CreateMap<Partidos, CrearPartidoDTO>().ReverseMap();
         }
 
+        private void MapearPuestoElectivoDTO_PuestoElectivo()
+        {
+            CreateMap<PuestoElectivo, CrearPuestoElectivoDTO>().ReverseMap();
+        }
 
 
     }

@@ -27,13 +27,15 @@ namespace Repository.APIRepository
         }
 
         ///Todos los partidos
-        public async Task<List<PartidoDTO>> GetAllPartidoDTO() {
+        public async Task<List<PartidoDTO>> GetAllPartidoDTO()
+        {
             string Activo = "Activo";
 
             var GetAllPartidosActivos = await _context.Partidos.Where(x => x.Estado == Activo).ToListAsync();
             var ObjectListPartidoDTO = new List<PartidoDTO>();
 
-            if (GetAllPartidosActivos == null) {
+            if (GetAllPartidosActivos == null)
+            {
                 return null;
             }
 
@@ -57,7 +59,8 @@ namespace Repository.APIRepository
 
             var ListadoCandidatosPartido = await _candidatoApiRepos.GetPartidoCandidatosList(id);
 
-            if (ListadoCandidatosPartido == null) {
+            if (ListadoCandidatosPartido == null)
+            {
                 return null;
             }
 
@@ -65,13 +68,14 @@ namespace Repository.APIRepository
         }
 
         //Agreando Partido
-        public async Task<bool> PostNewPartido(CrearPartidoDTO newPartido) {
+        public async Task<bool> PostNewPartido(CrearPartidoDTO newPartido)
+        {
 
             try
             {
                 var Partido = _mapper.Map<Partidos>(newPartido);
                 Partido.Estado = "Activo";
-                Partido.Logo = "LogoNone";
+                Partido.Logo = "LogoNone.jpg";
                 await AddAsync(Partido);
                 return true;
             }
@@ -84,11 +88,13 @@ namespace Repository.APIRepository
 
 
         //Desactivar Partido
-        public async Task<bool> DesactivarPartido(int IdPartido) {
+        public async Task<bool> DesactivarPartido(int IdPartido)
+        {
 
             var GetPartido = await GetByIdAsync(IdPartido);
 
-            if (GetPartido == null) {
+            if (GetPartido == null)
+            {
                 return false;
             }
 
@@ -96,7 +102,7 @@ namespace Repository.APIRepository
 
             if (ok)
             {
-                GetPartido.Estado = "Inactivar";
+                GetPartido.Estado = "Inactivo";
                 await Update(GetPartido);
             }
 
@@ -125,8 +131,49 @@ namespace Repository.APIRepository
             return true;
         }
 
+        //Actualizar Partido
+        public async Task<bool> ActualizarPartido(int? IdPartido, CrearPartidoDTO PartidoUpdate)
+        {
+
+            try
+            {
+                var PartidoOriginal = await GetByIdAsync(IdPartido.Value);
+
+                if (PartidoOriginal == null)
+                {
+                    return false;
+                }
+
+                var Partido = _mapper.Map<Partidos>(PartidoUpdate);
+                PartidoOriginal.Nombre = Partido.Nombre;
+                PartidoOriginal.Descripcion = Partido.Descripcion;
+
+                await Update(PartidoOriginal);
+                return true;
+
+            }
+            catch
+            {
+                return false;
+            }
 
 
+        }
+
+        //Verificando que el partido no este Inactivo
+        public async Task<bool> PartidoInactivoVerificacion(int IdPartido)
+        {
+
+            var action = await GetByIdAsync(IdPartido);
+
+            if (action.Estado == "Inactivo")
+            {
+                return false;
+            }
+
+            return true;
+
+        }
 
     }
 

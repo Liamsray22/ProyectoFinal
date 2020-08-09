@@ -59,14 +59,28 @@ namespace API.Controllers
         {
             try
             {
-                var ListadoCandidosPartidos = await _partidoApiRepos.GetListSpecificPartido(Id.Value);
 
-                if (ListadoCandidosPartidos == null)
+                var actionar = await _partidoApiRepos.PartidoInactivoVerificacion(Id.Value);
+
+                if (actionar) {
+
+                    var ListadoCandidosPartidos = await _partidoApiRepos.GetListSpecificPartido(Id.Value);
+
+                    if (ListadoCandidosPartidos == null)
+                    {
+                        return NotFound();
+                    }
+
+                    return ListadoCandidosPartidos;
+
+                }
+                else
                 {
-                    return NotFound();
+                    ModelState.AddModelError("Error", "El partido esta Inactivo.");
+                    return BadRequest(ModelState);
                 }
 
-                return ListadoCandidosPartidos;
+              
 
             }
             catch
@@ -155,6 +169,28 @@ namespace API.Controllers
 
         }
 
+        //PUT actualizar Partido
+        [HttpPut("{id}")]
+        public async Task<ActionResult> PutPartido(int? id, CrearPartidoDTO partido)
+        {
+            if (ModelState.IsValid)
+            {
+                var respuesta = await _partidoApiRepos.ActualizarPartido(id.Value, partido);
+
+                if (respuesta)
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return StatusCode(500);
+
+                }
+
+            }
+
+            return BadRequest();
+        }
 
 
 
