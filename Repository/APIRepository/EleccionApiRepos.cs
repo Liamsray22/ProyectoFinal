@@ -27,7 +27,7 @@ namespace Repository.APIRepository
             _context = context;
             _mapper = mapper;
             _ciudadanoApiRepos = ciudadApiRepos;
-            _votacionesApiRepos = votacionesApiRepos
+            _votacionesApiRepos = votacionesApiRepos;
 
         }
 

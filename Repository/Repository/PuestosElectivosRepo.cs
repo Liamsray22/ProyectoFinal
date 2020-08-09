@@ -18,6 +18,7 @@ namespace Repository.Repository
         private readonly IMapper _mapper;
 
 
+
         public PuestosElectivosRepo(ItlaElectorDBContext context, UserManager<IdentityUser> userManager,
                             SignInManager<IdentityUser> signInManager, IMapper mapper) : base(context)
         {
@@ -39,9 +40,10 @@ namespace Repository.Repository
             par.puestos = TodosLosPartidos;
             return par;
         }
+
         public async Task<PuestosElectivosViewModel> TraerPuestosElectivosActivos()
         {
-            var puestos = await _context.PuestoElectivo.Where(Puesto => Puesto.Estado.Trim() == "Activo").ToListAsync();
+            var puestos = await _context.PuestoElectivo.Where(puesto => puesto.Estado.Trim() == "Activo").ToListAsync();
             PuestosElectivosViewModel par = new PuestosElectivosViewModel();
             List<PuestosElectivosViewModel> TodosLosPartidos = new List<PuestosElectivosViewModel>();
             foreach (var p in puestos)
@@ -52,7 +54,6 @@ namespace Repository.Repository
             par.puestos = TodosLosPartidos;
             return par;
         }
-
         public async Task<PuestosElectivosViewModel> TraerPuestosElectivosById(int id)
         {
             var PuestosElectivos = await GetByIdAsync(id);
@@ -75,10 +76,28 @@ namespace Repository.Repository
             var puesto = await GetByIdAsync(id);
             if (puesto != null)
             {
-                puesto.Estado = "Inactivo";
+                if (puesto.Estado.Equals("Activo"))
+                {
+                    puesto.Estado = "Inactivo";
+                var candidatos = await _context.Candidatos.Where(a => a.IdPuestoElectivo == puesto.IdPuestoElectivo).ToListAsync();
+                foreach (var can in candidatos)
+                {
+                    
+                    can.Estado = "Inactivo";
+                    _context.Entry(can).State = EntityState.Modified;
+                    await _context.SaveChangesAsync();
+                }
+             
+                }
+                else
+                {
+                    puesto.Estado = "Activo";
+                }
                 await Update(puesto);
             }
+
         }
+        
 
         public async Task<bool> EditarPuestosElectivos(PuestosElectivosViewModel upevm)
         {

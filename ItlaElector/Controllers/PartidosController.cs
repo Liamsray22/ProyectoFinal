@@ -5,15 +5,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Repository;
 using DataBase.ViewModels;
+using Microsoft.AspNetCore.Hosting;
 
 namespace ItlaElector.Controllers
 {
     public class PartidosController : Controller
     {
         private readonly PartidosRepo _partidosRepo;
-        public PartidosController(PartidosRepo partidosRepo)
+        private readonly IHostingEnvironment hostEnvironment;
+
+        public PartidosController(PartidosRepo partidosRepo, IHostingEnvironment hostEnvironment)
         {
             _partidosRepo = partidosRepo;
+            this.hostEnvironment = hostEnvironment;
 
         }
         public async Task<IActionResult> Partidos()
@@ -28,7 +32,7 @@ namespace ItlaElector.Controllers
             {
                 try
                 {
-                    await _partidosRepo.CrearPartido(pvm);
+                    await _partidosRepo.CrearPartido(pvm, hostEnvironment.WebRootPath);
                 }
                 catch
                 {
@@ -57,7 +61,7 @@ namespace ItlaElector.Controllers
         [HttpPost]
         public async Task<IActionResult> EditarPartido(PartidosViewModels upvm)
         {
-            var edit = await _partidosRepo.EditarPartidos(upvm);
+            var edit = await _partidosRepo.EditarPartidos(upvm, hostEnvironment.WebRootPath);
             if (edit)
             {
                 return RedirectToAction("Partidos");

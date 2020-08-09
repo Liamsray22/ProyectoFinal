@@ -151,17 +151,17 @@ namespace DataBase.Migrations
                         .HasMaxLength(15)
                         .IsUnicode(false);
 
-                    b.Property<int>("IdEleccion");
+                    b.Property<int>("IdCandidato");
 
-                    b.Property<int>("IdPartido");
+                    b.Property<int>("IdEleccion");
 
                     b.HasKey("IdVotacion");
 
                     b.HasIndex("Cedula");
 
-                    b.HasIndex("IdEleccion");
+                    b.HasIndex("IdCandidato");
 
-                    b.HasIndex("IdPartido");
+                    b.HasIndex("IdEleccion");
 
                     b.ToTable("Votacion");
                 });
@@ -347,15 +347,15 @@ namespace DataBase.Migrations
                         .HasForeignKey("Cedula")
                         .HasConstraintName("FK__Votacion__Cedula__1BFD2C07");
 
+                    b.HasOne("DataBase.Models.Candidatos", "IdCandidatoNavigation")
+                        .WithMany("Votacion")
+                        .HasForeignKey("IdCandidato")
+                        .HasConstraintName("FK_Votacion_IdCand_1EE45789");
+
                     b.HasOne("DataBase.Models.Elecciones", "IdEleccionNavigation")
                         .WithMany("Votacion")
                         .HasForeignKey("IdEleccion")
                         .HasConstraintName("FK__Votacion__IdElec__1CF15040");
-
-                    b.HasOne("DataBase.Models.Partidos", "IdPartidoNavigation")
-                        .WithMany("Votacion")
-                        .HasForeignKey("IdPartido")
-                        .HasConstraintName("FK__Votacion__IdPart__1DE57479");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataBase.Models;
@@ -76,19 +75,50 @@ namespace Repository.Repository
             var candidato = await GetByIdAsync(id);
             if (candidato != null)
             {
-                candidato.Estado = "Inactivo";
-                await Update(candidato);
-
+                if (candidato.Estado.Equals("Activo"))
+                {
+                    candidato.Estado = "Inactivo";
+               
             }
+            else
+            {
+                candidato.Estado = "Activo";
+            }
+            await Update(candidato);
+        }
         }
 
-        public async Task<bool> EditarCandidatos(CandidatosViewModel ucavm)
+
+
+        public async Task<bool> EditarCandidatos(CandidatosViewModel ucavm, string WebrootPath)
         {
             var candidato = await GetByIdAsync(ucavm.IdCandidato);
             if (candidato != null)
             {
                 _context.Entry(candidato).State = EntityState.Detached;
                 var can = _mapper.Map<Candidatos>(ucavm);
+
+                string uniqueName = null;
+                var folderPath = Path.Combine(WebrootPath, "images/Candidato");
+                uniqueName = Guid.NewGuid().ToString() + "_" + ucavm.Photo.FileName;
+                var filepath = Path.Combine(folderPath, uniqueName);
+              
+                
+                if (filepath != null)
+                {
+
+                    ucavm.Photo.CopyTo(new FileStream(filepath, mode: FileMode.Create));
+                }
+                if (candidato.FotoPerfil != null)
+                {
+                    var filepathdelete = Path.Combine(folderPath, candidato.FotoPerfil.Trim());
+
+                    if (File.Exists(filepathdelete))
+                    {
+                        File.Delete(filepathdelete);
+                    }
+                }
+                    can.FotoPerfil = uniqueName;
                 await Update(can);
                 return true;
             }

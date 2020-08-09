@@ -30,9 +30,10 @@ namespace Repository.Repository
 
             /* var user = new IdentityUser { UserName = "Liam" };
              var result = await _userManager.CreateAsync(user, "222");*/
-
             var user = new IdentityUser { UserName = "Dalvin" };
             var result = await _userManager.CreateAsync(user, "123");
+            await _userManager.AddToRoleAsync(user, "Administrador");
+
 
         }
 
@@ -49,10 +50,10 @@ namespace Repository.Repository
         }
 
 
-        public async Task<bool> LoguearCiudadano(LoginViewModel lvm)
+        public async Task<bool> LoguearCiudadano(LoginUserViewModel lvm)
         {
 
-            var result = await _signInManager.PasswordSignInAsync(lvm.Usuario, lvm.Usuario, false, true);
+            var result = await _signInManager.PasswordSignInAsync(lvm.Cedula, lvm.Cedula, false, true);
 
             if (result.Succeeded)
             {

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace Repository.Repository
             _userManager = userManager;
             _signInManager = signInManager;
             _mapper = mapper;
+
         }
 
         public async Task<PartidosViewModels> TraerPartidos()
@@ -39,9 +41,10 @@ namespace Repository.Repository
             par.partidos = TodosLosPartidos;
             return par;
         }
+
         public async Task<PartidosViewModels> TraerPartidosActivos()
         {
-            var partidos =  await _context.Partidos.Where(partido => partido.Estado.Trim() == "Activo").ToListAsync();
+            var partidos = await _context.Partidos.Where(partido => partido.Estado.Trim() == "Activo").ToListAsync(); 
             PartidosViewModels par = new PartidosViewModels();
             List<PartidosViewModels> TodosLosPartidos = new List<PartidosViewModels>();
             foreach (var p in partidos)
@@ -64,8 +67,19 @@ namespace Repository.Repository
             return null;
         }
 
-        public async Task CrearPartido(PartidosViewModels pvm) {
+        public async Task CrearPartido(PartidosViewModels pvm, string webroot) {
             var partido = _mapper.Map<Partidos>(pvm);
+            string uniqueName = null;
+            var folderPath = Path.Combine(webroot, "images/Partido");
+            uniqueName = Guid.NewGuid().ToString() + "_" + pvm.Photo.FileName;
+            var filepath = Path.Combine(folderPath, uniqueName);
+
+            if (filepath != null)
+            {
+
+                pvm.Photo.CopyTo(new FileStream(filepath, mode: FileMode.Create));
+            }
+            partido.Logo = uniqueName;
             await AddAsync(partido);
         }
 
@@ -74,18 +88,54 @@ namespace Repository.Repository
             var partido = await GetByIdAsync(id);
             if(partido != null)
             {
-                partido.Estado = "Inactivo";
+                if (partido.Estado.Equals("Activo"))
+                {
+                    partido.Estado = "Inactivo";
+                    var candidatos = await _context.Candidatos.Where(a => a.IdPartido == partido.IdPartido).ToListAsync();
+                    foreach (var can in candidatos)
+                    {
+                        can.Estado = "Inactivo";
+                        _context.Entry(can).State = EntityState.Modified;
+                        await _context.SaveChangesAsync();
+                    }
+                }
+                else
+                {
+                    partido.Estado = "Activo";
+                }
                 await Update(partido);
             }
+        
         }
 
-        public async Task<bool> EditarPartidos(PartidosViewModels upvm)
+        public async Task<bool> EditarPartidos(PartidosViewModels upvm, string WebrootPath)
         {
             var partido = await GetByIdAsync(upvm.IdPartido);
             if (partido != null)
             {
                 _context.Entry(partido).State = EntityState.Detached;
                 var par = _mapper.Map<Partidos>(upvm);
+                string uniqueName = null;
+                var folderPath = Path.Combine(WebrootPath, "images/Partido");
+                uniqueName = Guid.NewGuid().ToString() + "_" + upvm.Photo.FileName;
+                var filepath = Path.Combine(folderPath, uniqueName);
+
+
+                if (filepath != null)
+                {
+
+                    upvm.Photo.CopyTo(new FileStream(filepath, mode: FileMode.Create));
+                }
+                if (partido.Logo != null)
+                {
+                    var filepathdelete = Path.Combine(folderPath, partido.Logo.Trim());
+
+                    if (File.Exists(filepathdelete))
+                    {
+                        File.Delete(filepathdelete);
+                    }
+                }
+                par.Logo = uniqueName;
                 await Update(par);
                 return true;
             }
