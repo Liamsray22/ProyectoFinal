@@ -59,7 +59,7 @@ namespace ItlaElector.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Start(LoginViewModel loginViewModel)
+        public async Task<IActionResult> Start(LoginUserViewModel loginViewModel)
         {
             
                 var log = await _adminRepo.LoguearCiudadano(loginViewModel);
@@ -75,9 +75,10 @@ namespace ItlaElector.Controllers
         }
 
         [AcceptVerbs("GET", "POST")]
-        public async Task<IActionResult> VerifyCedula(string user)
+        public async Task<IActionResult> VerifyCedula(string Cedula)
         {
-            var verify = await _votacionRepo.Verificarsivoto(user);
+            Cedula = Cedula.Replace("-","");
+          var verify = await _votacionRepo.Verificarsivoto(Cedula);
             if (verify)
             {
                 return Json($"Usted ya participo en estas elecciones");
@@ -91,7 +92,7 @@ namespace ItlaElector.Controllers
 
 
             }
-            var verifyestadouser = await _CiudadanosRepo.USERactivo(user) ;
+            var verifyestadouser = await _CiudadanosRepo.USERactivo(Cedula) ;
             if (verifyestadouser)
             {
                 return Json($"Usted ha sido restringido ");

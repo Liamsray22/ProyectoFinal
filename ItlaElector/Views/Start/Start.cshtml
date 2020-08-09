@@ -44,7 +44,7 @@
                             <form asp-action="Start" asp-controller="Start">
                                 <div class="row form-group  mb-5">
                                     <div class="col-10 offset-1">
-                                        <span asp-validation-for="Cedula"></span>
+                                        <span asp-validation-for="Cedula" class="text-danger"></span>
                                         <input asp-for="Cedula" class="form-control form-control-lg shadow-sm p-3 rounded-pill text-center" pattern="[0-9]{3}-[0-9]{7}-[0-9]{1}" id="InputCedula" placeholder="Ingresar Cédula">
                                         <small id="emailHelp" class="form-text text-muted">El formato de la cedula debe ser: 000-0000000-0</small>
                                     </div>
@@ -78,3 +78,6 @@
 
 </body>
 
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

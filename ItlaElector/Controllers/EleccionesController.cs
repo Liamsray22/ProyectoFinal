@@ -27,14 +27,31 @@ namespace ItlaElector.Controllers
         {
             if (ModelState.IsValid)
             {
-                try
-                {
+                //try
+                //{
                     await _eleccionesRepo.CrearElecciones(evm);
-                }
-                catch
-                {
+                //}
+                //catch
+                //{
 
-                }
+                //}
+            }
+            var elecciones = await _eleccionesRepo.TraerElecciones();
+            return RedirectToAction("Elecciones");
+        }
+        [HttpPost]
+        public async Task<IActionResult> EleccionesFinalizar(EleccionesViewModel evm)
+        {
+            if (ModelState.IsValid)
+            {
+                //try
+                //{
+                await _eleccionesRepo.eleccionesactivas();
+                //}
+                //catch
+                //{
+
+                //}
             }
             var elecciones = await _eleccionesRepo.TraerElecciones();
             return RedirectToAction("Elecciones");

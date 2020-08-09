@@ -81,7 +81,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
 
 
 
-                                            <input type="hidden" name="Estado" value="En Progreso" />
+                                            <input type="hidden" name="Estado" value="Progreso" />
 
                                             <div class="form-group row mt-4">
                                                 <div class="col">
@@ -178,7 +178,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
 
 
                                                 <div class="mt-4 d-flex justify-content-center">
-                                                    <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-secondary btn-sm" style="font-size:16px; "><i class="fa fa-check-circle-o" style="color:greenyellow" aria-hidden="true"></i> Finalizar</a>
+                                                    <a asp-controller="Elecciones" asp-action="EleccionesFinalizar" asp-route-id="@e.IdEleccion" class="btn btn-outline-secondary btn-sm" style="font-size:16px; "><i class="fa fa-check-circle-o" style="color:greenyellow" aria-hidden="true"></i> Finalizar</a>
                                                 </div>
 
                                             </div>

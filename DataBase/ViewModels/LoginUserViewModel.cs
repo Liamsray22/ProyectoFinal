@@ -10,7 +10,6 @@ namespace DataBase.ViewModels
     {
         [Required(ErrorMessage ="Este Campo Usuario es requerido")]
         [Remote(action: "VerifyCedula", controller: "Start")]
-
         public string Cedula { get; set; }
  
     }
