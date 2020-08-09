@@ -59,7 +59,7 @@ namespace Repository.Repository
             
                 Votacion votacion = new Votacion();
                 votacion.Cedula = vvm.Cedula;
-                votacion.IdCandidato = vvm.IdCandidato;
+                votacion.IdCandidato = vvm.IdCandidato.Value;
                 var ele = await _context.Elecciones.FirstOrDefaultAsync(x => x.Estado == "En Proceso");
                 votacion.IdEleccion = ele.IdEleccion;
                 await AddAsync(votacion);

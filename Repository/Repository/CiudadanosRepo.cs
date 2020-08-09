@@ -15,15 +15,25 @@ namespace Repository.Repository
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IMapper _mapper;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
 
         public CiudadanosRepo(ItlaElectorDBContext context, UserManager<IdentityUser> userManager,
-                            SignInManager<IdentityUser> signInManager, IMapper mapper) : base(context)
+                            SignInManager<IdentityUser> signInManager, IMapper mapper, RoleManager<IdentityRole> roleManager) : base(context)
         {
             _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
             _mapper = mapper;
+            _roleManager = roleManager ;
+        }
+        public async Task CrearRole(string rol)
+        {
+            IdentityRole identityRole = new IdentityRole
+            {
+                Name = rol
+            };
+            await _roleManager.CreateAsync(identityRole);
         }
 
         public async Task<CiudadanosViewModel> TraerCiudadanos()

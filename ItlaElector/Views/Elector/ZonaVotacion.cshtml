@@ -22,38 +22,34 @@
         </div>
 
     </header>
-    <form asp-action="VotarPuesto" asp-controller="Elector" method="post">
-        <div class="container mt-4">
+    <form asp-action="ZonaVotacion" asp-controller="Elector" method="post">
+        <center><div style="font-size:30px;" asp-validation-summary="ModelOnly" class="text-danger"></div></center>
+    <div class="container mt-4">
 
-            <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center">
 
-                <script>
-                    //NO ME FUNCIONA
-                    //function comprobar(checkbox) {
-                    //    otro = checkbox.parentNode.querySelector("[type=checkbox]:not(#" + checkbox.id + ")");
-                    //    if (otro.checked) {
-                    //        otro.checked = false;
-                    //    }
-                    //}
-                    //tampoco funciona
-                    function checkBox(cb) {
-                        for (n = 0; n < 3; n++) {
-                            if (eval("document.form.contact[" + n + "].checked") == true) {
-                                document.form.candidato[n].checked = false;
-                                if (n == cb) {
-                                    document.form.candidatot[n].checked = true;
-                                }
+            <script>
+                
+                function checkBox(cb) {
+                    for (n = 0; n < 3; n++) {
+                        if (eval("document.form.contact[" + n + "].checked") == true) {
+                            document.form.candidato[n].checked = false;
+                            if (n == cb) {
+                                document.form.candidatot[n].checked = true;
                             }
                         }
                     }
-                </script>
+                }
+            </script>
 
 
 
 
-                @foreach(var c in Model.candidatos) {
+            @foreach (var c in Model.candidatos)
+            {
+                <input type="hidden" asp-for="IdEleccion" value="@c.IdPuestoElectivo">
                 <div class="col-sm-4 col-md-4 col-lg-3 mb-3 form-check-label">
-                    <input type="radio" id="CheckCard@(c.IdCandidato)"  asp-for="IdCandidato" onClick="javascript:checkBox(1)" value="@(c.IdCandidato)">
+                    <input type="radio" id="CheckCard@(c.IdCandidato)" asp-for="IdCandidato" onClick="javascript:checkBox(1)" value="@(c.IdCandidato)">
                     <label for="CheckCard@(c.IdCandidato)">
                         <div class="card bg-light stretched-link" style="width: 16rem; ">
                             <div class="card-header">
@@ -85,27 +81,27 @@
                         </div>
                     </label>
                 </div>
-                }
+            }
 
 
-
-
-
-            </div>
 
 
 
         </div>
 
 
-        <div class="fixed-bottom" id="votar">
 
-            <footer class="container-fluid bg-light  p-3">
-                <input class="font-weight-bolder text-white btn-block btn text-white btn-success" type="submit" value="VOTAR" style="font-family: 'Lemonada', cursive;" />
-            </footer>
+    </div>
 
-        </div>
 
-    </form>
+    <div class="fixed-bottom" id="votar">
+
+        <footer class="container-fluid bg-light  p-3">
+            <input class="font-weight-bolder text-white btn-block btn text-white btn-success" type="submit" value="VOTAR" style="font-family: 'Lemonada', cursive;" />
+        </footer>
+
+    </div>
+
+</form>
 
 </body>
