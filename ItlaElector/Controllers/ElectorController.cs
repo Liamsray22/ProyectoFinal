@@ -12,10 +12,14 @@ namespace ItlaElector.Controllers
     {
         private readonly ElectorRepo _electorRepo;
         private readonly CandidatosRepo _candidatosRepo;
-        public ElectorController(ElectorRepo electorRepo, CandidatosRepo candidatosRepo)
+        private readonly VotacionRepo _votacionRepo;
+
+        public ElectorController(ElectorRepo electorRepo, CandidatosRepo candidatosRepo,
+            VotacionRepo votacionRepo)
         {
             _electorRepo = electorRepo;
             _candidatosRepo = candidatosRepo;
+            _votacionRepo = votacionRepo;
         }
         public async Task<IActionResult> Home()
         {
@@ -24,15 +28,16 @@ namespace ItlaElector.Controllers
         }
 
         public async Task<IActionResult> ZonaVotacion(int id) {
-            var Candidatos = await _candidatosRepo.TraerCandidatosByIdPuestos(id);
+            var Votacionvm = await _votacionRepo.TraerCandidatosByIdPuestos(id);
 
-            return View(Candidatos);
+            return View(Votacionvm);
         }
 
-        public async Task<IActionResult> VotarPuesto(CandidatosViewModel vcvm)
+        public async Task<IActionResult> VotarPuesto(VotacionViewModel vvm)
         {
-            await _electorRepo.Votar(vcvm);
-            return RedirectToAction();
+            vvm.Cedula = User.Identity.Name;
+            await _votacionRepo.Votar(vvm);
+            return RedirectToAction("Home");
 
 
         }

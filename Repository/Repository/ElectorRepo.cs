@@ -35,10 +35,7 @@ namespace Repository.Repository
             return el;
         }
 
-        public async Task Votar(CandidatosViewModel vcvm)
-        {
-
-        }
+       
 
             //public void Borrar(string path)
             //{

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model DataBase.ViewModels.LoginViewModel
+@{
     ViewData["Title"] = "Elecciones";
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
 }
@@ -40,10 +41,10 @@
                         <div class="col-sm-12 text-center">
                             <div class="font-weigth-bold" id="fontingre">Ingresar Cédula</div>
 
-                            <form asp-action="Home" asp-controller="Elector">
+                            <form asp-action="Start" asp-controller="Start">
                                 <div class="row form-group  mb-5">
                                     <div class="col-10 offset-1">
-                                        <input type="text" class="form-control form-control-lg shadow-sm p-3 rounded-pill text-center" pattern="[0-9]{3}-[0-9]{7}-[0-9]{1}" id="InputCedula" placeholder="Ingresar Cédula">
+                                        <input asp-for="Usuario" class="form-control form-control-lg shadow-sm p-3 rounded-pill text-center" pattern="[0-9]{3}-[0-9]{7}-[0-9]{1}" id="InputCedula" placeholder="Ingresar Cédula">
                                         <small id="emailHelp" class="form-text text-muted">El formato de la cedula debe ser: 000-0000000-0</small>
                                     </div>
                                 </div>

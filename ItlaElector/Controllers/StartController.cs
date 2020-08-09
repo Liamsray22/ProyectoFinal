@@ -52,8 +52,7 @@ namespace ItlaElector.Controllers
         [HttpPost]
         public async Task<IActionResult> Start(LoginViewModel loginViewModel)
         {
-            if (ModelState.IsValid)
-            {
+            
                 var log = await _adminRepo.LoguearCiudadano(loginViewModel);
                 if (log)
                 {
@@ -63,7 +62,7 @@ namespace ItlaElector.Controllers
 
                 ViewBag.error = "Usuario o clave incorrectos";
                 return View(loginViewModel);
-            }
+            
             return View(loginViewModel);
         }
 

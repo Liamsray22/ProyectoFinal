@@ -68,12 +68,7 @@ namespace ItlaElector
             services.AddScoped<CandidatosRepo>();
             services.AddScoped<EleccionesRepo>();
             services.AddScoped<ElectorRepo>();
-
-
-
-
-
-
+            services.AddScoped<VotacionRepo>();
 
             //Email
             var emailConfig = Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();

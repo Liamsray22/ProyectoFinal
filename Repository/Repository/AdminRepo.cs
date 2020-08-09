@@ -52,7 +52,7 @@ namespace Repository.Repository
         public async Task<bool> LoguearCiudadano(LoginViewModel lvm)
         {
 
-            var result = await _signInManager.PasswordSignInAsync(lvm.Usuario, lvm.Clave, false, true);
+            var result = await _signInManager.PasswordSignInAsync(lvm.Usuario, lvm.Usuario, false, true);
 
             if (result.Succeeded)
             {

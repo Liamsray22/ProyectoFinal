@@ -50,25 +50,7 @@ namespace Repository.Repository
             can.candidatos = TodosLosCandidatos;
             return can;
         }
-        public async Task<CandidatosViewModel> TraerCandidatosByIdPuestos(int id)
-        {
-            var candidatos = await _context.Candidatos.Where(x=>x.IdPuestoElectivo == id).ToListAsync();
-            CandidatosViewModel can = new CandidatosViewModel();
-            List<CandidatosViewModel> TodosLosCandidatos = new List<CandidatosViewModel>();
-            foreach (var c in candidatos)
-            {
-                var candidato = _mapper.Map<CandidatosViewModel>(c);
-                var puesto = await _puestosElectivos.TraerPuestosElectivosById(candidato.IdPuestoElectivo);
-                var partido = await _partidosRepo.TraerPartidosById(candidato.IdPartido);
-                candidato.Partido = partido.Nombre;
-                candidato.PuestoElectivo = puesto.Nombre;
-                TodosLosCandidatos.Add(candidato);
-                can.PuestoElectivo = candidato.PuestoElectivo;
-
-            }
-            can.candidatos = TodosLosCandidatos;
-            return can;
-        }
+        
 
         public async Task CrearCandidatos(CandidatosViewModel cavm, string WebrootPath)
         {
