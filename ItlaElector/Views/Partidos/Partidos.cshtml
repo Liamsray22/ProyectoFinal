@@ -147,7 +147,7 @@
                         @foreach (var p in Model.partidos)
                         {
                             <tr>
-                                @{ var photopath = "~/images/Candidato/" + (!string.IsNullOrEmpty(p.Logo) ? p.Logo : "UserPuestos.jpg");}
+                                @{ var photopath = "~/images/Partido/" + (!string.IsNullOrEmpty(p.Logo) ? p.Logo : "UserPuestos.jpg");}
                                 <td><img src="@photopath" class="mr-3 mt-2 rounded-pill" width="60" height="60" asp-append-version="true" /> </td>
                                 <td>@Html.DisplayFor(ModelItem => p.Nombre)</td>
                                 <td>
@@ -246,15 +246,15 @@
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
                                                             <div>
                                                                 <div class="d-flex justify-content-center">
-                                                                    <img id="imagenPrevisualizacion2" src="@photopath" asp-append-version="true"
+                                                                    <img id="imagenPrevisualizacion_@p.IdPartido" src="@photopath" asp-append-version="true"
                                                                          class="rounded-circle " style="width: 150px;height: 150px; ">
                                                                 </div>
                                                                 <span asp-validation-for="Photo" class="text-danger text-center"></span>
                                                                 <div class="d-flex justify-content-center mt-2">
                                                                     <div>
-                                                                        <label for="upload-photo2" class="btn btn-outline-primary mr-3 rounded float-left">Añadir foto</label>
-                                                                        <input type="file" id="upload-photo2" asp-for="Photo" accept="image/*" />
-                                                                        <button type="button" id="delete2" class="btn btn-outline-danger rounded float-left">Quitar</button>
+                                                                        <label for="upload-photo2" class="btn btn-outline-primary mr-3 rounded float-left" onClick="upload(@p.IdPartido)">Añadir foto</label>
+                                                                        <input type="file" id="upload-photo2" name="upload-photo_@p.IdPartido" asp-for="Photo" accept="image/*" />
+                                                                        <button type="button" id="delete_@p.IdPartido" onClick="Deletephoto(@p.IdPartido)" class="btn btn-outline-danger rounded float-left">Quitar</button>
 
                                                                     </div>
                                                                 </div>
@@ -339,53 +339,75 @@
 
     </div>
 
+    <script src='~/js/site.js'></script>
+    <script>
+        const $seleccionArchivos = document.querySelector("#upload-photo"),
+            $imagenPrevisualizacion = document.querySelector("#imagenPrevisualizacion");
+        $delete = document.querySelector("#delete");
+        $seleccionArchivos.addEventListener("change", () => {
+            const archivos = $seleccionArchivos.files;
+            if (!archivos || !archivos.length) {
+                $imagenPrevisualizacion.src = "";
+                return;
+            }
+            const primerArchivo = archivos[0];
+            const objectURL = URL.createObjectURL(primerArchivo);
+            $imagenPrevisualizacion.src = objectURL;
+            $('#delete').removeAttr('hidden')
+        });
+        $delete.addEventListener("click", () => {
+            $seleccionArchivos.src = "";
+            $imagenPrevisualizacion.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
+            $('#delete').attr("hidden", true)
+        });
+        $seleccionArchivos2 = "",
+            $imagenPrevisualizacion2 = "";
+        $delete2 = "";
+        function upload(id) {
+            alert(id);
+            const $seleccionArchivos2 = document.querySelector('input[name="upload-photo_' + id + '"]'),
+                $imagenPrevisualizacion2 = document.querySelector("#imagenPrevisualizacion_" + id);
+            alert($imagenPrevisualizacion2.src)
+            $delete2 = document.querySelector("#delete_" + id);
+           
 
+        }
+        $seleccionArchivos2.addEventListener("change", () => {
+            const archivos2 = $seleccionArchivos2.files;
+            if (!archivos2 || !archivos2.length) {
+                $imagenPrevisualizacion2.src = "";
+                return;
+            }
+            const primerArchivo2 = archivos2[0];
+            const objectURL2 = URL.createObjectURL(primerArchivo2);
+            $imagenPrevisualizacion2.src = objectURL2;
+            $('#delete_' + id).removeAttr('hidden')
+        });
+        //$delete2.addEventListener("click", () => {
+        //    $seleccionArchivos2.src = "";
+        //    $imagenPrevisualizacion2.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
+        //    $('#delete2').attr("hidden", true)
+        //});
+        function Deletephoto(clicked_id) {
+            const $seleccionArchivos2 = document.querySelector("#upload-photo_" + clicked_id),
+                $imagenPrevisualizacion2 = document.querySelector("#imagenPrevisualizacion_" + clicked_id);
+            //$seleccionArchivos2.src = "";
+            $imagenPrevisualizacion2.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
+            $('#delete_' + clicked_id).attr("hidden", true)
+        }
+
+    </script>
 </body>
-<script src='~/js/site.js'></script>
-<script>
-    const $seleccionArchivos = document.querySelector("#upload-photo"),
-        $imagenPrevisualizacion = document.querySelector("#imagenPrevisualizacion");
-    $delete = document.querySelector("#delete");
-    $seleccionArchivos.addEventListener("change", () => {
-        const archivos = $seleccionArchivos.files;
-        if (!archivos || !archivos.length) {
-            $imagenPrevisualizacion.src = "";
-            return;
-        }
-        const primerArchivo = archivos[0];
-        const objectURL = URL.createObjectURL(primerArchivo);
-        $imagenPrevisualizacion.src = objectURL;
-        $('#delete').removeAttr('hidden')
-    });
-    $delete.addEventListener("click", () => {
-        $seleccionArchivos.src = "";
-        $imagenPrevisualizacion.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
-        $('#delete').attr("hidden", true)
-    });
-    const $seleccionArchivos2 = document.querySelector("#upload-photo2"),
-        $imagenPrevisualizacion2 = document.querySelector("#imagenPrevisualizacion2");
-    $delete2 = document.querySelector("#delete2");
-    $seleccionArchivos2.addEventListener("change", () => {
-        const archivos2 = $seleccionArchivos2.files;
-        if (!archivos2 || !archivos2.length) {
-            $imagenPrevisualizacion2.src = "";
-            return;
-        }
-        const primerArchivo2 = archivos2[0];
-        const objectURL2 = URL.createObjectURL(primerArchivo2);
-        $imagenPrevisualizacion2.src = objectURL2;
-        $('#delete2').removeAttr('hidden')
-    });
-    $delete2.addEventListener("click", () => {
-        $seleccionArchivos2.src = "";
-        $imagenPrevisualizacion2.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
-        $('#delete2').attr("hidden", true)
-    });
-</script>
+
+@*<script type="text/javascript">
+    function Deletephoto(clicked_id) {
+        alert(clicked_id);
+    }
+</script>*@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></script>
-
-<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
