@@ -366,7 +366,6 @@
         }
         function change(id){
 
-            $seleccionArchivos2 = document.querySelector('input[name="upload-photo_' + id + '"]'),
             console.log($imagenPrevisualizacion2);
 
             const archivos2 = $seleccionArchivos2.files;
@@ -377,7 +376,7 @@
             const primerArchivo2 = archivos2[0];
             const objectURL2 = URL.createObjectURL(primerArchivo2);
             $imagenPrevisualizacion2.src = objectURL2;
-            $('#delete_' + id).removeAttr('hidden');
+            $('#delete_' + id).removeAttr('hidden')
             console.log($seleccionArchivos2);
 
             console.log($imagenPrevisualizacion2);

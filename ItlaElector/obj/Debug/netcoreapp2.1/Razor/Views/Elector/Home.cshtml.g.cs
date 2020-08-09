@@ -72,7 +72,7 @@ using ItlaElector;
 #line default
 #line hidden
             BeginContext(143, 4579, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "070895fe17484217ba0a6db378b12435", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c64b88a348bc466aa375731c4f43919e", async() => {
                 BeginContext(459, 336, true);
                 WriteLiteral(@"
 
@@ -87,7 +87,7 @@ using ItlaElector;
             ");
                 EndContext();
                 BeginContext(795, 251, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a4a7bca9ad8415c8ad6b7959b75c416", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7a72002449e4907a792545fda6537e2", async() => {
                     BeginContext(971, 71, true);
                     WriteLiteral("<i class=\"fa fa-window-close\" aria-hidden=\"true\"></i> Cancelar Votación");
                     EndContext();
@@ -138,12 +138,12 @@ using ItlaElector;
                 WriteLiteral("                    ");
                 EndContext();
                 BeginContext(1527, 1500, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "535bfae723454149bfd7f55baca912a1", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c87f7c5c0c04989b802f9cf15c893d7", async() => {
                     BeginContext(1732, 184, true);
                     WriteLiteral("\r\n                        <div>\r\n                            <div class=\"row row-no-gutters\">\r\n                                <div class=\"col-1\">\r\n                                    ");
                     EndContext();
                     BeginContext(1916, 93, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "de0d1198e92840ae881d422f2e7b43e5", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e47f95931efb4080975c50e460131983", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -237,12 +237,12 @@ using ItlaElector;
                 WriteLiteral("                    ");
                 EndContext();
                 BeginContext(3109, 1485, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "caba0bab45d140d087bb119d85cf0cf7", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "66dded13e23646cc98437d20feba00d3", async() => {
                     BeginContext(3263, 190, true);
                     WriteLiteral("\r\n\r\n                        <div>\r\n\r\n                            <div class=\"row row-no-gutters\">\r\n\r\n                                <div class=\"col-1\">\r\n                                    ");
                     EndContext();
                     BeginContext(3453, 93, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a9a0b2e8dfe44426aeb8744d0552ead5", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "15052a84ca6547d09fa956abfe87ab2a", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
