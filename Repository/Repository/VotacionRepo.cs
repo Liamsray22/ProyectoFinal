@@ -56,14 +56,14 @@ namespace Repository.Repository
 
         public async Task Votar(VotacionViewModel vvm)
         {
-            if (vvm.IdCandidato != 0 || vvm.IdCandidato != null) {
+            
                 Votacion votacion = new Votacion();
                 votacion.Cedula = vvm.Cedula;
                 votacion.IdCandidato = vvm.IdCandidato;
                 var ele = await _context.Elecciones.FirstOrDefaultAsync(x => x.Estado == "En Proceso");
                 votacion.IdEleccion = ele.IdEleccion;
                 await AddAsync(votacion);
-            }
+            
         }
         //public void Borrar(string path)
         //{

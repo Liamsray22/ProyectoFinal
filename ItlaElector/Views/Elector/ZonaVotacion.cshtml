@@ -53,7 +53,7 @@
 
                 @foreach(var c in Model.candidatos) {
                 <div class="col-sm-4 col-md-4 col-lg-3 mb-3 form-check-label">
-                    <input type="radio" id="CheckCard@(c.IdCandidato)" name="candidato" asp-for="IdCandidato" onClick="javascript:checkBox(1)" value="@c.IdCandidato"> @*style="display:none"*@   @*onchange="comprobar(this)"*@
+                    <input type="radio" id="CheckCard@(c.IdCandidato)"  asp-for="IdCandidato" onClick="javascript:checkBox(1)" value="@(c.IdCandidato)">
                     <label for="CheckCard@(c.IdCandidato)">
                         <div class="card bg-light stretched-link" style="width: 16rem; ">
                             <div class="card-header">

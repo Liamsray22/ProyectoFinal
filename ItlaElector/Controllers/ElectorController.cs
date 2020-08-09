@@ -33,6 +33,7 @@ namespace ItlaElector.Controllers
             return View(Votacionvm);
         }
 
+        [HttpPost]
         public async Task<IActionResult> VotarPuesto(VotacionViewModel vvm)
         {
             vvm.Cedula = User.Identity.Name;
