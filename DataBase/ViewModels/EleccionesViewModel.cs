@@ -10,6 +10,7 @@ namespace DataBase.ViewModels
     {
         public int IdEleccion { get; set; }
         [Required(ErrorMessage = "El nombre de la eleccion es requerido")]
+        [Remote(action: "Verifycandidatos", controller: "Elecciones")]
 
         public string Nombre { get; set; }
 

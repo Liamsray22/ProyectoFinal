@@ -67,5 +67,17 @@ namespace ItlaElector.Controllers
 
             return Json(true);
         }
+
+        [AcceptVerbs("GET", "POST")]
+        public async Task<IActionResult> Verifycandidatos(string nombre)
+        {
+
+            if (date < DateTime.Now)
+            {
+                return Json($"Debe elegir una fecha valida");
+            }
+
+            return Json(true);
+        }
     }
 }
