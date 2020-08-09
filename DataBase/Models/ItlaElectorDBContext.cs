@@ -29,7 +29,7 @@ namespace DataBase.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=LIAM-PC\\SQLEXPRESS;Database=ItlaElectorDB;Trusted_Connection=True; persist security info=True;Integrated Security =SSPI");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-DK0MCFF;Database=ItlaElectorDB;Trusted_Connection=True; persist security info=True;Integrated Security =SSPI");
             }
         }
 
