@@ -54,6 +54,7 @@ namespace Repository.Repository
         {
             var user = new IdentityUser { UserName = cvm.Cedula };
             var result = await _userManager.CreateAsync(user, cvm.Cedula);
+            await _userManager.AddToRoleAsync(user,"Ciudadano");
             if (result.Succeeded) {
                 var ciudadano = _mapper.Map<Ciudadanos>(cvm);
                 await AddAsync(ciudadano);
