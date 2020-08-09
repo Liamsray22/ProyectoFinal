@@ -21,7 +21,7 @@ namespace ItlaElector.Controllers
         public async Task<IActionResult> CrearAdmin()
         {
             await _adminRepo.CrearAdmin();
-            return RedirectToAction("Index","Start");
+            return RedirectToAction("Start","Start");
         }
 
         

@@ -35,15 +35,20 @@ namespace Repository.Repository
             return el;
         }
 
-        //public void Borrar(string path)
-        //{
-        //    File.SetAttributes(path, FileAttributes.Normal);
-        //    System.GC.Collect();
-        //    System.GC.WaitForPendingFinalizers();
+        public async Task Votar(CandidatosViewModel vcvm)
+        {
 
-        //    File.Delete(path);
-        //}
+        }
+
+            //public void Borrar(string path)
+            //{
+            //    File.SetAttributes(path, FileAttributes.Normal);
+            //    System.GC.Collect();
+            //    System.GC.WaitForPendingFinalizers();
+
+            //    File.Delete(path);
+            //}
 
 
-    }
+        }
 }

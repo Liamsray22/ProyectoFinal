@@ -12,15 +12,26 @@
             })
         })
     </script>
+    <style>
+        label {
+            cursor: pointer;
+        }
+
+        #upload-photo {
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
 </head>
 
 <body style="background: #2980b9; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #2c3e50, #2980b9); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
 
-<header class="container-fluid shadow position-relative fixed-top col-lg-pull-2 border-bottom bg-light" id="HeaderHome">
+    <header class="container-fluid shadow position-relative fixed-top col-lg-pull-2 border-bottom bg-light" id="HeaderHome">
 
-<div class="row ml-4 p-1">
+        <div class="row ml-4 p-1">
 
             <div class="font-weight-bolder pt-2" style="font-family: 'Lemonada', cursive;">
                 <h1>Candidatos</h1>
@@ -35,126 +46,146 @@
     <div class="container mt-5 d-flex justify-content-center table-responsive-lg table-responsive-sm">
 
 
-            <table class="table table-hover shadow rounded table-borderless">
+        <table class="table table-hover shadow rounded table-borderless">
 
-                <thead class="thead-dark shadow-sm">
-                    <tr class="bg-primary">
-                        <th scope="col" colspan="6">
-                            <h2 class="mr-auto text-white" style="font-family: 'Abril Fatface', cursive;"><i class="fa fa-address-book" aria-hidden="true"></i>  Agregar Candidatos</h2>
-                        </th>
-                        <th scope="col" class="text-center">
-                            <a data-toggle="modal" data-target="#agregarNewPuesto" class="shadow-sm btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Nuevo Candidatos</a>
-                        
-                            <div class="modal fade" id="agregarNewPuesto" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content bg-success">
+            <thead class="thead-dark shadow-sm">
+                <tr class="bg-primary">
+                    <th scope="col" colspan="6">
+                        <h2 class="mr-auto text-white" style="font-family: 'Abril Fatface', cursive;"><i class="fa fa-address-book" aria-hidden="true"></i>  Agregar Candidatos</h2>
+                    </th>
+                    <th scope="col" class="text-center">
+                        <a data-toggle="modal" data-target="#agregarNewPuesto" class="shadow-sm btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Nuevo Candidatos</a>
 
-                                        <div class="modal-header bg-success text-white rounded-bottom shadow">
+                        <div class="modal fade" id="agregarNewPuesto" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content bg-success">
+
+                                    <div class="modal-header bg-success text-white rounded-bottom shadow">
 
 
-                                            <div class=" mr-auto">
-                                                <h2 class="modal-title"><i class="fa fa-user-plus" aria-hidden="true"></i> Agregar Candidatos</h2>
+                                        <div class=" mr-auto">
+                                            <h2 class="modal-title"><i class="fa fa-user-plus" aria-hidden="true"></i> Agregar Candidatos</h2>
+                                        </div>
+                                        <div class="">
+                                            <button type="button" class="btn btn-danger btn-sm text-white p-2 rounded-pill" style="font-size:14px;" data-dismiss="modal" aria-label="Close">
+                                                Cancelar
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    <form asp-action="Candidatos" asp-controller="Candidatos" method="post" enctype="multipart/form-data">
+                                        <div class="modal-body bg-light text-dark">
+
+                                            <div class="form-group">
+                                                <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
+                                                <div>
+                                                    <div class="d-flex justify-content-center">
+                                                        <img id="imagenPrevisualizacion" src="~/images/Candidato/profile-logo.png" asp-append-version="true"
+                                                             class="rounded-circle " style="width: 150px;height: 150px; ">
+                                                    </div>
+                                                    <span asp-validation-for="Photo" class="text-danger text-center"></span>
+                                                    <span asp-validation-for="Photo" class="text-danger"></span>
+                                                    <div class="d-flex justify-content-center mt-2">
+                                                        <div>
+                                                            <label for="upload-photo" class="btn btn-outline-primary mr-3 rounded float-left">Añadir foto</label>
+                                                            <input type="file" name="photo" id="upload-photo" asp-for="Photo" accept="image/*" />
+                                                            <button type="button" id="delete" class="btn btn-outline-danger rounded float-left" hidden>Quitar</button>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="">
-                                                <button type="button" class="btn btn-danger btn-sm text-white p-2 rounded-pill" style="font-size:14px;" data-dismiss="modal" aria-label="Close">
-                                                    Cancelar
-                                                </button>
+
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <div class="row col-lg-4">
+                                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
+                                                    </div>
+                                                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                                                    <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
+                                                    <span class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <div class="row col-lg-4">
+                                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Apellido</label>
+                                                    </div>
+                                                    <span asp-validation-for="Apellido" class="text-danger"></span>
+                                                    <input asp-for="Apellido" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Apellido" />
+                                                    <span class="text-danger"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar partido</label>
+                                                    <span asp-validation-for="IdPartido" class="text-danger ml-5 row"></span>
+                                                    <select asp-for="IdPartido" asp-items="@(new  SelectList(Model.ListPartido,"IdPartido","Nombre"))" class="custom-select custom-select-lg" size="3">
+                                                        <option disabled>Seleccionar Partido..</option>
+
+                                                    </select>
+                                                    <span class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar puesto electivo</label>
+                                                    <span asp-validation-for="IdPuestoElectivo" class="text-danger ml-5 row"></span>
+                                                    <select asp-for="IdPuestoElectivo" asp-items="@(new  SelectList(Model.ListPuestoElectivo,"IdPuestoElectivo","Nombre"))" class="custom-select custom-select-lg" size="3">
+                                                        <option disabled>Seleccionar puesto..</option>
+
+                                                    </select>
+                                                    <span class="text-danger"></span>
+                                                </div>
+                                            </div>
+
+
+
+                                            <input type="hidden" asp-for="Estado" value="Activo" />
+
+                                            <div class="form-group row mt-4">
+                                                <div class="col">
+                                                    <input type="submit" value="Agregar" class="btn btn-outline-success btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
+                                                </div>
+                                                <div class="col">
+                                                    <input type="reset" value="Limpiar" class="btn btn-outline-warning btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
+                                                </div>
                                             </div>
 
                                         </div>
-                                        <form asp-action="Candidatos" asp-controller="Candidatos" method="post" enctype="multipart/form-data">
-                                            <div class="modal-body bg-light text-dark">
 
-                                                <div class="form-group">
-                                                    <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
-                                                </div>
-
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <div class="row col-lg-4">
-                                                            <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
-                                                        </div>
-                                                        <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
-                                                        <span class="text-danger"></span>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <div class="row col-lg-4">
-                                                            <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Apellido</label>
-                                                        </div>
-                                                        <input asp-for="Apellido"  class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Apellido" />
-                                                        <span class="text-danger"></span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar partido</label>
-                                                        <select asp-for="IdPartido" class="custom-select custom-select-lg" size="3">
-                                                            <option selected>Seleccionar Partido..</option>
-                                                            <option value="1">PRM</option>
-                                                            <option value="2">PLD</option>
-                                                        </select>
-                                                        <span class="text-danger"></span>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar puesto electivo</label>
-                                                        <select asp-for="IdPuestoElectivo" class="custom-select custom-select-lg" size="3">
-                                                            <option selected>Seleccionar puesto..</option>
-                                                            <option value="1">Presidente</option>
-                                                            <option value="2">Candidato</option>                                                            
-                                                        </select>
-                                                        <span class="text-danger"></span>
-                                                    </div>
-                                                </div>
-
-
-
-                                                <input type="hidden" name="Estado" value="Activo" />
-
-                                                <div class="form-group row mt-4">
-                                                    <div class="col">
-                                                        <input type="submit" value="Agregar" class="btn btn-outline-success btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
-                                                    </div>
-                                                    <div class="col">
-                                                        <input type="reset" value="Limpiar" class="btn btn-outline-warning btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                        </form>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
-                        
-                        
-                        </th>      
-                        
-                        @*<th>
+                        </div>
+
+
+                    </th>
+
+                    @*<th>
                               <button type="button" class="btn btn-danger text-white" data-container="body" data-toggle="popover" data-placement="top" data-content="En estos momentos no puede agregar un candidato, ya que en el sistema no hay registrado puesto electivo o un partido.">
                                  Información!
                                 </button>
                         </th>*@
 
-                    </tr>
-                </thead>
+                </tr>
+            </thead>
 
-                <thead class="table-info text-dark font-weight-light text-center" style="font-family: 'Abril Fatface', cursive; font-size:15px;">
-                    <tr>
-                        <th scope="col">Foto</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Partido</th>
-                        <th scope="col">Puesto Electivo</th>
-                        <th scope="col">Estado</th>
-                        <th scope="col">🛠</th>
-                    </tr>
-                </thead>
-                <tbody style="font-size:14px; overflow-y: scroll" class="text-center">
-                    @foreach (var c in Model.candidatos) {
+            <thead class="table-info text-dark font-weight-light text-center" style="font-family: 'Abril Fatface', cursive; font-size:15px;">
+                <tr>
+                    <th scope="col">Foto</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Partido</th>
+                    <th scope="col">Puesto Electivo</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">🛠</th>
+                </tr>
+            </thead>
+            <tbody style="font-size:14px; overflow-y: scroll" class="text-center">
+                @foreach (var c in Model.candidatos)
+                {
                     <tr class="bg-light mt-3">
                         <td>
-                            <img src="~/images/Candidato/LuisAbinader.jpg" class="rounded mx-auto d-block mr-3 mt-2" width="60" height="60">
+                            @{ var photopath = "~/images/Candidato/" + (!string.IsNullOrEmpty(c.FotoPerfil) ? c.FotoPerfil : "desconocido.jpg ");}
+                            <img src="@photopath" class="rounded mx-auto d-block mr-3 mt-2" width="60" height="60" asp-append-version="true">
                         </td>
                         <td>@Html.DisplayFor(ModelItem => c.Nombre)</td>
                         <td>@Html.DisplayFor(ModelItem => c.Apellido)</td>
@@ -219,7 +250,7 @@
                                 </div>
 
                             }
-                            </td>
+                        </td>
 
                         <td>
                             @*Editar puesto electivo*@
@@ -347,15 +378,42 @@
                         </td>
 
                     </tr>
-                    }
+                }
 
-                </tbody>
-            </table>
- 
-
+            </tbody>
+        </table>
 
 
-        </div>
+
+
+    </div>
 
 
 </body>
+<script src='~/js/site.js'></script>
+<script>
+    const $seleccionArchivos = document.querySelector("#upload-photo"),
+        $imagenPrevisualizacion = document.querySelector("#imagenPrevisualizacion");
+    $delete = document.querySelector("#delete");
+    $seleccionArchivos.addEventListener("change", () => {
+        const archivos = $seleccionArchivos.files;
+        if (!archivos || !archivos.length) {
+            $imagenPrevisualizacion.src = "";
+            return;
+        }
+        const primerArchivo = archivos[0];
+        const objectURL = URL.createObjectURL(primerArchivo);
+        $imagenPrevisualizacion.src = objectURL;
+        $('#imagenPrevisualizacion').removeAttr('hidden');
+        $('#delete').removeAttr('hidden')
+    });
+    $delete.addEventListener("click", () => {
+        $seleccionArchivos.src = "";
+        $imagenPrevisualizacion.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
+        $('#delete').attr("hidden", true)
+    });
+
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

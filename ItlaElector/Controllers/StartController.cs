@@ -31,6 +31,7 @@ namespace ItlaElector.Controllers
             //}
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel loginViewModel)
         {
@@ -60,6 +61,7 @@ namespace ItlaElector.Controllers
                 }
                 ModelState.AddModelError("", "Usuario o clave incorrectos");
 
+                ViewBag.error = "Usuario o clave incorrectos";
                 return View(loginViewModel);
             }
             return View(loginViewModel);

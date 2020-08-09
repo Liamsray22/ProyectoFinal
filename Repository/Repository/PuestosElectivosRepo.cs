@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataBase.Models;
@@ -32,6 +33,19 @@ namespace Repository.Repository
             PuestosElectivosViewModel par = new PuestosElectivosViewModel();
             List<PuestosElectivosViewModel> TodosLosPartidos = new List<PuestosElectivosViewModel>();
             foreach (var p in puestos) {
+                var puesto = _mapper.Map<PuestosElectivosViewModel>(p);
+                TodosLosPartidos.Add(puesto);
+            }
+            par.puestos = TodosLosPartidos;
+            return par;
+        }
+        public async Task<PuestosElectivosViewModel> TraerPuestosElectivosActivos()
+        {
+            var puestos = await _context.PuestoElectivo.Where(Puesto => Puesto.Estado.Trim() == "Activo").ToListAsync();
+            PuestosElectivosViewModel par = new PuestosElectivosViewModel();
+            List<PuestosElectivosViewModel> TodosLosPartidos = new List<PuestosElectivosViewModel>();
+            foreach (var p in puestos)
+            {
                 var puesto = _mapper.Map<PuestosElectivosViewModel>(p);
                 TodosLosPartidos.Add(puesto);
             }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataBase.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Repository;
 
@@ -26,6 +27,14 @@ namespace ItlaElector.Controllers
             var Candidatos = await _candidatosRepo.TraerCandidatosByIdPuestos(id);
 
             return View(Candidatos);
+        }
+
+        public async Task<IActionResult> VotarPuesto(CandidatosViewModel vcvm)
+        {
+            await _electorRepo.Votar(vcvm);
+            return RedirectToAction();
+
+
         }
 
     }
