@@ -43,12 +43,26 @@ namespace ItlaElector.Controllers
                     return RedirectToAction("Home", "Admin");
 
                 }
-
-                //ModelState.AddModelError("ser", "Usuario o clave incorrectos");
-                ViewBag.error = "Usuario o clave incorrectos";
-
+                ModelState.AddModelError("", "Usuario o clave incorrectos");
                 return View(loginViewModel);
             }
+            return View(loginViewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Start(LoginViewModel loginViewModel)
+        {
+            
+                var log = await _adminRepo.LoguearCiudadano(loginViewModel);
+                if (log)
+                {
+                    return RedirectToAction("Home", "Elector");
+                }
+                ModelState.AddModelError("", "Usuario o clave incorrectos");
+
+                ViewBag.error = "Usuario o clave incorrectos";
+                return View(loginViewModel);
+            
             return View(loginViewModel);
         }
 

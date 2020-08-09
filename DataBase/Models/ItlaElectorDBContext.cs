@@ -16,6 +16,7 @@ namespace DataBase.Models
         {
         }
 
+        
         public virtual DbSet<Candidatos> Candidatos { get; set; }
         public virtual DbSet<Ciudadanos> Ciudadanos { get; set; }
         public virtual DbSet<Elecciones> Elecciones { get; set; }
@@ -27,9 +28,8 @@ namespace DataBase.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-      //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=DESKTOP-DJ6VOP6\\SQLEXPRESS;Database=ItlaElectorDB;Trusted_Connection=True;MultipleActiveResultSets=true");
-
             }
         }
 
@@ -39,6 +39,10 @@ namespace DataBase.Models
             modelBuilder.Entity<Candidatos>(entity =>
             {
                 entity.HasKey(e => e.IdCandidato);
+
+                entity.HasIndex(e => e.IdPartido);
+
+                entity.HasIndex(e => e.IdPuestoElectivo);
 
                 entity.Property(e => e.Apellido).HasColumnType("text");
 
@@ -128,6 +132,12 @@ namespace DataBase.Models
             {
                 entity.HasKey(e => e.IdVotacion);
 
+                entity.HasIndex(e => e.Cedula);
+
+                entity.HasIndex(e => e.IdCandidato);
+
+                entity.HasIndex(e => e.IdEleccion);
+
                 entity.Property(e => e.Cedula)
                     .HasMaxLength(15)
                     .IsUnicode(false);
@@ -137,17 +147,17 @@ namespace DataBase.Models
                     .HasForeignKey(d => d.Cedula)
                     .HasConstraintName("FK__Votacion__Cedula__1BFD2C07");
 
+                entity.HasOne(d => d.IdCandidatoNavigation)
+                    .WithMany(p => p.Votacion)
+                    .HasForeignKey(d => d.IdCandidato)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Votacion_IdCand_1EE45789");
+
                 entity.HasOne(d => d.IdEleccionNavigation)
                     .WithMany(p => p.Votacion)
                     .HasForeignKey(d => d.IdEleccion)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Votacion__IdElec__1CF15040");
-
-                entity.HasOne(d => d.IdPartidoNavigation)
-                    .WithMany(p => p.Votacion)
-                    .HasForeignKey(d => d.IdPartido)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Votacion__IdPart__1DE57479");
             });
         }
     }

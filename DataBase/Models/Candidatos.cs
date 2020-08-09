@@ -5,6 +5,11 @@ namespace DataBase.Models
 {
     public partial class Candidatos
     {
+        public Candidatos()
+        {
+            Votacion = new HashSet<Votacion>();
+        }
+
         public int IdCandidato { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -15,5 +20,6 @@ namespace DataBase.Models
 
         public Partidos IdPartidoNavigation { get; set; }
         public PuestoElectivo IdPuestoElectivoNavigation { get; set; }
+        public ICollection<Votacion> Votacion { get; set; }
     }
 }
