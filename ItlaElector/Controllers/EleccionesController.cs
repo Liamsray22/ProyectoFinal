@@ -27,17 +27,46 @@ namespace ItlaElector.Controllers
         {
             if (ModelState.IsValid)
             {
-                try
-                {
+                //try
+                //{
                     await _eleccionesRepo.CrearElecciones(evm);
-                }
-                catch
-                {
-                }
+
+                //}
+                //catch
+                //{
+
+                //}
             }
             var elecciones = await _eleccionesRepo.TraerElecciones();
             return RedirectToAction("Elecciones");
         }
+        [HttpPost]
+        public async Task<IActionResult> EleccionesFinalizar()
+        {
+            if (ModelState.IsValid)
+            {
+                //try
+                //{
+                await _eleccionesRepo.FinalizarEleccion();
+                //}
+                //catch
+                //{
 
+                //}
+            }
+            var elecciones = await _eleccionesRepo.TraerElecciones();
+            return RedirectToAction("Elecciones");
+        }
+        [AcceptVerbs("GET", "POST")]
+        public async Task<IActionResult> Verifydate( DateTime date)
+        {
+
+            if (date < DateTime.Now)
+            {
+                return Json($"Debe elegir una fecha valida");
+            }
+
+            return Json(true);
+        }
     }
 }

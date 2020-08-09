@@ -14,8 +14,13 @@
         position: absolute;
         z-index: -1;
     }
-</style>
 
+    #upload-photo2 {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+</style>
 <body style="background: #2980b9; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #2c3e50, #2980b9); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
@@ -40,7 +45,7 @@
 
             <div class="card-header bg-transparent row ml-3">
 
-                <h2 class="mr-auto text-white" style="font-family: 'Abril Fatface', cursive;"><i class="fa fa-users" aria-hidden="true"></i> Lista de partidos</h2>
+                <h2 class="mr-auto text-white" style="font-family: 'Abril Fatface', cursive;"><i class="fa fa-users" aria-hidden="true"></i> Agregar Partido</h2>
                 <a data-toggle="modal" data-target="#agregarNewCiudadano" class="btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Nuevo Partido</a>
 
                 <div class="modal fade" id="agregarNewCiudadano" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -65,35 +70,38 @@
                                 <div class="modal-body bg-light">
 
 
-                                    <div class="form-group text-center">
-                                        <label style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
+
+                                    <div class="form-group">
+                                        <span asp-validation-for="Photo" class="text-danger text-center"></span>
+
+                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
                                         <div>
                                             <div class="d-flex justify-content-center">
                                                 <img id="imagenPrevisualizacion" src="~/images/Candidato/profile-logo.png" asp-append-version="true"
                                                      class="rounded-circle " style="width: 150px;height: 150px; ">
                                             </div>
-                                            <span asp-validation-for="Photo" class="text-danger text-center"></span>
-                                            <span asp-validation-for="Photo" class="text-danger"></span>
                                             <div class="d-flex justify-content-center mt-2">
                                                 <div>
                                                     <label for="upload-photo" class="btn btn-outline-primary mr-3 rounded float-left">Añadir foto</label>
-                                                    <input type="file" name="photo" id="upload-photo" asp-for="Photo" accept="image/*" />
+                                                    <input type="file" name="photo" id="upload-photo" asp-for="Photo" accept="image/*" required />
                                                     <button type="button" id="delete" class="btn btn-outline-danger rounded float-left" hidden>Quitar</button>
 
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="form-group">
-                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label> <span asp-validation-for="Nombre" class="text-danger"></span>
+                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>   <span asp-validation-for="Nombre" class="text-danger text-center"></span>
+
                                         <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Ingresar Nombre">
                                     </div>
                                     <div class="form-group">
-                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Descripcion</label> <span asp-validation-for="Descripcion" class="text-danger"></span>
+                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Descripcion</label>    <span asp-validation-for="Descripcion" class="text-danger text-center"></span>
                                         @*<textarea class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Escribrir descripcion del partido"></textarea>*@
                                         <input asp-for="Descripcion" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" id="" placeholder="Ingresar descripcion">
                                     </div>
-                                    <input type="hidden" asp-for="Estado" value="Activo" />
+                                    <input type="hidden" name="Estado" value="Activo" />
 
                                     <div class="form-group row mt-4">
                                         <div class="col">
@@ -139,77 +147,33 @@
                         @foreach (var p in Model.partidos)
                         {
                             <tr>
-
-                                <td><img src="~/images/Partido/PRM_Logo.png" class="mr-3 mt-2 rounded-pill" width="60" height="60" /> </td>
+                                @{ var photopath = "~/images/Partido/" + (!string.IsNullOrEmpty(p.Logo) ? p.Logo : "UserPuestos.jpg");}
+                                <td><img src="@photopath" class="mr-3 mt-2 rounded-pill" width="60" height="60" asp-append-version="true" /> </td>
                                 <td>@Html.DisplayFor(ModelItem => p.Nombre)</td>
-                                <td class="text-justify">
+                                <td>
                                     @Html.DisplayFor(ModelItem => p.Descripcion)
                                 </td>
                                 <td>
                                     @if (p.Estado == "Inactivo")
                                     {
+                                        @*Modelo para activar puesto*@
 
-                                        @*Modelo para activar Usuario*@
-                                        <a data-toggle="modal" data-target="#act-@(p.IdPartido)" class="btn btn-outline-info btn-sm" style="font-size:12px; "><i class="fa fa-check-circle" style="color:greenyellow" aria-hidden="true"></i> Activar</a>
-                                        <div class="modal fade " id="act-@(p.IdPartido)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog modal-sm">
-                                                <div class="modal-content bg-warning shadow-sm p-1 rounded">
-                                                    <div class="modal-header bg-warning  rounded">
-
-                                                        <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
-                                                        <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
-                                                            Cancelar
-                                                        </button>
-                                                    </div>
-
-                                                    <div class="modal-body bg-light text-center">
-                                                        <h4>¿Seguro que desea <span class="text-primary">Activar</span>  a este partido?</h4>
-
-
-                                                        <div class="mt-2 d-flex justify-content-center">
-                                                            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-info btn-sm" style="font-size:16px;"><i class="fa fa-check-circle" style="color:greenyellow" aria-hidden="true"></i> Activar</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="text-danger font-weight-bolder">
+                                            @Html.DisplayFor(ModelItem => p.Estado)
                                         </div>
+
                                     }
                                     else
                                     {
-
-                                        @*Modelo para desactivar usuario*@
-                                        <a data-toggle="modal" data-target="#des-@(p.IdPartido)" class="btn btn-outline-secondary btn-sm" style="font-size:12px; "><i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i> Desactivar</a>
-                                        <div class="modal fade " id="des-@(p.IdPartido)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                            <div class="modal-dialog  modal-sm">
-                                                <div class="modal-content bg-warning  p-1 rounded">
-
-                                                    <div class="modal-header bg-warning  rounded">
-
-                                                        <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Advertencía!</h5>
-                                                        <button type="button" class="btn btn-danger text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
-                                                            Cancelar
-                                                        </button>
-                                                    </div>
-
-                                                    <div class="modal-body bg-light text-center">
-                                                        <h4>¿Seguro que desea  <span class="text-primary">Desactivar</span> a este partido?</h4>
-
-
-                                                        <div class="mt-2 d-flex justify-content-center">
-                                                            <a asp-controller="" asp-action="" asp-route-id="" class="btn btn-outline-secondary btn-sm" style="font-size:16px; "><i class="fa fa-times-circle" style="color:red" aria-hidden="true"></i> Desactivar</a>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="text-info font-weight-bolder">
+                                            @Html.DisplayFor(ModelItem => p.Estado)
                                         </div>
-
                                     }
                                 </td>
 
                                 <td>
                                     @*Editar partido*@
-                                    <a data-toggle="modal" data-target="#EditarCiudadano@(p.IdPartido)" class="text-white btn btn-warning mb-3 btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                    <a data-toggle="modal" data-target="#EditarCiudadano@(p.IdPartido)" class="text-white btn btn-warning  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 
                                     <div class="modal fade" id="EditarCiudadano@(p.IdPartido)" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -233,14 +197,28 @@
 
 
 
+
                                                         <div class="form-group">
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
+                                                            <div>
+                                                                <div class="d-flex justify-content-center">
+                                                                    <img id="imagenPrevisualizacion_@p.IdPartido" src="@photopath" asp-append-version="true"
+                                                                         class="rounded-circle " style="width: 150px;height: 150px; ">
+                                                                </div>
+                                                                <span asp-validation-for="Photo" class="text-danger text-center"></span>
+                                                                <div class="d-flex justify-content-center mt-2">
+                                                                    <div>
+                                                                        <label for="upload-photo2" class="btn btn-outline-primary mr-3 rounded float-left" onClick="upload(@p.IdPartido)">Añadir foto</label>
+                                                                        <input type="file" id="upload-photo2" name="upload-photo_@p.IdPartido" asp-for="Photo" accept="image/*" onchange="change()" />
+                                                                        <button type="button" id="delete_@p.IdPartido" onClick="Deletephoto(@p.IdPartido)" class="btn btn-outline-danger rounded float-left">Quitar</button>
 
-
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
-                                                            <input asp-for="Nombre" value="@p.Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Ingresar Apellido">
+                                                            <input asp-for="Nombre" value="@p.Nombre" class="form-control ml-auto  btn-sm mb-2 shadow rounded bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Ingresar Apellido">
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Descripcion</label>
@@ -270,37 +248,71 @@
 
 
                                     @*ELIMINAR Partido*@
+                                    @if (p.Estado == "Inactivo")
+                                    {
+                                        <a data-toggle="modal" data-target="#EliminarCiudadano@(p.IdPartido)" class="text-white btn btn-success ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
 
+                                        <div class="modal fade " id="EliminarCiudadano@(p.IdPartido)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content bg-info shadow-sm p-1 rounded">
 
-                                    <a data-toggle="modal" data-target="#EliminarCiudadano@(p.IdPartido)" class="text-white btn btn-danger ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                                    <div class="modal-header bg-info p-1 rounded">
 
-                                    <div class="modal fade " id="EliminarCiudadano@(p.IdPartido)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-sm">
-                                            <div class="modal-content bg-danger shadow-sm p-1 rounded">
+                                                        <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Reactivar</h5>
 
-                                                <div class="modal-header bg-danger p-1 rounded">
-
-                                                    <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Eliminar</h5>
-
-                                                    <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
-                                                        Cancelar
-                                                    </button>
-
-                                                </div>
-
-                                                <div class="modal-body bg-light text-center">
-                                                    <h4>¿SEGURO QUE QUIERE ELIMINAR ESTE PARTIDO?</h4>
-
-                                                    <div class="mt-2 d-flex justify-content-center">
-                                                        <a asp-action="EliminarPartido" asp-controller="Partidos" asp-route-id="@p.IdPartido" class="text-white btn btn-danger shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                                        <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                            Cancelar
+                                                        </button>
 
                                                     </div>
 
+                                                    <div class="modal-body bg-light text-center">
+                                                        <h4>¿SEGURO QUE QUIERE REACTIVAR ESTE PARTIDO?</h4>
+
+                                                        <div class="mt-2 d-flex justify-content-center">
+                                                            <a asp-action="EliminarPartido" asp-controller="Partidos" asp-route-id="@(p.IdPartido)" class="text-white btn btn-info shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Reactivar</a>
+
+                                                        </div>
+
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
+                                    }
+                                    else
+                                    {
+                                        <a data-toggle="modal" data-target="#EliminarCiudadano@(p.IdPartido)" class="text-white btn btn-danger ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                                        <div class="modal fade " id="EliminarCiudadano@(p.IdPartido)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content bg-danger shadow-sm p-1 rounded">
+
+                                                    <div class="modal-header bg-danger p-1 rounded">
+
+                                                        <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Eliminar</h5>
+
+                                                        <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                            Cancelar
+                                                        </button>
+
+                                                    </div>
+
+                                                    <div class="modal-body bg-light text-center">
+                                                        <h4>¿SEGURO QUE QUIERE ELIMINAR ESTE PARTIDO?</h4>
+
+                                                        <div class="mt-2 d-flex justify-content-center">
+                                                            <a asp-action="EliminarPartido" asp-controller="Partidos" asp-route-id="@p.IdPartido" class="text-white btn btn-danger shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    }
 
 
                                 </td>
@@ -317,32 +329,83 @@
 
     </div>
 
+    <script src='~/js/site.js'></script>
+    <script>
+        const $seleccionArchivos = document.querySelector("#upload-photo"),
+            $imagenPrevisualizacion = document.querySelector("#imagenPrevisualizacion");
+        $delete = document.querySelector("#delete");
+        $seleccionArchivos.addEventListener("change", () => {
+            const archivos = $seleccionArchivos.files;
+            if (!archivos || !archivos.length) {
+                $imagenPrevisualizacion.src = "";
+                return;
+            }
+            const primerArchivo = archivos[0];
+            const objectURL = URL.createObjectURL(primerArchivo);
+            $imagenPrevisualizacion.src = objectURL;
+            $('#delete').removeAttr('hidden')
+        });
+        $delete.addEventListener("click", () => {
+            $seleccionArchivos.src = "";
+            $imagenPrevisualizacion.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
+            $('#delete').attr("hidden", true)
+        });
+        $seleccionArchivos2 = "",
+            $imagenPrevisualizacion2 = "";
+        $delete2 = "";
 
-</body>
-<script src='~/js/site.js'></script>
-<script>
-    const $seleccionArchivos = document.querySelector("#upload-photo"),
-        $imagenPrevisualizacion = document.querySelector("#imagenPrevisualizacion");
-    $delete = document.querySelector("#delete");
-    $seleccionArchivos.addEventListener("change", () => {
-        const archivos = $seleccionArchivos.files;
-        if (!archivos || !archivos.length) {
-            $imagenPrevisualizacion.src = "";
-            return;
+
+        function upload(id) {
+            alert(id);
+            $seleccionArchivos2 = document.querySelector('input[name="upload-photo_' + id + '"]'),
+                $imagenPrevisualizacion2 = document.querySelector("#imagenPrevisualizacion_" + id);
+            alert($imagenPrevisualizacion2.src)
+            $delete2 = document.querySelector("#delete_" + id);
+           
+
         }
-        const primerArchivo = archivos[0];
-        const objectURL = URL.createObjectURL(primerArchivo);
-        $imagenPrevisualizacion.src = objectURL;
-        $('#imagenPrevisualizacion').removeAttr('hidden');
-        $('#delete').removeAttr('hidden')
-    });
-    $delete.addEventListener("click", () => {
-        $seleccionArchivos.src = "";
-        $imagenPrevisualizacion.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
-        $('#delete').attr("hidden", true)
-    });
+        function change(){
 
-</script>
+            console.log($seleccionArchivos2.files);
+            const archivos2 = $seleccionArchivos2.files;
+
+            //if (!archivos2 || !archivos2.length) {
+            //    $imagenPrevisualizacion2.src = "";
+            //    return;
+            //}
+            console.log(archivos2[0]);
+
+            const primerArchivo2 = archivos2[0];
+            const objectURL2 = URL.createObjectURL(primerArchivo2);
+            $imagenPrevisualizacion2.src = objectURL2;
+            console.log($imagenPrevisualizacion2.src);
+
+        };
+        //$delete2.addEventListener("click", () => {
+        //    $seleccionArchivos2.src = "";
+        //    $imagenPrevisualizacion2.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
+        //    $('#delete2').attr("hidden", true)
+        //});
+        function Deletephoto(clicked_id) {
+            const $seleccionArchivos2 = document.querySelector("#upload-photo_" + clicked_id),
+                $imagenPrevisualizacion2 = document.querySelector("#imagenPrevisualizacion_" + clicked_id);
+            //$seleccionArchivos2.src = "";
+            $imagenPrevisualizacion2.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
+            $('#delete_' + clicked_id).attr("hidden", true)
+        }
+
+    </script>
+</body>
+
+@*<script type="text/javascript">
+    function Deletephoto(clicked_id) {
+        alert(clicked_id);
+    }
+</script>*@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

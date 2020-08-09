@@ -8,6 +8,7 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfo.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.pdb
+<<<<<<< HEAD
 C:\Users\Liam\source\repos\ItlaElector\DataBase\bin\Debug\netcoreapp2.1\DataBase.deps.json
 C:\Users\Liam\source\repos\ItlaElector\DataBase\bin\Debug\netcoreapp2.1\DataBase.runtimeconfig.json
 C:\Users\Liam\source\repos\ItlaElector\DataBase\bin\Debug\netcoreapp2.1\DataBase.runtimeconfig.dev.json
@@ -19,3 +20,17 @@ C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase
 C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfo.cs
 C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase.dll
 C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase.pdb
+=======
+C:\Users\User\Desktop\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.deps.json
+C:\Users\User\Desktop\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.runtimeconfig.json
+C:\Users\User\Desktop\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.runtimeconfig.dev.json
+C:\Users\User\Desktop\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.dll
+C:\Users\User\Desktop\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.pdb
+C:\Users\User\Desktop\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.csprojAssemblyReference.cache
+C:\Users\User\Desktop\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfo.cs
+C:\Users\User\Desktop\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.dll
+C:\Users\User\Desktop\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.pdb
+C:\Users\User\Desktop\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.genruntimeconfig.cache
+>>>>>>> addae7a95309de37e3ca631b2a886c843d7b845b

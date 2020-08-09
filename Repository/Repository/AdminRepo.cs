@@ -50,10 +50,10 @@ namespace Repository.Repository
         }
 
 
-        public async Task<bool> LoguearCiudadano(LoginViewModel lvm)
+        public async Task<bool> LoguearCiudadano(LoginUserViewModel lvm)
         {
 
-            var result = await _signInManager.PasswordSignInAsync(lvm.Usuario, lvm.Usuario, false, true);
+            var result = await _signInManager.PasswordSignInAsync(lvm.Cedula, lvm.Cedula, false, true);
 
             if (result.Succeeded)
             {

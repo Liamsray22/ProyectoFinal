@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
+
 namespace DataBase.ViewModels
 {
     public class CandidatosViewModel
@@ -25,8 +27,8 @@ namespace DataBase.ViewModels
 
         public string PuestoElectivo { get; set; }
         public string FotoPerfil { get; set; }
-
-        [Required(ErrorMessage = "El candidato debe identificarse con una foto")]
+        [Required(ErrorMessage = "Debe seleccionar una foto")]
+        //[Remote(action: "Verifyphoto", controller: "Candidatos")]
         public IFormFile Photo { get; set; }
         public string Estado { get; set; }
         public IEnumerable<CandidatosViewModel> candidatos { get; set; }

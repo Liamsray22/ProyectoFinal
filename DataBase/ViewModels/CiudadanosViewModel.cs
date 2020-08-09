@@ -11,13 +11,14 @@ namespace DataBase.ViewModels
         [Required(ErrorMessage = "La Cedula es requerida")]
 
         public string Cedula { get; set; }
-        [Required(ErrorMessage = "El nombre es requeridao")]
+        [Required(ErrorMessage = "El nombre es requerido")]
 
         public string Nombre { get; set; }
         [Required(ErrorMessage = "El Apellido es requerido")]
 
         public string Apellido { get; set; }
         [Required(ErrorMessage = "El Email es requerido")]
+        [EmailAddress(ErrorMessage = "Email invalido")]
 
         public string Email { get; set; }
         public string Estado { get; set; }
