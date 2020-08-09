@@ -11,9 +11,12 @@ namespace ItlaElector.Controllers
     public class EleccionesController : Controller
     {
         private readonly EleccionesRepo _eleccionesRepo;
-        public EleccionesController(EleccionesRepo eleccionesRepo)
+        private readonly CandidatosRepo _candidatosRepo;
+        public EleccionesController(EleccionesRepo eleccionesRepo, CandidatosRepo candidatosRepo)
         {
             _eleccionesRepo = eleccionesRepo;
+            _candidatosRepo = candidatosRepo;
+
 
         }
         public async Task<IActionResult> Elecciones()
@@ -69,12 +72,12 @@ namespace ItlaElector.Controllers
         }
 
         [AcceptVerbs("GET", "POST")]
-        public async Task<IActionResult> Verifycandidatos(string nombre)
+        public async Task<IActionResult> Verifycandidatos(string Nombre)
         {
 
-            if (date < DateTime.Now)
+            if (await _candidatosRepo.TraerCandidatosActivos())
             {
-                return Json($"Debe elegir una fecha valida");
+                return Json($"Debe haber al menos dos candidatos activos para proceder en las elecciones");
             }
 
             return Json(true);
