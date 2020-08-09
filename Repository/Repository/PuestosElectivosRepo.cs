@@ -76,8 +76,9 @@ namespace Repository.Repository
             var puesto = await GetByIdAsync(id);
             if (puesto != null)
             {
-                puesto.Estado = "Inactivo";
-                await Update(puesto);
+                if (puesto.Estado.Equals("Activo"))
+                {
+                    puesto.Estado = "Inactivo";
                 var candidatos = await _context.Candidatos.Where(a => a.IdPuestoElectivo == puesto.IdPuestoElectivo).ToListAsync();
                 foreach (var can in candidatos)
                 {
@@ -86,9 +87,17 @@ namespace Repository.Repository
                     _context.Entry(can).State = EntityState.Modified;
                     await _context.SaveChangesAsync();
                 }
-
+             
+                }
+                else
+                {
+                    puesto.Estado = "Activo";
+                }
+                await Update(puesto);
             }
+
         }
+        
 
         public async Task<bool> EditarPuestosElectivos(PuestosElectivosViewModel upevm)
         {

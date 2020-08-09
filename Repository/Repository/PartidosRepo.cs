@@ -88,16 +88,24 @@ namespace Repository.Repository
             var partido = await GetByIdAsync(id);
             if(partido != null)
             {
-                partido.Estado = "Inactivo";
-                await Update(partido);
-                var candidatos = await _context.Candidatos.Where(a => a.IdPartido == partido.IdPartido).ToListAsync();
-                foreach (var can in candidatos)
+                if (partido.Estado.Equals("Activo"))
                 {
-                    can.Estado = "Inactivo";
-                    _context.Entry(can).State = EntityState.Modified;
-                    await _context.SaveChangesAsync();
+                    partido.Estado = "Inactivo";
+                    var candidatos = await _context.Candidatos.Where(a => a.IdPartido == partido.IdPartido).ToListAsync();
+                    foreach (var can in candidatos)
+                    {
+                        can.Estado = "Inactivo";
+                        _context.Entry(can).State = EntityState.Modified;
+                        await _context.SaveChangesAsync();
+                    }
                 }
+                else
+                {
+                    partido.Estado = "Activo";
+                }
+                await Update(partido);
             }
+        
         }
 
         public async Task<bool> EditarPartidos(PartidosViewModels upvm, string WebrootPath)

@@ -75,11 +75,20 @@ namespace Repository.Repository
             var candidato = await GetByIdAsync(id);
             if (candidato != null)
             {
-                candidato.Estado = "Inactivo";
-                await Update(candidato);
-
+                if (candidato.Estado.Equals("Activo"))
+                {
+                    candidato.Estado = "Inactivo";
+               
             }
+            else
+            {
+                candidato.Estado = "Activo";
+            }
+            await Update(candidato);
         }
+        }
+
+
 
         public async Task<bool> EditarCandidatos(CandidatosViewModel ucavm, string WebrootPath)
         {
