@@ -17,15 +17,18 @@ namespace Repository.Repository
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IMapper _mapper;
+        private readonly CandidatosRepo _candidatorepo;
 
 
         public PartidosRepo(ItlaElectorDBContext context, UserManager<IdentityUser> userManager,
-                            SignInManager<IdentityUser> signInManager, IMapper mapper) : base(context)
+                            SignInManager<IdentityUser> signInManager, IMapper mapper, CandidatosRepo candidatorepo) : base(context)
         {
             _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
             _mapper = mapper;
+            _candidatorepo = candidatorepo;
+
         }
 
         public async Task<PartidosViewModels> TraerPartidos()
@@ -89,6 +92,12 @@ namespace Repository.Repository
             {
                 partido.Estado = "Inactivo";
                 await Update(partido);
+                var candidatos = await _context.Candidatos.Where(a => a.IdPartido == partido.IdPartido).ToListAsync();
+                foreach (var can in candidatos)
+                {
+                    can.Estado = "Inactivo";
+                    await _candidatorepo.Update(can);
+                }
             }
         }
 

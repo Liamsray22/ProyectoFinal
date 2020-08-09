@@ -50,3 +50,4 @@ C:\Users\User\Desktop\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElec
 C:\Users\User\Desktop\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.dll
 C:\Users\User\Desktop\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.pdb
 C:\Users\User\Desktop\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.genruntimeconfig.cache
+C:\Users\User\Desktop\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.csprojAssemblyReference.cache
