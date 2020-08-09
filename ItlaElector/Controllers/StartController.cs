@@ -63,7 +63,6 @@ namespace ItlaElector.Controllers
                 ViewBag.error = "Usuario o clave incorrectos";
                 return View(loginViewModel);
             
-            return View(loginViewModel);
         }
 
 

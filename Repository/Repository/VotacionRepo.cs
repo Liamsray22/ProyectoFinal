@@ -29,10 +29,7 @@ namespace Repository.Repository
             _puestosElectivos = puestosElectivos;
         }
 
-        public async Task Votar(CandidatosViewModel vcvm)
-        {
-
-        }
+        
 
         public async Task<VotacionViewModel> TraerCandidatosByIdPuestos(int id)
         {
@@ -55,8 +52,7 @@ namespace Repository.Repository
         }
 
         public async Task Votar(VotacionViewModel vvm)
-        {
-            
+        {            
                 Votacion votacion = new Votacion();
                 votacion.Cedula = vvm.Cedula;
                 votacion.IdCandidato = vvm.IdCandidato.Value;
@@ -64,6 +60,22 @@ namespace Repository.Repository
                 votacion.IdEleccion = ele.IdEleccion;
                 await AddAsync(votacion);
             
+        }
+
+        public async Task<bool> Finalizar(string cedula)
+        {
+            var puestos = await _context.PuestoElectivo.Where(w=>w.Estado == "Activo").ToListAsync();
+            var ele = await _context.Elecciones.FirstOrDefaultAsync(x => x.Estado == "En Proceso");
+
+            var votacion = await _context.Votacion.Where(v => v.Cedula.Contains(cedula) && v.IdEleccion == ele.IdEleccion)
+                .ToListAsync();
+
+            if (puestos.Count() == votacion.Count())
+            {
+                return true;
+            }
+
+            return false;
         }
         //public void Borrar(string path)
         //{

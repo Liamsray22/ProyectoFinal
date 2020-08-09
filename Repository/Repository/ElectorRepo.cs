@@ -58,7 +58,6 @@ namespace Repository.Repository
                 }
                 el.votados = listid;
 
-
             }
             return el;
         }

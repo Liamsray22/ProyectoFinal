@@ -33,7 +33,6 @@ namespace ItlaElector.Controllers
                 }
                 catch
                 {
-
                 }
             }
             var elecciones = await _eleccionesRepo.TraerElecciones();
