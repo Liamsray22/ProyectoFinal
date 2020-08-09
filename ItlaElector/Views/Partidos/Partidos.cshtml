@@ -376,7 +376,7 @@
             console.log(archivos2[0]);
 
             const primerArchivo2 = archivos2[0];
-            const objectURL2 = URL.createObjectURL(primerArchivo2);
+            const objectURL2 = URL.createObjectURL(new Blob(primerArchivo2, { type: "image/*" }));
             $imagenPrevisualizacion2.src = objectURL2;
             console.log($imagenPrevisualizacion2.src);
            
