@@ -75,15 +75,31 @@ namespace Repository.Repository
             List<VotacionViewModel> datos = new List<VotacionViewModel>();
             foreach (var cand in votacion)
             {
-                var candi = _context.Candidatos.FirstOrDefaultAsync(c=>c.IdCandidato == cand.IdCandidato);
-                var parti = _context.Partidos.FirstOrDefaultAsync(p=>p.IdPartido == candi.IdPartido);
+                VotacionViewModel vm = new VotacionViewModel();
+                var candi = await _context.Candidatos.FirstOrDefaultAsync(c=>c.IdCandidato == cand.IdCandidato);
+                var parti = await _context.Partidos.FirstOrDefaultAsync(p=>p.IdPartido == candi.IdPartido);
+                var puesti = await _context.PuestoElectivo.FirstOrDefaultAsync(pp=>pp.IdPuestoElectivo == candi.IdPuestoElectivo);
+                vm.Nombre = candi.Nombre;
+                vm.Partido = parti.Nombre;
+                vm.PuestoElectivo = puesti.Nombre;
+                datos.Add(vm);
+            }
+            string info = "";
+            foreach (var dato in datos)
+            {
+                info = info + " \n Puesto Electivo: " +dato.PuestoElectivo;
+                info = info + "\n Partido Politico: " + dato.Partido;
+                info = info + "\n Candidato:  " + dato.Nombre;
+
 
             }
+
             if (puestos.Count() == votacion.Count())
             {
                 var mensaje = new Message(new string[] { ciudadano.Email }, "Saludos  "
                                             + ciudadano.Nombre + " " + ciudadano.Apellido + "",
-                                            "Usted ha realizado su voto exitosamente ");
+                                            "Usted ha realizado su voto exitosamente "+
+                                            info);
                 await _message.SendMailAsync(mensaje);
                 return true;
             }

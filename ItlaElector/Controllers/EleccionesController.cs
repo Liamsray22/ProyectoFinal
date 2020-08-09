@@ -29,7 +29,18 @@ namespace ItlaElector.Controllers
             {
                 //try
                 //{
-                    await _eleccionesRepo.CrearElecciones(evm);
+                    var crear = await _eleccionesRepo.CrearElecciones(evm);
+                if (crear)
+                {
+                    //var elecciones = await _eleccionesRepo.TraerElecciones();
+                    return RedirectToAction("Elecciones");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Tienen que haber al menos 4 puestos electivos activos para crear elecciones");
+                    return RedirectToAction("Elecciones");
+
+                }
 
                 //}
                 //catch
@@ -37,7 +48,7 @@ namespace ItlaElector.Controllers
 
                 //}
             }
-            var elecciones = await _eleccionesRepo.TraerElecciones();
+            //var elecciones2 = await _eleccionesRepo.TraerElecciones();
             return RedirectToAction("Elecciones");
         }
         [HttpPost]

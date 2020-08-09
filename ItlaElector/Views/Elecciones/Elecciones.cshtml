@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Elecciones";
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
+    int fal = 0;
 }
 
 <body style="background: #000000;  /* fallback for old browsers */
@@ -33,8 +34,17 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                         <h2 class="mr-auto text-white" style="font-family: 'Abril Fatface', cursive;"><i class="fa fa-certificate" style="color:orange" aria-hidden="true"></i> Listado de Elecciones</h2>
                     </th>
                     <th scope="col" class="text-center">
-                        <a data-toggle="modal" data-target="#agregarNewPuesto" class="shadow-sm btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Iniciar Nuevo Proceso Electivo</a>
+                        @foreach (var el in Model.elecciones)
+                        {
+                            if (el.Estado == "Progreso")
+                            {
+                                fal = 1;
+                            }
 
+                        }
+                        @if (fal == 0) {
+                        <a data-toggle="modal" data-target="#agregarNewPuesto" class="shadow-sm btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Iniciar Nuevo Proceso Electivo</a>
+                        }
                         <div class="modal fade" id="agregarNewPuesto" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content bg-success">
@@ -69,15 +79,9 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                                 <div class="row">
                                                     <div class='col-12'>
                                                         <input asp-for="Fecha" placeholder="Ingresar Fecha" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg"/>
-@*=======
-                                                        <input asp-for="Fecha" placeholder="Ingresar Fecha" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg glyphicon-calendar"  id='datetimepicker4' onchange="validate()" />
->>>>>>> addae7a95309de37e3ca631b2a886c843d7b845b*@
+
                                                     </div>
-                                                    @*<script type="text/javascript">
-                $(function () {
-                    $('#datetimepicker4').datetimepicker();
-                });
-            </script>*@
+                            
                                                 </div>
                                                 <span class="text-danger"></span>
                                             </div>

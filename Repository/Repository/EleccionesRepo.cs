@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataBase.Models;
@@ -15,15 +16,19 @@ namespace Repository.Repository
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IMapper _mapper;
+        private readonly PuestosElectivosRepo _puestosElectivos;
+
 
 
         public EleccionesRepo(ItlaElectorDBContext context, UserManager<IdentityUser> userManager,
-                            SignInManager<IdentityUser> signInManager, IMapper mapper) : base(context)
+                            SignInManager<IdentityUser> signInManager, IMapper mapper,
+                            PuestosElectivosRepo puestosElectivos) : base(context)
         {
             _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
             _mapper = mapper;
+            _puestosElectivos = puestosElectivos;
         }
 
         public async Task<EleccionesViewModel> TraerElecciones()
@@ -40,9 +45,16 @@ namespace Repository.Repository
             return ele;
         }
 
-        public async Task CrearElecciones(EleccionesViewModel evm) {
+        public async Task<bool> CrearElecciones(EleccionesViewModel evm) {
+            var pe = await _context.PuestoElectivo.Where(p=>p.Estado.Contains("Activo")).ToListAsync();
+            if (pe.Count()<4)
+            {
+                return false;
+
+            }
             var eleccion = _mapper.Map<Elecciones>(evm);
             await AddAsync(eleccion);
+            return true;
         }
 
         public async Task<bool> eleccionesactivas()
