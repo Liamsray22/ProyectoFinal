@@ -22,6 +22,12 @@
             position: absolute;
             z-index: -1;
         }
+
+        #upload-photo2 {
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        }
     </style>
 </head>
 
@@ -78,13 +84,17 @@
 
                                             <div class="form-group">
                                                 <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
+                                                <span asp-validation-for="Photo" class="text-danger text-center"></span>
+
                                                 <div>
                                                     <div class="d-flex justify-content-center">
                                                         <img id="imagenPrevisualizacion" src="~/images/Candidato/profile-logo.png" asp-append-version="true"
                                                              class="rounded-circle " style="width: 150px;height: 150px; ">
                                                     </div>
-                                                    <span asp-validation-for="Photo" class="text-danger text-center"></span>
-                                                    <span asp-validation-for="Photo" class="text-danger"></span>
+
+
+                                                    @*<p id="info" class="text-danger text-center">Esta imagen sera permanente y no podra ser modificada</p>*@
+                                                    <span asp-validation-for="Nombre" class="text-danger"></span>
                                                     <div class="d-flex justify-content-center mt-2">
                                                         <div>
                                                             <label for="upload-photo" class="btn btn-outline-primary mr-3 rounded float-left">Añadir foto</label>
@@ -138,7 +148,7 @@
 
 
 
-                                            <input type="hidden" asp-for="Estado" value="Activo" />
+                                            <input type="hidden" name="Estado" value="Activo" />
 
                                             <div class="form-group row mt-4">
                                                 <div class="col">
@@ -273,23 +283,23 @@
                                             </div>
 
                                         </div>
-                                        <form asp-action="EditarCandidatos" asp-controller="Candidatos" method="post">
+                                        <form asp-action="EditarCandidatos" asp-controller="Candidatos" method="post" enctype="multipart/form-data">
                                             <div class="modal-body bg-light text-dark">
+
 
                                                 <div class="form-group">
                                                     <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
                                                     <div>
                                                         <div class="d-flex justify-content-center">
-                                                            <img id="imagenPrevisualizacion" src="@photopath" asp-append-version="true"
+                                                            <img id="imagenPrevisualizacion2" src="@photopath" asp-append-version="true"
                                                                  class="rounded-circle " style="width: 150px;height: 150px; ">
                                                         </div>
                                                         <span asp-validation-for="Photo" class="text-danger text-center"></span>
-                                                        <span asp-validation-for="Photo" class="text-danger"></span>
                                                         <div class="d-flex justify-content-center mt-2">
                                                             <div>
-                                                                <label for="upload-photo" class="btn btn-outline-primary mr-3 rounded float-left">Añadir foto</label>
-                                                                <input type="file" name="photo" id="upload-photo" asp-for="Photo" accept="image/*" />
-                                                                <button type="button" id="delete" class="btn btn-outline-danger rounded float-left" hidden>Quitar</button>
+                                                                <label for="upload-photo2" class="btn btn-outline-primary mr-3 rounded float-left">Añadir foto</label>
+                                                                <input type="file" id="upload-photo2" asp-for="Photo" accept="image/*" />
+                                                                <button type="button" id="delete2" class="btn btn-outline-danger rounded float-left">Quitar</button>
 
                                                             </div>
                                                         </div>
@@ -310,7 +320,7 @@
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Apellido</label>
                                                         </div>
                                                         <span asp-validation-for="Apellido" class="text-danger"></span>
-                                                        <input asp-for="Apellido" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Apellido" value="@c.Apellido"  />
+                                                        <input asp-for="Apellido" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Apellido" value="@c.Apellido" />
                                                         <span class="text-danger"></span>
                                                     </div>
                                                 </div>
@@ -319,7 +329,7 @@
                                                     <div class="form-group col-md-6">
                                                         <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar partido</label>
                                                         <span asp-validation-for="IdPartido" class="text-danger ml-5 row"></span>
-                                                        <select asp-for="IdPartido" asp-items="@(new  SelectList(Model.ListPartido,"IdPartido","Nombre"))" class="custom-select custom-select-lg" size="3"  value="@c.IdPartido" >
+                                                        <select asp-for="IdPartido" asp-items="@(new  SelectList(Model.ListPartido,"IdPartido","Nombre"))" class="custom-select custom-select-lg" size="3" value="@c.IdPartido">
                                                             <option disabled>Seleccionar Partido..</option>
 
                                                         </select>
@@ -328,7 +338,7 @@
                                                     <div class="form-group col-md-6">
                                                         <label style="font-family: 'Rowdies', cursive; font-size:15px;">Seleccionar puesto electivo</label>
                                                         <span asp-validation-for="IdPuestoElectivo" class="text-danger ml-5 row"></span>
-                                                        <select asp-for="IdPuestoElectivo" asp-items="@(new  SelectList(Model.ListPuestoElectivo,"IdPuestoElectivo","Nombre"))" class="custom-select custom-select-lg" size="3" value="@c.IdPuestoElectivo" >
+                                                        <select asp-for="IdPuestoElectivo" asp-items="@(new  SelectList(Model.ListPuestoElectivo,"IdPuestoElectivo","Nombre"))" class="custom-select custom-select-lg" size="3" value="@c.IdPuestoElectivo">
                                                             <option disabled>Seleccionar puesto..</option>
 
                                                         </select>
@@ -336,9 +346,6 @@
                                                     </div>
                                                 </div>
                                                 <input type="hidden" asp-for="IdCandidato" value="@c.IdCandidato" />
-
-
-                                                @*<input type="hidden" name="Estado" value="Activo" />*@
 
                                                 <div class="form-group row mt-4">
                                                     <div class="col">
@@ -422,7 +429,6 @@
         const primerArchivo = archivos[0];
         const objectURL = URL.createObjectURL(primerArchivo);
         $imagenPrevisualizacion.src = objectURL;
-        $('#imagenPrevisualizacion').removeAttr('hidden');
         $('#delete').removeAttr('hidden')
     });
     $delete.addEventListener("click", () => {
@@ -430,8 +436,30 @@
         $imagenPrevisualizacion.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
         $('#delete').attr("hidden", true)
     });
-
+    const $seleccionArchivos2 = document.querySelector("#upload-photo2"),
+        $imagenPrevisualizacion2 = document.querySelector("#imagenPrevisualizacion2");
+    $delete2 = document.querySelector("#delete2");
+    $seleccionArchivos2.addEventListener("change", () => {
+        const archivos2 = $seleccionArchivos2.files;
+        if (!archivos2 || !archivos2.length) {
+            $imagenPrevisualizacion2.src = "";
+            return;
+        }
+        const primerArchivo2 = archivos2[0];
+        const objectURL2 = URL.createObjectURL(primerArchivo2);
+        $imagenPrevisualizacion2.src = objectURL2;
+        $('#delete2').removeAttr('hidden')
+    });
+    $delete2.addEventListener("click", () => {
+        $seleccionArchivos2.src = "";
+        $imagenPrevisualizacion2.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
+        $('#delete2').attr("hidden", true)
+    });
 </script>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

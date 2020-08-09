@@ -9,11 +9,10 @@ namespace DataBase.ViewModels
     public class PartidosViewModels
     {
         public int IdPartido { get; set; }
-        [Required(ErrorMessage = "El partido debe tener un nombre")]
+        [Required(ErrorMessage = "El candidato debe identificarse con una foto")]
 
         public string Nombre { get; set; }
-
-        [Required(ErrorMessage = "El partido debe tener una descripcion")]
+        [Required(ErrorMessage = "El candidato debe identificarse con una foto")]
 
         public string Descripcion { get; set; }
         public string Logo { get; set; }
