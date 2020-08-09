@@ -1,15 +1,14 @@
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.deps.json
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.runtimeconfig.json
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.runtimeconfig.dev.json
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.dll
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.pdb
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\DataBase.dll
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\DataBase.pdb
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csprojAssemblyReference.cache
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.AssemblyInfo.cs
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csproj.CopyComplete
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.dll
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.pdb
-C:\Users\User\Desktop\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.genruntimeconfig.cache
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.deps.json
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.runtimeconfig.json
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.runtimeconfig.dev.json
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.dll
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.pdb
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\DataBase.dll
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\DataBase.pdb
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csprojAssemblyReference.cache
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csproj.CoreCompileInputs.cache
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.AssemblyInfoInputs.cache
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.AssemblyInfo.cs
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csproj.CopyComplete
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.dll
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.pdb
