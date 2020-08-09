@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using DataBase.Models;
 using DataBase.ViewModels;
+using EmailConfig;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,18 +16,20 @@ namespace Repository.Repository
     {
         private readonly ItlaElectorDBContext _context;
         private readonly IMapper _mapper;
+        private readonly IMessage _message;
         private readonly PartidosRepo _partidosRepo;
         private readonly PuestosElectivosRepo _puestosElectivos;
 
 
 
         public VotacionRepo(ItlaElectorDBContext context, IMapper mapper, PartidosRepo partidosRepo,
-            PuestosElectivosRepo puestosElectivos) : base(context)
+            PuestosElectivosRepo puestosElectivos, IMessage message) : base(context)
         {
             _context = context;
             _mapper = mapper;
             _partidosRepo = partidosRepo;
             _puestosElectivos = puestosElectivos;
+            _message = message;
         }
 
         
@@ -66,12 +69,22 @@ namespace Repository.Repository
         {
             var puestos = await _context.PuestoElectivo.Where(w=>w.Estado == "Activo").ToListAsync();
             var ele = await _context.Elecciones.FirstOrDefaultAsync(x => x.Estado == "Progreso");
-
+            var ciudadano = await _context.Ciudadanos.FirstOrDefaultAsync(c=>c.Cedula.Contains(cedula));
             var votacion = await _context.Votacion.Where(v => v.Cedula.Contains(cedula) && v.IdEleccion == ele.IdEleccion)
                 .ToListAsync();
+            List<VotacionViewModel> datos = new List<VotacionViewModel>();
+            foreach (var cand in votacion)
+            {
+                var candi = _context.Candidatos.FirstOrDefaultAsync(c=>c.IdCandidato == cand.IdCandidato);
+                var parti = _context.Partidos.FirstOrDefaultAsync(p=>p.IdPartido == candi.IdPartido);
 
+            }
             if (puestos.Count() == votacion.Count())
             {
+                var mensaje = new Message(new string[] { ciudadano.Email }, "Saludos  "
+                                            + ciudadano.Nombre + " " + ciudadano.Apellido + "",
+                                            "Usted ha realizado su voto exitosamente ");
+                await _message.SendMailAsync(mensaje);
                 return true;
             }
 
