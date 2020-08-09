@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataBase.Models;
@@ -27,11 +28,38 @@ namespace Repository.Repository
             _puestosElectivos = puestosElectivos;
         }
 
-        public async Task<ElectorViewModel> elector()
+        public async Task<ElectorViewModel> elector(string cedula)
         {
             var puestos = await _puestosElectivos.TraerPuestosElectivos();
             ElectorViewModel el = new ElectorViewModel();
             el.puestosElectivos = puestos.puestos;
+            var idcands = await _context.Votacion.Where(x=>x.Cedula.Contains(cedula)).Select(s=>s.IdCandidato).ToListAsync();
+
+            if (idcands.Count() != 0)
+            {
+                List<Candidatos> listcandidatos = new List<Candidatos>();
+                foreach (int idcand in idcands)
+                {
+                    var cand = await _context.Candidatos.FirstOrDefaultAsync(f => f.IdCandidato == idcand);
+                    listcandidatos.Add(cand);
+                    //if (cand != null)
+                    //{
+                    //    el.votados.Add(cand.IdPuestoElectivo);
+                    //}
+
+                }
+                List<int> listid = new List<int>();
+
+                foreach (var can in listcandidatos)
+                {
+                    int id = can.IdPuestoElectivo;
+                    listid.Add(id);
+
+                }
+                el.votados = listid;
+
+
+            }
             return el;
         }
 

@@ -23,7 +23,7 @@ namespace ItlaElector.Controllers
         }
         public async Task<IActionResult> Home()
         {
-            var ele = await _electorRepo.elector();
+            var ele = await _electorRepo.elector(User.Identity.Name);
             return View(ele);
         }
 
@@ -34,11 +34,18 @@ namespace ItlaElector.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> VotarPuesto(VotacionViewModel vvm)
+        public async Task<IActionResult> ZonaVotacion(VotacionViewModel vvm)
         {
-            vvm.Cedula = User.Identity.Name;
-            await _votacionRepo.Votar(vvm);
-            return RedirectToAction("Home");
+            if (vvm.IdCandidato != null)
+            {
+                vvm.Cedula = User.Identity.Name;
+                await _votacionRepo.Votar(vvm);
+                return RedirectToAction("Home");
+            }
+            var Votacionvm = await _votacionRepo.TraerCandidatosByIdPuestos(vvm.IdEleccion);
+            ModelState.AddModelError("", "Elija un candidato");
+            return View(Votacionvm);
+
 
 
         }

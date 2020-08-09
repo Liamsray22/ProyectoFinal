@@ -9,6 +9,7 @@ namespace DataBase.ViewModels
         public int IdEleccion { get; set; }
         public string Nombre { get; set; }
         public IEnumerable<PuestosElectivosViewModel> puestosElectivos { get; set; }
+        public List<int> votados { get; set; }
 
     }
 }

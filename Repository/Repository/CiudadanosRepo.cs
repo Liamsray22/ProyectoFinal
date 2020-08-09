@@ -15,15 +15,25 @@ namespace Repository.Repository
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IMapper _mapper;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
 
         public CiudadanosRepo(ItlaElectorDBContext context, UserManager<IdentityUser> userManager,
-                            SignInManager<IdentityUser> signInManager, IMapper mapper) : base(context)
+                            SignInManager<IdentityUser> signInManager, IMapper mapper, RoleManager<IdentityRole> roleManager) : base(context)
         {
             _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
             _mapper = mapper;
+            _roleManager = roleManager ;
+        }
+        public async Task CrearRole(string rol)
+        {
+            IdentityRole identityRole = new IdentityRole
+            {
+                Name = rol
+            };
+            await _roleManager.CreateAsync(identityRole);
         }
 
         public async Task<CiudadanosViewModel> TraerCiudadanos()
@@ -44,6 +54,7 @@ namespace Repository.Repository
         {
             var user = new IdentityUser { UserName = cvm.Cedula };
             var result = await _userManager.CreateAsync(user, cvm.Cedula);
+            await _userManager.AddToRoleAsync(user,"Ciudadano");
             if (result.Succeeded) {
                 var ciudadano = _mapper.Map<Ciudadanos>(cvm);
                 await AddAsync(ciudadano);
