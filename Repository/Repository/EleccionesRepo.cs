@@ -36,6 +36,12 @@ namespace Repository.Repository
                 var eleccione = _mapper.Map<EleccionesViewModel>(e);
                 TodasLasElecciones.Add(eleccione);
             }
+            var eleccion = await _context.Elecciones.FirstOrDefaultAsync(a => a.Estado.Trim() == "Progreso");
+            if (eleccion !=null)
+            {
+
+                ele.Procesoactivos = true;
+            }
             ele.elecciones = TodasLasElecciones;
             return ele;
         }

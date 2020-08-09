@@ -56,9 +56,9 @@ namespace Repository.Repository
            if (candidatos.Count > 2)
             {
 
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
 
 

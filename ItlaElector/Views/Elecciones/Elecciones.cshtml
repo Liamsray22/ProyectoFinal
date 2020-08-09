@@ -33,8 +33,15 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                         <h2 class="mr-auto text-white" style="font-family: 'Abril Fatface', cursive;"><i class="fa fa-certificate" style="color:orange" aria-hidden="true"></i> Listado de Elecciones</h2>
                     </th>
                     <th scope="col" class="text-center">
-                        <a data-toggle="modal" data-target="#agregarNewPuesto" class="shadow-sm btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Iniciar Nuevo Proceso Electivo</a>
+                        @if (Model.Procesoactivos)
+                        {
+                            <button data-toggle="modal" disabled data-target="#agregarNewPuesto" class="shadow-sm btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Iniciar Nuevo Proceso Electivo</button>
 
+
+                        }
+                        else {
+                        <a data-toggle="modal" data-target="#agregarNewPuesto" class="shadow-sm btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Iniciar Nuevo Proceso Electivo</a>
+                        }
                         <div class="modal fade" id="agregarNewPuesto" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content bg-success">
@@ -54,10 +61,10 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                     </div>
                                     <form asp-action="Elecciones" asp-controller="Elecciones" method="post">
                                         <div class="modal-body bg-light text-dark">
+                                            <span asp-validation-for="Nombre" class="text-danger"></span>
 
                                             <div class="form-group ">
                                                 <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
-                                                <span asp-validation-for="Nombre" class="text-danger"></span>
 
                                                 <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
                                             </div>
@@ -68,13 +75,13 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
 
                                                 <div class="row">
                                                     <div class='col-12'>
-                                                        <input asp-for="Fecha" placeholder="Ingresar Fecha" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg glyphicon-calendar"  id='datetimepicker4' onchange="validate()" />
+                                                        <input asp-for="Fecha" placeholder="Ingresar Fecha" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg glyphicon-calendar" id='datetimepicker4' onchange="validate()" />
                                                     </div>
                                                     @*<script type="text/javascript">
-                $(function () {
-                    $('#datetimepicker4').datetimepicker();
-                });
-            </script>*@
+                    $(function () {
+                        $('#datetimepicker4').datetimepicker();
+                    });
+                </script>*@
                                                 </div>
                                                 <span class="text-danger"></span>
                                             </div>

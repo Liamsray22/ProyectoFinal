@@ -22,6 +22,8 @@ namespace DataBase.ViewModels
         public DateTime Fecha { get; set; }
 
         public string Estado { get; set; }
+        public bool Procesoactivos { get; set; }
+
         public IEnumerable<EleccionesViewModel> elecciones { get; set; }
     }
 }
