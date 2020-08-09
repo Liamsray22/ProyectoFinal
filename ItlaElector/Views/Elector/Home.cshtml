@@ -1,4 +1,5 @@
-﻿@{
+﻿@model DataBase.ViewModels.ElectorViewModel
+@{
     ViewData["Title"] = "Elecciones";
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
 }
@@ -28,8 +29,8 @@
             <div class="bg-success  mb-1">
                 <h1 class="text-center text-white" style="font-family: 'Rowdies', cursive;">Puestos Electivos</h1>
             </div>
-
-            <a asp-action="ZonaVotacion" asp-controller="Elector" asp-route-id="" class="list-group-item list-group-item-info list-group-item-action flex-column align-items-start shadow mb-2">
+            @foreach (var puestos in Model.puestosElectivos) {
+            <a asp-action="ZonaVotacion" asp-controller="Elector" asp-route-id="@puestos.IdPuestoElectivo" class="list-group-item list-group-item-info list-group-item-action flex-column align-items-start shadow mb-2">
                 <div>
                     <div class="row row-no-gutters">
                         <div class="col-1">
@@ -37,17 +38,19 @@
                         </div>
                         <div class="col-11">
                             <div class="d-flex w-100 justify-content-between">
-                                <h2 class="mb-2 text-dark font-weight-bolder">Presidente</h2>
+                                <h2 class="mb-2 text-dark font-weight-bolder">
+                                    @Html.DisplayFor(ModelItem => puestos.Nombre)
+                                </h2>
                                 <span class="mr-3"><i class="fa  fa-spinner" style="color:gold; font-size:20px;" aria-hidden="true"></i></span>
                             </div>
                             <p class="font-weight-normal text-justify text-dark" style="font-size:12px; font-family:Arial,'Agency FB'">
-                            funcionario público, electo para un período determinado, que ostenta el poder ejecutivo de un Estado o de una región.
+                             @Html.DisplayFor(ModelItem => puestos.Descripcion)
                             </p>
                         </div>
                     </div>
                 </div>
             </a>
-
+            }
             @*Opcion desabilitada*@
             <a asp-action="" asp-controller="" class="list-group-item list-group-item-info list-group-item-action flex-column align-items-start shadow mb-2 disabled">
 

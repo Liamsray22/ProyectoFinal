@@ -8,7 +8,6 @@ namespace DataBase.Models
         public Partidos()
         {
             Candidatos = new HashSet<Candidatos>();
-            Votacion = new HashSet<Votacion>();
         }
 
         public int IdPartido { get; set; }
@@ -18,6 +17,5 @@ namespace DataBase.Models
         public string Estado { get; set; }
 
         public ICollection<Candidatos> Candidatos { get; set; }
-        public ICollection<Votacion> Votacion { get; set; }
     }
 }

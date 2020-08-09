@@ -26,8 +26,8 @@ namespace ItlaElector.Controllers
         [HttpPost]
         public async Task<IActionResult> Ciudadanos(CiudadanosViewModel cvm)
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 try
                 {
                     await _ciudadanosRepo.CrearCiudadanos(cvm);
@@ -36,7 +36,7 @@ namespace ItlaElector.Controllers
                 {
 
                 }
-            }
+            //}
             var ciudadanos = await _ciudadanosRepo.TraerCiudadanos();
             return RedirectToAction("Ciudadanos");
         }

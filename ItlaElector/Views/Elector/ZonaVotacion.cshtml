@@ -1,4 +1,5 @@
-﻿
+﻿@model DataBase.ViewModels.VotacionViewModel
+
 @{
     ViewData["Title"] = "Elecciones";
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
@@ -13,30 +14,28 @@
         <div class="text-center">
 
             <div class="font-weight-bolder pt-2 text-white" style="font-family: 'Lemonada', cursive;">
-                <h1>Presidente</h1>
+                <h1>
+                    @Model.PuestoElectivo
+                </h1>
             </div>
 
         </div>
 
     </header>
 
-    <form asp-action="" asp-controller="" method="post">
-
+    <form asp-action="VotarPuesto" asp-controller="Elector" method="post">
         <div class="container mt-4">
 
             <div class="row justify-content-md-center">
 
-
-                @*<script>
+                <script>
                     //NO ME FUNCIONA
                     //function comprobar(checkbox) {
                     //    otro = checkbox.parentNode.querySelector("[type=checkbox]:not(#" + checkbox.id + ")");
-
                     //    if (otro.checked) {
                     //        otro.checked = false;
                     //    }
                     //}
-
                     //tampoco funciona
                     function checkBox(cb) {
                         for (n = 0; n < 3; n++) {
@@ -49,11 +48,15 @@
                         }
                     }
 
-                </script>*@
+                </script>
 
+
+
+
+                @foreach(var c in Model.candidatos) {
                 <div class="col-sm-4 col-md-4 col-lg-3 mb-3 form-check-label">
-                    <input type="checkbox" id="CheckCard" name="candidato" onClick="javascript:checkBox(1)" value="1"> @*style="display:none"*@   @*onchange="comprobar(this)"*@
-                    <label for="CheckCard">
+                    <input type="radio" id="CheckCard@(c.IdCandidato)"  asp-for="IdCandidato" onClick="javascript:checkBox(1)" value="@(c.IdCandidato)">
+                    <label for="CheckCard@(c.IdCandidato)">
                         <div class="card bg-light stretched-link" style="width: 16rem; ">
                             <div class="card-header">
                                 <div class="row row-no-gutters">
@@ -61,10 +64,13 @@
                                         <img src="~/images/Partido/PRM_Logo.png" class="rounded-pill p-1 ml-1 mt-1 m-0" width="40" height="40" />
                                     </div>
                                     <div class="col-9">
-                                        <p class="text-dark col-lg-pull-0 pl-2 mr-2 m-0" style="font-size:10px;">Partido Revolucionario Moderno Social Cristiano (PRM)</p>
+                                        <p class="text-dark col-lg-pull-0 pl-2 mr-2 m-0" style="font-size:10px;">
+                                            @Html.DisplayFor(ModelItem => c.Partido)
+                                        </p>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="card-body m-0 pt-1 pb-1">
                                 <div class="row row-no-gutters ">
                                     <div class="col-5">
@@ -72,7 +78,9 @@
                                     </div>
                                     <div class="col-7 d-flex justify-content-start">
                                         <p class="card-text font-weight-normal pl-1" style="font-family: 'Rowdies', cursive; font-size:14px;">
-                                            Luis Rodolfo Abinader Corona
+                                            @Html.DisplayFor(ModelItem => c.Nombre)
+                                            @Html.DisplayFor(ModelItem => c.Apellido)
+
                                         </p>
                                     </div>
                                 </div>
@@ -80,6 +88,7 @@
                         </div>
                     </label>
                 </div>
+                }
 
 
                  </div>
@@ -88,10 +97,11 @@
 
             </div>
 
+
         <div class="fixed-bottom" id="votar">
 
             <footer class="container-fluid bg-light  p-3">
-                <input class="font-weight-bolder text-white btn-block btn text-white btn-success" type="submit" value="VOTAR" style="font-family: 'Lemonada', cursive;"/>
+                <input class="font-weight-bolder text-white btn-block btn text-white btn-success" type="submit" value="VOTAR" style="font-family: 'Lemonada', cursive;" />
             </footer>
 
         </div>

@@ -50,6 +50,7 @@ namespace Repository.Repository
             can.candidatos = TodosLosCandidatos;
             return can;
         }
+        
 
         public async Task CrearCandidatos(CandidatosViewModel cavm, string WebrootPath)
         {
