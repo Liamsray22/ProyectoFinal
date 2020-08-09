@@ -1,21 +1,3 @@
-C:\Users\Liam\source\repos\Limbo\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.deps.json
-C:\Users\Liam\source\repos\Limbo\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.dll
-C:\Users\Liam\source\repos\Limbo\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csprojAssemblyReference.cache
-C:\Users\Liam\source\repos\Limbo\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csproj.CoreCompileInputs.cache
-C:\Users\Liam\source\repos\Limbo\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfoInputs.cache
-C:\Users\Liam\source\repos\Limbo\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfo.cs
-C:\Users\Liam\source\repos\Limbo\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.pdb
-C:\Users\Liam\source\repos\Limbo\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.dll
-C:\Users\Liam\source\repos\Limbo\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.pdb
-C:\Users\Liam\source\repos\LimboLand\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.deps.json
-C:\Users\Liam\source\repos\LimboLand\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.dll
-C:\Users\Liam\source\repos\LimboLand\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.pdb
-C:\Users\Liam\source\repos\LimboLand\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csprojAssemblyReference.cache
-C:\Users\Liam\source\repos\LimboLand\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csproj.CoreCompileInputs.cache
-C:\Users\Liam\source\repos\LimboLand\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfoInputs.cache
-C:\Users\Liam\source\repos\LimboLand\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfo.cs
-C:\Users\Liam\source\repos\LimboLand\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.dll
-C:\Users\Liam\source\repos\LimboLand\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.pdb
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.deps.json
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.pdb
@@ -24,27 +6,4 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreap
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfo.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.pdb
-<<<<<<< HEAD
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csprojAssemblyReference.cache
-=======
-C:\Users\Liam\source\repos\ItlaElector\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.deps.json
-C:\Users\Liam\source\repos\ItlaElector\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.dll
-C:\Users\Liam\source\repos\ItlaElector\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.pdb
-C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csproj.CoreCompileInputs.cache
-C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfoInputs.cache
-C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfo.cs
-C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.dll
-C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.pdb
->>>>>>> b8f9597887455fd71594203f397d0e5f4b94c325
-C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csprojAssemblyReference.cache
->>>>>>> ba5c828256595e30d24e00b6c05b3b34dfc72e9a
-C:\Users\User\Desktop\ProyectoFinal\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.deps.json
-C:\Users\User\Desktop\ProyectoFinal\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.dll
-C:\Users\User\Desktop\ProyectoFinal\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.pdb
-C:\Users\User\Desktop\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csprojAssemblyReference.cache
-C:\Users\User\Desktop\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfo.cs
-C:\Users\User\Desktop\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.dll
-C:\Users\User\Desktop\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.pdb
->>>>>>> 633ee37696dcfdb09e88bd5dbb27416bcedae837

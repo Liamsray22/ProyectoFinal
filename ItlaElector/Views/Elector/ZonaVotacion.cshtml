@@ -42,9 +42,6 @@
                 }
             </script>
 
-
-
-
             @foreach (var c in Model.candidatos)
             {
                 <input type="hidden" asp-for="IdEleccion" value="@c.IdPuestoElectivo">
@@ -64,6 +61,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="card-body m-0 pt-1 pb-1">
                                 <div class="row row-no-gutters ">
                                     <div class="col-5">
@@ -84,17 +82,16 @@
             }
 
 
+                 </div>
 
 
 
         </div>
-
-
-
     </div>
 
 
     <div class="fixed-bottom" id="votar">
+
 
         <footer class="container-fluid bg-light  p-3">
             <input class="font-weight-bolder text-white btn-block btn text-white btn-success" type="submit" value="VOTAR" style="font-family: 'Lemonada', cursive;" />
