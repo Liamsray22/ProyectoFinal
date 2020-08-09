@@ -54,11 +54,16 @@
 
                                     <div class="form-group">
                                         <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
-                                        <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Escribir el Nombre del Puesto">
+                                        <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Escribir el Nombre del Puesto">           
+                                        <span asp-validation-for="Nombre" class="text-danger"></span>
+
                                     </div>
                                     <div class="form-group">
-                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Descripcion</label>
-                                        <textarea asp-for="Descripcion"  class="form-control shadow-sm p-3 bg-white rounded form-control-lg border-bottom border-dark" placeholder="Escribir descripcion del puesto electivo"></textarea>
+                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Descripcion</label>                    
+                                        <span asp-validation-for="Descripcion" class="text-danger"></span>
+
+                                        <textarea asp-for="Descripcion" class="form-control shadow-sm p-3 bg-white rounded form-control-lg border-bottom border-dark" placeholder="Escribir descripcion del puesto electivo"></textarea>
+
                                     </div>
                                     <input type="hidden" name="Estado" value="Activo" />
 
@@ -196,10 +201,14 @@
 
                                                     <div class="form-group">
                                                         <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
-                                                        <input asp-for="Nombre" value="@pe.Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Example input placeholder">
+                                                        <input asp-for="Nombre" value="@pe.Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Example input placeholder">   
+                                                        <span asp-validation-for="Nombre" class="text-danger"></span>
+
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Descripcion</label>
+                                                        <span asp-validation-for="Descripcion" class="text-danger"></span>
+
                                                         <textarea asp-for="Descripcion" value="@pe.Descripcion" class="form-control shadow-sm p-3 bg-white rounded form-control-lg border-bottom border-dark" placeholder="Escribir descripcion del puesto electivo"></textarea>
                                                     </div>
                                                     @*<input type="hidden" name="Estado" value="Activo" />*@

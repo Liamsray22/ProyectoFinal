@@ -18,6 +18,7 @@ namespace DataBase.ViewModels
 
         public string Apellido { get; set; }
         [Required(ErrorMessage = "El Email es requerido")]
+        [EmailAddress(ErrorMessage = "Email invalido")]
 
         public string Email { get; set; }
         public string Estado { get; set; }
