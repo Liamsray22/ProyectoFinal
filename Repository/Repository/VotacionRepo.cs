@@ -56,8 +56,8 @@ namespace Repository.Repository
                 Votacion votacion = new Votacion();
                 votacion.Cedula = vvm.Cedula;
                 votacion.IdCandidato = vvm.IdCandidato.Value;
-                var ele = await _context.Elecciones.FirstOrDefaultAsync(x => x.Estado == "En Proceso");
-                votacion.IdEleccion = ele.IdEleccion;
+            var ele = await _context.Elecciones.FirstOrDefaultAsync(x => x.Estado == "Progreso");
+            votacion.IdEleccion = ele.IdEleccion;
                 await AddAsync(votacion);
             
         }
@@ -65,7 +65,7 @@ namespace Repository.Repository
         public async Task<bool> Finalizar(string cedula)
         {
             var puestos = await _context.PuestoElectivo.Where(w=>w.Estado == "Activo").ToListAsync();
-            var ele = await _context.Elecciones.FirstOrDefaultAsync(x => x.Estado == "En Proceso");
+            var ele = await _context.Elecciones.FirstOrDefaultAsync(x => x.Estado == "Progreso");
 
             var votacion = await _context.Votacion.Where(v => v.Cedula.Contains(cedula) && v.IdEleccion == ele.IdEleccion)
                 .ToListAsync();
@@ -80,16 +80,17 @@ namespace Repository.Repository
         public async Task<bool> Verificarsivoto(string cedula)
         {
 
-            var eleccion = await _context.Elecciones.FirstOrDefaultAsync(a => a.Estado.Trim() == "Activo");
-            if(eleccion != null)
-            {
-                var voto = await _context.Votacion.FirstOrDefaultAsync(a => ((a.IdEleccion == eleccion.IdEleccion) && (a.Cedula.Trim() == cedula.Trim())));
-                if (voto != null) {
+            var puestos = await _context.PuestoElectivo.Where(w => w.Estado == "Activo").ToListAsync();
+            var ele = await _context.Elecciones.FirstOrDefaultAsync(x => x.Estado == "Progreso");
 
-                    return true;
-                }
-              
+            var votacion = await _context.Votacion.Where(v => v.Cedula.Contains(cedula) && v.IdEleccion == ele.IdEleccion)
+                .ToListAsync();
+
+            if (puestos.Count() == votacion.Count())
+            {
+                return true;
             }
+
             return false;
         }
 
