@@ -78,13 +78,6 @@ namespace ItlaElector.Controllers
         public async Task<IActionResult> VerifyCedula(string Cedula)
         {
             Cedula = Cedula.Replace("-","");
-          var verify = await _votacionRepo.Verificarsivoto(Cedula);
-            if (verify)
-            {
-                return Json($"Usted ya participo en estas elecciones");
-
-
-            }
             var verifyelecciones = await _EleccionesRepo.eleccionesactivas();
             if (verifyelecciones)
             {
@@ -92,13 +85,22 @@ namespace ItlaElector.Controllers
 
 
             }
-            var verifyestadouser = await _CiudadanosRepo.USERactivo(Cedula) ;
+            var verifyestadouser = await _CiudadanosRepo.USERactivo(Cedula);
             if (verifyestadouser)
             {
                 return Json($"Usted ha sido restringido ");
 
 
             }
+            var verify = await _votacionRepo.Verificarsivoto(Cedula);
+            if (verify)
+            {
+                return Json($"Usted ya participo en estas elecciones");
+
+
+            }
+           
+           
 
 
             return Json(true);

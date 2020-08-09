@@ -253,7 +253,7 @@
                                                                 <div class="d-flex justify-content-center mt-2">
                                                                     <div>
                                                                         <label for="upload-photo2" class="btn btn-outline-primary mr-3 rounded float-left" onClick="upload(@p.IdPartido)">Añadir foto</label>
-                                                                        <input type="file" id="upload-photo2" name="upload-photo_@p.IdPartido" asp-for="Photo" accept="image/*" />
+                                                                        <input type="file" id="upload-photo2" name="upload-photo_@p.IdPartido" asp-for="Photo" accept="image/*"  onchange="change()"/>
                                                                         <button type="button" id="delete_@p.IdPartido" onClick="Deletephoto(@p.IdPartido)" class="btn btn-outline-danger rounded float-left">Quitar</button>
 
                                                                     </div>
@@ -363,26 +363,34 @@
         $seleccionArchivos2 = "",
             $imagenPrevisualizacion2 = "";
         $delete2 = "";
+
+
         function upload(id) {
             alert(id);
-            const $seleccionArchivos2 = document.querySelector('input[name="upload-photo_' + id + '"]'),
+            $seleccionArchivos2 = document.querySelector('input[name="upload-photo_' + id + '"]'),
                 $imagenPrevisualizacion2 = document.querySelector("#imagenPrevisualizacion_" + id);
             alert($imagenPrevisualizacion2.src)
             $delete2 = document.querySelector("#delete_" + id);
            
 
         }
-        $seleccionArchivos2.addEventListener("change", () => {
+        function change(){
+
+            console.log($seleccionArchivos2.files);
             const archivos2 = $seleccionArchivos2.files;
-            if (!archivos2 || !archivos2.length) {
-                $imagenPrevisualizacion2.src = "";
-                return;
-            }
+
+            //if (!archivos2 || !archivos2.length) {
+            //    $imagenPrevisualizacion2.src = "";
+            //    return;
+            //}
+            console.log(archivos2[0]);
+
             const primerArchivo2 = archivos2[0];
             const objectURL2 = URL.createObjectURL(primerArchivo2);
             $imagenPrevisualizacion2.src = objectURL2;
-            $('#delete_' + id).removeAttr('hidden')
-        });
+            console.log($imagenPrevisualizacion2.src);
+
+        };
         //$delete2.addEventListener("click", () => {
         //    $seleccionArchivos2.src = "";
         //    $imagenPrevisualizacion2.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";

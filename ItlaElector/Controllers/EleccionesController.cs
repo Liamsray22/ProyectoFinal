@@ -40,13 +40,13 @@ namespace ItlaElector.Controllers
             return RedirectToAction("Elecciones");
         }
         [HttpPost]
-        public async Task<IActionResult> EleccionesFinalizar(EleccionesViewModel evm)
+        public async Task<IActionResult> EleccionesFinalizar()
         {
             if (ModelState.IsValid)
             {
                 //try
                 //{
-                await _eleccionesRepo.eleccionesactivas();
+                await _eleccionesRepo.FinalizarEleccion();
                 //}
                 //catch
                 //{

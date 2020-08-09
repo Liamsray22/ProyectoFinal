@@ -51,8 +51,6 @@ namespace Repository.Repository
             var eleccion = await _context.Elecciones.FirstOrDefaultAsync(a => a.Estado.Trim() == "Progreso");
             if (eleccion == null)
             {
-                eleccion.Estado = "Finalizado";
-                await Update(eleccion);
                 return true;
             }
             return false;
@@ -62,23 +60,25 @@ namespace Repository.Repository
         public async Task<bool> FinalizarEleccion()
         {
 
-            var eleccion = await _context.Elecciones.FirstOrDefaultAsync(a => a.Estado.Trim() == "Activo");
+            var eleccion = await _context.Elecciones.FirstOrDefaultAsync(a => a.Estado.Trim() == "Progreso");
             if (eleccion != null)
             {
+                eleccion.Estado = "Finalizado";
+                await Update(eleccion);
                 return true;
+
             }
             return false;
         }
+            //public void Borrar(string path)
+            //{
+            //    File.SetAttributes(path, FileAttributes.Normal);
+            //    System.GC.Collect();
+            //    System.GC.WaitForPendingFinalizers();
 
-        //public void Borrar(string path)
-        //{
-        //    File.SetAttributes(path, FileAttributes.Normal);
-        //    System.GC.Collect();
-        //    System.GC.WaitForPendingFinalizers();
-
-        //    File.Delete(path);
-        //}
+            //    File.Delete(path);
+            //}
 
 
-    }
+        }
     }

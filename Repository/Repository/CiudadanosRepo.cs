@@ -85,9 +85,12 @@ namespace Repository.Repository
         {
 
             var user = await _context.Ciudadanos.FirstOrDefaultAsync(a => a.Cedula.Trim() == cedula.Trim());
+            if (user != null) { 
             if (user.Estado == "Inactivo")
             {
                 return true;
+            }
+
             }
             return false;
         }
