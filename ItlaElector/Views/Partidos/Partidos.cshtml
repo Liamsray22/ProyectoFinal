@@ -15,11 +15,8 @@
         z-index: -1;
     }
 
-    #upload-photo2 {
-        opacity: 0;
-        position: absolute;
-        z-index: -1;
-    }
+.upload-photo2
+{ opacity: 0; position: absolute; z-index: -1; }
 </style>
 <body style="background: #2980b9; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #2c3e50, #2980b9); /* Chrome 10-25, Safari 5.1-6 */
@@ -209,7 +206,7 @@
                                                                 <div class="d-flex justify-content-center mt-2">
                                                                     <div>
                                                                         <label for="upload-photo2" class="btn btn-outline-primary mr-3 rounded float-left" onClick="upload(@p.IdPartido)">Añadir foto</label>
-                                                                        <input type="file" id="upload-photo2" name="upload-photo_@p.IdPartido" asp-for="Photo" accept="image/*" onchange="change(@p.IdPartido)" />
+                                                                        <input class="upload-photo2" type="file" id="upload-photo_@p.IdPartido"  asp-for="Photo" accept="image/*" onchange="change(@p.IdPartido)" />
                                                                         <button type="button" id="delete_@p.IdPartido" onClick="Deletephoto(@p.IdPartido)" class="btn btn-outline-danger rounded float-left">Quitar</button>
 
                                                                     </div>
@@ -353,15 +350,17 @@
         $seleccionArchivos2 = "",
             $imagenPrevisualizacion2 = "";
         $delete2 = "";
+        $ids = 0;
 
 
         function upload(id) {
             alert(id);
-            $seleccionArchivos2 = document.querySelector('input[name="upload-photo_' + id + '"]'),
+            $seleccionArchivos2 = document.querySelector("#upload-photo_" + id),
                 $imagenPrevisualizacion2 = document.querySelector("#imagenPrevisualizacion_" + id);
             alert($imagenPrevisualizacion2.src)
             $delete2 = document.querySelector("#delete_" + id);
-           
+            $ids =  id;
+
 
         }
         function change(id){
