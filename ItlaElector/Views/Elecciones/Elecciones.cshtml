@@ -136,12 +136,12 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                 @*Ver Resultado*@
                                 <a data-toggle="modal" data-target="#resultado@(e.IdEleccion)" class="text-link text-primary" style="font-size:14px; ">Ver Resultado</a>
                                 <div class="modal fade " id="resultado@(e.IdEleccion)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-sm">
+                                    <div class="modal-dialog modal-lg">
                                         <div class="modal-content bg-danger shadow-sm p-1 rounded">
 
-                                            <div class="modal-header bg-danger p-1 rounded">
+                                            <div class="modal-header bg-info p-1 rounded">
 
-                                                <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Eliminar</h5>
+                                                <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Resultados</h5>
 
                                                 <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
                                                     Cancelar
@@ -150,10 +150,39 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                             </div>
 
                                             <div class="modal-body bg-light text-center">
-                                                <h4>¿SEGURO QUE QUIERE ELIMINAR ESTE CANDIDATO?</h4>
-
+                                                <h4>Resultados de la presente elecciones</h4>
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">Candidato</th>
+                                                            <th scope="col">Puesto</th>
+                                                            <th scope="col">Votos</th>
+                                                            <th scope="col">%</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">1</th>
+                                                            <td>Mark</td>
+                                                            <td>Otto</td>
+                                                            <td>mdo</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>Jacob</td>
+                                                            <td>Thornton</td>
+                                                            <td>at</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>Larry</td>
+                                                            <td>the Bird</td>
+                                                            <td>twitter</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                                 <div class="mt-4 d-flex justify-content-center">
-                                                    <a asp-action="" asp-controller="" class="text-white btn btn-danger shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                                    <button class="text-white btn btn-info shadow-lg ml-auto  btn-block" style="font-size:15px;" data-dismiss="modal">Listo</button>
 
                                                 </div>
 
