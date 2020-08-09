@@ -80,6 +80,17 @@ namespace Repository.Repository
             }
             return false;
         }
+
+        public async Task<bool> USERactivo(string cedula)
+        {
+
+            var user = await _context.Ciudadanos.FirstOrDefaultAsync(a => a.Cedula.Trim() == cedula.Trim());
+            if (user.Estado == "Inactivo")
+            {
+                return true;
+            }
+            return false;
+        }
         //public void Borrar(string path)
         //{
         //    File.SetAttributes(path, FileAttributes.Normal);

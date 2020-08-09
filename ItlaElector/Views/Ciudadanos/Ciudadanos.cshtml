@@ -53,9 +53,6 @@
                                 <div class="modal-body bg-light">
 
                                     <div class="form-group">
-
-                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Cedula</label>    
-
                                         <div class="form-group">
                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Cedula</label>
                                             <input asp-for="Cedula" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Ingresar Cedula">
@@ -112,182 +109,182 @@
                     <tbody style="font-size:14px; overflow-y: scroll;">
                         @foreach (var c in Model.ciudadanos)
                         {
-                        <tr>
-                            <td>@Html.DisplayFor(ModelItem => c.Cedula)</td>
-                            <td>@Html.DisplayFor(ModelItem => c.Nombre)</td>
-                            <td>@Html.DisplayFor(ModelItem => c.Apellido)</td>
-                            <td>@Html.DisplayFor(ModelItem => c.Email)</td>
-                            <td>
+                            <tr>
+                                <td>@Html.DisplayFor(ModelItem => c.Cedula)</td>
+                                <td>@Html.DisplayFor(ModelItem => c.Nombre)</td>
+                                <td>@Html.DisplayFor(ModelItem => c.Apellido)</td>
+                                <td>@Html.DisplayFor(ModelItem => c.Email)</td>
+                                <td>
 
-                                @if (c.Estado == "Inactivo")
-                                {
-                                    <div class="text-danger font-weight-bolder">
-                                        @Html.DisplayFor(ModelItem => c.Estado)
-                                    </div>
+                                    @if (c.Estado == "Inactivo")
+                                    {
+                                        <div class="text-danger font-weight-bolder">
+                                            @Html.DisplayFor(ModelItem => c.Estado)
+                                        </div>
 
-                                }
-                                else
-                                {
-                                    <div class="text-info font-weight-bolder">
-                                        @Html.DisplayFor(ModelItem => c.Estado)
-                                    </div>
-                                }
-                            </td>
+                                    }
+                                    else
+                                    {
+                                        <div class="text-info font-weight-bolder">
+                                            @Html.DisplayFor(ModelItem => c.Estado)
+                                        </div>
+                                    }
+                                </td>
 
-                            <td>
+                                <td>
 
-                                @*Editar ciudadano*@
-                                <a data-toggle="modal" data-target="#EditarCiudadano@(c.Cedula)" class="text-white btn btn-warning ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                    @*Editar ciudadano*@
+                                    <a data-toggle="modal" data-target="#EditarCiudadano@(c.Cedula)" class="text-white btn btn-warning ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 
-                                <div class="modal fade" id="EditarCiudadano@(c.Cedula)" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    
-                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                        <div class="modal-content bg-success">
+                                    <div class="modal fade" id="EditarCiudadano@(c.Cedula)" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
-                                            <div class="modal-header bg-warning text-dark rounded-bottom shadow">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                            <div class="modal-content bg-success">
 
-                                                <div class=" mr-auto">
-                                                    <h2 class="modal-title"><i class="fa fa-pencil" aria-hidden="true"></i> Editar Ciudadano</h2>
+                                                <div class="modal-header bg-warning text-dark rounded-bottom shadow">
+
+                                                    <div class=" mr-auto">
+                                                        <h2 class="modal-title"><i class="fa fa-pencil" aria-hidden="true"></i> Editar Ciudadano</h2>
+
+                                                    </div>
+                                                    <div class="">
+                                                        <button type="button" class="btn btn-danger btn-sm text-white p-2 rounded-pill" style="font-size:14px;" data-dismiss="modal" aria-label="Close">
+                                                            Cancelar
+                                                        </button>
+                                                    </div>
 
                                                 </div>
-                                                <div class="">
-                                                    <button type="button" class="btn btn-danger btn-sm text-white p-2 rounded-pill" style="font-size:14px;" data-dismiss="modal" aria-label="Close">
-                                                        Cancelar
-                                                    </button>
-                                                </div>
 
-                                            </div>
+                                                <form asp-action="EditarCiudadano" asp-controller="Ciudadanos" method="post">
+                                                    <div class="modal-body bg-light">
 
-                                            <form asp-action="EditarCiudadano" asp-controller="Ciudadanos" method="post">
-                                                <div class="modal-body bg-light">
+                                                        <div class="form-group">
+                                                            <label style="font-family: 'Rowdies', cursive; font-size:15px;">Cédula</label>
+                                                            <span asp-validation-for="Cedula" class="text-danger"></span>
 
-                                                    <div class="form-group">
-                                                        <label style="font-family: 'Rowdies', cursive; font-size:15px;">Cédula</label>
-                                                        <span asp-validation-for="Cedula" class="text-danger"></span>
+                                                            <input asp-for="Cedula" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark tex-dark" pattern="[0-9]{3}-[0-9]{7}-[0-9]{1}" placeholder="Ingresar Cédula" value="@c.Cedula">
+                                                            <small class="form-text text-muted">El formato de la cedula debe ser: 000-0000000-0</small>
 
-                                                        <input asp-for="Cedula" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark tex-dark" pattern="[0-9]{3}-[0-9]{7}-[0-9]{1}" placeholder="Ingresar Cédula" value="@c.Cedula">
-                                                        <small class="form-text text-muted">El formato de la cedula debe ser: 000-0000000-0</small>
-
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
-                                                        <span asp-validation-for="Nombre" class="text-danger"></span>
-
-                                                        <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark tex-dark" placeholder="Ingresar Nombre" value="@c.Nombre">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label style="font-family: 'Rowdies', cursive; font-size:15px;">Apellido</label>
-                                                        <span asp-validation-for="Apellido" class="text-danger"></span>
-
-                                                        <input asp-for="Apellido" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark tex-dark" placeholder="Ingresar Apellido" value="@c.Apellido">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Email</label>
-                                                        <span asp-validation-for="Email" class="text-danger"></span>
-
-                                                        <input asp-for="Email" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark tex-dark" id="" placeholder="Ingresar Email" value="@c.Email">
-                                                    </div>
-                                                    <input type="hidden" name="Estado" value="@c.Estado" />
-
-                                                    <div class="form-group row mt-4">
-                                                        <div class="col">
-                                                            <input type="submit" value="Editar" class="btn btn-outline-success btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
                                                         </div>
-                                                        <div class="col">
-                                                            <input type="reset" value="Limpiar" class="btn btn-outline-warning btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
+                                                        <div class="form-group">
+                                                            <label style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
+                                                            <span asp-validation-for="Nombre" class="text-danger"></span>
+
+                                                            <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark tex-dark" placeholder="Ingresar Nombre" value="@c.Nombre">
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label style="font-family: 'Rowdies', cursive; font-size:15px;">Apellido</label>
+                                                            <span asp-validation-for="Apellido" class="text-danger"></span>
+
+                                                            <input asp-for="Apellido" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark tex-dark" placeholder="Ingresar Apellido" value="@c.Apellido">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Email</label>
+                                                            <span asp-validation-for="Email" class="text-danger"></span>
+
+                                                            <input asp-for="Email" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark tex-dark" id="" placeholder="Ingresar Email" value="@c.Email">
+                                                        </div>
+                                                        <input type="hidden" name="Estado" value="@c.Estado" />
+
+                                                        <div class="form-group row mt-4">
+                                                            <div class="col">
+                                                                <input type="submit" value="Editar" class="btn btn-outline-success btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
+                                                            </div>
+                                                            <div class="col">
+                                                                <input type="reset" value="Limpiar" class="btn btn-outline-warning btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
+                                                            </div>
+                                                        </div>
+
                                                     </div>
 
-                                                </div>
-
-                                            </form>
+                                                </form>
 
 
+                                            </div>
                                         </div>
+
                                     </div>
 
-                                </div>
 
 
 
+                                    @*ELIMINAR CIUDADANO*@
 
-                                @*ELIMINAR CIUDADANO*@
+                                    @if (c.Estado == "Inactivo")
+                                    {
+                                        <a data-toggle="modal" data-target="#ActivarCiudadano@(c.Cedula)" class="text-white btn btn-success ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
 
-                                @if (c.Estado == "Inactivo")
-                                {
-                                    <a data-toggle="modal" data-target="#ActivarCiudadano@(c.Cedula)" class="text-white btn btn-success ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
+                                        <div class="modal fade " id="ActivarCiudadano@(c.Cedula)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content bg-info shadow-sm p-1 rounded">
 
-                                    <div class="modal fade " id="ActivarCiudadano@(c.Cedula)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-sm">
-                                            <div class="modal-content bg-info shadow-sm p-1 rounded">
+                                                    <div class="modal-header bg-info p-1 rounded">
 
-                                                <div class="modal-header bg-info p-1 rounded">
+                                                        <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Reactivar</h5>
 
-                                                    <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Reactivar</h5>
-
-                                                    <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
-                                                        Cancelar
-                                                    </button>
-
-                                                </div>
-
-                                                <div class="modal-body bg-light text-center">
-                                                    <h4>¿SEGURO QUE QUIERE REACTIVAR ESTE CIUDADANO?</h4>
-
-                                                    <div class="mt-2 d-flex justify-content-center">
-                                                        <a asp-action="EliminarCiudadano" asp-controller="Ciudadanos" asp-route-id="@c.Cedula" class="text-white btn btn-info shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Reactivar</a>
+                                                        <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                            Cancelar
+                                                        </button>
 
                                                     </div>
 
+                                                    <div class="modal-body bg-light text-center">
+                                                        <h4>¿SEGURO QUE QUIERE REACTIVAR ESTE CIUDADANO?</h4>
+
+                                                        <div class="mt-2 d-flex justify-content-center">
+                                                            <a asp-action="EliminarCiudadano" asp-controller="Ciudadanos" asp-route-id="@c.Cedula" class="text-white btn btn-info shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Reactivar</a>
+
+                                                        </div>
+
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                }
-                                else
-                                {
-                                    <a data-toggle="modal" data-target="#EliminarCiudadano@(c.Cedula)" class="text-white btn btn-danger ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    }
+                                    else
+                                    {
+                                        <a data-toggle="modal" data-target="#EliminarCiudadano@(c.Cedula)" class="text-white btn btn-danger ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
 
-                                    <div class="modal fade " id="EliminarCiudadano@(c.Cedula)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-sm">
-                                            <div class="modal-content bg-danger shadow-sm p-1 rounded">
+                                        <div class="modal fade " id="EliminarCiudadano@(c.Cedula)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content bg-danger shadow-sm p-1 rounded">
 
-                                                <div class="modal-header bg-danger p-1 rounded">
+                                                    <div class="modal-header bg-danger p-1 rounded">
 
-                                                    <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Eliminar</h5>
+                                                        <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Eliminar</h5>
 
-                                                    <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
-                                                        Cancelar
-                                                    </button>
-
-                                                </div>
-
-                                                <div class="modal-body bg-light text-center">
-                                                    <h4>¿SEGURO QUE QUIERE ELIMINAR ESTE CIUDADANO?</h4>
-
-                                                    <div class="mt-2 d-flex justify-content-center">
-                                                        <a asp-action="EliminarCiudadano" asp-controller="Ciudadanos" asp-route-id="@c.Cedula" class="text-white btn btn-danger shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                                        <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                            Cancelar
+                                                        </button>
 
                                                     </div>
 
+                                                    <div class="modal-body bg-light text-center">
+                                                        <h4>¿SEGURO QUE QUIERE ELIMINAR ESTE CIUDADANO?</h4>
+
+                                                        <div class="mt-2 d-flex justify-content-center">
+                                                            <a asp-action="EliminarCiudadano" asp-controller="Ciudadanos" asp-route-id="@c.Cedula" class="text-white btn btn-danger shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                                                        </div>
+
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
 
-                                }
+                                    }
 
 
 
-                            </td>
+                                </td>
 
                             </tr>
                         }
 
 
-                        </tbody>
+                    </tbody>
                 </table>
 
             </div>
@@ -298,3 +295,6 @@
 
 
 </body>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

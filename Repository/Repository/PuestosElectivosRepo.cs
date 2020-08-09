@@ -16,18 +16,16 @@ namespace Repository.Repository
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IMapper _mapper;
-        private readonly CandidatosRepo _candidatorepo;
 
 
 
         public PuestosElectivosRepo(ItlaElectorDBContext context, UserManager<IdentityUser> userManager,
-                            SignInManager<IdentityUser> signInManager, IMapper mapper, CandidatosRepo candidatorepo) : base(context)
+                            SignInManager<IdentityUser> signInManager, IMapper mapper) : base(context)
         {
             _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
             _mapper = mapper;
-            _candidatorepo = candidatorepo;
         }
 
         public async Task<PuestosElectivosViewModel> TraerPuestosElectivos()
@@ -83,8 +81,10 @@ namespace Repository.Repository
                 var candidatos = await _context.Candidatos.Where(a => a.IdPuestoElectivo == puesto.IdPuestoElectivo).ToListAsync();
                 foreach (var can in candidatos)
                 {
+                    
                     can.Estado = "Inactivo";
-                    await _candidatorepo.Update(can);
+                    _context.Entry(can).State = EntityState.Modified;
+                    await _context.SaveChangesAsync();
                 }
 
             }

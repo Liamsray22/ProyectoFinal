@@ -65,6 +65,24 @@ namespace Repository.Repository
                 await AddAsync(votacion);
             
         }
+
+        public async Task<bool> Verificarsivoto(string cedula)
+        {
+
+            var eleccion = await _context.Elecciones.FirstOrDefaultAsync(a => a.Estado.Trim() == "Activo");
+            if(eleccion != null)
+            {
+                var voto = await _context.Votacion.FirstOrDefaultAsync(a => ((a.IdEleccion == eleccion.IdEleccion) && (a.Cedula.Trim() == cedula.Trim())));
+                if (voto != null) {
+
+                    return true;
+                }
+              
+            }
+            return false;
+        }
+
+       
         //public void Borrar(string path)
         //{
         //    File.SetAttributes(path, FileAttributes.Normal);

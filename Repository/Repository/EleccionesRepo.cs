@@ -5,6 +5,7 @@ using AutoMapper;
 using DataBase.Models;
 using DataBase.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Repository.Repository
 {
@@ -43,15 +44,27 @@ namespace Repository.Repository
             var eleccion = _mapper.Map<Elecciones>(evm);
             await AddAsync(eleccion);
         }
-        //public void Borrar(string path)
-        //{
-        //    File.SetAttributes(path, FileAttributes.Normal);
-        //    System.GC.Collect();
-        //    System.GC.WaitForPendingFinalizers();
 
-        //    File.Delete(path);
-        //}
+        public async Task<bool> eleccionesactivas()
+        {
+
+            var eleccion = await _context.Elecciones.FirstOrDefaultAsync(a => a.Estado.Trim() == "Activo");
+            if (eleccion != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+            //public void Borrar(string path)
+            //{
+            //    File.SetAttributes(path, FileAttributes.Normal);
+            //    System.GC.Collect();
+            //    System.GC.WaitForPendingFinalizers();
+
+            //    File.Delete(path);
+            //}
 
 
+        }
     }
-}

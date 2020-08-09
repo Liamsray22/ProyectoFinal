@@ -39,6 +39,16 @@ namespace ItlaElector.Controllers
             var elecciones = await _eleccionesRepo.TraerElecciones();
             return RedirectToAction("Elecciones");
         }
+        [AcceptVerbs("GET", "POST")]
+        public async Task<IActionResult> Verifydate( DateTime date)
+        {
 
+            if (date < DateTime.Now)
+            {
+                return Json($"Debe elegir una fecha valida");
+            }
+
+            return Json(true);
+        }
     }
 }

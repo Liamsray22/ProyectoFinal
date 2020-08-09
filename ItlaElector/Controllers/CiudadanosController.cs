@@ -28,14 +28,14 @@ namespace ItlaElector.Controllers
         {
             //if (ModelState.IsValid)
             //{
-                try
-                {
-                    await _ciudadanosRepo.CrearCiudadanos(cvm);
-                }
-                catch
-                {
+            //try
+            //{
+                await _ciudadanosRepo.CrearCiudadanos(cvm);
+                //}
+                //catch
+                //{
 
-                }
+                //}
             //}
             var ciudadanos = await _ciudadanosRepo.TraerCiudadanos();
             return RedirectToAction("Ciudadanos");

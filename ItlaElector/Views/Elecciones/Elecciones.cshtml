@@ -1,4 +1,4 @@
-﻿@model DataBase.ViewModels.EleccionesViewModel 
+﻿@model DataBase.ViewModels.EleccionesViewModel
 @{
     ViewData["Title"] = "Elecciones";
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
@@ -56,22 +56,25 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                         <div class="modal-body bg-light text-dark">
 
                                             <div class="form-group ">
-                                                  <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
+                                                <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
+                                                <span asp-validation-for="Nombre" class="text-danger"></span>
+
                                                 <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" />
-                                                <span class="text-danger"></span>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Fecha</label>
+                                                <span asp-validation-for="Fecha" class="text-danger"></span>
+
                                                 <div class="row">
                                                     <div class='col-12'>
-                                                        <input asp-for="Fecha" placeholder="Ingresar Fecha" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" id='datetimepicker4' />
+                                                        <input asp-for="Fecha" placeholder="Ingresar Fecha" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg glyphicon-calendar"  id='datetimepicker4' onchange="validate()" />
                                                     </div>
                                                     @*<script type="text/javascript">
-                                                        $(function () {
-                                                            $('#datetimepicker4').datetimepicker();
-                                                        });
-                                                    </script>*@
+                $(function () {
+                    $('#datetimepicker4').datetimepicker();
+                });
+            </script>*@
                                                 </div>
                                                 <span class="text-danger"></span>
                                             </div>
@@ -99,7 +102,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
 
                     </th>
 
-         
+
 
                 </tr>
             </thead>
@@ -184,7 +187,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                 </div>
 
                             }
-                            </td>
+                        </td>
 
 
 
@@ -192,7 +195,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                 }
 
 
-                </tbody>
+            </tbody>
         </table>
 
 
@@ -202,3 +205,25 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
 
 
 </body>
+<script>
+    function validate() {
+        var first = document.getElementById('datetimepicker4').value;
+        var today = new Date();
+        var date = ""+today.getFullYear() + (today.getMonth() + 1) + today.g;
+        var startDate = new Date($('#datetimepicker4').val());
+        var endDate = new Date(date);
+        console.log(first)
+        console.log(date)
+        if (first < dateTime    ) {
+            alert("start time is lesser");
+            
+            console.log(firsone)
+            console.log(dateTime)
+
+
+        }
+    }
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -16,6 +16,7 @@ C:\Users\User\Desktop\ProyectoFinal\ItlaElector\bin\Debug\netcoreapp2.1\AutoMap.
 C:\Users\User\Desktop\ProyectoFinal\ItlaElector\bin\Debug\netcoreapp2.1\DataBase.pdb
 C:\Users\User\Desktop\ProyectoFinal\ItlaElector\bin\Debug\netcoreapp2.1\EmailConfig.pdb
 C:\Users\User\Desktop\ProyectoFinal\ItlaElector\bin\Debug\netcoreapp2.1\Repository.pdb
+C:\Users\User\Desktop\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.csprojAssemblyReference.cache
 C:\Users\User\Desktop\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.AssemblyInfo.cs
 C:\Users\User\Desktop\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.csproj.CoreCompileInputs.cache
@@ -50,4 +51,3 @@ C:\Users\User\Desktop\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElec
 C:\Users\User\Desktop\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.dll
 C:\Users\User\Desktop\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.pdb
 C:\Users\User\Desktop\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.genruntimeconfig.cache
-C:\Users\User\Desktop\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.csprojAssemblyReference.cache
