@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataBase.Models;
 using DataBase.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Repository;
 
 namespace ItlaElector.Controllers
 {
+    [Authorize(Roles = "Administrador")]
+
     public class EleccionesController : Controller
     {
         private readonly EleccionesRepo _eleccionesRepo;
@@ -27,28 +31,16 @@ namespace ItlaElector.Controllers
         {
             if (ModelState.IsValid)
             {
-                //try
-                //{
-                    var crear = await _eleccionesRepo.CrearElecciones(evm);
-                if (crear)
+                try
                 {
-                    //var elecciones = await _eleccionesRepo.TraerElecciones();
-                    return RedirectToAction("Elecciones");
+                    await _eleccionesRepo.CrearElecciones(evm);
                 }
-                else
+                catch
                 {
-                    ModelState.AddModelError("", "Tienen que haber al menos 4 puestos electivos activos para crear elecciones");
-                    return RedirectToAction("Elecciones");
 
                 }
-
-                //}
-                //catch
-                //{
-
-                //}
             }
-            //var elecciones2 = await _eleccionesRepo.TraerElecciones();
+            var elecciones = await _eleccionesRepo.TraerElecciones();
             return RedirectToAction("Elecciones");
         }
         [HttpPost]
@@ -56,14 +48,14 @@ namespace ItlaElector.Controllers
         {
             if (ModelState.IsValid)
             {
-                //try
-                //{
-                await _eleccionesRepo.FinalizarEleccion();
-                //}
-                //catch
-                //{
+                try
+                {
+                    await _eleccionesRepo.FinalizarEleccion();
+                }
+                catch
+                {
 
-                //}
+                }
             }
             var elecciones = await _eleccionesRepo.TraerElecciones();
             return RedirectToAction("Elecciones");
@@ -80,5 +72,6 @@ namespace ItlaElector.Controllers
             return Json(true);
         }
 
+       
     }
 }

@@ -7,6 +7,7 @@ using DataBase.Models;
 using DataBase.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Remotion.Linq.Clauses;
 
 namespace Repository.Repository
 {
@@ -17,18 +18,21 @@ namespace Repository.Repository
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IMapper _mapper;
         private readonly PuestosElectivosRepo _puestosElectivos;
+        private readonly CandidatosRepo _candidatosRepo;
 
 
 
         public EleccionesRepo(ItlaElectorDBContext context, UserManager<IdentityUser> userManager,
                             SignInManager<IdentityUser> signInManager, IMapper mapper,
-                            PuestosElectivosRepo puestosElectivos) : base(context)
+                            PuestosElectivosRepo puestosElectivos, CandidatosRepo candidatosRepo) : base(context)
         {
             _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
             _mapper = mapper;
             _puestosElectivos = puestosElectivos;
+            _candidatosRepo = candidatosRepo;
+
         }
 
         public async Task<EleccionesViewModel> TraerElecciones()
@@ -36,11 +40,38 @@ namespace Repository.Repository
             var elecciones = await GetAllAsync();
             EleccionesViewModel ele = new EleccionesViewModel();
             List<EleccionesViewModel> TodasLasElecciones = new List<EleccionesViewModel>();
+            List<List<ResultadosViewModel>> listoflist = new List<List<ResultadosViewModel>>();
             foreach (var e in elecciones)
             {
                 var eleccione = _mapper.Map<EleccionesViewModel>(e);
+                var resul = await ResultadosElecciones(e.IdEleccion);
+
+                if (resul.Count >0)
+                {
+                    listoflist.Add(resul);
+                }
                 TodasLasElecciones.Add(eleccione);
             }
+            var eleccion = await _context.Elecciones.FirstOrDefaultAsync(a => a.Estado.Trim() == "Progreso");
+            if (eleccion !=null)
+            {
+
+                ele.Procesoactivos = true;
+            }
+            else
+            {
+                if (await _puestosElectivos.validacionepuestosE())
+                {
+                    ele.disponibilidadpuestos = true;
+                }
+                if (await _candidatosRepo.TraerCandidatosActivos())
+                {
+                    ele.disponibilidadecandidatos = true;
+                }
+
+            }
+
+            ele.Resultados = listoflist;
             ele.elecciones = TodasLasElecciones;
             return ele;
         }
@@ -60,12 +91,47 @@ namespace Repository.Repository
         public async Task<bool> eleccionesactivas()
         {
 
-            var eleccion = await _context.Elecciones.FirstOrDefaultAsync(a => a.Estado.Trim() == "Progreso");
+            var eleccion = await _context.Elecciones.FirstOrDefaultAsync(a => a.Estado == "Progreso");
             if (eleccion == null)
             {
                 return true;
             }
             return false;
+        }
+
+
+        public async Task<List<ResultadosViewModel>> ResultadosElecciones(int id)
+        {
+
+            var totalvotos = await _context.Votacion.Where(a => a.IdEleccion == id).ToListAsync();
+            var candidatos =  totalvotos.Select(a => a.IdCandidato).Distinct().ToList();
+            var list = new List<ResultadosViewModel>();
+            var Listidpuestos = new List<int>();
+            foreach (var can in totalvotos)
+            {
+                var newcandidato = await _context.Candidatos.FirstOrDefaultAsync(b => b.IdCandidato == can.IdCandidato);
+                var puesto = await _context.PuestoElectivo.FirstOrDefaultAsync(p => p.IdPuestoElectivo == newcandidato.IdPuestoElectivo);
+                Listidpuestos.Add(puesto.IdPuestoElectivo);
+            }
+
+            foreach (var can in candidatos)
+            {
+                var newcandidato = await _context.Candidatos.FirstOrDefaultAsync(b => b.IdCandidato == can);
+                var puesto = await _context.PuestoElectivo.FirstOrDefaultAsync(p => p.IdPuestoElectivo == newcandidato.IdPuestoElectivo);
+                var totalvotospuestos = Listidpuestos.Count(a => a == puesto.IdPuestoElectivo);
+                var votos = totalvotos.Count(c => c.IdCandidato == newcandidato.IdCandidato);
+                var resul = new ResultadosViewModel();
+                resul.ideleccion = id;
+                resul.Nombre = newcandidato.Nombre;
+                resul.Puesto = puesto.Nombre;
+                resul.Votos = votos;
+                resul.porcentaje = (((votos * 100.00) / (totalvotospuestos * 100.00)) * 100.00);
+
+                list.Add(resul);
+               
+            }
+
+            return list;
         }
 
 

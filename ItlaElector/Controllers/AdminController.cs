@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Repository;
 
@@ -15,6 +16,8 @@ namespace ItlaElector.Controllers
             _adminRepo = adminRepo;
 
         }
+        [Authorize(Roles = "Administrador")]
+
         public IActionResult Home()
         {
             return View();

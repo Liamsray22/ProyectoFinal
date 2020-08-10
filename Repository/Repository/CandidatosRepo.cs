@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataBase.Models;
@@ -49,7 +50,17 @@ namespace Repository.Repository
             can.candidatos = TodosLosCandidatos;
             return can;
         }
-        
+        public async Task<bool> TraerCandidatosActivos()
+        {
+            var candidatos = await _context.Candidatos.Where(a=> a.Estado.Trim()=="Activo").ToListAsync();
+           if (candidatos.Count >= 2)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
 
         public async Task CrearCandidatos(CandidatosViewModel cavm, string WebrootPath)
         {
@@ -97,7 +108,8 @@ namespace Repository.Repository
             {
                 _context.Entry(candidato).State = EntityState.Detached;
                 var can = _mapper.Map<Candidatos>(ucavm);
-
+                can.Estado = candidato.Estado;
+                if (ucavm.Photo != null) { 
                 string uniqueName = null;
                 var folderPath = Path.Combine(WebrootPath, "images/Candidato");
                 uniqueName = Guid.NewGuid().ToString() + "_" + ucavm.Photo.FileName;
@@ -119,6 +131,13 @@ namespace Repository.Repository
                     }
                 }
                     can.FotoPerfil = uniqueName;
+                }
+                else
+                {
+
+                    can.FotoPerfil = candidato.FotoPerfil;
+                }
+
                 await Update(can);
                 return true;
             }

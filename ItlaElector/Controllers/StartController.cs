@@ -65,7 +65,8 @@ namespace ItlaElector.Controllers
                 var log = await _adminRepo.LoguearCiudadano(loginViewModel);
                 if (log)
                 {
-                    return RedirectToAction("Home", "Elector");
+
+                return RedirectToAction("Home", "Elector");
                 }
                 ModelState.AddModelError("", "Usuario o clave incorrectos");
 
