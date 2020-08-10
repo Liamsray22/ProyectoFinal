@@ -16,6 +16,7 @@ namespace Repository.Repository
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IMapper _mapper;
+        
 
 
 
@@ -79,6 +80,30 @@ namespace Repository.Repository
         {
             var puesto = _mapper.Map<PuestoElectivo>(pevm);
             await AddAsync(puesto);
+            var partido = await _context.Partidos.FirstOrDefaultAsync(p=>p.Nombre.Contains("Ninguno"));
+            if (partido == null)
+            {
+                var part = new Partidos();
+                part.Nombre = "Ninguno";
+                part.Descripcion = "Partido Ninguno";
+                part.Logo = "UserPuestos.jpg";
+                part.Estado = "Activo";
+
+                await _context.Partidos.AddAsync(part);
+                await _context.SaveChangesAsync();
+            }
+            var partido2 = await _context.Partidos.FirstOrDefaultAsync(p => p.Nombre.Contains("Ninguno"));
+            var cand = new Candidatos();
+            cand.Nombre = "Ninguno";
+            cand.Apellido = "";
+            cand.IdPuestoElectivo = puesto.IdPuestoElectivo;
+            cand.IdPartido = partido2.IdPartido;
+            cand.FotoPerfil = "UserPuestos.jpg";
+            cand.Estado = "Activo";
+            await _context.Candidatos.AddAsync(cand);
+            await _context.SaveChangesAsync();
+
+
         }
 
         public async Task EliminarPuestosElectivos(int id)

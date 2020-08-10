@@ -188,36 +188,42 @@
             <tbody style="font-size:14px; overflow-y: scroll" class="text-center">
                 @foreach (var c in Model.candidatos)
                 {
-                    <tr class="bg-light mt-3">
-                        <td>
-                            @{ var photopath = "~/images/Candidato/" + (!string.IsNullOrEmpty(c.FotoPerfil) ? c.FotoPerfil : "desconocido.jpg ");}
-                            <img src="@photopath" class="rounded mx-auto d-block mr-3 mt-2" width="60" height="60" asp-append-version="true">
-                        </td>
-                        <td>@Html.DisplayFor(ModelItem => c.Nombre)</td>
-                        <td>@Html.DisplayFor(ModelItem => c.Apellido)</td>
-                        <td>@Html.DisplayFor(ModelItem => c.Partido)</td>
-                        <td>@Html.DisplayFor(ModelItem => c.PuestoElectivo)</td>
-                        <td>
-                           
-                                @if (c.Estado == "Inactivo")
-                                {
-                                    @*Modelo para activar puesto*@
+                <tr class="bg-light mt-3">
+                    <td>
+                        @{ var photopath = "~/images/Candidato/" + (!string.IsNullOrEmpty(c.FotoPerfil) ? c.FotoPerfil : "desconocido.jpg ");}
+                        <img src="@photopath" class="rounded mx-auto d-block mr-3 mt-2" width="60" height="60" asp-append-version="true">
+                    </td>
+                    <td>@Html.DisplayFor(ModelItem => c.Nombre)</td>
+                    <td>@Html.DisplayFor(ModelItem => c.Apellido)</td>
+                    <td>@Html.DisplayFor(ModelItem => c.Partido)</td>
+                    <td>@Html.DisplayFor(ModelItem => c.PuestoElectivo)</td>
+                    <td>
 
-                                    <div class="text-danger font-weight-bolder">
-                                        @Html.DisplayFor(ModelItem => c.Estado)
-                                    </div>
+                        @if (c.Estado == "Inactivo")
+                        {
+                            @*Modelo para activar puesto*@
 
-                                }
-                                else
-                                {
-                                    <div class="text-info font-weight-bolder">
-                                        @Html.DisplayFor(ModelItem => c.Estado)
-                                    </div>
-                                }
-                        
-                        </td>
+                            <div class="text-danger font-weight-bolder">
+                                @Html.DisplayFor(ModelItem => c.Estado)
+                            </div>
 
-                        <td>
+                        }
+                        else
+                        {
+                            <div class="text-info font-weight-bolder">
+                                @Html.DisplayFor(ModelItem => c.Estado)
+                            </div>
+                        }
+
+                    </td>
+                    
+                    <td>
+                        @if (c.Nombre == "Ninguno")
+                        {
+
+                        }
+                        else
+                        {
                             @*Editar puesto electivo*@
                             <a data-toggle="modal" data-target="#EditarPuesto@(c.IdCandidato)" class="text-white btn btn-warning ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 
@@ -323,6 +329,10 @@
 
                             @*eliminar puesto*@
 
+
+
+
+
                             @if (c.Estado == "Inactivo")
                             {
                                 <a data-toggle="modal" data-target="#EliminarCiudadano@(c.IdCandidato)" class="text-white btn btn-success ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
@@ -388,10 +398,10 @@
 
 
                             }
-                           
+                        }
 
 
-                        </td>
+                    </td>
 
                     </tr>
                 }
