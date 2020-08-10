@@ -114,7 +114,7 @@
                                 <td class="text-info font-weight-bolder">
                                     @Html.DisplayFor(ModelItem => pe.Nombre)
                                 </td>
-                                <td class="font-weight-normal">
+                                <td class="font-weight-normal text-justify">
                                     @Html.DisplayFor(ModelItem => pe.Descripcion)
                                 <td>
                                     @if (pe.Estado == "Inactivo")
@@ -138,7 +138,7 @@
 
                                 <td>
                                     @*Editar puesto electivo*@
-                                    <a data-toggle="modal" data-target="#EditarPuesto@(pe.IdPuestoElectivo)" class="text-white btn btn-warning ml-auto   btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                    <a data-toggle="modal" data-target="#EditarPuesto@(pe.IdPuestoElectivo)" class="text-white btn btn-warning ml-auto mt-1 btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 
                                     <div class="modal fade" id="EditarPuesto@(pe.IdPuestoElectivo)" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -173,9 +173,9 @@
                                                             <span asp-validation-for="Descripcion" class="text-danger ml-5 text-center "> <br /></span>
                                                         </div>
                                                         <textarea asp-for="Descripcion" value="@pe.Descripcion" class="form-control shadow-sm p-3 bg-white rounded form-control-lg border-bottom border-dark" placeholder="Escribir descripcion del puesto electivo"></textarea>
-                                                        @*<input type="hidden" name="Estado" value="Activo" />*@
+                                                        @*<input type="hidden" asp-for="Estado" value="Activo" />*@
                                                         <input type="hidden" asp-for="IdPuestoElectivo" value="@pe.IdPuestoElectivo" />
-
+                                                        <input type="hidden"  asp-for="Estado"  value="@pe.Estado" />
                                                         <div class="form-group row mt-4">
                                                             <div class="col">
                                                                 <input type="submit" value="Editar" class="btn btn-outline-success btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
@@ -198,7 +198,7 @@
                                     @*eliminar puesto*@
                                     @if (pe.Estado == "Inactivo")
                                     {
-                                        <a data-toggle="modal" data-target="#EliminarCiudadano@(pe.IdPuestoElectivo)" class="text-white btn btn-success ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
+                                        <a data-toggle="modal" data-target="#EliminarCiudadano@(pe.IdPuestoElectivo)" class="text-white btn btn-success ml-auto mt-1 btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
 
                                         <div class="modal fade " id="EliminarCiudadano@(pe.IdPuestoElectivo)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-sm">
@@ -230,7 +230,7 @@
                                     }
                                     else
                                     {
-                                        <a data-toggle="modal" data-target="#EliminarCiudadano@(pe.IdPuestoElectivo)" class="text-white btn btn-danger ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                        <a data-toggle="modal" data-target="#EliminarCiudadano@(pe.IdPuestoElectivo)" class="text-white btn btn-danger ml-auto mt-1  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
 
                                         <div class="modal fade " id="EliminarCiudadano@(pe.IdPuestoElectivo)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-sm">

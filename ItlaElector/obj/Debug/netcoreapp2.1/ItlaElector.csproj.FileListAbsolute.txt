@@ -22,7 +22,6 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreap
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.TagHelpers.input.cache
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.TagHelpers.output.cache
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\ItlaElector.RazorCoreGenerate.cache
-C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Account\Index.g.cshtml.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Home.g.cshtml.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Candidatos\Candidatos.g.cshtml.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Ciudadanos\Ciudadanos.g.cshtml.cs

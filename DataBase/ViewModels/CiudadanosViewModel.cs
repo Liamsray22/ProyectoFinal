@@ -1,15 +1,18 @@
-﻿using System;
+﻿using DataBase.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Text;
 
 namespace DataBase.ViewModels
 {
     public class CiudadanosViewModel
     {
-        [StringLength(11, ErrorMessage = "Solo 11 digitos de la Cedula")]
-        [Required(ErrorMessage = "La Cedula es requerida")]
 
+      // [Cedula(ErrorMessage = "Esta cédula ya a sido registrada")]
+        [StringLength(11, MinimumLength = 11, ErrorMessage = "Debes insertar exactamente 11 digitos de la Cedula")]
+        [Required(ErrorMessage = "La Cedula es requerida")]
         public string Cedula { get; set; }
         [Required(ErrorMessage = "El nombre es requerido")]
 
@@ -24,4 +27,28 @@ namespace DataBase.ViewModels
         public string Estado { get; set; }
         public IEnumerable<CiudadanosViewModel> ciudadanos { get; set; }
     }
+
+ /*   public class CedulaAttribute : ValidationAttribute
+    {
+
+
+        public override bool IsValid(object value)
+        {
+
+            ItlaElectorDBContext context = new ItlaElectorDBContext();
+
+            var ListUsuario = context.Ciudadanos.Select(x => x.Cedula).ToList();
+
+            if (ListUsuario.Contains(value))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+    }*/
+
+
+
 }

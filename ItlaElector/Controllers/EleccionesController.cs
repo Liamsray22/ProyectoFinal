@@ -4,11 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using DataBase.Models;
 using DataBase.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Repository;
 
 namespace ItlaElector.Controllers
 {
+    [Authorize(Roles = "Administrador")]
+
     public class EleccionesController : Controller
     {
         private readonly EleccionesRepo _eleccionesRepo;

@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DataBase.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Repository;
 
 namespace ItlaElector.Controllers
 {
+    [Authorize(Roles = "Administrador")]
+
     public class CiudadanosController : Controller
     {
         private readonly CiudadanosRepo _ciudadanosRepo;
