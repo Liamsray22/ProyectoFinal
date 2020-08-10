@@ -5642,7 +5642,7 @@
       ]
     },
     "Microsoft.AspNetCore.Razor.Design/2.1.1": {
-      "sha512": "1XHObHLx6A0/57ZmLG9gfKMO/Z/gQjRXPFWQDMlPZGYwcfgufvSdmI2+RYvR5DGkbba9HIHC35ClNQ2yVNIohw==",
+      "sha512": "f8PKGcxiezL1RVqmnmrazj24Mj4KCTSXqwdotl7Lc+82h8iLV7ItxEIShTJakG7M9iw0ZuCocM0J/IhYesdQrg==",
       "type": "package",
       "path": "microsoft.aspnetcore.razor.design/2.1.1",
       "hasTools": true,
@@ -6006,19 +6006,20 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "U+1YSJFxnBMpAcSqA8pbPaWqNbnyK/ft1RrlKw/iZknltmS+2CnOVnc1b6bfV3EgPJwYfAHNKkt75+yyJX8xAQ==",
+      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
-        "Microsoft.CodeAnalysis.Analyzers.1.1.0.nupkg.sha512",
-        "Microsoft.CodeAnalysis.Analyzers.nuspec",
+        ".signature.p7s",
         "ThirdPartyNotices.rtf",
         "analyzers/dotnet/cs/Microsoft.CodeAnalysis.Analyzers.dll",
         "analyzers/dotnet/cs/Microsoft.CodeAnalysis.CSharp.Analyzers.dll",
         "analyzers/dotnet/vb/Microsoft.CodeAnalysis.Analyzers.dll",
         "analyzers/dotnet/vb/Microsoft.CodeAnalysis.VisualBasic.Analyzers.dll",
+        "microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",
+        "microsoft.codeanalysis.analyzers.nuspec",
         "tools/install.ps1",
         "tools/uninstall.ps1"
       ]
@@ -9543,13 +9544,11 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "ETGCguMPc5f2zYoRKD9LPAJMQnDVL6UQYz7WxGtQ0Szr2nca7UFnl6+K7I4kmomj3xZE3ez0kU3NyRqO/10ylg==",
+      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
         ".nupkg.metadata",
-        "System.Linq.Queryable.4.0.1.nupkg.sha512",
-        "System.Linq.Queryable.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/monoandroid10/_._",
@@ -9597,7 +9596,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "system.linq.queryable.4.0.1.nupkg.sha512",
+        "system.linq.queryable.nuspec"
       ]
     },
     "System.Memory/4.5.1": {
@@ -12716,24 +12717,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Liam\\.nuget\\packages\\": {},
+    "C:\\Users\\Pablo Molina\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\Repository\\Repository.csproj",
+      "projectUniqueName": "C:\\Users\\Pablo Molina\\source\\repos\\ProyectoFinal\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\Repository\\Repository.csproj",
-      "packagesPath": "C:\\Users\\Liam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\Repository\\obj\\",
+      "projectPath": "C:\\Users\\Pablo Molina\\source\\repos\\ProyectoFinal\\Repository\\Repository.csproj",
+      "packagesPath": "C:\\Users\\Pablo Molina\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pablo Molina\\source\\repos\\ProyectoFinal\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Liam\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Pablo Molina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -12745,14 +12749,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Liam\\source\\repos\\ItlaElector\\AutoMap\\AutoMap.csproj": {
-              "projectPath": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\AutoMap\\AutoMap.csproj"
+            "C:\\Users\\Pablo Molina\\source\\repos\\ProyectoFinal\\AutoMap\\AutoMap.csproj": {
+              "projectPath": "C:\\Users\\Pablo Molina\\source\\repos\\ProyectoFinal\\AutoMap\\AutoMap.csproj"
             },
-            "C:\\Users\\Liam\\source\\repos\\ItlaElector\\DataBase\\DataBase.csproj": {
-              "projectPath": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\DataBase\\DataBase.csproj"
+            "C:\\Users\\Pablo Molina\\source\\repos\\ProyectoFinal\\DataBase\\DataBase.csproj": {
+              "projectPath": "C:\\Users\\Pablo Molina\\source\\repos\\ProyectoFinal\\DataBase\\DataBase.csproj"
             },
-            "C:\\Users\\Liam\\source\\repos\\ItlaElector\\EmailConfig\\EmailConfig.csproj": {
-              "projectPath": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\EmailConfig\\EmailConfig.csproj"
+            "C:\\Users\\Pablo Molina\\source\\repos\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj": {
+              "projectPath": "C:\\Users\\Pablo Molina\\source\\repos\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj"
             }
           }
         }
@@ -12810,7 +12814,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: Microsoft.AspNetCore.App 2.1.1 requiere Microsoft.Extensions.DependencyInjection.Abstractions (>= 2.1.1 && < 2.2.0), pero la versión Microsoft.Extensions.DependencyInjection.Abstractions 3.0.0 ya se resolvió.",
+      "message": "Detected package version outside of dependency constraint: Microsoft.AspNetCore.App 2.1.1 requires Microsoft.Extensions.DependencyInjection.Abstractions (>= 2.1.1 && < 2.2.0) but version Microsoft.Extensions.DependencyInjection.Abstractions 3.0.0 was resolved.",
       "libraryId": "Microsoft.Extensions.DependencyInjection.Abstractions",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.1"
