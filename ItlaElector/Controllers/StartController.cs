@@ -71,7 +71,6 @@ namespace ItlaElector.Controllers
 
                 ViewBag.error = "Usuario o clave incorrectos";
                 return View(loginViewModel);
-            
         }
 
         [AcceptVerbs("GET", "POST")]

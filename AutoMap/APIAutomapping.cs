@@ -15,6 +15,7 @@ namespace AutoMap
             MapearCandidatoPartidoDTO_Candidato();
             MapearCrearPartidoDTO_Partido();
             MapearPuestoElectivoDTO_PuestoElectivo();
+            MapearEleccionesDTO_Eleccion();
 
         }
 
@@ -24,6 +25,13 @@ namespace AutoMap
             //ForMember(dest => dest.campo, opt => opt.Ignore()).
             //ForMember(dest => dest.campo, opt => opt.Ignore());
         }
+
+        private void MapearEleccionesDTO_Eleccion()
+        {
+            CreateMap<EleccionesDTO, Elecciones>().ReverseMap();
+        }
+
+
 
         private void MapearPartidoDTO_Partido()
         {

@@ -45,8 +45,20 @@ namespace ItlaElector.Controllers
             var Votacionvm = await _votacionRepo.TraerCandidatosByIdPuestos(vvm.IdEleccion);
             ModelState.AddModelError("", "Elija un candidato");
             return View(Votacionvm);
+        }
 
+        public async Task<IActionResult> Finalizar()
+        {
+            var validar = await _votacionRepo.Finalizar(User.Identity.Name);
+            if (validar)
+            {
+                return RedirectToAction("Start", "Start");
+            }
+            else
+            {
+                return RedirectToAction("Home");
 
+            }
 
         }
 
