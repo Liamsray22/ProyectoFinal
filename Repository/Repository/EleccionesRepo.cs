@@ -75,7 +75,7 @@ namespace Repository.Repository
         public async Task<bool> eleccionesactivas()
         {
 
-            var eleccion = await _context.Elecciones.FirstOrDefaultAsync(a => a.Estado.Trim() == "Progreso");
+            var eleccion = await _context.Elecciones.FirstOrDefaultAsync(a => a.Estado == "Progreso");
             if (eleccion == null)
             {
                 return true;

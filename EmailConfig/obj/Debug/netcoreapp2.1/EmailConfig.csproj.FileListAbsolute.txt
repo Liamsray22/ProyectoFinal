@@ -18,9 +18,9 @@ C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\Email
 C:\ProyectoFinal\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.deps.json
 C:\ProyectoFinal\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.dll
 C:\ProyectoFinal\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.pdb
-C:\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csprojAssemblyReference.cache
 C:\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfoInputs.cache
 C:\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfo.cs
 C:\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csproj.CoreCompileInputs.cache
 C:\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.dll
 C:\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.pdb
+C:\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csprojAssemblyReference.cache

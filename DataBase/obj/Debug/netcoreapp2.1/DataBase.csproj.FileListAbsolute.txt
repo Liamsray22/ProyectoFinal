@@ -24,10 +24,10 @@ C:\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.runtimeconfig.json
 C:\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.runtimeconfig.dev.json
 C:\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.dll
 C:\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.pdb
-C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.csprojAssemblyReference.cache
 C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfoInputs.cache
 C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfo.cs
 C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.csproj.CoreCompileInputs.cache
 C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.dll
 C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.pdb
 C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.genruntimeconfig.cache
+C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.csprojAssemblyReference.cache
