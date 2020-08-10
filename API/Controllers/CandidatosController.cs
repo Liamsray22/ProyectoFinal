@@ -183,7 +183,12 @@ namespace API.Controllers
             return BadRequest();
 
         }
-
+        [HttpGet(("GetCandidatosByEleccion/{Id}"))]
+        public async Task<ActionResult<List<VotacionDTO>>> GetCandidatosByEleccion(int? Id)
+        {
+            var datos = await _candidatosApiRepos.GetCandidatosByEleccion(Id.Value);
+            return datos;
+        }
 
     }
 

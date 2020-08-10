@@ -63,6 +63,11 @@ namespace Repository.Repository
             return false;
         }
 
+        public async Task CerrarSesion()
+        {
+            await _signInManager.SignOutAsync();
+        }
+
         //public void Borrar(string path)
         //{
         //    File.SetAttributes(path, FileAttributes.Normal);

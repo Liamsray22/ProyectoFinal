@@ -13519,11 +13519,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\ItlaElector\\ItlaElector.csproj",
+      "projectUniqueName": "C:\\Users\\Liam\\Desktop\\ProyectoFinal\\ItlaElector\\ItlaElector.csproj",
       "projectName": "ItlaElector",
-      "projectPath": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\ItlaElector\\ItlaElector.csproj",
+      "projectPath": "C:\\Users\\Liam\\Desktop\\ProyectoFinal\\ItlaElector\\ItlaElector.csproj",
       "packagesPath": "C:\\Users\\Liam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\ItlaElector\\obj\\",
+      "outputPath": "C:\\Users\\Liam\\Desktop\\ProyectoFinal\\ItlaElector\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13542,17 +13542,17 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Liam\\source\\repos\\ItlaElector\\AutoMap\\AutoMap.csproj": {
-              "projectPath": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\AutoMap\\AutoMap.csproj"
+            "C:\\Users\\Liam\\Desktop\\ProyectoFinal\\AutoMap\\AutoMap.csproj": {
+              "projectPath": "C:\\Users\\Liam\\Desktop\\ProyectoFinal\\AutoMap\\AutoMap.csproj"
             },
-            "C:\\Users\\Liam\\source\\repos\\ItlaElector\\DataBase\\DataBase.csproj": {
-              "projectPath": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\DataBase\\DataBase.csproj"
+            "C:\\Users\\Liam\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj": {
+              "projectPath": "C:\\Users\\Liam\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj"
             },
-            "C:\\Users\\Liam\\source\\repos\\ItlaElector\\EmailConfig\\EmailConfig.csproj": {
-              "projectPath": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\EmailConfig\\EmailConfig.csproj"
+            "C:\\Users\\Liam\\Desktop\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj": {
+              "projectPath": "C:\\Users\\Liam\\Desktop\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj"
             },
-            "C:\\Users\\Liam\\source\\repos\\ItlaElector\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\Liam\\source\\repos\\ItlaElector\\Repository\\Repository.csproj"
+            "C:\\Users\\Liam\\Desktop\\ProyectoFinal\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\Liam\\Desktop\\ProyectoFinal\\Repository\\Repository.csproj"
             }
           }
         }
