@@ -11,7 +11,7 @@ namespace DataBase.ViewModels
         [StringLength(13, ErrorMessage = "Siga el formato dado")]
 
         [Required(ErrorMessage ="Este Campo Usuario es requerido")]
-        //[Remote(action: "VerifyCedula", controller: "Start")]
+        [Remote(action: "VerifyCedula", controller: "Start")]
         public string Cedula { get; set; }
  
     }

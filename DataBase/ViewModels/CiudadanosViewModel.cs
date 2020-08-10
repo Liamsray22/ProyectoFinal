@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -9,6 +10,7 @@ namespace DataBase.ViewModels
     {
         [StringLength(11, ErrorMessage = "Solo 11 digitos de la Cedula")]
         [Required(ErrorMessage = "La Cedula es requerida")]
+        [Remote(action: "VerifyCedula", controller: "Ciudadanos")]
 
         public string Cedula { get; set; }
         [Required(ErrorMessage = "El nombre es requerido")]

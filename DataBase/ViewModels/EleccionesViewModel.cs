@@ -17,7 +17,7 @@ namespace DataBase.ViewModels
         [Required(ErrorMessage = "Debe elegir la fecha de la Elecciones")]
         [DataType(DataType.Date)]
         //[Remote(action: "Verifydate", controller: "Elecciones")]
-        public DateTime Fecha { get; set; }
+        public DateTime? Fecha { get; set; }
 
         public string Estado { get; set; }
         public bool Procesoactivos { get; set; }

@@ -26,8 +26,13 @@ namespace DataBase.ViewModels
         public string Partido { get; set; }
 
         public string PuestoElectivo { get; set; }
+        [Required(ErrorMessage = "Debe seleccionar una foto")]
         public string FotoPerfil { get; set; }
-        //[Required(ErrorMessage = "Debe seleccionar una foto")]
+
+        [Required(ErrorMessage = "Debe seleccionar una foto")]
+        public string newfoto { get; set; }
+
+
         //[Remote(action: "Verifyphoto", controller: "Candidatos")]
         public IFormFile Photo { get; set; }
         public string Estado { get; set; }
