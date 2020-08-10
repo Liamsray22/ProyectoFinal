@@ -3,14 +3,6 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\bin\Debug\netcoreapp2.1\API
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\bin\Debug\netcoreapp2.1\API.runtimeconfig.dev.json
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\bin\Debug\netcoreapp2.1\API.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\bin\Debug\netcoreapp2.1\API.pdb
-C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.csproj.CoreCompileInputs.cache
-C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.RazorAssemblyInfo.cache
-C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.RazorAssemblyInfo.cs
-C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.AssemblyInfoInputs.cache
-C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.AssemblyInfo.cs
-C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.RazorTargetAssemblyInfo.cache
-C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.dll
-C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.pdb
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\bin\Debug\netcoreapp2.1\AutoMap.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\bin\Debug\netcoreapp2.1\DataBase.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\bin\Debug\netcoreapp2.1\EmailConfig.dll
@@ -19,58 +11,13 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\bin\Debug\netcoreapp2.1\Aut
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\bin\Debug\netcoreapp2.1\DataBase.pdb
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\bin\Debug\netcoreapp2.1\Repository.pdb
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\bin\Debug\netcoreapp2.1\EmailConfig.pdb
-C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.csproj.CopyComplete
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.csprojAssemblyReference.cache
-<<<<<<< HEAD
-C:\Users\Liam\source\repos\ItlaElector\API\bin\Debug\netcoreapp2.1\API.deps.json
-C:\Users\Liam\source\repos\ItlaElector\API\bin\Debug\netcoreapp2.1\API.runtimeconfig.json
-C:\Users\Liam\source\repos\ItlaElector\API\bin\Debug\netcoreapp2.1\API.runtimeconfig.dev.json
-C:\Users\Liam\source\repos\ItlaElector\API\bin\Debug\netcoreapp2.1\API.dll
-C:\Users\Liam\source\repos\ItlaElector\API\bin\Debug\netcoreapp2.1\API.pdb
-C:\Users\Liam\source\repos\ItlaElector\API\bin\Debug\netcoreapp2.1\AutoMap.dll
-C:\Users\Liam\source\repos\ItlaElector\API\bin\Debug\netcoreapp2.1\DataBase.dll
-C:\Users\Liam\source\repos\ItlaElector\API\bin\Debug\netcoreapp2.1\EmailConfig.dll
-C:\Users\Liam\source\repos\ItlaElector\API\bin\Debug\netcoreapp2.1\Repository.dll
-C:\Users\Liam\source\repos\ItlaElector\API\bin\Debug\netcoreapp2.1\AutoMap.pdb
-C:\Users\Liam\source\repos\ItlaElector\API\bin\Debug\netcoreapp2.1\DataBase.pdb
-C:\Users\Liam\source\repos\ItlaElector\API\bin\Debug\netcoreapp2.1\Repository.pdb
-C:\Users\Liam\source\repos\ItlaElector\API\bin\Debug\netcoreapp2.1\EmailConfig.pdb
-C:\Users\Liam\source\repos\ItlaElector\API\obj\Debug\netcoreapp2.1\API.csprojAssemblyReference.cache
-C:\Users\Liam\source\repos\ItlaElector\API\obj\Debug\netcoreapp2.1\API.csproj.CoreCompileInputs.cache
-C:\Users\Liam\source\repos\ItlaElector\API\obj\Debug\netcoreapp2.1\API.RazorAssemblyInfo.cache
-C:\Users\Liam\source\repos\ItlaElector\API\obj\Debug\netcoreapp2.1\API.RazorAssemblyInfo.cs
-C:\Users\Liam\source\repos\ItlaElector\API\obj\Debug\netcoreapp2.1\API.AssemblyInfoInputs.cache
-C:\Users\Liam\source\repos\ItlaElector\API\obj\Debug\netcoreapp2.1\API.AssemblyInfo.cs
-C:\Users\Liam\source\repos\ItlaElector\API\obj\Debug\netcoreapp2.1\API.RazorTargetAssemblyInfo.cache
-C:\Users\Liam\source\repos\ItlaElector\API\obj\Debug\netcoreapp2.1\API.csproj.CopyComplete
-C:\Users\Liam\source\repos\ItlaElector\API\obj\Debug\netcoreapp2.1\API.dll
-C:\Users\Liam\source\repos\ItlaElector\API\obj\Debug\netcoreapp2.1\API.pdb
-=======
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\appsettings.Development.json
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\appsettings.json
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\API.deps.json
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\API.runtimeconfig.json
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\API.runtimeconfig.dev.json
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\API.dll
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\API.pdb
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\AutoMap.dll
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\DataBase.dll
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\EmailConfig.dll
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\Repository.dll
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\AutoMap.pdb
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\DataBase.pdb
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\Repository.pdb
-C:\Users\User\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\EmailConfig.pdb
-C:\Users\User\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.csprojAssemblyReference.cache
-C:\Users\User\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.AssemblyInfo.cs
-C:\Users\User\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.RazorAssemblyInfo.cache
-C:\Users\User\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.RazorAssemblyInfo.cs
-C:\Users\User\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.RazorTargetAssemblyInfo.cache
-C:\Users\User\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.csproj.CopyComplete
-C:\Users\User\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.dll
-C:\Users\User\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.pdb
-C:\Users\User\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.genruntimeconfig.cache
->>>>>>> addae7a95309de37e3ca631b2a886c843d7b845b
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.csproj.CoreCompileInputs.cache
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.RazorAssemblyInfo.cache
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.RazorAssemblyInfo.cs
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.AssemblyInfoInputs.cache
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.AssemblyInfo.cs
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.RazorTargetAssemblyInfo.cache
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.csproj.CopyComplete
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.dll
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.pdb

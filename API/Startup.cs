@@ -57,17 +57,34 @@ namespace API
             services.AddScoped<CandidatoApiRepos>();
             services.AddScoped<PuestoElectivoApiRepos>();
             services.AddScoped<PuestoCanditadoApiRepos>();
+            services.AddScoped<CiudadApiRepos>();
+            services.AddScoped<EleccionApiRepos>();
+            services.AddScoped<VotacionesApiRepos>();
+
+            //Swager
+            services.AddSwaggerGen();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-            }
 
+                app.UseDeveloperExceptionPage();
+                
+                app.UseSwagger();
+
+                app.UseSwaggerUI(c => {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
+                    c.RoutePrefix = String.Empty;
+                });
+
+            }
+            
+            
             app.UseMvc();
         }
     }
