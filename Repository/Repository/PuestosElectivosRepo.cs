@@ -64,6 +64,16 @@ namespace Repository.Repository
             }
             return null;
         }
+        public async Task<bool> validacionepuestosE()
+        {
+            var PuestosElectivos = await _context.PuestoElectivo.Where(a => a.Estado.Trim() == "Activo").ToListAsync();
+            if (PuestosElectivos.Count>=4)
+            {
+                return false;
+            }
+
+            return true;
+        }
 
         public async Task CrearPuestosElectivos(PuestosElectivosViewModel pevm)
         {

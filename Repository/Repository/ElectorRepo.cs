@@ -31,6 +31,7 @@ namespace Repository.Repository
         public async Task<ElectorViewModel> elector(string cedula)
         {
             var puestos = await _puestosElectivos.TraerPuestosElectivos();
+            //var lispuestos = new IEnumerable<PuestosElectivosViewModel>();
             ElectorViewModel el = new ElectorViewModel();
             el.puestosElectivos = puestos.puestos;
             var idcands = await _context.Votacion.Where(x=>x.Cedula.Contains(cedula)).Select(s=>s.IdCandidato).ToListAsync();

@@ -1,7 +1,6 @@
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.deps.json
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.pdb
-C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csprojAssemblyReference.cache
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.csproj.CoreCompileInputs.cache
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfoInputs.cache
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfo.cs

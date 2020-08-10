@@ -20,7 +20,8 @@ namespace AutoMap
 
         private void MapearElecciones()
         {
-            CreateMap<EleccionesViewModel, Elecciones>().ReverseMap();
+            CreateMap<EleccionesViewModel, Elecciones>().ReverseMap().
+            ForMember(dest => dest.Procesoactivos, opt => opt.Ignore());
         }
 
         private void MapearCiudadanos()

@@ -10,7 +10,6 @@ namespace DataBase.ViewModels
     {
         public int IdEleccion { get; set; }
         [Required(ErrorMessage = "El nombre de la eleccion es requerido")]
-
         public string Nombre { get; set; }
 
 
@@ -21,6 +20,12 @@ namespace DataBase.ViewModels
         public DateTime Fecha { get; set; }
 
         public string Estado { get; set; }
+        public bool Procesoactivos { get; set; }
+        public bool disponibilidadecandidatos{ get; set; }
+        public bool disponibilidadpuestos { get; set; }
+
+
+        public List<List<ResultadosViewModel>> Resultados { get; set; }
         public IEnumerable<EleccionesViewModel> elecciones { get; set; }
     }
 }

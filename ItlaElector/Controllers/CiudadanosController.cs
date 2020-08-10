@@ -30,7 +30,8 @@ namespace ItlaElector.Controllers
             //{
             //try
             //{
-                await _ciudadanosRepo.CrearCiudadanos(cvm);
+
+            await _ciudadanosRepo.CrearCiudadanos(cvm);
                 //}
                 //catch
                 //{

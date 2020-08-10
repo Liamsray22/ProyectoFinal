@@ -3,6 +3,7 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.runtimeconfig.dev.json
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.pdb
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.csprojAssemblyReference.cache
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.csproj.CoreCompileInputs.cache
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfoInputs.cache
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfo.cs
