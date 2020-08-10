@@ -76,16 +76,13 @@ namespace API.Controllers
 
 
             var ListadoPuestoEleccion = await _eleccionApiRepos.ListaCandidatosElecciones(Id.Value);
-            
-            //if (ListadoEleccionesDTO == null)
-            //{
-            //    return NotFound();
-            //}
 
-            //return ListadoEleccionesDTO;
+            if (ListadoPuestoEleccion == null)
+            {
+                return NotFound();
+            }
 
-
-            return null;
+            return ListadoPuestoEleccion;
 
         }
 

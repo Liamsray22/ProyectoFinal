@@ -70,7 +70,10 @@ namespace Repository.APIRepository
         //Todos los candidatos por puestos
         public async Task<List<CandidatoEleccionesDTO>> ListaCandidatosElecciones(int Id) {
 
+            //Listados all candidatos en esa eleccion
+            var Listado = await _context.Votacion.Where(x => x.IdEleccion == Id).Select(x => x.IdCandidato).Distinct().ToListAsync();
 
+            //Listado all
 
 
             return null;
