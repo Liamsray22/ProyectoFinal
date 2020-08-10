@@ -32,7 +32,7 @@ namespace Repository.Repository
             _message = message;
         }
 
-        
+
 
         public async Task<VotacionViewModel> TraerCandidatosByIdPuestos(int id)
         {
@@ -55,31 +55,31 @@ namespace Repository.Repository
         }
 
         public async Task Votar(VotacionViewModel vvm)
-        {            
-                Votacion votacion = new Votacion();
-                votacion.Cedula = vvm.Cedula;
-                votacion.IdCandidato = vvm.IdCandidato.Value;
+        {
+            Votacion votacion = new Votacion();
+            votacion.Cedula = vvm.Cedula;
+            votacion.IdCandidato = vvm.IdCandidato.Value;
 
             var ele = await _context.Elecciones.FirstOrDefaultAsync(x => x.Estado == "Progreso");
             votacion.IdEleccion = ele.IdEleccion;
-                await AddAsync(votacion);
-            
+            await AddAsync(votacion);
+
         }
 
         public async Task<bool> Finalizar(string cedula)
         {
-            var puestos = await _context.PuestoElectivo.Where(w=>w.Estado == "Activo").ToListAsync();
+            var puestos = await _context.PuestoElectivo.Where(w => w.Estado == "Activo").ToListAsync();
             var ele = await _context.Elecciones.FirstOrDefaultAsync(x => x.Estado == "Progreso");
-            var ciudadano = await _context.Ciudadanos.FirstOrDefaultAsync(c=>c.Cedula.Contains(cedula));
+            var ciudadano = await _context.Ciudadanos.FirstOrDefaultAsync(c => c.Cedula.Contains(cedula));
             var votacion = await _context.Votacion.Where(v => v.Cedula.Contains(cedula) && v.IdEleccion == ele.IdEleccion)
                 .ToListAsync();
             List<VotacionViewModel> datos = new List<VotacionViewModel>();
             foreach (var cand in votacion)
             {
                 VotacionViewModel vm = new VotacionViewModel();
-                var candi = await _context.Candidatos.FirstOrDefaultAsync(c=>c.IdCandidato == cand.IdCandidato);
-                var parti = await _context.Partidos.FirstOrDefaultAsync(p=>p.IdPartido == candi.IdPartido);
-                var puesti = await _context.PuestoElectivo.FirstOrDefaultAsync(pp=>pp.IdPuestoElectivo == candi.IdPuestoElectivo);
+                var candi = await _context.Candidatos.FirstOrDefaultAsync(c => c.IdCandidato == cand.IdCandidato);
+                var parti = await _context.Partidos.FirstOrDefaultAsync(p => p.IdPartido == candi.IdPartido);
+                var puesti = await _context.PuestoElectivo.FirstOrDefaultAsync(pp => pp.IdPuestoElectivo == candi.IdPuestoElectivo);
                 vm.Nombre = candi.Nombre;
                 vm.Partido = parti.Nombre;
                 vm.PuestoElectivo = puesti.Nombre;
@@ -88,18 +88,16 @@ namespace Repository.Repository
             string info = "";
             foreach (var dato in datos)
             {
-                info = info + " \n Puesto Electivo: " +dato.PuestoElectivo;
+                info = info + " \n Puesto Electivo: " + dato.PuestoElectivo;
                 info = info + "\n Partido Politico: " + dato.Partido;
                 info = info + "\n Candidato:  " + dato.Nombre;
-
-
             }
 
             if (puestos.Count() == votacion.Count())
             {
                 var mensaje = new Message(new string[] { ciudadano.Email }, "Saludos  "
                                             + ciudadano.Nombre + " " + ciudadano.Apellido + "",
-                                            "Usted ha realizado su voto exitosamente "+
+                                            "Usted ha realizado su voto exitosamente " +
                                             info);
                 await _message.SendMailAsync(mensaje);
                 return true;
@@ -132,6 +130,25 @@ namespace Repository.Repository
 
         //    File.Delete(path);
         //}
+        public async Task publishAsync (int IdEleccion){
+            //var puestos = await _context.PuestoElectivo.ToListAsync();
+            //var ele = await _context.Elecciones.FirstOrDefaultAsync(x => x.IdEleccion == IdEleccion);
+            //var ciudadano = await _context.Ciudadanos.FirstOrDefaultAsync(c => c.Cedula.Contains(cedula));
+            var votacion = await _context.Votacion.Where(v => v.IdEleccion == IdEleccion)
+                .ToListAsync();
+            List<VotacionViewModel> datos = new List<VotacionViewModel>();
+            foreach (var cand in votacion)
+            {
+                VotacionViewModel vm = new VotacionViewModel();
+                var candi = await _context.Candidatos.FirstOrDefaultAsync(c => c.IdCandidato == cand.IdCandidato);
+                var parti = await _context.Partidos.FirstOrDefaultAsync(p => p.IdPartido == candi.IdPartido);
+                var puesti = await _context.PuestoElectivo.FirstOrDefaultAsync(pp => pp.IdPuestoElectivo == candi.IdPuestoElectivo);
+                vm.Nombre = candi.Nombre;
+                vm.Partido = parti.Nombre;
+                vm.PuestoElectivo = puesti.Nombre;
+                datos.Add(vm);
+            }
+        }
 
 
     }
