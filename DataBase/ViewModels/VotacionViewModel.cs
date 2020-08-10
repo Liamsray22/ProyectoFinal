@@ -13,6 +13,8 @@ namespace DataBase.ViewModels
         public int? IdCandidato { get; set; }
         public string Nombre { get; set; }
         public string PuestoElectivo { get; set; }
+        public string Partido { get; set; }
+
 
         public IEnumerable<CandidatosViewModel> candidatos { get; set; }
 
