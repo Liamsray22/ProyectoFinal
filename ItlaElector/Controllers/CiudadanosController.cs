@@ -66,8 +66,6 @@ namespace ItlaElector.Controllers
             }
 
             return RedirectToAction("Ciudadanos");
-
-
         }
 
         public async Task<IActionResult> CrearRol(string rol)
