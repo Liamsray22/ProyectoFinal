@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using DataBase.DTO;
 
 namespace Repository.APIRepository
 {
@@ -31,7 +32,28 @@ namespace Repository.APIRepository
 
         }
 
+        //Todos los candidatos por puesto electivo de una eleccion especifica
+        /*public async Task<List<CandidatoEleccionEspecificaDTO>> EleccionTodosCandiatos(int IdEleccion)
+        {
+            var AllVotacion = new List<int>();
+            AllVotacion = await _context.Votacion.Where(x => x.IdEleccion == IdEleccion).Select(x=>x.IdCandidato).Distinct().ToListAsync();
 
+            var ListadoCandidatoEleccion = new List<CandidatoEleccionEspecificaDTO>();
+
+            var ListadoEnteroPuesto = new List<CandidatoEleccionEspecificaDTO>();
+
+            foreach (var IdCandidato in AllVotacion) {
+
+
+                var Candidato = _context.Candidatos.FirstOrDefaultAsync(x => x.IdCandidato == IdCandidato);
+                
+            
+            }
+
+            return null;
+
+        }
+        */
 
     }
 }

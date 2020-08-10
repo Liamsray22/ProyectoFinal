@@ -6,7 +6,6 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreap
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfo.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.pdb
-<<<<<<< HEAD
 C:\Users\Liam\source\repos\ItlaElector\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.deps.json
 C:\Users\Liam\source\repos\ItlaElector\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.dll
 C:\Users\Liam\source\repos\ItlaElector\EmailConfig\bin\Debug\netcoreapp2.1\EmailConfig.pdb
@@ -16,5 +15,3 @@ C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\Email
 C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.AssemblyInfo.cs
 C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.dll
 C:\Users\Liam\source\repos\ItlaElector\EmailConfig\obj\Debug\netcoreapp2.1\EmailConfig.pdb
-=======
->>>>>>> 907867a861d2d2123fbc85df1327725614e18d08

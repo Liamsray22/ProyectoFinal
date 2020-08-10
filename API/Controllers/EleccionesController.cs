@@ -11,7 +11,7 @@ using Repository.APIRepository;
 namespace API.Controllers
 {
 
-    [Route("api/[controller]")]
+    [Route("api/elecciones/[controller]")]
     [ApiController]
     public class EleccionesController : ControllerBase
     {
@@ -27,51 +27,70 @@ namespace API.Controllers
 
         }
 
-        //GET Todas la elecciones a la que a partcipado un ciudadano
+        //GET Todas la elecciones a la que a participado un ciudadano
         [HttpGet("{Cedula}")]
         public async Task<ActionResult<List<EleccionesDTO>>> Get(string Cedula)
         {
-            //try
+            try
+            {
+
+                var Ciudadano = await _eleccionApiRepos.VerificandoCiudadano(Cedula);
+
+                    if(Ciudadano){
+
+                            var ListadoEleccionesDTO = await _eleccionApiRepos.EleccionesCiudadano(Cedula);
+
+                            if (ListadoEleccionesDTO == null)
+                            {
+                                return NotFound();
+                            }
+
+                            return ListadoEleccionesDTO;
+
+
+                     }else{
+
+                            ModelState.AddModelError("Error", "Este Ciudadano/a no existe.");
+                            return BadRequest(ModelState);
+                        }
+
+                        }catch{
+                           return StatusCode(500);
+                        }
+
+
+}
+
+
+        //Listado de todos los candidatos por puesto electivos,  elección específica.
+        [HttpGet("{Id}")]
+        public async Task<ActionResult<List<CandidatoEleccionesDTO>>> GetCandidatosEleccion(int? Id)
+        {
+
+            var EleccionExists = await _eleccionApiRepos.GetByIdAsync(Id.Value);
+
+            if (EleccionExists == null) {
+                ModelState.AddModelError("Error", "La Eleccion que busca no existe...");
+                return BadRequest(ModelState);
+            }
+
+
+            var ListadoPuestoEleccion = await _eleccionApiRepos.ListaCandidatosElecciones(Id.Value);
+            
+            //if (ListadoEleccionesDTO == null)
             //{
-
-                int Ciudadano = await _eleccionApiRepos.VerificandoCiudadano(Cedula);
-
-                switch (Ciudadano) {
-
-                    case 1:
-                        ModelState.AddModelError("Error", "Este Ciudada no existe.");
-                        return BadRequest(ModelState);
-                        
-                    case 2:
-                        ModelState.AddModelError("Error", "Este Ciudadano esta Inactivo");
-                        return BadRequest(ModelState);
-                    default:
-
-                    var ListadoEleccionesDTO = await _eleccionApiRepos.EleccionesCiudadano(Cedula);
-
-                    if (ListadoEleccionesDTO == null)
-                    {
-                        return NotFound();
-                    }
-
-                    return ListadoEleccionesDTO;
-                    
-                }
-
-            //}
-            //catch
-            //{
-            //    return StatusCode(500);
+            //    return NotFound();
             //}
 
+            //return ListadoEleccionesDTO;
+
+
+            return null;
 
         }
 
 
 
-
-
-
-    }
+        }
 
 }

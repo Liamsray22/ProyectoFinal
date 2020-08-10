@@ -31,21 +31,16 @@ namespace Repository.APIRepository
 
         }
 
-
-        public async Task<int> VerificandoCiudadano(string Cedula) {
+        //verificando que el ciudadano exista
+        public async Task<bool> VerificandoCiudadano(string Cedula) {
 
 
             var CiudadanoActivo = await _context.Ciudadanos.FirstOrDefaultAsync(x => x.Cedula == Cedula);
 
             if (CiudadanoActivo == null) {
-                return 1;
+                return false;
             }
-
-            if (CiudadanoActivo.Estado == "Inactivo") {
-                return 2;
-            }
-
-            return 3;
+            return true;
         }
 
         //Elecciones en la que a participado un ciudadano expecificamente.
@@ -72,11 +67,16 @@ namespace Repository.APIRepository
             return List;
         }
 
+        //Todos los candidatos por puestos
+        public async Task<List<CandidatoEleccionesDTO>> ListaCandidatosElecciones(int Id) {
+
+
+
+
+            return null;
+        }
 
 
     }
-
-
-
 
 }
