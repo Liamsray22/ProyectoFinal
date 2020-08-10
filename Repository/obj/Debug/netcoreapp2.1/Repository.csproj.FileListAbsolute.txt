@@ -16,6 +16,7 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\bin\Debug\netcoreapp
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CopyComplete
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
+<<<<<<< HEAD
 C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\Repository.deps.json
 C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\Repository.runtimeconfig.json
 C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\Repository.runtimeconfig.dev.json
@@ -34,3 +35,5 @@ C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Reposi
 C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CopyComplete
 C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Repository.dll
 C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
+=======
+>>>>>>> 907867a861d2d2123fbc85df1327725614e18d08

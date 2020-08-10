@@ -12,6 +12,7 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csproj.CopyComplete
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.pdb
+<<<<<<< HEAD
 C:\Users\Liam\source\repos\ItlaElector\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.deps.json
 C:\Users\Liam\source\repos\ItlaElector\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.runtimeconfig.json
 C:\Users\Liam\source\repos\ItlaElector\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.runtimeconfig.dev.json
@@ -26,3 +27,5 @@ C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.A
 C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csproj.CopyComplete
 C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.dll
 C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.pdb
+=======
+>>>>>>> 907867a861d2d2123fbc85df1327725614e18d08

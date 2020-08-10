@@ -84,7 +84,6 @@ C:\Users\Liam\source\repos\ItlaElector\ItlaElector\obj\Debug\netcoreapp2.1\Razor
 C:\Users\Liam\source\repos\ItlaElector\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Elecciones\Elecciones.g.cshtml.cs
 C:\Users\Liam\source\repos\ItlaElector\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Elector\Home.g.cshtml.cs
 C:\Users\Liam\source\repos\ItlaElector\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Elector\ZonaVotacion.g.cshtml.cs
-C:\Users\Liam\source\repos\ItlaElector\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Home.g.cshtml.cs
 C:\Users\Liam\source\repos\ItlaElector\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Partidos\Partidos.g.cshtml.cs
 C:\Users\Liam\source\repos\ItlaElector\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\PuestosElectivos\PuestosElectivos.g.cshtml.cs
 C:\Users\Liam\source\repos\ItlaElector\ItlaElector\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs

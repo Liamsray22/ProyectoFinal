@@ -79,5 +79,6 @@ namespace ItlaElector.Controllers
 
             return Json(true);
         }
+
     }
 }
