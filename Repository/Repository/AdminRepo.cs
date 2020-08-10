@@ -27,14 +27,11 @@ namespace Repository.Repository
 
         public async Task CrearAdmin()
         {
-
             /* var user = new IdentityUser { UserName = "Liam" };
              var result = await _userManager.CreateAsync(user, "222");*/
             var user = new IdentityUser { UserName = "Dalvin" };
             var result = await _userManager.CreateAsync(user, "123");
-            await _userManager.AddToRoleAsync(user, "Administrador");
-
-
+            await _userManager.AddToRoleAsync(user, "ADMINISTRADOR");
         }
 
         public async Task<bool> LoguearAdmin(LoginViewModel lvm)
