@@ -39,8 +39,75 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
 
 
                         }
-                        else {
-                        <a data-toggle="modal" data-target="#agregarNewPuesto" class="shadow-sm btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Iniciar Nuevo Proceso Electivo</a>
+                        else
+                        {
+                            if (Model.disponibilidadecandidatos)
+                            {
+                                <a data-toggle="modal" data-target="#errorcandidato" class="shadow-sm btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Iniciar Nuevo Proceso Electivo</a>
+
+                                <div class="modal fade " id="errorcandidato" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content bg-info shadow-sm p-1 rounded">
+
+                                            <div class="modal-header bg-info p-1 rounded">
+
+                                                <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Atencion</h5>
+
+                                                <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                    Cancelar
+                                                </button>
+
+                                            </div>
+
+                                            <div class="modal-body bg-light text-center">
+                                                <h4 class="text-dark">Deben haber al menos 2 candidatos disponibles y activos para establecer una nueva eleccion</h4>
+
+                                                <div class="mt-2 d-flex justify-content-center">
+                                                    <button class="text-white btn btn-info shadow-lg ml-auto  btn-block" style="font-size:15px;" data-dismiss="modal">Entendido</button>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            else if (Model.disponibilidadpuestos)
+                            {
+
+                                <a data-toggle="modal" data-target="#errorpuesto" class="shadow-sm btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Iniciar Nuevo Proceso Electivo</a>
+                                       <div class="modal fade " id="errorpuesto" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content bg-info shadow-sm p-1 rounded">
+
+                                            <div class="modal-header bg-info p-1 rounded">
+
+                                                <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Atencion</h5>
+
+                                                <button type = "button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                    Cancelar
+                                                </button>
+
+                                            </div>
+
+                                            <div class="modal-body bg-light text-center">
+                                                <h4  class="text-dark">Deben haber al menos 4 puestos electivos activos para establecer una nueva eleccion</h4>
+
+                                                <div class="mt-2 d-flex justify-content-center">
+                                                    <button class="text-white btn btn-info shadow-lg ml-auto  btn-block" style="font-size:15px;" data-dismiss="modal">Entendido</button>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+                            else
+                            {
+                                <a data-toggle="modal" data-target="#agregarNewPuesto" class="shadow-sm btn btn-success ml-auto btn-lg  text-white" style="margin-right:5px;">Iniciar Nuevo Proceso Electivo</a>
+                            }
                         }
                         <div class="modal fade" id="agregarNewPuesto" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
@@ -78,10 +145,10 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                                         <input asp-for="Fecha" placeholder="Ingresar Fecha" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg glyphicon-calendar" id='datetimepicker4' onchange="validate()" />
                                                     </div>
                                                     @*<script type="text/javascript">
-                    $(function () {
-                        $('#datetimepicker4').datetimepicker();
-                    });
-                </script>*@
+                                        $(function () {
+                                            $('#datetimepicker4').datetimepicker();
+                                        });
+                                    </script>*@
                                                 </div>
                                                 <span class="text-danger"></span>
                                             </div>
@@ -150,7 +217,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                             </div>
                                             @if (Model.Resultados != null)
                                             {
-                                                var itemscresutlado = Model.Resultados.SelectMany(sublist => sublist.Where(com => com.ideleccion == e.IdEleccion)).ToList();
+                                                var itemscresutlado = Model.Resultados.SelectMany(sublist => sublist.Where(com => com.ideleccion == e.IdEleccion)).ToList().OrderByDescending(num => num.Votos).ThenBy(c => c.Puesto);
                                                 <div class="modal-body bg-light text-center">
                                                     <h4>Resultados de la presente elecciones</h4>
                                                     <table class="table table-striped">
@@ -163,7 +230,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            @if (itemscresutlado.Count > 0)
+                                                            @if (itemscresutlado!=null)
                                                             {
                                                                 @foreach (var resul in itemscresutlado)
                                                                 {

@@ -18,18 +18,21 @@ namespace Repository.Repository
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IMapper _mapper;
         private readonly PuestosElectivosRepo _puestosElectivos;
+        private readonly CandidatosRepo _candidatosRepo;
 
 
 
         public EleccionesRepo(ItlaElectorDBContext context, UserManager<IdentityUser> userManager,
                             SignInManager<IdentityUser> signInManager, IMapper mapper,
-                            PuestosElectivosRepo puestosElectivos) : base(context)
+                            PuestosElectivosRepo puestosElectivos, CandidatosRepo candidatosRepo) : base(context)
         {
             _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
             _mapper = mapper;
             _puestosElectivos = puestosElectivos;
+            _candidatosRepo = candidatosRepo;
+
         }
 
         public async Task<EleccionesViewModel> TraerElecciones()
@@ -55,6 +58,19 @@ namespace Repository.Repository
 
                 ele.Procesoactivos = true;
             }
+            else
+            {
+                if (await _puestosElectivos.validacionepuestosE())
+                {
+                    ele.disponibilidadpuestos = true;
+                }
+                if (await _candidatosRepo.TraerCandidatosActivos())
+                {
+                    ele.disponibilidadecandidatos = true;
+                }
+
+            }
+
             ele.Resultados = listoflist;
             ele.elecciones = TodasLasElecciones;
             return ele;
@@ -109,7 +125,7 @@ namespace Repository.Repository
                 resul.Nombre = newcandidato.Nombre;
                 resul.Puesto = puesto.Nombre;
                 resul.Votos = votos;
-                resul.porcentaje = (votos / totalvotospuestos) * 100;
+                resul.porcentaje = (((votos * 100.00) / (totalvotospuestos * 100.00)) * 100.00);
 
                 list.Add(resul);
                

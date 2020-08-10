@@ -53,7 +53,7 @@ namespace Repository.Repository
         public async Task<bool> TraerCandidatosActivos()
         {
             var candidatos = await _context.Candidatos.Where(a=> a.Estado.Trim()=="Activo").ToListAsync();
-           if (candidatos.Count > 2)
+           if (candidatos.Count >= 2)
             {
 
                 return false;

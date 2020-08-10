@@ -17,7 +17,7 @@ namespace DataBase.ViewModels
 
         public int Votos { get; set; }
 
-        public int porcentaje { get; set; }
+        public double porcentaje { get; set; }
        
     }
 }

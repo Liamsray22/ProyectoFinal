@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataBase.Models;
 using DataBase.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Repository;
@@ -11,12 +12,9 @@ namespace ItlaElector.Controllers
     public class EleccionesController : Controller
     {
         private readonly EleccionesRepo _eleccionesRepo;
-        private readonly CandidatosRepo _candidatosRepo;
-        public EleccionesController(EleccionesRepo eleccionesRepo, CandidatosRepo candidatosRepo)
+        public EleccionesController(EleccionesRepo eleccionesRepo)
         {
             _eleccionesRepo = eleccionesRepo;
-            _candidatosRepo = candidatosRepo;
-
 
         }
         public async Task<IActionResult> Elecciones()
@@ -30,14 +28,14 @@ namespace ItlaElector.Controllers
         {
             if (ModelState.IsValid)
             {
-                //try
-                //{
+                try
+                {
                     await _eleccionesRepo.CrearElecciones(evm);
-                //}
-                //catch
-                //{
+                }
+                catch
+                {
 
-                //}
+                }
             }
             var elecciones = await _eleccionesRepo.TraerElecciones();
             return RedirectToAction("Elecciones");
@@ -47,14 +45,14 @@ namespace ItlaElector.Controllers
         {
             if (ModelState.IsValid)
             {
-                //try
-                //{
-                await _eleccionesRepo.FinalizarEleccion();
-                //}
-                //catch
-                //{
+                try
+                {
+                    await _eleccionesRepo.FinalizarEleccion();
+                }
+                catch
+                {
 
-                //}
+                }
             }
             var elecciones = await _eleccionesRepo.TraerElecciones();
             return RedirectToAction("Elecciones");
@@ -71,16 +69,6 @@ namespace ItlaElector.Controllers
             return Json(true);
         }
 
-        [AcceptVerbs("GET", "POST")]
-        public async Task<IActionResult> Verifycandidatos(string Nombre)
-        {
-
-            if (await _candidatosRepo.TraerCandidatosActivos())
-            {
-                return Json($"Debe haber al menos dos candidatos activos para proceder en las elecciones");
-            }
-
-            return Json(true);
-        }
+       
     }
 }
