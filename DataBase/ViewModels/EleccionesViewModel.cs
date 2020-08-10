@@ -24,6 +24,7 @@ namespace DataBase.ViewModels
         public string Estado { get; set; }
         public bool Procesoactivos { get; set; }
 
+        public List<List<ResultadosViewModel>> Resultados { get; set; }
         public IEnumerable<EleccionesViewModel> elecciones { get; set; }
     }
 }

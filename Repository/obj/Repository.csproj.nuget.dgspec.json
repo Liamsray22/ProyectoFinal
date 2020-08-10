@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\ProyectoFinal\\Repository\\Repository.csproj": {}
+    "C:\\ProyectoFinal\\Repository\\Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\ProyectoFinal\\AutoMap\\AutoMap.csproj": {
+    "C:\\ProyectoFinal\\AutoMap\\AutoMap.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProyectoFinal\\AutoMap\\AutoMap.csproj",
+        "projectUniqueName": "C:\\ProyectoFinal\\AutoMap\\AutoMap.csproj",
         "projectName": "AutoMap",
-        "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\AutoMap\\AutoMap.csproj",
+        "projectPath": "C:\\ProyectoFinal\\AutoMap\\AutoMap.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\AutoMap\\obj\\",
+        "outputPath": "C:\\ProyectoFinal\\AutoMap\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -31,8 +31,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj"
+              "C:\\ProyectoFinal\\DataBase\\DataBase.csproj": {
+                "projectPath": "C:\\ProyectoFinal\\DataBase\\DataBase.csproj"
               }
             }
           }
@@ -87,14 +87,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj": {
+    "C:\\ProyectoFinal\\DataBase\\DataBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj",
+        "projectUniqueName": "C:\\ProyectoFinal\\DataBase\\DataBase.csproj",
         "projectName": "DataBase",
-        "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj",
+        "projectPath": "C:\\ProyectoFinal\\DataBase\\DataBase.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\obj\\",
+        "outputPath": "C:\\ProyectoFinal\\DataBase\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -162,14 +162,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj": {
+    "C:\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj",
+        "projectUniqueName": "C:\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj",
         "projectName": "EmailConfig",
-        "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj",
+        "projectPath": "C:\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\EmailConfig\\obj\\",
+        "outputPath": "C:\\ProyectoFinal\\EmailConfig\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -225,14 +225,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\ProyectoFinal\\Repository\\Repository.csproj": {
+    "C:\\ProyectoFinal\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\ProyectoFinal\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\ProyectoFinal\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\Repository\\Repository.csproj",
+        "projectPath": "C:\\ProyectoFinal\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\Repository\\obj\\",
+        "outputPath": "C:\\ProyectoFinal\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -252,14 +252,14 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\ProyectoFinal\\AutoMap\\AutoMap.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\AutoMap\\AutoMap.csproj"
+              "C:\\ProyectoFinal\\AutoMap\\AutoMap.csproj": {
+                "projectPath": "C:\\ProyectoFinal\\AutoMap\\AutoMap.csproj"
               },
-              "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj"
+              "C:\\ProyectoFinal\\DataBase\\DataBase.csproj": {
+                "projectPath": "C:\\ProyectoFinal\\DataBase\\DataBase.csproj"
               },
-              "C:\\Users\\User\\Desktop\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj"
+              "C:\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj": {
+                "projectPath": "C:\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj"
               }
             }
           }

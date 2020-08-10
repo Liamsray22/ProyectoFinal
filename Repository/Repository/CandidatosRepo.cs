@@ -108,7 +108,8 @@ namespace Repository.Repository
             {
                 _context.Entry(candidato).State = EntityState.Detached;
                 var can = _mapper.Map<Candidatos>(ucavm);
-
+                can.Estado = candidato.Estado;
+                if (ucavm.Photo != null) { 
                 string uniqueName = null;
                 var folderPath = Path.Combine(WebrootPath, "images/Candidato");
                 uniqueName = Guid.NewGuid().ToString() + "_" + ucavm.Photo.FileName;
@@ -130,6 +131,13 @@ namespace Repository.Repository
                     }
                 }
                     can.FotoPerfil = uniqueName;
+                }
+                else
+                {
+
+                    can.FotoPerfil = candidato.FotoPerfil;
+                }
+
                 await Update(can);
                 return true;
             }

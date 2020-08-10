@@ -11888,11 +11888,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj",
+      "projectUniqueName": "C:\\ProyectoFinal\\DataBase\\DataBase.csproj",
       "projectName": "DataBase",
-      "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj",
+      "projectPath": "C:\\ProyectoFinal\\DataBase\\DataBase.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\obj\\",
+      "outputPath": "C:\\ProyectoFinal\\DataBase\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

@@ -13485,11 +13485,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\ProyectoFinal\\API\\API.csproj",
+      "projectUniqueName": "C:\\ProyectoFinal\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\API\\API.csproj",
+      "projectPath": "C:\\ProyectoFinal\\API\\API.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\API\\obj\\",
+      "outputPath": "C:\\ProyectoFinal\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -13509,14 +13509,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\ProyectoFinal\\AutoMap\\AutoMap.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\AutoMap\\AutoMap.csproj"
+            "C:\\ProyectoFinal\\AutoMap\\AutoMap.csproj": {
+              "projectPath": "C:\\ProyectoFinal\\AutoMap\\AutoMap.csproj"
             },
-            "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj"
+            "C:\\ProyectoFinal\\DataBase\\DataBase.csproj": {
+              "projectPath": "C:\\ProyectoFinal\\DataBase\\DataBase.csproj"
             },
-            "C:\\Users\\User\\Desktop\\ProyectoFinal\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\Repository\\Repository.csproj"
+            "C:\\ProyectoFinal\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\ProyectoFinal\\Repository\\Repository.csproj"
             }
           }
         }

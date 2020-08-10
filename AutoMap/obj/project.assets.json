@@ -11937,11 +11937,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\ProyectoFinal\\AutoMap\\AutoMap.csproj",
+      "projectUniqueName": "C:\\ProyectoFinal\\AutoMap\\AutoMap.csproj",
       "projectName": "AutoMap",
-      "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\AutoMap\\AutoMap.csproj",
+      "projectPath": "C:\\ProyectoFinal\\AutoMap\\AutoMap.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\AutoMap\\obj\\",
+      "outputPath": "C:\\ProyectoFinal\\AutoMap\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -11961,8 +11961,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\DataBase\\DataBase.csproj"
+            "C:\\ProyectoFinal\\DataBase\\DataBase.csproj": {
+              "projectPath": "C:\\ProyectoFinal\\DataBase\\DataBase.csproj"
             }
           }
         }

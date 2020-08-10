@@ -4660,11 +4660,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj",
+      "projectUniqueName": "C:\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj",
       "projectName": "EmailConfig",
-      "projectPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj",
+      "projectPath": "C:\\ProyectoFinal\\EmailConfig\\EmailConfig.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\ProyectoFinal\\EmailConfig\\obj\\",
+      "outputPath": "C:\\ProyectoFinal\\EmailConfig\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
