@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,14 +11,16 @@ namespace DataBase.ViewModels
     {
         public int IdPartido { get; set; }
         [Required(ErrorMessage = "Debe ingresar nombre de partido")]
-
+        [Remote(action: "VerifyPartido", controller: "Partidos")]
         public string Nombre { get; set; }
         [Required(ErrorMessage = "Debe ingresar descripcion de partido")]
 
         public string Descripcion { get; set; }
         public string Logo { get; set; }
         public string Estado { get; set; }
-        [Required(ErrorMessage = "El candidato debe identificarse con una foto")]
+
+        [Required(ErrorMessage = "Debe seleccionar una foto")]
+        public string newfoto { get; set; }
         public IFormFile Photo { get; set; }
         public IEnumerable<PartidosViewModels> partidos { get; set; }
     }

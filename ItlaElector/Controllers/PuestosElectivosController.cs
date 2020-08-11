@@ -67,5 +67,18 @@ namespace ItlaElector.Controllers
             return RedirectToAction("Start", "Start");
 
         }
+        [AcceptVerbs("GET", "POST")]
+        public async Task<IActionResult> VerifyPuesto(string nombre)
+        {
+            var verifypuesto = await _puestosRepo.verifyPuestos(nombre);
+            if (verifypuesto)
+            {
+                return Json($"Ya esta puesto esta creado");
+
+
+            }
+
+            return Json(true);
+        }
     }
 }

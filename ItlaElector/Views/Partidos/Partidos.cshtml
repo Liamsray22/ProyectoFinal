@@ -77,8 +77,11 @@
                                                 <img id="imagenPrevisualizacion" src="~/images/Candidato/profile-logo.png" asp-append-version="true"
                                                      class="rounded-circle " style="width: 150px;height: 150px; ">
                                             </div>
+                                            <span asp-validation-for="newfoto" class="text-danger"></span>
+
                                             <div class="d-flex justify-content-center mt-2">
                                                 <div>
+                                                    <input style="opacity: 0; width: 0;" id="fotonew" asp-for="newfoto" />
                                                     <label for="upload-photo" class="btn btn-outline-primary mr-3 rounded float-left">Añadir foto</label>
                                                     <input type="file" name="photo" id="upload-photo" asp-for="Photo" accept="image/*" required />
                                                     <button type="button" id="delete" class="btn btn-outline-danger rounded float-left" hidden>Quitar</button>
@@ -340,6 +343,7 @@
             const primerArchivo = archivos[0];
             const objectURL = URL.createObjectURL(primerArchivo);
             $imagenPrevisualizacion.src = objectURL;
+            $('#fotonew').val(objectURL);
             $('#delete').removeAttr('hidden')
         });
         $delete.addEventListener("click", () => {
