@@ -172,148 +172,154 @@
                                 </td>
 
                                 <td>
-                                    @*Editar partido*@
-                                    <a data-toggle="modal" data-target="#EditarCiudadano@(p.IdPartido)" class="text-white btn btn-warning  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-
-                                    <div class="modal fade" id="EditarCiudadano@(p.IdPartido)" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                            <div class="modal-content bg-success">
-
-                                                <div class="modal-header bg-warning text-dark rounded-bottom shadow">
-
-
-                                                    <div class=" mr-auto">
-                                                        <h2 class="modal-title"><i class="fa fa-pencil" aria-hidden="true"></i> Editar Partido</h2>
-                                                    </div>
-                                                    <div class="">
-                                                        <button type="button" class="btn btn-danger btn-sm text-white p-2 rounded-pill" style="font-size:14px;" data-dismiss="modal" aria-label="Close">
-                                                            Cancelar
-                                                        </button>
-                                                    </div>
-
-                                                </div>
-                                                <form asp-action="EditarPartido" asp-controller="Partidos" method="post">
-                                                    <div class="modal-body bg-light">
-
-
-
-
-                                                        <div class="form-group">
-                                                            <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
-                                                            <div>
-                                                                <div class="d-flex justify-content-center">
-                                                                    <img id="imagenPrevisualizacion_@p.IdPartido" src="@photopath" asp-append-version="true"
-                                                                         class="rounded-circle " style="width: 150px;height: 150px; ">
-                                                                </div>
-                                                                <span asp-validation-for="Photo" class="text-danger text-center"></span>
-                                                                <div class="d-flex justify-content-center mt-2">
-                                                                    <div>
-                                                                        <label for="upload-photo2" class="btn btn-outline-primary mr-3 rounded float-left" onClick="upload(@p.IdPartido)">Añadir foto</label>
-                                                                        <input class="upload-photo2" type="file" id="upload-photo_@p.IdPartido"  asp-for="Photo" accept="image/*" onchange="change(@p.IdPartido)" />
-                                                                        <button type="button" id="delete_@p.IdPartido" onClick="Deletephoto(@p.IdPartido)" class="btn btn-outline-danger rounded float-left">Quitar</button>
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
-                                                            <input asp-for="Nombre" value="@p.Nombre" class="form-control ml-auto  btn-sm mb-2 shadow rounded bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Ingresar Apellido">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Descripcion</label>
-                                                            @*<textarea class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Escribrir descripcion del partido"></textarea>*@
-                                                            <input asp-for="Descripcion" value="@p.Descripcion" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" id="" placeholder="Ingresar descripcion">
-                                                        </div>
-                                                        @*<input type="hidden" name="Estado" value="Activo" />*@
-                                                        <input type="hidden" asp-for="IdPartido" value="@(p.IdPartido)" />
-
-                                                        <div class="form-group row mt-4">
-                                                            <div class="col">
-                                                                <input type="submit" value="Editar" class="btn btn-outline-success btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
-                                                            </div>
-                                                            <div class="col">
-                                                                <input type="reset" value="Limpiar" class="btn btn-outline-warning btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-
-                                    @*ELIMINAR Partido*@
-                                    @if (p.Estado == "Inactivo")
+                                    @if (p.Nombre == "Ninguno")
                                     {
-                                        <a data-toggle="modal" data-target="#EliminarCiudadano@(p.IdPartido)" class="text-white btn btn-success ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
-
-                                        <div class="modal fade " id="EliminarCiudadano@(p.IdPartido)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-sm">
-                                                <div class="modal-content bg-info shadow-sm p-1 rounded">
-
-                                                    <div class="modal-header bg-info p-1 rounded">
-
-                                                        <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Reactivar</h5>
-
-                                                        <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
-                                                            Cancelar
-                                                        </button>
-
-                                                    </div>
-
-                                                    <div class="modal-body bg-light text-center">
-                                                        <h4>¿SEGURO QUE QUIERE REACTIVAR ESTE PARTIDO?</h4>
-
-                                                        <div class="mt-2 d-flex justify-content-center">
-                                                            <a asp-action="EliminarPartido" asp-controller="Partidos" asp-route-id="@(p.IdPartido)" class="text-white btn btn-info shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Reactivar</a>
-
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
 
                                     }
                                     else
                                     {
-                                        <a data-toggle="modal" data-target="#EliminarCiudadano@(p.IdPartido)" class="text-white btn btn-danger ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                        @*Editar partido*@
+                                        <a data-toggle="modal" data-target="#EditarCiudadano@(p.IdPartido)" class="text-white btn btn-warning  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 
-                                        <div class="modal fade " id="EliminarCiudadano@(p.IdPartido)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-sm">
-                                                <div class="modal-content bg-danger shadow-sm p-1 rounded">
+                                        <div class="modal fade" id="EditarCiudadano@(p.IdPartido)" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content bg-success">
 
-                                                    <div class="modal-header bg-danger p-1 rounded">
+                                                    <div class="modal-header bg-warning text-dark rounded-bottom shadow">
 
-                                                        <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Eliminar</h5>
 
-                                                        <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
-                                                            Cancelar
-                                                        </button>
-
-                                                    </div>
-
-                                                    <div class="modal-body bg-light text-center">
-                                                        <h4>¿SEGURO QUE QUIERE ELIMINAR ESTE PARTIDO?</h4>
-
-                                                        <div class="mt-2 d-flex justify-content-center">
-                                                            <a asp-action="EliminarPartido" asp-controller="Partidos" asp-route-id="@p.IdPartido" class="text-white btn btn-danger shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
-
+                                                        <div class=" mr-auto">
+                                                            <h2 class="modal-title"><i class="fa fa-pencil" aria-hidden="true"></i> Editar Partido</h2>
+                                                        </div>
+                                                        <div class="">
+                                                            <button type="button" class="btn btn-danger btn-sm text-white p-2 rounded-pill" style="font-size:14px;" data-dismiss="modal" aria-label="Close">
+                                                                Cancelar
+                                                            </button>
                                                         </div>
 
                                                     </div>
+                                                    <form asp-action="EditarPartido" asp-controller="Partidos" method="post">
+                                                        <div class="modal-body bg-light">
+
+
+
+
+                                                            <div class="form-group">
+                                                                <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
+                                                                <div>
+                                                                    <div class="d-flex justify-content-center">
+                                                                        <img id="imagenPrevisualizacion_@p.IdPartido" src="@photopath" asp-append-version="true"
+                                                                             class="rounded-circle " style="width: 150px;height: 150px; ">
+                                                                    </div>
+                                                                    <span asp-validation-for="Photo" class="text-danger text-center"></span>
+                                                                    <div class="d-flex justify-content-center mt-2">
+                                                                        <div>
+                                                                            <label for="upload-photo2" class="btn btn-outline-primary mr-3 rounded float-left" onClick="upload(@p.IdPartido)">Añadir foto</label>
+                                                                            <input class="upload-photo2" type="file" id="upload-photo_@p.IdPartido" asp-for="Photo" accept="image/*" onchange="change(@p.IdPartido)" />
+                                                                            <button type="button" id="delete_@p.IdPartido" onClick="Deletephoto(@p.IdPartido)" class="btn btn-outline-danger rounded float-left">Quitar</button>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
+                                                                <input asp-for="Nombre" value="@p.Nombre" class="form-control ml-auto  btn-sm mb-2 shadow rounded bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Ingresar Apellido">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Descripcion</label>
+                                                                @*<textarea class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Escribrir descripcion del partido"></textarea>*@
+                                                                <input asp-for="Descripcion" value="@p.Descripcion" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg border-bottom border-dark" id="" placeholder="Ingresar descripcion">
+                                                            </div>
+                                                            @*<input type="hidden" name="Estado" value="Activo" />*@
+                                                            <input type="hidden" asp-for="IdPartido" value="@(p.IdPartido)" />
+
+                                                            <div class="form-group row mt-4">
+                                                                <div class="col">
+                                                                    <input type="submit" value="Editar" class="btn btn-outline-success btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="reset" value="Limpiar" class="btn btn-outline-warning btn-block" style="font-family: 'Rowdies', cursive; font-size:15px;" />
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
 
 
-                                    }
 
+
+                                        @*ELIMINAR Partido*@
+                                        @if (p.Estado == "Inactivo")
+                                        {
+                                            <a data-toggle="modal" data-target="#EliminarCiudadano@(p.IdPartido)" class="text-white btn btn-success ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a>
+
+                                            <div class="modal fade " id="EliminarCiudadano@(p.IdPartido)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content bg-info shadow-sm p-1 rounded">
+
+                                                        <div class="modal-header bg-info p-1 rounded">
+
+                                                            <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Reactivar</h5>
+
+                                                            <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                                Cancelar
+                                                            </button>
+
+                                                        </div>
+
+                                                        <div class="modal-body bg-light text-center">
+                                                            <h4>¿SEGURO QUE QUIERE REACTIVAR ESTE PARTIDO?</h4>
+
+                                                            <div class="mt-2 d-flex justify-content-center">
+                                                                <a asp-action="EliminarPartido" asp-controller="Partidos" asp-route-id="@(p.IdPartido)" class="text-white btn btn-info shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Reactivar</a>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        }
+                                        else
+                                        {
+                                            <a data-toggle="modal" data-target="#EliminarCiudadano@(p.IdPartido)" class="text-white btn btn-danger ml-auto  btn-sm shadow rounded" style="margin-right:5px; font-size:12px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                                            <div class="modal fade " id="EliminarCiudadano@(p.IdPartido)" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content bg-danger shadow-sm p-1 rounded">
+
+                                                        <div class="modal-header bg-danger p-1 rounded">
+
+                                                            <h5 class="modal-title text-white font-weight-light mr-auto" id="staticBackdropLabel" style="font-family: 'Rowdies', cursive; font-size:20px;">Eliminar</h5>
+
+                                                            <button type="button" class="btn btn-primary btn-sm text-white p-1 rounded mt-2 shadow-sm" style="font-size:11px;" data-dismiss="modal" aria-label="Close">
+                                                                Cancelar
+                                                            </button>
+
+                                                        </div>
+
+                                                        <div class="modal-body bg-light text-center">
+                                                            <h4>¿SEGURO QUE QUIERE ELIMINAR ESTE PARTIDO?</h4>
+
+                                                            <div class="mt-2 d-flex justify-content-center">
+                                                                <a asp-action="EliminarPartido" asp-controller="Partidos" asp-route-id="@p.IdPartido" class="text-white btn btn-danger shadow-lg ml-auto  btn-block" style="font-size:15px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        }
+                                    }
 
                                 </td>
 

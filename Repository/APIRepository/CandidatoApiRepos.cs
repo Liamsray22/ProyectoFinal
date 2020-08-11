@@ -235,7 +235,29 @@ namespace Repository.APIRepository
 
         }
 
-        
+        public async Task<List<VotacionDTO>> GetCandidatosByEleccion(int IdEleccion)
+        {
+            //var puestos = await _context.PuestoElectivo.ToListAsync();
+            var ele = await _context.Elecciones.FirstOrDefaultAsync(x => x.IdEleccion == IdEleccion);
+            //var ciudadano = await _context.Ciudadanos.FirstOrDefaultAsync(c => c.Cedula.Contains(cedula));
+            var votacion = await _context.Votacion.Where(v => v.IdEleccion == IdEleccion).ToListAsync();
+            List<VotacionDTO> datos = new List<VotacionDTO>();
+            foreach (var cand in votacion)
+            {
+                VotacionDTO vm = new VotacionDTO();
+                var candi = await _context.Candidatos.FirstOrDefaultAsync(c => c.IdCandidato == cand.IdCandidato);
+                var parti = await _context.Partidos.FirstOrDefaultAsync(p => p.IdPartido == candi.IdPartido);
+                var puesti = await _context.PuestoElectivo.FirstOrDefaultAsync(pp => pp.IdPuestoElectivo == candi.IdPuestoElectivo);
+                vm.Nombre = candi.Nombre;
+                vm.Partido = parti.Nombre;
+                vm.PuestoElectivo = puesti.Nombre;
+                datos.Add(vm);
+            }
+            return datos;
+
+        }
+
+
 
     }
 }

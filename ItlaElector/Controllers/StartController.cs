@@ -33,11 +33,11 @@ namespace ItlaElector.Controllers
             return View();
         }
         public IActionResult Login() {
-            //if (User.Identity.IsAuthenticated)
-            //{
-            //    return RedirectToAction("Home", "Admin");
+            if (User.Identity.IsAuthenticated && User.IsInRole("Administrador"))
+            {
+                return RedirectToAction("Home", "Admin");
 
-            //}
+            }
             return View();
         }
 

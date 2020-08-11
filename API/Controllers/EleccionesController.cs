@@ -44,12 +44,8 @@ namespace API.Controllers
                             {
                                 return NotFound();
                             }
-
                             return ListadoEleccionesDTO;
-
-
                      }else{
-
                             ModelState.AddModelError("Error", "Este Ciudadano/a no existe.");
                             return BadRequest(ModelState);
                         }
@@ -58,39 +54,40 @@ namespace API.Controllers
                            return StatusCode(500);
                         }
 
-
 }
 
-
-        //Listado de todos los candidatos por puesto electivos,  elección específica.
-        [HttpGet("{Id}")]
-        public async Task<ActionResult<List<CandidatoEleccionesDTO>>> GetCandidatosEleccion(int? Id)
+        [HttpGet("ResultadosElecciones/{id}")]
+        public async Task<ActionResult<List<ResultadosDTO>>> ResultadosElecciones(int? id)
         {
+            try
+            {
+                var res = await _eleccionApiRepos.ResultadosElecciones(id.Value);
+                return res;
+            }
+            catch
+            {
+                return StatusCode(500);
 
-            var EleccionExists = await _eleccionApiRepos.GetByIdAsync(Id.Value);
+            }
+            
+        }
 
-            if (EleccionExists == null) {
-                ModelState.AddModelError("Error", "La Eleccion que busca no existe...");
-                return BadRequest(ModelState);
+        [HttpGet]
+        public async Task<ActionResult<List<List<ResultadosDTO>>>> TodasElecciones()
+        {
+            try{
+                var res = await _eleccionApiRepos.TodasElecciones();
+                return res;
+            }
+            catch 
+            {
+                return StatusCode(500);
             }
 
 
-            var ListadoPuestoEleccion = await _eleccionApiRepos.ListaCandidatosElecciones(Id.Value);
-            
-            //if (ListadoEleccionesDTO == null)
-            //{
-            //    return NotFound();
-            //}
-
-            //return ListadoEleccionesDTO;
-
-
-            return null;
-
         }
 
 
-
-        }
+    }
 
 }

@@ -16,6 +16,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Repository.APIRepository;
+using Repository.Repository;
 
 namespace API
 {
@@ -60,6 +61,15 @@ namespace API
             services.AddScoped<CiudadApiRepos>();
             services.AddScoped<EleccionApiRepos>();
             services.AddScoped<VotacionesApiRepos>();
+            services.AddScoped<CiudadanosRepo>();
+            services.AddScoped<AdminRepo>();
+            services.AddScoped<PartidosRepo>();
+            services.AddScoped<PuestosElectivosRepo>();
+            services.AddScoped<CandidatosRepo>();
+            services.AddScoped<EleccionesRepo>();
+            services.AddScoped<ElectorRepo>();
+            services.AddScoped<VotacionRepo>();
+
 
             //Swager
             services.AddSwaggerGen();

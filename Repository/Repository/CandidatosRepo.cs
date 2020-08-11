@@ -52,13 +52,32 @@ namespace Repository.Repository
         }
         public async Task<bool> TraerCandidatosActivos()
         {
-            var candidatos = await _context.Candidatos.Where(a=> a.Estado.Trim()=="Activo").ToListAsync();
-           if (candidatos.Count >= 2)
-            {
 
+            var TodosPuesto = await _context.PuestoElectivo.Where(a => a.Estado.Trim() == "Activo").Select(a => a.IdPuestoElectivo).Distinct().ToListAsync();
+
+            int verificado = 0;
+
+            foreach (var id in TodosPuesto) {
+
+                var candidatos = await _context.Candidatos.Where(a => a.Estado.Trim() == "Activo" && a.IdPuestoElectivo == id)
+                    .ToListAsync();
+
+                int contador = candidatos.Count();
+
+                if (contador >= 3) {
+                    verificado++;
+                }
+
+            }
+            
+            
+            if (verificado >=  4)
+            {
                 return false;
             }
+            
             return true;
+            
         }
 
 

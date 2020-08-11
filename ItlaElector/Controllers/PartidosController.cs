@@ -6,9 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 using Repository.Repository;
 using DataBase.ViewModels;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ItlaElector.Controllers
 {
+    [Authorize(Roles = "Administrador")]
+
     public class PartidosController : Controller
     {
         private readonly PartidosRepo _partidosRepo;

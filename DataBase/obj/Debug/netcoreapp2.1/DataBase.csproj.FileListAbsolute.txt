@@ -8,26 +8,4 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfo.cs
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.pdb
-C:\Users\Liam\source\repos\ItlaElector\DataBase\bin\Debug\netcoreapp2.1\DataBase.deps.json
-C:\Users\Liam\source\repos\ItlaElector\DataBase\bin\Debug\netcoreapp2.1\DataBase.runtimeconfig.json
-C:\Users\Liam\source\repos\ItlaElector\DataBase\bin\Debug\netcoreapp2.1\DataBase.runtimeconfig.dev.json
-C:\Users\Liam\source\repos\ItlaElector\DataBase\bin\Debug\netcoreapp2.1\DataBase.dll
-C:\Users\Liam\source\repos\ItlaElector\DataBase\bin\Debug\netcoreapp2.1\DataBase.pdb
-C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase.csprojAssemblyReference.cache
-C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase.csproj.CoreCompileInputs.cache
-C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfoInputs.cache
-C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfo.cs
-C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase.dll
-C:\Users\Liam\source\repos\ItlaElector\DataBase\obj\Debug\netcoreapp2.1\DataBase.pdb
-C:\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.deps.json
-C:\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.runtimeconfig.json
-C:\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.runtimeconfig.dev.json
-C:\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.dll
-C:\ProyectoFinal\DataBase\bin\Debug\netcoreapp2.1\DataBase.pdb
-C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfoInputs.cache
-C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.AssemblyInfo.cs
-C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.csproj.CoreCompileInputs.cache
-C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.dll
-C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.pdb
-C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.genruntimeconfig.cache
-C:\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.csprojAssemblyReference.cache
+C:\Users\Pablo Molina\source\repos\ProyectoFinal\DataBase\obj\Debug\netcoreapp2.1\DataBase.csprojAssemblyReference.cache
