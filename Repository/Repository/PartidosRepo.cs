@@ -130,12 +130,10 @@ namespace Repository.Repository
                 {
                     var filepathdelete = Path.Combine(folderPath, partido.Logo.Trim());
 
-                    if (File.Exists(filepathdelete))
-                    {
-                        File.Delete(filepathdelete);
-                    }
+                 
                 }
                 par.Logo = uniqueName;
+                par.Nombre = upvm.Nombreedit.Trim();
                 await Update(par);
                 return true;
             }

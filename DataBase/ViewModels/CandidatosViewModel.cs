@@ -24,7 +24,8 @@ namespace DataBase.ViewModels
         public List<PartidosViewModels> ListPartido { get; set; }
         public List<PuestosElectivosViewModel> ListPuestoElectivo { get; set; }
         public string Partido { get; set; }
-
+        [Required(ErrorMessage = "Debe ingresar nombre de candidato")]
+        public string Nombreedit { get; set; }
         public string PuestoElectivo { get; set; }
         public string FotoPerfil { get; set; }
 

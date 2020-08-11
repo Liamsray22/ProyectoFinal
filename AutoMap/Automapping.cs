@@ -37,12 +37,14 @@ namespace AutoMap
         {
             CreateMap<CandidatosViewModel, Candidatos>().ReverseMap().
             ForMember(dest => dest.Partido, opt => opt.Ignore()).
-            ForMember(dest => dest.PuestoElectivo, opt => opt.Ignore());
+            ForMember(dest => dest.PuestoElectivo, opt => opt.Ignore()).
+            ForMember(dest => dest.Nombreedit, opt => opt.Ignore());
         }
 
         private void MapearPartidos()
         {
-            CreateMap<PartidosViewModels, Partidos>().ReverseMap();
+            CreateMap<PartidosViewModels, Partidos>().ReverseMap().
+            ForMember(dest => dest.Nombreedit, opt => opt.Ignore()); ;
             //ForMember(dest => dest.campo, opt => opt.Ignore()).
             //ForMember(dest => dest.campo, opt => opt.Ignore());
         }

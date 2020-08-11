@@ -201,7 +201,7 @@
                                                         </div>
 
                                                     </div>
-                                                    <form asp-action="EditarPartido" asp-controller="Partidos" method="post">
+                                                    <form asp-action="EditarPartido" asp-controller="Partidos" method="post" enctype="multipart/form-data">
                                                         <div class="modal-body bg-light">
 
 
@@ -217,8 +217,8 @@
                                                                     <span asp-validation-for="Photo" class="text-danger text-center"></span>
                                                                     <div class="d-flex justify-content-center mt-2">
                                                                         <div>
-                                                                            <label for="upload-photo2" class="btn btn-outline-primary mr-3 rounded float-left" onClick="upload(@p.IdPartido)">Añadir foto</label>
-                                                                            <input class="upload-photo2" type="file" id="upload-photo_@p.IdPartido" asp-for="Photo" accept="image/*" onchange="change(@p.IdPartido)" />
+                                                                            <label for="upload-photo_@p.IdPartido" class="btn btn-outline-primary mr-3 rounded float-left" onClick="upload(@p.IdPartido)">Añadir foto</label>
+                                                                            <input asp-for="Photo" class="upload-photo2" type="file" id="upload-photo_@p.IdPartido"  accept="image/*" onchange="change(@p.IdPartido)" />
                                                                             <button type="button" id="delete_@p.IdPartido" onClick="Deletephoto(@p.IdPartido)" class="btn btn-outline-danger rounded float-left">Quitar</button>
 
                                                                         </div>
@@ -226,8 +226,9 @@
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
+                                                                <input type="hidden" asp-for="Estado" value="@p.Estado" />
                                                                 <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
-                                                                <input asp-for="Nombre" value="@p.Nombre" class="form-control ml-auto  btn-sm mb-2 shadow rounded bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Ingresar Apellido">
+                                                                <input asp-for="Nombreedit" value="@p.Nombre" class="form-control ml-auto  btn-sm mb-2 shadow rounded bg-white rounded-pill form-control-lg border-bottom border-dark" placeholder="Ingresar Apellido">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Descripcion</label>
@@ -363,22 +364,19 @@
         $seleccionArchivos2 = "",
             $imagenPrevisualizacion2 = "";
         $delete2 = "";
-        $ids = 0;
 
 
         function upload(id) {
-            alert(id);
             $seleccionArchivos2 = document.querySelector("#upload-photo_" + id),
                 $imagenPrevisualizacion2 = document.querySelector("#imagenPrevisualizacion_" + id);
-            alert($imagenPrevisualizacion2.src)
             $delete2 = document.querySelector("#delete_" + id);
-            $ids =  id;
 
 
         }
         function change(id){
+            $imagenPrevisualizacion2 = document.querySelector("#imagenPrevisualizacion_" + id);
 
-            console.log($imagenPrevisualizacion2);
+          
 
             const archivos2 = $seleccionArchivos2.files;
             if (!archivos2 || !archivos2.length) {
@@ -389,9 +387,8 @@
             const objectURL2 = URL.createObjectURL(primerArchivo2);
             $imagenPrevisualizacion2.src = objectURL2;
             $('#delete_' + id).removeAttr('hidden')
-            console.log($seleccionArchivos2);
-
-            console.log($imagenPrevisualizacion2);
+            $seleccionArchivos2.val = $seleccionArchivos2.val;
+            
         };
       
         //$delete2.addEventListener("click", () => {

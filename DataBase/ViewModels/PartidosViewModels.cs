@@ -13,6 +13,9 @@ namespace DataBase.ViewModels
         [Required(ErrorMessage = "Debe ingresar nombre de partido")]
         [Remote(action: "VerifyPartido", controller: "Partidos")]
         public string Nombre { get; set; }
+
+        [Required(ErrorMessage = "Debe ingresar nombre de partido")]
+        public string Nombreedit { get; set; }
         [Required(ErrorMessage = "Debe ingresar descripcion de partido")]
 
         public string Descripcion { get; set; }

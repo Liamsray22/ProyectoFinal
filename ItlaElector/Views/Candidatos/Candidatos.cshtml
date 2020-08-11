@@ -23,7 +23,8 @@
             z-index: -1;
         }
 
-        #upload-photo2 {
+
+        .upload-photo2 {
             opacity: 0;
             position: absolute;
             z-index: -1;
@@ -251,25 +252,31 @@
                                         <form asp-action="EditarCandidatos" asp-controller="Candidatos" method="post" enctype="multipart/form-data">
                                             <div class="modal-body bg-light text-dark">
 
-
                                                 <div class="form-group">
                                                     <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Foto</label>
                                                     <div>
                                                         <div class="d-flex justify-content-center">
-                                                            <img id="imagenPrevisualizacion2" src="@photopath" asp-append-version="true"
+                                                            <img id="imagenPrevisualizacion_@c.IdCandidato" src="@photopath" asp-append-version="true"
                                                                  class="rounded-circle " style="width: 150px;height: 150px; ">
                                                         </div>
                                                         <span asp-validation-for="Photo" class="text-danger text-center"></span>
                                                         <div class="d-flex justify-content-center mt-2">
                                                             <div>
-                                                                <label for="upload-photo2" class="btn btn-outline-primary mr-3 rounded float-left">Añadir foto</label>
-                                                                <input type="file" id="upload-photo2" asp-for="Photo" accept="image/*" />
-                                                                <button type="button" id="delete2" class="btn btn-outline-danger rounded float-left">Quitar</button>
+                                                                <label for="upload-photo_@c.IdCandidato" class="btn btn-outline-primary mr-3 rounded float-left" onClick="upload(@c.IdCandidato)">Añadir foto</label>
+                                                                <input asp-for="Photo" class="upload-photo2" type="file" id="upload-photo_@c.IdCandidato" accept="image/*" onchange="change(@c.IdCandidato)" />
+                                                                <button type="button" id="delete_@c.IdCandidato" onClick="Deletephoto(@c.IdCandidato)" class="btn btn-outline-danger rounded float-left">Quitar</button>
 
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="form-group">
+                                                    <input type="hidden" asp-for="Estado" value="@c.Estado" />
+                                                   
+                                                </div>
+                                                
+                                                @*<input type="hidden" name="Estado" value="Activo" />*@
+                                         
 
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
@@ -277,7 +284,7 @@
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Nombre</label>
                                                         </div>
                                                         <span asp-validation-for="Nombre" class="text-danger"></span>
-                                                        <input asp-for="Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" value="@c.Nombre" />
+                                                        <input asp-for="Nombreedit" value="@c.Nombre" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Nombre" value="@c.Nombre" />
                                                         <span class="text-danger"></span>
                                                     </div>
                                                     <div class="form-group col-md-6">
@@ -285,7 +292,7 @@
                                                             <label class="ml-3" style="font-family: 'Rowdies', cursive; font-size:15px;">Apellido</label>
                                                         </div>
                                                         <span asp-validation-for="Apellido" class="text-danger"></span>
-                                                        <input asp-for="Apellido" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Apellido" value="@c.Apellido" />
+                                                        <input asp-for="Apellido" value="@c.Apellido" class="form-control shadow-sm p-3 bg-white rounded-pill form-control-lg" placeholder="Ingresar Apellido" value="@c.Apellido" />
                                                         <span class="text-danger"></span>
                                                     </div>
                                                 </div>
@@ -442,10 +449,22 @@
         $imagenPrevisualizacion.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
         $('#delete').attr("hidden", true)
     });
-    const $seleccionArchivos2 = document.querySelector("#upload-photo2"),
-        $imagenPrevisualizacion2 = document.querySelector("#imagenPrevisualizacion2");
-    $delete2 = document.querySelector("#delete2");
-    $seleccionArchivos2.addEventListener("change", () => {
+    $seleccionArchivos2 = "",
+        $imagenPrevisualizacion2 = "";
+    $delete2 = "";
+
+
+    function upload(id) {
+        $seleccionArchivos2 = document.querySelector("#upload-photo_" + id),
+            $imagenPrevisualizacion2 = document.querySelector("#imagenPrevisualizacion_" + id);
+        $delete2 = document.querySelector("#delete_" + id);
+
+
+    }
+    function change(id) {
+        $imagenPrevisualizacion2 = document.querySelector("#imagenPrevisualizacion_" + id);
+
+
         const archivos2 = $seleccionArchivos2.files;
         if (!archivos2 || !archivos2.length) {
             $imagenPrevisualizacion2.src = "";
@@ -454,19 +473,23 @@
         const primerArchivo2 = archivos2[0];
         const objectURL2 = URL.createObjectURL(primerArchivo2);
         $imagenPrevisualizacion2.src = objectURL2;
-        $('#delete2').removeAttr('hidden')
-    });
-    $delete2.addEventListener("click", () => {
-        $seleccionArchivos2.src = "";
+        $('#delete_' + id).removeAttr('hidden')
+        $seleccionArchivos2.val = $seleccionArchivos2.val;
+    };
+
+    //$delete2.addEventListener("click", () => {
+    //    $seleccionArchivos2.src = "";
+    //    $imagenPrevisualizacion2.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
+    //    $('#delete2').attr("hidden", true)
+    //});
+    function Deletephoto(clicked_id) {
+        const $seleccionArchivos2 = document.querySelector("#upload-photo_" + clicked_id),
+            $imagenPrevisualizacion2 = document.querySelector("#imagenPrevisualizacion_" + clicked_id);
+        //$seleccionArchivos2.src = "";
         $imagenPrevisualizacion2.src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
-        $('#delete2').attr("hidden", true)
-    });
-    $(document).ready(function () {
-        $('#name').change(function () {
-            const archivos3 = $seleccionArchivos2.files;
-            $('#firstname').val($('#name').val());
-        });
-    });
+        $('#delete_' + clicked_id).attr("hidden", true)
+    }
+
 </script>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

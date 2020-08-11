@@ -144,10 +144,6 @@ namespace Repository.Repository
                 {
                     var filepathdelete = Path.Combine(folderPath, candidato.FotoPerfil.Trim());
 
-                    if (File.Exists(filepathdelete))
-                    {
-                        File.Delete(filepathdelete);
-                    }
                 }
                     can.FotoPerfil = uniqueName;
                 }
@@ -156,7 +152,7 @@ namespace Repository.Repository
 
                     can.FotoPerfil = candidato.FotoPerfil;
                 }
-
+                can.Nombre = ucavm.Nombreedit.Trim();
                 await Update(can);
                 return true;
             }
