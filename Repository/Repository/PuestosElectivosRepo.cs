@@ -75,7 +75,15 @@ namespace Repository.Repository
 
             return true;
         }
-
+        public async Task<bool> verifyPuestos(string puessto)
+        {
+            var puesto = await _context.PuestoElectivo.FirstOrDefaultAsync(a => a.Nombre.Contains(puessto));
+            if (puesto != null)
+            {
+                return true;
+            }
+            return false;
+        }
         public async Task CrearPuestosElectivos(PuestosElectivosViewModel pevm)
         {
             var puesto = _mapper.Map<PuestoElectivo>(pevm);

@@ -98,6 +98,15 @@ namespace Repository.Repository
             return false;
         }
 
+        public async Task<bool> verifyusercedula(string cedula)
+        {
+            var ciudadano = await _userManager.FindByNameAsync(cedula);
+            if (ciudadano!=null)
+            {
+                return true;
+            }
+            return false;
+        }
         public async Task<bool> USERactivo(string cedula)
         {
 

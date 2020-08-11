@@ -21,6 +21,7 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.csproj.CopyComplete
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.pdb
+<<<<<<< HEAD
 C:\Users\Liam\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\API.deps.json
 C:\Users\Liam\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\API.runtimeconfig.json
 C:\Users\Liam\Desktop\ProyectoFinal\API\bin\Debug\netcoreapp2.1\API.runtimeconfig.dev.json
@@ -44,3 +45,5 @@ C:\Users\Liam\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.RazorTargetA
 C:\Users\Liam\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.csproj.CopyComplete
 C:\Users\Liam\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.dll
 C:\Users\Liam\Desktop\ProyectoFinal\API\obj\Debug\netcoreapp2.1\API.pdb
+=======
+>>>>>>> 5a76c522825e130986727a9e6851da499fe23ad7

@@ -22,25 +22,25 @@ namespace ItlaElector.Controllers
 
         public async Task<IActionResult> Ciudadanos()
         {
-            var ciudadanos =await _ciudadanosRepo.TraerCiudadanos();
+            var ciudadanos = await _ciudadanosRepo.TraerCiudadanos();
             return View(ciudadanos);
         }
 
         [HttpPost]
         public async Task<IActionResult> Ciudadanos(CiudadanosViewModel cvm)
         {
-            //if (ModelState.IsValid)
-            //{
-            //try
-            //{
+            if (ModelState.IsValid)
+            {
+                try
+                {
 
-            await _ciudadanosRepo.CrearCiudadanos(cvm);
-                //}
-                //catch
-                //{
+                    await _ciudadanosRepo.CrearCiudadanos(cvm);
+                }
+                catch
+                {
 
-                //}
-            //}
+                }
+            }
             var ciudadanos = await _ciudadanosRepo.TraerCiudadanos();
             return RedirectToAction("Ciudadanos");
         }
@@ -72,6 +72,7 @@ namespace ItlaElector.Controllers
             return RedirectToAction("Ciudadanos");
         }
 
+
         public async Task<IActionResult> CrearRol()
         {
             await _ciudadanosRepo.CrearRole();
@@ -79,5 +80,22 @@ namespace ItlaElector.Controllers
 
         }
 
+
+        [AcceptVerbs("GET", "POST")]
+        public async Task<IActionResult> VerifyCedula(string Cedula)
+        {
+            Cedula = Cedula.Replace("-", "");
+            var verifyelecciones = await _ciudadanosRepo.verifyusercedula(Cedula);
+            if (verifyelecciones)
+            {
+                return Json($"Este usuario ya esta registrado");
+
+
+            }
+
+            return Json(true);
+        }
     }
 }
+
+    

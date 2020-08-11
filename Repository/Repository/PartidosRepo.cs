@@ -141,7 +141,15 @@ namespace Repository.Repository
             }
             return false;
         }
-
+        public async Task<bool> verifyPartido(string partido)
+        {
+            var partidos = await _context.Partidos.FirstOrDefaultAsync(a=>a.Nombre.Contains(partido));
+            if (partidos != null)
+            {
+                return true;
+            }
+            return false;
+        }
         //public void Borrar(string path)
         //{
         //    File.SetAttributes(path, FileAttributes.Normal);

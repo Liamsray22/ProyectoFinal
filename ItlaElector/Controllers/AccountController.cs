@@ -34,6 +34,7 @@ namespace ItlaElector.Controllers
         public async Task<IActionResult> CrearRol()
         {
             await _ciudadanosRepo.CrearRole();
+
             return RedirectToAction("Start","Start");
 
         }

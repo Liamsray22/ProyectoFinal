@@ -26,6 +26,7 @@ namespace ItlaElector.Controllers
         public async Task<IActionResult> Partidos()
         {
             var partido = await _partidosRepo.TraerPartidos();
+
             return View(partido);
         }
         [HttpPost]
@@ -42,6 +43,7 @@ namespace ItlaElector.Controllers
 
                 }
             }
+
             var partido = await _partidosRepo.TraerPartidos();
             return RedirectToAction("Partidos");
         }
@@ -73,6 +75,20 @@ namespace ItlaElector.Controllers
 
             return RedirectToAction("Start", "Start");
 
+        }
+
+        [AcceptVerbs("GET", "POST")]
+        public async Task<IActionResult> VerifyPartido(string Nombre)
+        {
+            var verifypartido = await _partidosRepo.verifyPartido(Nombre);
+            if (verifypartido)
+            {
+                return Json($"Ya esta partido esta creado");
+
+
+            }
+
+            return Json(true);
         }
     }
 }
