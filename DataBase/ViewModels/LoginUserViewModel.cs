@@ -10,7 +10,7 @@ namespace DataBase.ViewModels
     {
         [StringLength(13, ErrorMessage = "Siga el formato dado")]
 
-        [Required(ErrorMessage ="Este Campo Usuario es requerido")]
+        [Required(ErrorMessage ="Para acceder a la zona de votación debes colocar tu cédula.")]
         //[Remote(action: "VerifyCedula", controller: "Start")]
         public string Cedula { get; set; }
  

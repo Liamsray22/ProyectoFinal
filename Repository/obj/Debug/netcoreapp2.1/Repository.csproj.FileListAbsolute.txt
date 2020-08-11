@@ -16,25 +16,6 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CopyComplete
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
-C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\Repository.deps.json
-C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\Repository.runtimeconfig.json
-C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\Repository.runtimeconfig.dev.json
-C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\Repository.dll
-C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\Repository.pdb
-C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\AutoMap.dll
-C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\DataBase.dll
-C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\EmailConfig.dll
-C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\AutoMap.pdb
-C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\DataBase.pdb
-C:\Users\Liam\source\repos\ItlaElector\Repository\bin\Debug\netcoreapp2.1\EmailConfig.pdb
-C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Repository.csprojAssemblyReference.cache
-C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CoreCompileInputs.cache
-C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfoInputs.cache
-C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfo.cs
-C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CopyComplete
-C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Repository.dll
-C:\Users\Liam\source\repos\ItlaElector\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
-<<<<<<< HEAD
 C:\Users\Liam\Desktop\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\Repository.deps.json
 C:\Users\Liam\Desktop\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\Repository.runtimeconfig.json
 C:\Users\Liam\Desktop\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\Repository.runtimeconfig.dev.json
@@ -53,24 +34,3 @@ C:\Users\Liam\Desktop\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repositor
 C:\Users\Liam\Desktop\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CopyComplete
 C:\Users\Liam\Desktop\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.dll
 C:\Users\Liam\Desktop\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
-=======
-C:\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\Repository.deps.json
-C:\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\Repository.runtimeconfig.json
-C:\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\Repository.runtimeconfig.dev.json
-C:\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\Repository.dll
-C:\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\Repository.pdb
-C:\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\AutoMap.dll
-C:\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\DataBase.dll
-C:\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\EmailConfig.dll
-C:\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\AutoMap.pdb
-C:\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\DataBase.pdb
-C:\ProyectoFinal\Repository\bin\Debug\netcoreapp2.1\EmailConfig.pdb
-C:\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.csprojAssemblyReference.cache
-C:\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfoInputs.cache
-C:\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfo.cs
-C:\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CoreCompileInputs.cache
-C:\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CopyComplete
-C:\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.dll
-C:\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
-C:\ProyectoFinal\Repository\obj\Debug\netcoreapp2.1\Repository.genruntimeconfig.cache
->>>>>>> 6ed4bc7c2fc799540a082f219428138a34e59457

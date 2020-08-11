@@ -104,7 +104,7 @@ namespace ItlaElector
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Start}/{action=Start}/{id?}");
+                    template: "{controller=Account}/{action=AccessDenied}/{id?}");
             });
         }
     }

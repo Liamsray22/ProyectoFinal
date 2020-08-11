@@ -53,7 +53,9 @@ namespace API.Controllers
                         }catch{
                            return StatusCode(500);
                         }
+
 }
+
         [HttpGet("ResultadosElecciones/{id}")]
         public async Task<ActionResult<List<ResultadosDTO>>> ResultadosElecciones(int? id)
         {
@@ -67,7 +69,7 @@ namespace API.Controllers
                 return StatusCode(500);
 
             }
-
+            
         }
 
         [HttpGet]
@@ -82,7 +84,9 @@ namespace API.Controllers
                 return StatusCode(500);
             }
 
+
         }
+
 
     }
 

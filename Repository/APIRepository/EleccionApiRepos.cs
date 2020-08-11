@@ -103,7 +103,7 @@ namespace Repository.APIRepository
                 resul.Nombre = newcandidato.Nombre;
                 resul.Puesto = puesto.Nombre;
                 resul.Votos = votos;
-                resul.porcentaje = (((votos * 100.00) / (totalvotospuestos * 100.00)) * 100.00);
+                resul.porcentaje = Math.Round((((votos * 100.00) / (totalvotospuestos * 100.00)) * 100.00));
 
                 list.Add(resul);
 
@@ -148,7 +148,7 @@ namespace Repository.APIRepository
                         resul.Nombre = newcandidato.Nombre;
                         resul.Puesto = puesto.Nombre;
                         resul.Votos = votos;
-                        resul.porcentaje = (((votos * 100.00) / (totalvotospuestos * 100.00)) * 100.00);
+                        resul.porcentaje = Math.Round((((votos * 100.00) / (totalvotospuestos * 100.00)) * 100.00));
                         puestoanterior = resul.Puesto;
                         porcentajeanterior = resul.porcentaje;
                         list.Add(resul);

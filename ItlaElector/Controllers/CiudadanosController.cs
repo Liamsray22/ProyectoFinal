@@ -70,13 +70,11 @@ namespace ItlaElector.Controllers
             }
 
             return RedirectToAction("Ciudadanos");
-
-
         }
 
-        public async Task<IActionResult> CrearRol(string rol)
+        public async Task<IActionResult> CrearRol()
         {
-            await _ciudadanosRepo.CrearRole(rol);
+            await _ciudadanosRepo.CrearRole();
             return RedirectToAction("Ciudadanos");
 
         }

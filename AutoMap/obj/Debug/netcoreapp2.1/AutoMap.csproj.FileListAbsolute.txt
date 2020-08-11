@@ -12,21 +12,6 @@ C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csproj.CopyComplete
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.dll
 C:\Users\Pablo Molina\source\repos\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.pdb
-C:\Users\Liam\source\repos\ItlaElector\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.deps.json
-C:\Users\Liam\source\repos\ItlaElector\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.runtimeconfig.json
-C:\Users\Liam\source\repos\ItlaElector\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.runtimeconfig.dev.json
-C:\Users\Liam\source\repos\ItlaElector\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.dll
-C:\Users\Liam\source\repos\ItlaElector\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.pdb
-C:\Users\Liam\source\repos\ItlaElector\AutoMap\bin\Debug\netcoreapp2.1\DataBase.dll
-C:\Users\Liam\source\repos\ItlaElector\AutoMap\bin\Debug\netcoreapp2.1\DataBase.pdb
-C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csprojAssemblyReference.cache
-C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csproj.CoreCompileInputs.cache
-C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.AssemblyInfoInputs.cache
-C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.AssemblyInfo.cs
-C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csproj.CopyComplete
-C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.dll
-C:\Users\Liam\source\repos\ItlaElector\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.pdb
-<<<<<<< HEAD
 C:\Users\Liam\Desktop\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.deps.json
 C:\Users\Liam\Desktop\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.runtimeconfig.json
 C:\Users\Liam\Desktop\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.runtimeconfig.dev.json
@@ -41,20 +26,3 @@ C:\Users\Liam\Desktop\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.Asse
 C:\Users\Liam\Desktop\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csproj.CopyComplete
 C:\Users\Liam\Desktop\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.dll
 C:\Users\Liam\Desktop\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.pdb
-=======
-C:\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.deps.json
-C:\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.runtimeconfig.json
-C:\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.runtimeconfig.dev.json
-C:\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.dll
-C:\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\AutoMap.pdb
-C:\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\DataBase.dll
-C:\ProyectoFinal\AutoMap\bin\Debug\netcoreapp2.1\DataBase.pdb
-C:\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csprojAssemblyReference.cache
-C:\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.AssemblyInfoInputs.cache
-C:\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.AssemblyInfo.cs
-C:\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csproj.CoreCompileInputs.cache
-C:\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.csproj.CopyComplete
-C:\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.dll
-C:\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.pdb
-C:\ProyectoFinal\AutoMap\obj\Debug\netcoreapp2.1\AutoMap.genruntimeconfig.cache
->>>>>>> 6ed4bc7c2fc799540a082f219428138a34e59457

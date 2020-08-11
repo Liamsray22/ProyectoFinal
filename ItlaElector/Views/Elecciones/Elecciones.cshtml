@@ -60,7 +60,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                             </div>
 
                                             <div class="modal-body bg-light text-center">
-                                                <h4 class="text-dark">Deben haber al menos 2 candidatos disponibles y activos para establecer una nueva eleccion</h4>
+                                                <h4 class="text-dark">Deben haber al menos 2 candidatos disponibles para el mismo puesto y activos para establecer una nueva eleccion</h4>
 
                                                 <div class="mt-2 d-flex justify-content-center">
                                                     <button class="text-white btn btn-info shadow-lg ml-auto  btn-block" style="font-size:15px;" data-dismiss="modal">Entendido</button>
@@ -217,7 +217,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                             </div>
                                             @if (Model.Resultados != null)
                                             {
-                                                var itemscresutlado = Model.Resultados.SelectMany(sublist => sublist.Where(com => com.ideleccion == e.IdEleccion)).ToList().OrderByDescending(num => num.Votos).ThenBy(c => c.Puesto);
+                                                var itemscresutlado = Model.Resultados.SelectMany(sublist => sublist.Where(com => com.ideleccion == e.IdEleccion)).ToList().OrderByDescending(c => c.Puesto).ThenBy(num => num.Votos);
                                                 <div class="modal-body bg-light text-center">
                                                     <h4>Resultados de la presente elecciones</h4>
                                                     <table class="table table-striped">
