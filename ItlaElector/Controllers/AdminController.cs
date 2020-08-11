@@ -8,6 +8,8 @@ using Repository.Repository;
 
 namespace ItlaElector.Controllers
 {
+    [Authorize(Roles = "Administrador")]
+
     public class AdminController : Controller
     {
         private readonly AdminRepo _adminRepo;
@@ -16,7 +18,6 @@ namespace ItlaElector.Controllers
             _adminRepo = adminRepo;
 
         }
-        [Authorize(Roles = "Administrador")]
 
         public IActionResult Home()
         {
