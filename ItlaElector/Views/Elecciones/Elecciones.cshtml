@@ -3,10 +3,10 @@
     ViewData["Title"] = "Elecciones";
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
 }
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-
-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-
-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+<script src="scripts/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <body style="background: #000000;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
@@ -145,7 +145,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
 
                                                 <div class="row">
                                                     <div class='col-12'>
-                                                        <input asp-for="Fecha" type="text" placeholder="Ingresar Fecha" data-provide="datepicker" class=" shadow-sm p-3 bg-white rounded-pill " id="datepicker" />
+                                                        <input asp-for="Fecha" placeholder="Ingresar Fecha" class="form-control-lg shadow-sm p-3 bg-white rounded-pill " id="datepicker" />
                                                     </div>
                                                     @*<script type="text/javascript">
                                                             $(function () {
@@ -311,24 +311,42 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
 
     </div>
     @*<div class="input-group date">
-        <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
-    </div>
-    <script>
-    $('#sandbox-container .input-group.date').datepicker({
-        });</script>*@
+            <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+        </div>
+        <script>
+        $('#sandbox-container .input-group.date').datepicker({
+            });</script>*@
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="foo" hidden>
+    </button>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header alert-info">    
+                    <h5 class="modal-title" id="exampleModalLabel">Atencion!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body ">
+                    <input type="text" name="names" id="names" value="@ViewBag.mostrar" hidden />
+                    <p>Dedebes ingresar una fecha actual o superior para efectuar una eleccion </p>
+
+                </div>
+                <div class="modal-footer alert-info">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script src='~/js/site.js'></script>
+
 <script>
-    $(function () {
-        var oneDay = 24 * 60 * 60 * 1000;
-        var firstDate = new Date($("#datepicker").val); // your given date
-        var secondDate = new Date(new Date().getTime()); //current date
-        var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
-        $("#datepicker").datepicker({
-            dateFormat: 'dd/mm/yy',
-            minDate: 1,
-            maxDate: diffDays + 1
-        });
+    $(document).ready(function () {
+        if ($("#names").val() == "block") {
+            $("#foo").trigger("click");
+        }
     });
 </script>
 @section Scripts {

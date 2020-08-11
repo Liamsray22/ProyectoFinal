@@ -33,6 +33,14 @@ namespace ItlaElector.Controllers
             {
                 try
                 {
+                    if (evm.Fecha < DateTime.Now.AddDays(-1))
+                    {
+                        ViewBag.mostrar = "block";
+                        var elecciones = await _eleccionesRepo.TraerElecciones();
+                        return View(elecciones);
+
+
+                    }
                     await _eleccionesRepo.CrearElecciones(evm);
                 }
                 catch
@@ -40,7 +48,6 @@ namespace ItlaElector.Controllers
 
                 }
             }
-            var elecciones = await _eleccionesRepo.TraerElecciones();
             return RedirectToAction("Elecciones");
         }
         [HttpPost]
