@@ -258,6 +258,25 @@ namespace Repository.APIRepository
         }
 
 
+        //Verificando si los puestos y elecciones existen
+        public async Task<int> VerificPuestoYPartidoCandidatos(CandidatoDTO op) {
+
+            var puesto = await _context.PuestoElectivo.FirstOrDefaultAsync(x => x.IdPuestoElectivo == op.IdPuestoElectivo);
+
+            if (puesto == null) {
+                return 1;
+            }
+
+            var Partido = await _context.Partidos.FirstOrDefaultAsync(x => x.IdPartido == op.IdPartido);
+            if (Partido == null) {
+                return 2;
+
+            }
+
+
+            return 3;
+        } 
+
 
     }
 }

@@ -31,9 +31,10 @@ namespace ItlaElector.Controllers
         }
 
         //Crear roles
-        public async Task<IActionResult> CrearRol(string rol)
+        public async Task<IActionResult> CrearRol()
         {
-            await _ciudadanosRepo.CrearRole(rol);
+            await _ciudadanosRepo.CrearRole();
+
             return RedirectToAction("Start","Start");
 
         }

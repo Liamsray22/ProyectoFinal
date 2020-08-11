@@ -220,7 +220,7 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
                                             </div>
                                             @if (Model.Resultados != null)
                                             {
-                                                var itemscresutlado = Model.Resultados.SelectMany(sublist => sublist.Where(com => com.ideleccion == e.IdEleccion)).ToList().OrderByDescending(num => num.Votos).ThenBy(c => c.Puesto);
+                                                var itemscresutlado = Model.Resultados.SelectMany(sublist => sublist.Where(com => com.ideleccion == e.IdEleccion)).ToList().OrderByDescending(c => c.Puesto).ThenBy(num => num.Votos);
                                                 <div class="modal-body bg-light text-center">
                                                     <h4>Resultados de la presente elecciones</h4>
                                                     <table class="table table-striped">

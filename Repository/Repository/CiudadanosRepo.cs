@@ -27,13 +27,18 @@ namespace Repository.Repository
             _mapper = mapper;
             _roleManager = roleManager ;
         }
-        public async Task CrearRole(string rol)
+        public async Task CrearRole()
         {
             IdentityRole identityRole = new IdentityRole
             {
-                Name = rol
+                Name = "Ciudadanos"
             };
             await _roleManager.CreateAsync(identityRole);
+            IdentityRole identityRole2 = new IdentityRole
+            {
+                Name = "Administrador"
+            };
+            await _roleManager.CreateAsync(identityRole2);
         }
 
         public async Task<CiudadanosViewModel> TraerCiudadanos()

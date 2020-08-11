@@ -63,6 +63,22 @@ namespace API.Controllers
 
                 var Exists = await _candidatosApiRepos.VerificarCandidatoPartido(candidato);
 
+                int Autentific = await _candidatosApiRepos.VerificPuestoYPartidoCandidatos(candidato);
+
+                switch (Autentific) {
+
+                    case 1:
+                        ModelState.AddModelError("Error", "No hay puesto con ese Id");
+                        return BadRequest(ModelState);
+
+                    case 2:
+                        ModelState.AddModelError("Error", "No hay partido con ese Id");
+                        return BadRequest(ModelState);
+                        
+                }
+
+
+
                 if (Exists)
                 {
 
@@ -154,6 +170,26 @@ namespace API.Controllers
             {
 
                 var Exists = await _candidatosApiRepos.VerificarCandidatoUpdate(candidato.IdPuestoElectivo,candidato.IdPartido);
+
+
+
+                int Autentific = await _candidatosApiRepos.VerificPuestoYPartidoCandidatos(candidato);
+
+                switch (Autentific)
+                {
+
+                    case 1:
+                        ModelState.AddModelError("Error", "No hay puesto con ese Id");
+                        return BadRequest(ModelState);
+
+                    case 2:
+                        ModelState.AddModelError("Error", "No hay partido con ese Id");
+                        return BadRequest(ModelState);
+                        
+                }
+
+
+
 
                 if (Exists)
                 {
