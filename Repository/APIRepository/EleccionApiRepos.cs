@@ -117,7 +117,7 @@ namespace Repository.APIRepository
             var elecciones = await _context.Elecciones.ToListAsync();
             List<List<ResultadosDTO>> lili = new List<List<ResultadosDTO>>();
             foreach (var elec in elecciones) {
-                var totalvotos = await _context.Votacion.Where(a => a.IdEleccion == elec.IdEleccion).ToListAsync();
+                var totalvotos = await _context.Votacion.Where(a => a.IdEleccion == elec.IdEleccion).OrderByDescending(c=>c.IdCandidato).ToListAsync();
                 var candidatos = totalvotos.Select(a => a.IdCandidato).Distinct().ToList();
                 var list = new List<ResultadosDTO>();
                 var Listidpuestos = new List<int>();
@@ -138,12 +138,13 @@ namespace Repository.APIRepository
                     var totalvotospuestos = Listidpuestos.Count(a => a == puesto.IdPuestoElectivo);
                     var votos = totalvotos.Count(c => c.IdCandidato == newcandidato.IdCandidato);
                     var resul = new ResultadosDTO();
-                    if (puestoanterior == resul.Puesto && porcentajeanterior < resul.porcentaje)
+                    if (puestoanterior == resul.Puesto && porcentajeanterior <= resul.porcentaje)
                     {
 
                     }
                     else
                     {
+
                         resul.ideleccion = elec.IdEleccion;
                         resul.Nombre = newcandidato.Nombre;
                         resul.Puesto = puesto.Nombre;
